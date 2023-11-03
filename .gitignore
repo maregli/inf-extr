@@ -163,5 +163,6 @@ cython_debug/
 # User-specific stuff
 data/
 resources/
+midatams/
 
 src/paths.py

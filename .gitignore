@@ -164,5 +164,6 @@ cython_debug/
 data/
 resources/
 midatams/
+results/
 
 src/paths.py

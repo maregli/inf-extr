@@ -1,10 +1,11 @@
-import matplotlib.pyplot as plt
 import torch
-from sklearn.decomposition import PCA
+from torch.utils.data import DataLoader
 from sklearn.preprocessing import OneHotEncoder
 from datasets import DatasetDict
-import umap
 import numpy as np
+from transformers import AutoModelForSequenceClassification
+from datasets import Dataset
+import tqdm
 
 class MedDataset(torch.utils.data.Dataset):
     def __init__(self, dataframe: DatasetDict, tokenizer, max_length: int = 512, split: str = 'train'):
@@ -22,3 +23,30 @@ class MedDataset(torch.utils.data.Dataset):
 
     def __len__(self):
         return len(self.labels)
+    
+# Embedd the data and predict
+def model_output(data: Dataset, model: AutoModelForSequenceClassification, batch_size: int = 32, device: str = 'cuda'):
+    """
+    Embedd the data and predict
+
+    Args:
+        data (datasets.arrow_dataset.Dataset): Dataset to embedd
+        model (transformers.models.bert.modeling_bert.BertForSequenceClassification): Model to use.
+        batch_size (int, optional): Batch size. Defaults to 32.
+    """
+    # Create dataloader
+    dataloader = DataLoader(data, batch_size=batch_size, shuffle=False)
+    # Embedd data
+    embeddings = []
+    logits = []
+    labels = []
+    for batch in tqdm.tqdm(dataloader):
+        input_ids = torch.stack(batch['input_ids'], dim=1).to(device)
+        attention_mask = torch.stack(batch['attention_mask'], dim=1).to(device)
+        token_type_ids = torch.stack(batch['token_type_ids'], dim=1).to(device)
+        with torch.no_grad():
+            output = model(input_ids, attention_mask=attention_mask, token_type_ids=token_type_ids, output_hidden_states=True)
+            embeddings.append(output.hidden_states[-1].cpu())
+            logits.append(output.logits.cpu())
+            labels.append(torch.stack(batch['labels'], dim = 1))
+    return {"embeddings": torch.cat(embeddings, dim=0), "logits": torch.cat(logits, dim=0), "labels": torch.cat(labels, dim = 0)}

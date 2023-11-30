@@ -26,3 +26,4 @@ dependencies:
     - transformers # There were problems on linux with conda install
     - accelerate>=0.20.1
     - huggingface-hub==0.19.4
+    - sentencepiece

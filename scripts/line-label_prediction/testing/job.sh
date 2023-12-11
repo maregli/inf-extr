@@ -5,7 +5,7 @@
 #SBATCH --error=/cluster/home/eglimar/inf-extr/scripts/line-label_prediction/llama2_zero-shot/logs/test-%j.err
 #SBATCH --cpus-per-task=1
 #SBATCH -p gpu
-#SBATCH --gres=gpu:titanrtx:2
+#SBATCH --gres=gpu:rtx2080ti:2
 #SBATCH --time=1:00:00
 #SBATCH --mem-per-cpu=1G
  

@@ -1,10 +1,17 @@
+from typing import List, Dict, Tuple, Union, Optional
+
 import torch
 from torch.utils.data import DataLoader
+
 from sklearn.preprocessing import OneHotEncoder
+
 from datasets import DatasetDict
-import numpy as np
-from transformers import AutoModelForSequenceClassification
 from datasets import Dataset
+
+import numpy as np
+
+from transformers import AutoModelForSequenceClassification
+
 import tqdm
 
 class MedDataset(torch.utils.data.Dataset):
@@ -50,3 +57,17 @@ def model_output(data: Dataset, model: AutoModelForSequenceClassification, batch
             logits.append(output.logits.cpu())
             labels.append(torch.stack(batch['labels'], dim = 1))
     return {"embeddings": torch.cat(embeddings, dim=0), "logits": torch.cat(logits, dim=0), "labels": torch.cat(labels, dim = 0)}
+
+def train_transformer(
+        number: torch.Tensor
+        ) -> Tuple[torch.Tensor, Optional[torch.Tensor], Optional[Tuple[torch.Tensor]]]:
+    """
+    Train transformer on number
+    
+    Args:
+        number (torch.Tensor): Number to train on
+
+    Returns:
+        Tuple[torch.Tensor, Optional[torch.Tensor], Optional[Tuple[torch.Tensor]]]: Tuple of (input_ids, attention_mask, token_type_ids)
+    """
+    return number, None, None

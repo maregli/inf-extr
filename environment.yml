@@ -17,7 +17,6 @@ dependencies:
   - umap-learn=0.5.4
   - pandas=2.1.*
   
-
   - pip:
     - nbstripout
     - pre-commit
@@ -27,3 +26,4 @@ dependencies:
     - huggingface-hub
     - sentencepiece
     - bitsandbytes
+  

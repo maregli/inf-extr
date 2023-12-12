@@ -26,4 +26,5 @@ dependencies:
     - huggingface-hub
     - sentencepiece
     - bitsandbytes
+    - evaluate
   

@@ -1,0 +1,5 @@
+/cluster/home/eglimar/.env_bootstrap/dotfiles/shell/bashrc: line 17: module: command not found
+/cluster/home/eglimar/.env_bootstrap/dotfiles/shell/bashrc: line 20: module: command not found
+Loading checkpoint shards:   0%|          | 0/6 [00:00<?, ?it/s]Loading checkpoint shards:  17%|█▋        | 1/6 [02:45<13:46, 165.36s/it]Loading checkpoint shards:  33%|███▎      | 2/6 [05:25<10:48, 162.12s/it]Loading checkpoint shards:  50%|█████     | 3/6 [08:24<08:30, 170.07s/it]Loading checkpoint shards:  67%|██████▋   | 4/6 [11:22<05:45, 172.98s/it]Loading checkpoint shards:  83%|████████▎ | 5/6 [14:23<02:55, 175.90s/it]Loading checkpoint shards: 100%|██████████| 6/6 [15:53<00:00, 146.83s/it]Loading checkpoint shards: 100%|██████████| 6/6 [15:53<00:00, 158.94s/it]
+  0%|          | 0/31 [00:00<?, ?it/s]You're using a LlamaTokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
+  0%|          | 0/31 [00:28<?, ?it/s]

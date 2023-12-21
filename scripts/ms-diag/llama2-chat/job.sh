@@ -5,7 +5,7 @@
 #SBATCH --error=/cluster/home/eglimar/inf-extr/scripts/ms-diag/llama2-chat/logs/test-%j.err
 #SBATCH --cpus-per-task=1
 #SBATCH -p gpu
-#SBATCH --gres=gpu:gtx3090:1
+#SBATCH --gres=gpu:rtx3090:1
 #SBATCH --time=1:00:00
 #SBATCH --mem-per-cpu=10G
  

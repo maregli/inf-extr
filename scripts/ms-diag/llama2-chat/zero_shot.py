@@ -251,7 +251,6 @@ def main():
                                             top_p = TOP_P).to("cpu")
     
         outputs.append(tokenizer.batch_decode(generated_ids, skip_special_tokens=True))
-        break
 
     # Save results
     outputs = list(chain.from_iterable(outputs))
@@ -260,7 +259,7 @@ def main():
     file_name = f"ms_diag-llama2-chat_zero-shot_{JOB_ID}.csv"
     pd.Series(results).to_csv(paths.RESULTS_PATH/file_name)
 
-    return "Done"
+    return
 
 if __name__ == "__main__":
     main()

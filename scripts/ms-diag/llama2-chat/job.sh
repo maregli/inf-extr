@@ -11,7 +11,7 @@
  
 source ~/.bashrc
 conda activate inf-extr
- 
-echo "Python version:" $(python --version)
+
 echo "Starting job with ID $SLURM_JOB_ID..."
+python /cluster/home/eglimar/inf-extr/scripts/ms-diag/llama2-chat/zero_shot.py --job_id $SLURM_JOB_ID
 echo "Job finished"

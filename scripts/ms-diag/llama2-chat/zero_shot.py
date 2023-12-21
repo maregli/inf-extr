@@ -33,9 +33,9 @@ SYSTEM_PROMP = "Is the MS diagnosis in the text of type \"Sekundär progrediente
 ANSWER_INIT = "Based on the information provided in the text, the most likely diagnosis for the patient is: "
 TRUNCATION_SIZE = 300
 
-BATCH_SIZE = 1
-NUM_BEAMS = 1
-MAX_NEW_TOKENS = 1
+BATCH_SIZE = 4
+NUM_BEAMS = 2
+MAX_NEW_TOKENS = 20
 TEMPERATURE = 0.9
 TOP_P = 0.6
 
@@ -82,7 +82,7 @@ def check_gpu_memory():
 
 # Load Model and tokenizer
 
-def load_model_and_tokenizer(model_path:os.PathLike, quantization_config:BitsAndBytesConfig = None)->Tuple[AutoModelForCausalLM, AutoTokenizer]:
+def load_model_and_tokenizer(model_path:os.PathLike, quantization:bool = QUANTIZATION)->Tuple[AutoModelForCausalLM, AutoTokenizer]:
     """Loads the model and tokenizer from the given path and returns the compiled model and tokenizer.
     
     Args:
@@ -93,7 +93,7 @@ def load_model_and_tokenizer(model_path:os.PathLike, quantization_config:BitsAnd
             tuple(AutoModelForCausalLM, AutoTokenizer): Returns the compiled model and tokenizer
             
     """
-    ### Model
+    # ### Model
     if QUANTIZATION == False:
         model = AutoModelForCausalLM.from_pretrained(model_path, device_map="auto", torch_dtype=torch.bfloat16)
     else:
@@ -111,6 +111,7 @@ def load_model_and_tokenizer(model_path:os.PathLike, quantization_config:BitsAnd
     if '<pad>' not in tokenizer.get_vocab():
         # Add the pad token
         tokenizer.add_special_tokens({"pad_token":"<pad>"})
+    
 
     #Resize the embeddings
     model.resize_token_embeddings(len(tokenizer))
@@ -219,7 +220,7 @@ def main():
 
     print("GPU Memory before Model is loaded:\n")
     check_gpu_memory()
-    model, tokenizer = load_model_and_tokenizer(MODEL_PATH, quantization_config=QUANTIZATION)
+    model, tokenizer = load_model_and_tokenizer(MODEL_PATH, quantization=QUANTIZATION)
     print("GPU Memory after Model is loaded:\n")
     check_gpu_memory()
 

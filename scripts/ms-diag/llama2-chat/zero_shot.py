@@ -24,7 +24,7 @@ import argparse
 from typing import Tuple
 
 MODEL_PATH = paths.MODEL_PATH/'llama2-chat'
-QUANTIZATION = True
+QUANTIZATION = "4bit"
 
 SPLIT = "train"
 
@@ -42,18 +42,18 @@ TOP_P = 0.6
 def parse_args():
     parser = argparse.ArgumentParser(description="Zero Shot Classification with Llama2-Chat")
     parser.add_argument("--job_id", type=str, default="unknown", help="Job ID")
-    parser.add_argument("--model_path", type=str, default=MODEL_PATH, help="Path to the model")
-    parser.add_argument("--quantization", type=bool, default=QUANTIZATION, help="Quantization")
+    parser.add_argument("--model_path", type=str, default=MODEL_PATH, help="Path to the model. Defaults to llama2-chat")
+    parser.add_argument("--quantization", type=str, default=QUANTIZATION, help="Quantization. Must be one of 4bit or bfloat16. Defaults to 4bit")
     parser.add_argument("--split", type=str, default=SPLIT, help="Data Split. Must be one of train, validation or test. Defaults to train")
     parser.add_argument("--base_prompt", type=str, default=BASE_PROMPT, help="Base Prompt, must contain {system_prompt}, {user_prompt} and {answer_init}")
     parser.add_argument("--system_prompt", type=str, default=SYSTEM_PROMP, help="System Prompt")
     parser.add_argument("--answer_init", type=str, default=ANSWER_INIT, help="Answer Initialization for model")
-    parser.add_argument("--truncation_size", type=int, default=TRUNCATION_SIZE, help="Truncation Size of the input text")
-    parser.add_argument("--batch_size", type=int, default=BATCH_SIZE, help="Batch Size")
-    parser.add_argument("--num_beams", type=int, default=NUM_BEAMS, help="Number of Beams for Beam Search")
-    parser.add_argument("--max_new_tokens", type=int, default=MAX_NEW_TOKENS, help="Maximum number of new tokens to be generated")
-    parser.add_argument("--temperature", type=float, default=TEMPERATURE, help="Temperature for sampling")
-    parser.add_argument("--top_p", type=float, default=TOP_P, help="Top p for sampling")
+    parser.add_argument("--truncation_size", type=int, default=TRUNCATION_SIZE, help="Truncation Size of the input text. Defaults to 300")
+    parser.add_argument("--batch_size", type=int, default=BATCH_SIZE, help="Batch Size. Defaults to 4")
+    parser.add_argument("--num_beams", type=int, default=NUM_BEAMS, help="Number of Beams for Beam Search. Defaults to 2")
+    parser.add_argument("--max_new_tokens", type=int, default=MAX_NEW_TOKENS, help="Maximum number of new tokens to be generated. Defaults to 20")
+    parser.add_argument("--temperature", type=float, default=TEMPERATURE, help="Temperature for sampling. Defaults to 0.9")
+    parser.add_argument("--top_p", type=float, default=TOP_P, help="Top p for sampling. Defaults to 0.6")
     
     args = parser.parse_args()
 
@@ -82,27 +82,29 @@ def check_gpu_memory():
 
 # Load Model and tokenizer
 
-def load_model_and_tokenizer(model_path:os.PathLike, quantization:bool = QUANTIZATION)->Tuple[AutoModelForCausalLM, AutoTokenizer]:
+def load_model_and_tokenizer(model_path:os.PathLike, quantization:str = QUANTIZATION)->Tuple[AutoModelForCausalLM, AutoTokenizer]:
     """Loads the model and tokenizer from the given path and returns the compiled model and tokenizer.
     
     Args:
         model_path (os.PathLike): Path to the model
-        quantization_config (BitsAndBytesConfig, optional): Quantization Config. Defaults to None, in which case model is loaded in bfloat16.
-        
+        quantization (str, optional): Quantization. Must be one of 4bit or bfloat16. Defaults to QUANTIZATION.
+
         Returns:
             tuple(AutoModelForCausalLM, AutoTokenizer): Returns the compiled model and tokenizer
             
     """
     # ### Model
-    if QUANTIZATION == False:
+    if quantization == "bfloat16":
         model = AutoModelForCausalLM.from_pretrained(model_path, device_map="auto", torch_dtype=torch.bfloat16)
-    else:
+    elif quantization == "4bit":
         bnb_config = BitsAndBytesConfig(load_in_4bit=True,
                                         bnb_4bit_use_double_quant=True,
                                         bnb_4bit_quant_type="nf4",
                                         bnb_4bit_compute_dtype=torch.bfloat16,
                                         )
         model = AutoModelForCausalLM.from_pretrained(model_path, device_map="auto", quantization_config=bnb_config)
+    else:
+        raise ValueError("Quantization must be one of 4bit or bfloat16")
     
     ### Tokenizer
     tokenizer = AutoTokenizer.from_pretrained(model_path, padding_side="left")
@@ -233,7 +235,7 @@ def main():
     # Inference
     outputs = []
 
-    for batch in tqdm.tqdm(dataloader):
+    for idx, batch in enumerate(tqdm.tqdm(dataloader)):
             
         torch.cuda.empty_cache()
         gc.collect()
@@ -251,6 +253,8 @@ def main():
                                             top_p = TOP_P).to("cpu")
     
         outputs.append(tokenizer.batch_decode(generated_ids, skip_special_tokens=True))
+        print("Memory after batch {}:\n".format(idx))
+        check_gpu_memory()
 
     # Save results
     outputs = list(chain.from_iterable(outputs))

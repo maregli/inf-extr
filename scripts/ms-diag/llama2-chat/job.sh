@@ -13,5 +13,5 @@ source ~/.bashrc
 conda activate inf-extr
 
 echo "Starting job with ID $SLURM_JOB_ID..."
-python /cluster/home/eglimar/inf-extr/scripts/ms-diag/llama2-chat/zero_shot.py --job_id $SLURM_JOB_ID --quantization False
+python /cluster/home/eglimar/inf-extr/scripts/ms-diag/llama2-chat/zero_shot.py --job_id $SLURM_JOB_ID --quantization bfloat16 --batch_size 2
 echo "Job finished"

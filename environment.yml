@@ -27,4 +27,5 @@ dependencies:
     - sentencepiece
     - bitsandbytes
     - evaluate
+    - peft
   

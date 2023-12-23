@@ -1,0 +1,29 @@
+Starting job with ID 3591584...
+Parsed Arguments:
+job_id: 3591584
+model_path: /cluster/dataset/midatams/inf-extr/resources/models/llama2-chat
+quantization: bfloat16
+split: train
+base_prompt: <s>[INST]
+<<SYS>>
+{system_prompt}
+<</SYS>>
+
+{user_prompt}[/INST]
+
+{answer_init}
+system_prompt: Is the MS diagnosis in the text of type "Sekundär progrediente Multiple Sklerose (SPMS)", "primäre progrediente Multiple Sklerose (PPMS)" or "schubförmig remittierende Multiple Sklerose (RRMS)"?
+answer_init: Based on the information provided in the text, the most likely diagnosis for the patient is: 
+truncation_size: 300
+batch_size: 2
+num_beams: 2
+max_new_tokens: 20
+temperature: 0.9
+top_p: 0.6
+GPU Memory before Model is loaded:
+
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 23.43 GB
+   Allocated Memory : 0.00 GB
+   Reserved Memory : 0.00 GB

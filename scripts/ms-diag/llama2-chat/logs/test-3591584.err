@@ -1,0 +1,3 @@
+/cluster/home/eglimar/.env_bootstrap/dotfiles/shell/bashrc: line 17: module: command not found
+/cluster/home/eglimar/.env_bootstrap/dotfiles/shell/bashrc: line 20: module: command not found
+Loading checkpoint shards:   0%|          | 0/6 [00:00<?, ?it/s]Loading checkpoint shards:  17%|█▋        | 1/6 [35:57<2:59:49, 2157.82s/it]slurmstepd-gpu-biomed-16: error: *** JOB 3591584 ON gpu-biomed-16 CANCELLED AT 2023-12-23T11:02:50 DUE TO TIME LIMIT ***

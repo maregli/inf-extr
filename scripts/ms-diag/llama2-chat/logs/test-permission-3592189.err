@@ -1,0 +1,26 @@
+/cluster/home/eglimar/.env_bootstrap/dotfiles/shell/bashrc: line 17: module: command not found
+/cluster/home/eglimar/.env_bootstrap/dotfiles/shell/bashrc: line 20: module: command not found
+Traceback (most recent call last):
+  File "/cluster/home/eglimar/inf-extr/scripts/ms-diag/llama2-chat/test-permission.py", line 2, in <module>
+    from datasets import DatasetDict, load_dataset
+  File "/cluster/customapps/biomed/grlab/users/eglimar/conda/envs/inf-extr/lib/python3.9/site-packages/datasets/__init__.py", line 22, in <module>
+    from .arrow_dataset import Dataset
+  File "/cluster/customapps/biomed/grlab/users/eglimar/conda/envs/inf-extr/lib/python3.9/site-packages/datasets/arrow_dataset.py", line 59, in <module>
+    import pandas as pd
+  File "/cluster/customapps/biomed/grlab/users/eglimar/conda/envs/inf-extr/lib/python3.9/site-packages/pandas/__init__.py", line 46, in <module>
+    from pandas.core.api import (
+  File "/cluster/customapps/biomed/grlab/users/eglimar/conda/envs/inf-extr/lib/python3.9/site-packages/pandas/core/api.py", line 47, in <module>
+    from pandas.core.groupby import (
+  File "/cluster/customapps/biomed/grlab/users/eglimar/conda/envs/inf-extr/lib/python3.9/site-packages/pandas/core/groupby/__init__.py", line 1, in <module>
+    from pandas.core.groupby.generic import (
+  File "/cluster/customapps/biomed/grlab/users/eglimar/conda/envs/inf-extr/lib/python3.9/site-packages/pandas/core/groupby/generic.py", line 67, in <module>
+    from pandas.core.frame import DataFrame
+  File "/cluster/customapps/biomed/grlab/users/eglimar/conda/envs/inf-extr/lib/python3.9/site-packages/pandas/core/frame.py", line 142, in <module>
+    from pandas.core.generic import (
+  File "/cluster/customapps/biomed/grlab/users/eglimar/conda/envs/inf-extr/lib/python3.9/site-packages/pandas/core/generic.py", line 187, in <module>
+    from pandas.core.window import (
+  File "/cluster/customapps/biomed/grlab/users/eglimar/conda/envs/inf-extr/lib/python3.9/site-packages/pandas/core/window/__init__.py", line 1, in <module>
+    from pandas.core.window.ewm import (
+  File "/cluster/customapps/biomed/grlab/users/eglimar/conda/envs/inf-extr/lib/python3.9/site-packages/pandas/core/window/ewm.py", line 11, in <module>
+    import pandas._libs.window.aggregations as window_aggregations
+ImportError: /lib/x86_64-linux-gnu/libstdc++.so.6: version `GLIBCXX_3.4.29' not found (required by /cluster/customapps/biomed/grlab/users/eglimar/conda/envs/inf-extr/lib/python3.9/site-packages/pandas/_libs/window/aggregations.cpython-39-x86_64-linux-gnu.so)

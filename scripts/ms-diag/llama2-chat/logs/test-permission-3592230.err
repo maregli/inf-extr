@@ -1,0 +1,6 @@
+/cluster/home/eglimar/.env_bootstrap/dotfiles/shell/bashrc: line 17: module: command not found
+/cluster/home/eglimar/.env_bootstrap/dotfiles/shell/bashrc: line 20: module: command not found
+HF google storage unreachable. Downloading and preparing it from source
+Generating train split: 0 examples [00:00, ? examples/s]Generating train split: 123 examples [00:00, 1352.93 examples/s]
+Generating validation split: 0 examples [00:00, ? examples/s]Generating validation split: 14 examples [00:00, 2301.49 examples/s]
+Generating test split: 0 examples [00:00, ? examples/s]Generating test split: 59 examples [00:00, 16470.15 examples/s]

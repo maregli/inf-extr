@@ -34,26 +34,32 @@ ANSWER_INIT = "Based on the information provided in the text, the most likely di
 TRUNCATION_SIZE = 300
 
 BATCH_SIZE = 4
-NUM_BEAMS = 2
+DO_SAMPLE = False
+NUM_BEAMS = 1
 MAX_NEW_TOKENS = 20
-TEMPERATURE = 0.9
-TOP_P = 0.6
+TEMPERATURE = 1
+TOP_P = 1
+TOP_K = 4
+PENALTY_ALPHA = 0.0
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Zero Shot Classification with Llama2-Chat")
     parser.add_argument("--job_id", type=str, default="unknown", help="Job ID")
     parser.add_argument("--model_path", type=str, default=MODEL_PATH, help="Path to the model. Defaults to llama2-chat")
     parser.add_argument("--quantization", type=str, default=QUANTIZATION, help="Quantization. Must be one of 4bit or bfloat16. Defaults to 4bit")
-    parser.add_argument("--split", type=str, default=SPLIT, help="Data Split. Must be one of train, validation or test. Defaults to train")
+    parser.add_argument("--split", type=str, default=SPLIT, help="Data Split. Must be one of train, validation, test or all. Defaults to train")
     parser.add_argument("--base_prompt", type=str, default=BASE_PROMPT, help="Base Prompt, must contain {system_prompt}, {user_prompt} and {answer_init}")
     parser.add_argument("--system_prompt", type=str, default=SYSTEM_PROMP, help="System Prompt")
     parser.add_argument("--answer_init", type=str, default=ANSWER_INIT, help="Answer Initialization for model")
     parser.add_argument("--truncation_size", type=int, default=TRUNCATION_SIZE, help="Truncation Size of the input text. Defaults to 300")
     parser.add_argument("--batch_size", type=int, default=BATCH_SIZE, help="Batch Size. Defaults to 4")
-    parser.add_argument("--num_beams", type=int, default=NUM_BEAMS, help="Number of Beams for Beam Search. Defaults to 2")
+    parser.add_argument("--do_sample", type=str, default=DO_SAMPLE, help="Do Sampling. Defaults to False")
+    parser.add_argument("--num_beams", type=int, default=NUM_BEAMS, help="Number of Beams for Beam Search. Defaults to 1")
     parser.add_argument("--max_new_tokens", type=int, default=MAX_NEW_TOKENS, help="Maximum number of new tokens to be generated. Defaults to 20")
-    parser.add_argument("--temperature", type=float, default=TEMPERATURE, help="Temperature for sampling. Defaults to 0.9")
-    parser.add_argument("--top_p", type=float, default=TOP_P, help="Top p for sampling. Defaults to 0.6")
+    parser.add_argument("--temperature", type=float, default=TEMPERATURE, help="Temperature for sampling. Defaults to 1")
+    parser.add_argument("--top_p", type=float, default=TOP_P, help="Top p for sampling. Defaults to 1")
+    parser.add_argument("--top_k", type=int, default=0, help="Top k for sampling. Defaults to 4")
+    parser.add_argument("--penalty_alpha", type=float, default=0.0, help="Penalty Alpha for Beam Search. Defaults to 0.0")
     
     args = parser.parse_args()
 
@@ -168,7 +174,10 @@ def prepare_data(df:DatasetDict, tokenizer:AutoTokenizer, split:str=SPLIT, trunc
         Returns:
             str: Returns the formatted prompt
         """
-        text = text[:truncation_size]
+        if len(text) > truncation_size:
+            text = text[:truncation_size]
+        else:
+            text = text
         input = BASE_PROMPT.format(system_prompt = SYSTEM_PROMP,
                                 user_prompt = text,
                                 answer_init = ANSWER_INIT)
@@ -177,7 +186,12 @@ def prepare_data(df:DatasetDict, tokenizer:AutoTokenizer, split:str=SPLIT, trunc
 
     
     # Tokenize the text
-    tokens = [tokenizer(format_prompt(t)) for t in df[split]["text"]]
+    if split == "all":
+        text = df["train"]["text"] + df["validation"]["text"] + df["test"]["text"]
+    else:
+        text = df[split]["text"]
+
+    tokens = [tokenizer(format_prompt(t)) for t in text]
 
     return tokens
 
@@ -211,11 +225,14 @@ def main():
     BASE_PROMPT = args.base_prompt
     SYSTEM_PROMP = args.system_prompt
     ANSWER_INIT = args.answer_init
+    BATCH_SIZE = args.batch_size
+    DO_SAMPLE = True if args.do_sample == "True" else False
     TRUNCATION_SIZE = args.truncation_size
     NUM_BEAMS = args.num_beams
     MAX_NEW_TOKENS = args.max_new_tokens
     TEMPERATURE = args.temperature
     TOP_P = args.top_p
+    TOP_K = args.top_k
 
     # Load Data, Model and Tokenizer
     df = load_data()
@@ -247,10 +264,12 @@ def main():
                                            attention_mask = attention_mask,
                                             max_new_tokens=MAX_NEW_TOKENS, 
                                             num_beams=NUM_BEAMS, 
-                                            do_sample=True, 
+                                            do_sample=DO_SAMPLE, 
                                             temperature = TEMPERATURE, 
                                             num_return_sequences = 1, 
-                                            top_p = TOP_P).to("cpu")
+                                            top_p = TOP_P,
+                                            top_k = TOP_K,
+                                            penalty_alpha = PENALTY_ALPHA).to("cpu")
     
         outputs.append(tokenizer.batch_decode(generated_ids, skip_special_tokens=True))
         print("Memory after batch {}:\n".format(idx))
@@ -259,6 +278,9 @@ def main():
     # Save results
     outputs = list(chain.from_iterable(outputs))
     results = [out.split(ANSWER_INIT)[1] for out in outputs]
+    
+    # Add Arguments as last row to the results
+    results.append(str(args))
 
     file_name = f"ms_diag-llama2-chat_zero-shot_{JOB_ID}.csv"
     pd.Series(results).to_csv(paths.RESULTS_PATH/file_name)

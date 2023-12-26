@@ -28,4 +28,6 @@ dependencies:
     - bitsandbytes==0.41.3.post2
     - evaluate==0.4.1
     - peft==0.7.1
+    - vllm==0.2.6
+    - autoawq==0.1.1
   

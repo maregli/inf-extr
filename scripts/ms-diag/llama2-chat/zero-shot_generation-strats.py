@@ -357,7 +357,14 @@ def main():
             generation_config = get_generation_config(strategy=strat)
 
             # Generate Outputs
-            outputs = generate_outputs(model, tokenizer, dataloader, generation_config=generation_config)
+            try:
+                outputs = generate_outputs(model, tokenizer, dataloader, generation_config=generation_config)
+                
+            except RuntimeError as e:
+                print("Runtime Error: {}".format(e))
+                print("Skipping this strategy and truncation size")
+                continue
+
 
             # Extract the generated answers
             outputs = list(chain.from_iterable(outputs))

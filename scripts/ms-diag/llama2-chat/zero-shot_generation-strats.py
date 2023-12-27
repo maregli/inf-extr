@@ -27,6 +27,7 @@ MODEL_PATH = paths.MODEL_PATH/'llama2-chat'
 QUANTIZATION = "4bit"
 
 MAX_NEW_TOKENS = 20
+TRUNCATION_SIZE = 300
 
 BASE_PROMPT = "<s>[INST]\n<<SYS>>\n{system_prompt}\n<</SYS>>\n\n{user_prompt}[/INST]\n\n{answer_init}"
 SYSTEM_PROMP = "Is the MS diagnosis in the text of type \"Sekundär progrediente Multiple Sklerose (SPMS)\", \"primäre progrediente Multiple Sklerose (PPMS)\" or \"schubförmig remittierende Multiple Sklerose (RRMS)\"?"
@@ -45,6 +46,8 @@ def parse_args():
     parser.add_argument("--answer_init", type=str, default=ANSWER_INIT, help="Answer Initialization for model")
     parser.add_argument("--batch_size", type=int, default=BATCH_SIZE, help="Batch Size. Defaults to 4")
     parser.add_argument("--max_new_tokens", type=int, default=MAX_NEW_TOKENS, help="Maximum number of new tokens to be generated. Defaults to 20")
+    parser.add_argument("--truncation_size", type=int, default=TRUNCATION_SIZE, help="Truncation Size. Defaults to 300")
+
 
     
     args = parser.parse_args()
@@ -320,10 +323,11 @@ def main():
     ANSWER_INIT = args.answer_init
     BATCH_SIZE = args.batch_size
     MAX_NEW_TOKENS = args.max_new_tokens
+    TRUNCATION_SIZE = args.truncation_size
     
     # Iterate over different truncation sizes and strategies
     strategies = ["greedy", "contrastive", "sampling", "beam"]
-    truncation_sizes = [300]
+    truncation_sizes = [300, 600, 1200]
 
     # Load Data, Model and Tokenizer
     df = load_data()
@@ -369,7 +373,7 @@ def main():
 
     file_name = f"ms_diag-llama2-chat_zero-shot_generation-strats_{JOB_ID}.csv"
 
-    results.to_csv(os.path.join(paths.DATA_PATH, file_name), index=False)
+    results.to_csv(os.path.join(paths.RESULTS_PATH, "ms-diag", file_name), index=False)
 
     return
 

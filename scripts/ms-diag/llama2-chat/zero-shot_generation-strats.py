@@ -227,7 +227,9 @@ def generate_outputs(model:AutoModelForCausalLM, tokenizer:AutoTokenizer, datalo
                                             **generation_config).to("cpu")
     
         outputs.append(tokenizer.batch_decode(generated_ids, skip_special_tokens=True))
-        check_gpu_memory()
+        if idx % 5 == 0:
+            print(f"Memory after batch {idx}:\n")
+            check_gpu_memory()
 
     # Free Memory
     del input_ids
@@ -363,8 +365,6 @@ def main():
             else:
                 results[col_name] = outputs
             
-            break
-        break
 
     file_name = f"ms_diag-llama2-chat_zero-shot_generation-strats_{JOB_ID}.csv"
 

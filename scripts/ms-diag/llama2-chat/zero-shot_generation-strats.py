@@ -26,6 +26,7 @@ from typing import Tuple
 MODEL_PATH = paths.MODEL_PATH/'llama2-chat'
 QUANTIZATION = "4bit"
 
+MAX_NEW_TOKENS = 20
 
 BASE_PROMPT = "<s>[INST]\n<<SYS>>\n{system_prompt}\n<</SYS>>\n\n{user_prompt}[/INST]\n\n{answer_init}"
 SYSTEM_PROMP = "Is the MS diagnosis in the text of type \"Sekundär progrediente Multiple Sklerose (SPMS)\", \"primäre progrediente Multiple Sklerose (PPMS)\" or \"schubförmig remittierende Multiple Sklerose (RRMS)\"?"

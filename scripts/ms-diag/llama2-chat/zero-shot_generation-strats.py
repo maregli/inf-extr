@@ -26,40 +26,25 @@ from typing import Tuple
 MODEL_PATH = paths.MODEL_PATH/'llama2-chat'
 QUANTIZATION = "4bit"
 
-SPLIT = "train"
 
 BASE_PROMPT = "<s>[INST]\n<<SYS>>\n{system_prompt}\n<</SYS>>\n\n{user_prompt}[/INST]\n\n{answer_init}"
 SYSTEM_PROMP = "Is the MS diagnosis in the text of type \"Sekundär progrediente Multiple Sklerose (SPMS)\", \"primäre progrediente Multiple Sklerose (PPMS)\" or \"schubförmig remittierende Multiple Sklerose (RRMS)\"?"
 ANSWER_INIT = "Based on the information provided in the text, the most likely diagnosis for the patient is: "
-TRUNCATION_SIZE = 300
 
 BATCH_SIZE = 4
-DO_SAMPLE = False
-NUM_BEAMS = 1
-MAX_NEW_TOKENS = 20
-TEMPERATURE = 1
-TOP_P = 1
-TOP_K = 4
-PENALTY_ALPHA = 0.0
+
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Zero Shot Classification with Llama2-Chat")
     parser.add_argument("--job_id", type=str, default="unknown", help="Job ID")
     parser.add_argument("--model_path", type=str, default=MODEL_PATH, help="Path to the model. Defaults to llama2-chat")
     parser.add_argument("--quantization", type=str, default=QUANTIZATION, help="Quantization. Must be one of 4bit or bfloat16. Defaults to 4bit")
-    parser.add_argument("--split", type=str, default=SPLIT, help="Data Split. Must be one of train, validation, test or all. Defaults to train")
     parser.add_argument("--base_prompt", type=str, default=BASE_PROMPT, help="Base Prompt, must contain {system_prompt}, {user_prompt} and {answer_init}")
     parser.add_argument("--system_prompt", type=str, default=SYSTEM_PROMP, help="System Prompt")
     parser.add_argument("--answer_init", type=str, default=ANSWER_INIT, help="Answer Initialization for model")
-    parser.add_argument("--truncation_size", type=int, default=TRUNCATION_SIZE, help="Truncation Size of the input text. Defaults to 300")
     parser.add_argument("--batch_size", type=int, default=BATCH_SIZE, help="Batch Size. Defaults to 4")
-    parser.add_argument("--do_sample", type=str, default=DO_SAMPLE, help="Do Sampling. Defaults to False")
-    parser.add_argument("--num_beams", type=int, default=NUM_BEAMS, help="Number of Beams for Beam Search. Defaults to 1")
     parser.add_argument("--max_new_tokens", type=int, default=MAX_NEW_TOKENS, help="Maximum number of new tokens to be generated. Defaults to 20")
-    parser.add_argument("--temperature", type=float, default=TEMPERATURE, help="Temperature for sampling. Defaults to 1")
-    parser.add_argument("--top_p", type=float, default=TOP_P, help="Top p for sampling. Defaults to 1")
-    parser.add_argument("--top_k", type=int, default=0, help="Top k for sampling. Defaults to 4")
-    parser.add_argument("--penalty_alpha", type=float, default=0.0, help="Penalty Alpha for Beam Search. Defaults to 0.0")
+
     
     args = parser.parse_args()
 
@@ -152,14 +137,14 @@ def load_data()->DatasetDict:
     
     return df
 
-def prepare_data(df:DatasetDict, tokenizer:AutoTokenizer, split:str=SPLIT, truncation_size:int = TRUNCATION_SIZE)->list[str]:
+def prepare_data(df:DatasetDict, tokenizer:AutoTokenizer, split:str="all", truncation_size:int = 300)->list[str]:
     """Returns a list of input texts for the classification task
     
     Args:
         df (DatasetDict): Dataset dictionary
         tokenizer (AutoTokenizer): Tokenizer
-        split (str, optional): Split. Defaults to SPLIT.
-        truncation_size (int, optional): Truncation size. Defaults to TRUNCATION_SIZE.
+        split (str, optional): Split. Must be one of train, validation, test or all. Defaults to "all".
+        truncation_size (int, optional): Truncation size. Defaults to 300.
         
     Returns:
         list(str): Returns a list of input texts for the classification task
@@ -239,14 +224,7 @@ def generate_outputs(model:AutoModelForCausalLM, tokenizer:AutoTokenizer, datalo
         with torch.inference_mode():
             generated_ids = model.generate(input_ids = input_ids, 
                                             attention_mask = attention_mask,
-                                            max_new_tokens=generation_config["max_new_tokens"], 
-                                            num_beams=generation_config["num_beams"], 
-                                            do_sample=generation_config["do_sample"], 
-                                            temperature = generation_config["temperature"], 
-                                            num_return_sequences = 1, 
-                                            top_p = generation_config["top_p"],
-                                            top_k = generation_config["top_k"],
-                                            penalty_alpha = generation_config["penalty_alpha"]).to("cpu")
+                                            **generation_config).to("cpu")
     
         outputs.append(tokenizer.batch_decode(generated_ids, skip_special_tokens=True))
         check_gpu_memory()
@@ -264,7 +242,7 @@ def get_generation_config(strategy:str="greedy")->dict:
     """Returns the generation config for the given strategy
 
     Args:
-        strategy (str, optional): Strategy. Defaults to "greedy". Must be one of greedy, contrastive, sampling or beam.
+        strategy (str, optional): Strategy. Must be one of greedy, contrastive, sampling or beam. Defaults to "greedy".
 
     Returns:
         dict: Returns the generation config for the given strategy
@@ -327,6 +305,20 @@ def get_generation_config(strategy:str="greedy")->dict:
 
 def main():
 
+    # Parse Arguments
+    args = parse_args()
+
+    # Set Arguments
+    JOB_ID = args.job_id
+    MODEL_PATH = args.model_path
+    QUANTIZATION = args.quantization
+    BASE_PROMPT = args.base_prompt
+    SYSTEM_PROMP = args.system_prompt
+    ANSWER_INIT = args.answer_init
+    BATCH_SIZE = args.batch_size
+    MAX_NEW_TOKENS = args.max_new_tokens
+    
+    # Iterate over different truncation sizes and strategies
     strategies = ["greedy", "contrastive", "sampling", "beam"]
     truncation_sizes = [300]
 
@@ -336,6 +328,7 @@ def main():
     print("GPU Memory before Model is loaded:\n")
     check_gpu_memory()
     model, tokenizer = load_model_and_tokenizer(MODEL_PATH, quantization=QUANTIZATION)
+    
     print("GPU Memory after Model is loaded:\n")
     check_gpu_memory()
 
@@ -369,9 +362,12 @@ def main():
                 results = pd.DataFrame({col_name: outputs})
             else:
                 results[col_name] = outputs
+            
+            break
+        break
 
     file_name = f"ms_diag-llama2-chat_zero-shot_generation-strats_{JOB_ID}.csv"
-    
+
     results.to_csv(os.path.join(paths.DATA_PATH, file_name), index=False)
 
     return

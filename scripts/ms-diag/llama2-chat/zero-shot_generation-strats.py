@@ -331,6 +331,7 @@ def main():
 
     # Load Data, Model and Tokenizer
     df = load_data()
+    labels = df["train"]["labels"] + df["validation"]["labels"] + df["test"]["labels"]
 
     print("GPU Memory before Model is loaded:\n")
     check_gpu_memory()
@@ -339,7 +340,7 @@ def main():
     print("GPU Memory after Model is loaded:\n")
     check_gpu_memory()
 
-    results = None
+    results = pd.DataFrame({"labels": labels})
 
     for input_size in truncation_sizes:
         print("Starting with input size: {}".format(input_size))
@@ -372,10 +373,7 @@ def main():
 
             col_name = f"truncate_{input_size}_strategy_{strat}"
             
-            if results is None:
-                results = pd.DataFrame({col_name: outputs})
-            else:
-                results[col_name] = outputs
+            results[col_name] = outputs
             
 
     file_name = f"ms_diag-llama2-chat_zero-shot_generation-strats_{JOB_ID}.csv"

@@ -5,7 +5,7 @@
 #SBATCH --error=/cluster/home/eglimar/inf-extr/scripts/ms-diag/llama2-chat/logs/zero-shot_gen-strat-%j.err
 #SBATCH --cpus-per-task=1
 #SBATCH -p gpu
-#SBATCH --gres=gpu:rtx3090:1
+#SBATCH --gres=gpu:titanrtx:1
 #SBATCH --time=7:00:00
 #SBATCH --mem-per-cpu=10G
  

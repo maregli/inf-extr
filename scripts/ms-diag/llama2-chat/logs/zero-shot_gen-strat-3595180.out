@@ -177,3 +177,1556 @@ GPU 0: NVIDIA TITAN RTX
    Allocated Memory : 3.70 GB
    Reserved Memory : 4.51 GB
 Starting with strategy: contrastive
+Memory after batch 0:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 16.50 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 6.95 GB
+Memory after batch 5:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 15.54 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 7.90 GB
+Memory after batch 10:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 15.47 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 7.97 GB
+Memory after batch 15:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 15.47 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 7.97 GB
+Memory after batch 20:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 16.50 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 6.95 GB
+Memory after batch 25:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 16.59 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 6.85 GB
+Memory after batch 30:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 16.06 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 7.38 GB
+Memory after batch 35:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 15.46 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 7.99 GB
+Memory after batch 40:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 16.60 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 6.85 GB
+Memory after batch 45:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 15.56 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 7.89 GB
+Memory after batch 50:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 16.50 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 6.95 GB
+Memory after batch 55:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 15.82 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 7.62 GB
+Memory after batch 60:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 15.47 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 7.97 GB
+Memory after batch 65:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 15.56 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 7.89 GB
+Memory after batch 70:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 16.61 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 6.84 GB
+Memory after batch 75:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 15.46 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 7.99 GB
+Memory after batch 80:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 15.47 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 7.97 GB
+Memory after batch 85:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 16.50 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 6.95 GB
+Memory after batch 90:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 16.50 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 6.95 GB
+Memory after batch 95:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 16.53 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 6.92 GB
+Starting with strategy: sampling
+Memory after batch 0:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 18.85 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 4.60 GB
+Memory after batch 5:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 18.85 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 4.60 GB
+Memory after batch 10:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 18.85 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 4.60 GB
+Memory after batch 15:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 18.85 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 4.60 GB
+Memory after batch 20:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 18.93 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 4.51 GB
+Memory after batch 25:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 18.93 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 4.51 GB
+Memory after batch 30:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 18.85 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 4.60 GB
+Memory after batch 35:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 18.85 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 4.60 GB
+Memory after batch 40:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 18.93 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 4.51 GB
+Memory after batch 45:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 18.85 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 4.60 GB
+Memory after batch 50:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 18.93 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 4.51 GB
+Memory after batch 55:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 18.93 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 4.51 GB
+Memory after batch 60:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 18.85 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 4.60 GB
+Memory after batch 65:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 18.85 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 4.60 GB
+Memory after batch 70:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 18.93 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 4.51 GB
+Memory after batch 75:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 18.85 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 4.60 GB
+Memory after batch 80:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 18.85 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 4.60 GB
+Memory after batch 85:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 18.93 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 4.51 GB
+Memory after batch 90:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 18.93 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 4.51 GB
+Memory after batch 95:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 18.93 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 4.51 GB
+Starting with strategy: beam
+Memory after batch 0:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 16.03 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 7.42 GB
+Memory after batch 5:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 15.41 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 8.03 GB
+Memory after batch 10:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 15.43 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 8.01 GB
+Memory after batch 15:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 15.43 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 8.01 GB
+Memory after batch 20:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 16.03 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 7.42 GB
+Memory after batch 25:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 16.17 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 7.28 GB
+Memory after batch 30:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 15.38 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 8.06 GB
+Memory after batch 35:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 15.41 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 8.03 GB
+Memory after batch 40:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 16.03 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 7.41 GB
+Memory after batch 45:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 15.43 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 8.02 GB
+Memory after batch 50:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 16.03 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 7.41 GB
+Memory after batch 55:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 16.03 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 7.42 GB
+Memory after batch 60:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 15.53 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 7.92 GB
+Memory after batch 65:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 15.43 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 8.02 GB
+Memory after batch 70:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 16.17 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 7.27 GB
+Memory after batch 75:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 15.41 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 8.03 GB
+Memory after batch 80:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 15.43 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 8.01 GB
+Memory after batch 85:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 16.03 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 7.42 GB
+Memory after batch 90:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 16.03 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 7.42 GB
+Memory after batch 95:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 16.17 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 7.28 GB
+Starting with input size: 600
+Starting with strategy: greedy
+Memory after batch 0:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 18.59 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 4.85 GB
+Memory after batch 5:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 18.59 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 4.85 GB
+Memory after batch 10:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 18.59 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 4.85 GB
+Memory after batch 15:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 18.47 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 4.97 GB
+Memory after batch 20:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 18.60 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 4.85 GB
+Memory after batch 25:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 18.60 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 4.85 GB
+Memory after batch 30:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 18.50 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 4.94 GB
+Memory after batch 35:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 18.59 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 4.85 GB
+Memory after batch 40:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 18.60 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 4.85 GB
+Memory after batch 45:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 18.59 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 4.85 GB
+Memory after batch 50:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 18.59 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 4.85 GB
+Memory after batch 55:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 18.59 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 4.85 GB
+Memory after batch 60:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 18.59 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 4.85 GB
+Memory after batch 65:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 18.60 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 4.85 GB
+Memory after batch 70:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 18.60 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 4.85 GB
+Memory after batch 75:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 18.59 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 4.85 GB
+Memory after batch 80:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 18.59 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 4.85 GB
+Memory after batch 85:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 18.59 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 4.85 GB
+Memory after batch 90:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 18.59 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 4.85 GB
+Memory after batch 95:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 18.68 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 4.76 GB
+Starting with strategy: contrastive
+Memory after batch 0:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 14.80 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 8.64 GB
+Memory after batch 5:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 14.72 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 8.73 GB
+Memory after batch 10:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 14.72 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 8.72 GB
+Memory after batch 15:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 14.34 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 9.10 GB
+Memory after batch 20:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 13.67 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 9.77 GB
+Memory after batch 25:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 13.76 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 9.69 GB
+Memory after batch 30:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 13.23 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 10.22 GB
+Memory after batch 35:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 13.34 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 10.11 GB
+Memory after batch 40:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 13.67 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 9.77 GB
+Memory after batch 45:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 13.25 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 10.19 GB
+Memory after batch 50:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 13.25 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 10.19 GB
+Memory after batch 55:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 14.72 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 8.73 GB
+Memory after batch 60:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 14.72 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 8.72 GB
+Memory after batch 65:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 13.67 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 9.77 GB
+Memory after batch 70:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 13.59 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 9.85 GB
+Memory after batch 75:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 13.34 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 10.11 GB
+Memory after batch 80:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 14.72 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 8.73 GB
+Memory after batch 85:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 14.72 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 8.72 GB
+Memory after batch 90:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 14.72 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 8.72 GB
+Memory after batch 95:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 13.85 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 9.59 GB
+Starting with strategy: sampling
+Memory after batch 0:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 18.59 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 4.85 GB
+Memory after batch 5:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 18.59 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 4.85 GB
+Memory after batch 10:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 18.59 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 4.85 GB
+Memory after batch 15:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 18.47 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 4.97 GB
+Memory after batch 20:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 18.60 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 4.85 GB
+Memory after batch 25:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 18.60 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 4.85 GB
+Memory after batch 30:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 18.50 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 4.94 GB
+Memory after batch 35:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 18.59 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 4.85 GB
+Memory after batch 40:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 18.60 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 4.85 GB
+Memory after batch 45:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 18.59 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 4.85 GB
+Memory after batch 50:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 18.59 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 4.85 GB
+Memory after batch 55:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 18.59 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 4.85 GB
+Memory after batch 60:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 18.59 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 4.85 GB
+Memory after batch 65:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 18.60 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 4.85 GB
+Memory after batch 70:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 18.60 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 4.85 GB
+Memory after batch 75:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 18.59 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 4.85 GB
+Memory after batch 80:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 18.59 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 4.85 GB
+Memory after batch 85:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 18.59 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 4.85 GB
+Memory after batch 90:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 18.59 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 4.85 GB
+Memory after batch 95:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 18.68 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 4.76 GB
+Starting with strategy: beam
+Memory after batch 0:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 13.92 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 9.52 GB
+Memory after batch 5:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 13.91 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 9.53 GB
+Memory after batch 10:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 13.91 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 9.53 GB
+Memory after batch 15:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 13.81 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 9.64 GB
+Memory after batch 20:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 13.08 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 10.37 GB
+Memory after batch 25:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 13.16 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 10.28 GB
+Memory after batch 30:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 13.11 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 10.33 GB
+Memory after batch 35:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 13.18 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 10.27 GB
+Memory after batch 40:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 13.20 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 10.25 GB
+Memory after batch 45:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 13.07 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 10.38 GB
+Memory after batch 50:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 13.13 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 10.32 GB
+Memory after batch 55:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 13.91 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 9.54 GB
+Memory after batch 60:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 13.92 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 9.52 GB
+Memory after batch 65:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 13.08 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 10.37 GB
+Memory after batch 70:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 13.16 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 10.28 GB
+Memory after batch 75:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 13.18 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 10.27 GB
+Memory after batch 80:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 13.91 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 9.53 GB
+Memory after batch 85:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 13.92 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 9.52 GB
+Memory after batch 90:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 13.92 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 9.52 GB
+Memory after batch 95:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 14.21 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 9.24 GB
+Starting with input size: 1200
+Starting with strategy: greedy
+Memory after batch 0:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 17.98 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 5.46 GB
+Memory after batch 5:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 18.05 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 5.40 GB
+Memory after batch 10:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 18.05 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 5.40 GB
+Memory after batch 15:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 17.85 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 5.59 GB
+Memory after batch 20:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 18.05 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 5.40 GB
+Memory after batch 25:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 17.86 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 5.58 GB
+Memory after batch 30:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 17.86 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 5.58 GB
+Memory after batch 35:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 17.86 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 5.58 GB
+Memory after batch 40:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 17.87 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 5.57 GB
+Memory after batch 45:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 17.96 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 5.49 GB
+Memory after batch 50:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 17.86 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 5.58 GB
+Memory after batch 55:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 18.05 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 5.39 GB
+Memory after batch 60:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 17.87 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 5.57 GB
+Memory after batch 65:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 18.05 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 5.40 GB
+Memory after batch 70:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 18.06 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 5.39 GB
+Memory after batch 75:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 17.86 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 5.59 GB
+Memory after batch 80:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 17.95 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 5.49 GB
+Memory after batch 85:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 17.87 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 5.57 GB
+Memory after batch 90:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 17.95 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 5.49 GB
+Memory after batch 95:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 18.06 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 5.38 GB
+Starting with strategy: contrastive
+Memory after batch 0:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 9.54 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 13.90 GB
+Memory after batch 5:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 11.59 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 11.86 GB
+Memory after batch 10:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 11.59 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 11.86 GB
+Memory after batch 15:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 9.85 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 13.60 GB
+Memory after batch 20:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 11.61 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 11.84 GB
+Memory after batch 25:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 9.79 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 13.65 GB
+Memory after batch 30:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 9.79 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 13.65 GB
+Memory after batch 35:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 9.71 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 13.74 GB
+Memory after batch 40:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 12.32 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 11.13 GB
+Memory after batch 45:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 9.30 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 14.14 GB
+Memory after batch 50:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 9.97 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 13.48 GB
+Memory after batch 55:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 9.02 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 14.42 GB
+Memory after batch 60:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 12.32 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 11.13 GB
+Memory after batch 65:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 9.16 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 14.28 GB
+Memory after batch 70:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 9.28 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 14.16 GB
+Memory after batch 75:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 12.22 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 11.23 GB
+Memory after batch 80:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 11.58 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 11.86 GB
+Memory after batch 85:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 12.32 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 11.13 GB
+Memory after batch 90:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 11.58 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 11.86 GB
+Memory after batch 95:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 11.74 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 11.70 GB
+Starting with strategy: sampling
+Memory after batch 0:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 17.98 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 5.46 GB
+Memory after batch 5:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 18.05 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 5.40 GB
+Memory after batch 10:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 18.05 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 5.40 GB
+Memory after batch 15:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 17.85 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 5.59 GB
+Memory after batch 20:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 18.05 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 5.40 GB
+Memory after batch 25:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 17.86 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 5.58 GB
+Memory after batch 30:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 17.86 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 5.58 GB
+Memory after batch 35:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 17.86 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 5.58 GB
+Memory after batch 40:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 17.87 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 5.58 GB
+Memory after batch 45:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 17.95 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 5.49 GB
+Memory after batch 50:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 17.86 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 5.59 GB
+Memory after batch 55:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 18.05 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 5.39 GB
+Memory after batch 60:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 17.87 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 5.58 GB
+Memory after batch 65:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 18.04 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 5.40 GB
+Memory after batch 70:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 18.06 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 5.39 GB
+Memory after batch 75:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 17.86 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 5.59 GB
+Memory after batch 80:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 17.95 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 5.49 GB
+Memory after batch 85:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 17.87 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 5.58 GB
+Memory after batch 90:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 17.95 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 5.49 GB
+Memory after batch 95:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 18.06 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 5.38 GB
+Starting with strategy: beam
+Memory after batch 0:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 9.73 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 13.71 GB
+Memory after batch 5:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 11.00 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 12.44 GB
+Memory after batch 10:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 11.01 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 12.43 GB
+Memory after batch 15:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 9.97 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 13.48 GB
+Memory after batch 20:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 11.00 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 12.44 GB
+Memory after batch 25:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 8.68 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 14.77 GB
+Memory after batch 30:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 8.66 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 14.78 GB
+Memory after batch 35:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 8.74 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 14.70 GB
+Memory after batch 40:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 10.32 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 13.13 GB
+Memory after batch 45:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 8.90 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 14.55 GB
+Memory after batch 50:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 8.56 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 14.88 GB
+Memory after batch 55:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 9.80 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 13.65 GB
+Memory after batch 60:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 10.32 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 13.12 GB
+Memory after batch 65:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 8.99 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 14.45 GB
+Memory after batch 70:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 9.65 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 13.79 GB
+Memory after batch 75:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 9.98 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 13.46 GB
+Memory after batch 80:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 10.32 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 13.12 GB
+Memory after batch 85:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 10.32 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 13.12 GB
+Memory after batch 90:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 10.32 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 13.12 GB
+Memory after batch 95:
+
+GPU 0: NVIDIA TITAN RTX
+   Total Memory: 23.64 GB
+   Free Memory: 11.18 GB
+   Allocated Memory : 3.70 GB
+   Reserved Memory : 12.26 GB
+Job finished

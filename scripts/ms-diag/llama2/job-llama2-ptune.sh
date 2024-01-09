@@ -16,7 +16,7 @@ echo "Starting job with ID $SLURM_JOB_ID..."
 python /cluster/home/eglimar/inf-extr/scripts/ms-diag/llama2/ \
     --model_name llama2 \
     --quantization bfloat16 \
-    --peft_type lora \
+    --peft_type ptune \
     --truncation_size 512 \
     --batch_size 8 \
     --lr 0.001 \

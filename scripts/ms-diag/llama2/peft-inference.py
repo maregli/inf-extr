@@ -73,6 +73,7 @@ def main():
 
         # Load PEFT Model
         peft_model = PeftModel.from_pretrained(model, paths.MODEL_PATH/peft_model_name).to(device)
+        print(peft_model.peft_config)
 
         # Load Data in format matching the PEFT Model configuration
         df = load_ms_data(data=DATA)
@@ -81,7 +82,7 @@ def main():
         truncation_size = int(peft_model_name.split("_")[-1])
         peft_type = peft_model_name.split("_")[-3]
 
-        if peft_type in ["prompt", "ptune", "prefix"]:
+        if peft_type in ["prompt", "ptune"]:
             is_prompt_tuning = True
             num_virtual_tokens = peft_model.peft_config["default"].num_virtual_tokens
         else:
@@ -97,7 +98,7 @@ def main():
         inference_results = perform_inference(peft_model, dataloader, device)
 
         # Save Inference Results
-        torch.save(inference_results, paths.RESULTS_PATH/"ms-diag"/peft_model_name)
+        torch.save(inference_results, paths.RESULTS_PATH/"ms-diag"/f"{peft_model_name}.pt")
 
     return
 

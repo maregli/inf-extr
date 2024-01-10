@@ -11,9 +11,17 @@ import numpy as np
 
 import pandas as pd
 
+import matplotlib.pyplot as plt
+
 from transformers import AutoModelForSequenceClassification, AutoTokenizer, DataCollatorWithPadding, BitsAndBytesConfig
 
 from tqdm import tqdm
+
+from sklearn.decomposition import PCA
+from sklearn.manifold import TSNE
+from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_score, ConfusionMatrixDisplay
+
+from umap import UMAP
 
 import os
 import sys
@@ -276,3 +284,71 @@ def check_gpu_memory()->None:
             print(f"   Reserved Memory : {torch.cuda.memory_reserved(gpu_id) / (1024 ** 3):.2f} GB")
     else:
         print("No GPU available.")
+
+def plot_embeddings(embeddings: torch.tensor, labels:List[int], title = "plot", method="pca")->None:
+    """
+    Plot embeddings using PCA or UMAP
+
+    Args:
+        embeddings (torch.tensor): Embeddings to plot. Shape: (num_samples, embedding_size)
+        labels List[int]: Labels in integer format.
+        title (str, optional): Title. Defaults to "plot".
+        method (str, optional): Method. Defaults to "pca".
+    """
+
+    # Create a PCA object
+    if method == "umap":
+        reducer = UMAP()
+    elif method == "pca":
+        reducer = PCA(n_components=2)
+    elif method == "tsne":
+        reducer = TSNE(n_components=2, perplexity=5, n_iter=250)
+    else:
+        raise ValueError("Reducer Method not implemented")
+
+    # Fit and transform the embeddings using the PCA object
+    principalComponents = reducer.fit_transform(embeddings)
+
+    # Create a dataframe with the embeddings and the corresponding labels
+    df_embeddings = pd.DataFrame(principalComponents, columns=['x', 'y'])
+    df_embeddings['label'] = labels
+    
+    for label in df_embeddings['label'].unique():
+        _df = df_embeddings[df_embeddings['label'] == label]
+        plt.scatter(_df['x'], _df['y'], alpha=0.5)
+        plt.legend(df_embeddings['label'].unique())
+
+    # Add a title and show the plot
+    plt.title(title)
+
+    plt.show()
+
+def performance_metrics(preds:List[int], labels:List[int])->dict[str, float]:
+
+    """
+    Returns the accuracy, f1 score, precision and recall
+
+    Args:
+        preds (List[int]): Predictions
+        labels (List[int]): Labels
+
+    Returns:
+        dict[str, float]: Returns the accuracy, f1 score, precision and recall.
+    """    
+
+    return {"accuracy": accuracy_score(labels, preds),
+            "f1": f1_score(labels, preds, average='macro'),
+            "precision": precision_score(labels, preds, average='macro'),
+            "recall": recall_score(labels, preds, average='macro')}
+
+def plot_confusion_matrix(preds:List[int], labels:List[int], title:str = "Confusion Matrix", label2id:dict = None)->None:
+    """
+    Plots the confusion matrix
+
+    Args:
+        preds (List[int]): Predictions
+        labels (List[int]): Labels
+        title (str, optional): Title. Defaults to "Confusion Matrix".
+        id2label (dict, optional): Id to label mapping. Defaults to None.
+    """    
+    ConfusionMatrixDisplay.from_predictions(labels, preds, display_labels=label2id, xticks_rotation="vertical")

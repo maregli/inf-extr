@@ -1,11 +1,11 @@
 #!/bin/bash
  
-#SBATCH --job-name=llama2_lora
-#SBATCH --output=/cluster/home/eglimar/inf-extr/scripts/ms-diag/llama2/logs/lora-%j.out
-#SBATCH --error=/cluster/home/eglimar/inf-extr/scripts/ms-diag/llama2/logs/lora-%j.err
+#SBATCH --job-name=llama2_prompt
+#SBATCH --output=/cluster/home/eglimar/inf-extr/scripts/ms-diag/llama2/logs/prompt-%j.out
+#SBATCH --error=/cluster/home/eglimar/inf-extr/scripts/ms-diag/llama2/logs/prompt-%j.err
 #SBATCH --cpus-per-task=1
 #SBATCH -p gpu
-#SBATCH --gres=gpu:titanrtx:1
+#SBATCH --gres=gpu:rtx3090:1
 #SBATCH --time=7:00:00
 #SBATCH --mem-per-cpu=30G
  
@@ -17,7 +17,7 @@ python /cluster/home/eglimar/inf-extr/scripts/ms-diag/llama2/peft-training.py \
     --model_name llama2 \
     --quantization bfloat16 \
     --peft_type prompt \
-    --truncation_size 512 \
+    --truncation_size 256 \
     --batch_size 8 \
     --lr 0.001 \
     --num_epochs 4 \

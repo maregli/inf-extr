@@ -1,0 +1,38 @@
+Starting job with ID 3740231...
+Parsed Arguments:
+job_id: unknown
+model_name: llama2
+quantization: 4bit
+truncation_size: 256
+batch_size: 8
+lr: 0.001
+num_epochs: 4
+gradient_accumulation_steps: None
+peft_type: lora
+data: augmented
+classification: multi-class
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 23.02 GB
+   Allocated Memory : 0.00 GB
+   Reserved Memory : 0.00 GB
+Tokenizer pad token ID: 32000
+Model pad token ID: 32000
+Model config pad token ID: 32000
+Vocabulary Size with Pad Token:  32001
+Loaded Model and Tokenizer
+trainable params: 4,206,592 || all params: 6,611,566,592 || trainable%: 0.06362473918193577
+Loaded PEFT Model
+Loaded Data
+Starting Training
+Saving Model at /cluster/dataset/midatams/inf-extr/resources/models/ms-diag_llama2_4bit_lora_augmented_256
+Saving Model at /cluster/dataset/midatams/inf-extr/resources/models/ms-diag_llama2_4bit_lora_augmented_256
+epoch=0: train_epoch_loss=tensor(1.5030, device='cuda:0') eval_epoch_loss=tensor(1.2395, device='cuda:0') f1=0.2424242424242424
+Saving Model at /cluster/dataset/midatams/inf-extr/resources/models/ms-diag_llama2_4bit_lora_augmented_256
+epoch=1: train_epoch_loss=tensor(0.3474, device='cuda:0') eval_epoch_loss=tensor(1.1367, device='cuda:0') f1=0.2608695652173913
+Saving Model at /cluster/dataset/midatams/inf-extr/resources/models/ms-diag_llama2_4bit_lora_augmented_256
+epoch=2: train_epoch_loss=tensor(0.1615, device='cuda:0') eval_epoch_loss=tensor(1.0894, device='cuda:0') f1=0.2608695652173913
+Saving Model at /cluster/dataset/midatams/inf-extr/resources/models/ms-diag_llama2_4bit_lora_augmented_256
+epoch=3: train_epoch_loss=tensor(0.1104, device='cuda:0') eval_epoch_loss=tensor(1.0335, device='cuda:0') f1=0.2608695652173913
+Training Finished
+Job finished

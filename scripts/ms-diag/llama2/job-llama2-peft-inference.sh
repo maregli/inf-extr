@@ -1,6 +1,6 @@
 #!/bin/bash
  
-#SBATCH --job-name=llama2_lora
+#SBATCH --job-name=llama2_peft_inference
 #SBATCH --output=/cluster/home/eglimar/inf-extr/scripts/ms-diag/llama2/logs/peft-inference-%j.out
 #SBATCH --error=/cluster/home/eglimar/inf-extr/scripts/ms-diag/llama2/logs/peft-inference-%j.err
 #SBATCH --cpus-per-task=1

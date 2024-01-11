@@ -13,7 +13,7 @@ import pandas as pd
 
 import matplotlib.pyplot as plt
 
-from transformers import AutoModelForSequenceClassification, AutoTokenizer, DataCollatorWithPadding, BitsAndBytesConfig
+from transformers import AutoModelForSequenceClassification, AutoTokenizer, DataCollatorWithPadding, BitsAndBytesConfig, get_linear_schedule_with_warmup
 
 from tqdm import tqdm
 
@@ -95,10 +95,16 @@ def load_model_and_tokenizer(model_name:str, num_labels:int, quantization:str = 
         raise ValueError("Quantization must be one of 4bit, bfloat16 or float16")
         
     ### Tokenizer
-    tokenizer = AutoTokenizer.from_pretrained(paths.MODEL_PATH/model_name, padding_side="left")
+    # If model is bert model, use bert tokenizer
+    if "bert" in model_name:
+        padding_side = "right"
+    else:
+        padding_side = "left"
+
+    tokenizer = AutoTokenizer.from_pretrained(paths.MODEL_PATH/model_name, padding_side=padding_side)
 
     # Check if the pad token is already in the tokenizer vocabulary
-    if '<pad>' not in tokenizer.get_vocab():
+    if tokenizer.pad_token_id is None:
         # Add the pad token
         tokenizer.add_special_tokens({"pad_token":"<pad>"})
     
@@ -244,6 +250,7 @@ def perform_inference(model:Union[PeftModel, AutoModelForSequenceClassification]
     Returns:
         dict[str, Union[List[torch.Tensor], List[int]]]: Returns a dictionary containing the last hidden states List[torch.Tensor], labels List[int]  and predictions List[int].
     """
+    model.to(device)
     model.eval()
 
     with torch.no_grad():
@@ -268,6 +275,129 @@ def perform_inference(model:Union[PeftModel, AutoModelForSequenceClassification]
             "labels": label_list,
             "test_preds": test_preds}   
 
+
+def get_optimizer_and_scheduler(model:Union[PeftModel, AutoModelForSequenceClassification],
+                                num_training_steps:int, 
+                                learning_rate:float)->Tuple[torch.optim.Optimizer, torch.optim.lr_scheduler.LambdaLR]:
+    """Returns the optimizer and scheduler for the given model
+    
+    Args:
+        model (PeftModel): Model
+        learning_rate (float, optional): Learning Rate. Defaults to LEARNING_RATE.
+        
+    Returns:
+        tuple(torch.optim.Optimizer, torch.optim.lr_scheduler.LambdaLR): Returns the optimizer and scheduler for the given model
+    """
+
+    # Optimizer
+    optimizer = torch.optim.AdamW(model.parameters(), lr=learning_rate)
+
+    # Scheduler
+    lr_scheduler = get_linear_schedule_with_warmup(
+        optimizer=optimizer,
+        num_warmup_steps=0,
+        num_training_steps=num_training_steps,
+    )
+
+    return optimizer, lr_scheduler
+
+
+def train_loop(model:Union[PeftModel, AutoModelForSequenceClassification], 
+               train_dataloader:DataLoader, 
+               eval_dataloader:DataLoader, 
+               device:torch.device,
+               finetuned_model_name:str,
+               num_epochs:int = 4, 
+               learning_rate:float = 1e-03,
+               gradient_accumulation_steps:int = 1,
+               )->None:
+    
+    """Trains the given model using the given dataloader and returns the trained model.
+
+    Args:
+        model (Union[PeftModel, AutoModelForSequenceClassification]): Model to train.
+        train_dataloader (DataLoader): Train DataLoader.
+        eval_dataloader (DataLoader): Eval DataLoader.
+        device (torch.device): Device to use for training.
+        finetuned_model_name (str): Name under which finetuned model is saved.
+        num_epochs (int, optional): Number of epochs. Defaults to 4.
+        learning_rate (float, optional): Learning Rate. Defaults to 1e-03.
+        gradient_accumulation_steps (int, optional): Gradient Accumulation Steps. Defaults to 1.
+
+    Returns:
+        None: Trains the given model using the given dataloader and returns the trained model.
+    """
+
+    # Seed
+    torch.manual_seed(42)
+    torch.cuda.manual_seed(42)
+
+    # Optimizer and Scheduler
+    num_training_steps = num_epochs * len(train_dataloader)
+    optimizer, lr_scheduler = get_optimizer_and_scheduler(model, num_training_steps, learning_rate)
+
+    # Training
+    model.to(device)
+
+    for epoch in range(num_epochs):
+        model.train()
+        total_loss = 0
+        bar = tqdm(train_dataloader)
+
+        for step, batch in enumerate(bar):
+            optimizer.zero_grad()
+            batch.to(device)
+            outputs = model(**batch)
+            
+            loss = outputs.loss
+            total_loss += loss.detach().float()
+            loss = loss / gradient_accumulation_steps
+            loss.backward()
+
+            if (step + 1) % gradient_accumulation_steps == 0:
+                optimizer.step()
+                lr_scheduler.step()
+            bar.set_description(f"Epoch: {epoch}, Loss: {loss.item():.4f}")
+
+        model.eval()
+
+        with torch.no_grad():
+            eval_loss = 0
+            eval_preds = []
+            labels = []
+            for step, batch in enumerate(tqdm(eval_dataloader)):
+                batch.to(device)
+                outputs = model(**batch)
+                    
+                predictions = outputs.logits.argmax(dim=-1)
+                eval_preds.extend(predictions.tolist())
+                labels.extend(batch['labels'].tolist())
+                
+                loss = outputs.loss
+                eval_loss += loss.detach().float()
+                
+        f1 = f1_score(labels, eval_preds, average='macro')
+        
+        if epoch == 0:
+            max_f1 = 0
+            min_eval_loss = eval_loss
+            print(f"Saving Model at {paths.MODEL_PATH/finetuned_model_name}")
+            model.save_pretrained(paths.MODEL_PATH/finetuned_model_name)
+
+        if f1 > max_f1:
+            max_f1 = f1
+            min_eval_loss = eval_loss
+            print(f"Saving Model at {paths.MODEL_PATH/finetuned_model_name}")
+            model.save_pretrained(paths.MODEL_PATH/finetuned_model_name)
+
+        elif f1 == max_f1 and eval_loss < min_eval_loss:
+            min_eval_loss = eval_loss
+            print(f"Saving Model at {paths.MODEL_PATH/finetuned_model_name}")
+            model.save_pretrained(paths.MODEL_PATH/finetuned_model_name)
+
+        eval_epoch_loss = eval_loss / len(eval_dataloader)
+        train_epoch_loss = total_loss / len(train_dataloader)
+        print(f"{epoch=}: {train_epoch_loss=} {eval_epoch_loss=} {f1=}")
 
 def check_gpu_memory()->None:
     """Checks the GPU memory and prints the results.
@@ -308,6 +438,7 @@ def plot_embeddings(embeddings: torch.tensor, labels:List[int], title = "plot", 
 
     # Fit and transform the embeddings using the PCA object
     principalComponents = reducer.fit_transform(embeddings)
+    print(principalComponents.shape)
 
     # Create a dataframe with the embeddings and the corresponding labels
     df_embeddings = pd.DataFrame(principalComponents, columns=['x', 'y'])

@@ -1,0 +1,32 @@
+Starting job with ID 3752692...
+Parsed Arguments:
+job_id: 3752692
+model_name: llama2
+peft_model_names: ['ms-diag_llama2_bfloat16_lora_augmented_256', 'ms-diag_llama2_bfloat16_lora_augmented_512', 'ms-diag_llama2_bfloat16_prompt_augmented_256', 'ms-diag_llama2_bfloat16_prompt_augmented_512', 'ms-diag_llama2_bfloat16_ptune_augmented_256', 'ms-diag_llama2_bfloat16_ptune_augmented_512']
+quantization: bfloat16
+batch_size: 4
+split: test
+num_labels: 3
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 23.02 GB
+   Allocated Memory : 0.00 GB
+   Reserved Memory : 0.00 GB
+Tokenizer pad token ID: 32000
+Model pad token ID: 32000
+Model config pad token ID: 32000
+Vocabulary Size with Pad Token:  32001
+Loaded Model and Tokenizer
+Starting Inference for PEFT Model: ms-diag_llama2_bfloat16_lora_augmented_256
+{'default': LoraConfig(peft_type=<PeftType.LORA: 'LORA'>, auto_mapping=None, base_model_name_or_path='/cluster/dataset/midatams/inf-extr/resources/models/llama2', revision=None, task_type='SEQ_CLS', inference_mode=True, r=8, target_modules={'q_proj', 'v_proj'}, lora_alpha=16, lora_dropout=0.1, fan_in_fan_out=False, bias='none', modules_to_save=None, init_lora_weights=True, layers_to_transform=None, layers_pattern=None, rank_pattern={}, alpha_pattern={}, megatron_config=None, megatron_core='megatron.core', loftq_config={})}
+Starting Inference for PEFT Model: ms-diag_llama2_bfloat16_lora_augmented_512
+{'default': LoraConfig(peft_type=<PeftType.LORA: 'LORA'>, auto_mapping=None, base_model_name_or_path='/cluster/dataset/midatams/inf-extr/resources/models/llama2', revision=None, task_type='SEQ_CLS', inference_mode=True, r=8, target_modules={'q_proj', 'v_proj'}, lora_alpha=16, lora_dropout=0.1, fan_in_fan_out=False, bias='none', modules_to_save=None, init_lora_weights=True, layers_to_transform=None, layers_pattern=None, rank_pattern={}, alpha_pattern={}, megatron_config=None, megatron_core='megatron.core', loftq_config={})}
+Starting Inference for PEFT Model: ms-diag_llama2_bfloat16_prompt_augmented_256
+{'default': PromptTuningConfig(peft_type=<PeftType.PROMPT_TUNING: 'PROMPT_TUNING'>, auto_mapping=None, base_model_name_or_path='/cluster/dataset/midatams/inf-extr/resources/models/llama2', revision=None, task_type='SEQ_CLS', inference_mode=True, num_virtual_tokens=20, token_dim=4096, num_transformer_submodules=1, num_attention_heads=32, num_layers=32, prompt_tuning_init='TEXT', prompt_tuning_init_text='Klassifiziere als primär, sekundär oder schubförmige MS', tokenizer_name_or_path='/cluster/dataset/midatams/inf-extr/resources/models/llama2-chat', tokenizer_kwargs=None)}
+Starting Inference for PEFT Model: ms-diag_llama2_bfloat16_prompt_augmented_512
+{'default': PromptTuningConfig(peft_type=<PeftType.PROMPT_TUNING: 'PROMPT_TUNING'>, auto_mapping=None, base_model_name_or_path='/cluster/dataset/midatams/inf-extr/resources/models/llama2', revision=None, task_type='SEQ_CLS', inference_mode=True, num_virtual_tokens=20, token_dim=4096, num_transformer_submodules=1, num_attention_heads=32, num_layers=32, prompt_tuning_init='TEXT', prompt_tuning_init_text='Klassifiziere als primär, sekundär oder schubförmige MS', tokenizer_name_or_path='/cluster/dataset/midatams/inf-extr/resources/models/llama2-chat', tokenizer_kwargs=None)}
+Starting Inference for PEFT Model: ms-diag_llama2_bfloat16_ptune_augmented_256
+{'default': PromptEncoderConfig(peft_type=<PeftType.P_TUNING: 'P_TUNING'>, auto_mapping=None, base_model_name_or_path='/cluster/dataset/midatams/inf-extr/resources/models/llama2', revision=None, task_type='SEQ_CLS', inference_mode=True, num_virtual_tokens=20, token_dim=4096, num_transformer_submodules=1, num_attention_heads=32, num_layers=32, encoder_reparameterization_type='MLP', encoder_hidden_size=128, encoder_num_layers=2, encoder_dropout=0.1)}
+Starting Inference for PEFT Model: ms-diag_llama2_bfloat16_ptune_augmented_512
+{'default': PromptEncoderConfig(peft_type=<PeftType.P_TUNING: 'P_TUNING'>, auto_mapping=None, base_model_name_or_path='/cluster/dataset/midatams/inf-extr/resources/models/llama2', revision=None, task_type='SEQ_CLS', inference_mode=True, num_virtual_tokens=20, token_dim=4096, num_transformer_submodules=1, num_attention_heads=32, num_layers=32, encoder_reparameterization_type='MLP', encoder_hidden_size=128, encoder_num_layers=2, encoder_dropout=0.1)}
+Job finished

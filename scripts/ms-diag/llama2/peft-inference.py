@@ -72,7 +72,7 @@ def main():
         print(f"Starting Inference for PEFT Model: {peft_model_name}")
 
         # Load PEFT Model
-        peft_model = PeftModel.from_pretrained(model, paths.MODEL_PATH/peft_model_name).to(device)
+        peft_model = PeftModel.from_pretrained(model, paths.MODEL_PATH/peft_model_name)
         print(peft_model.peft_config)
 
         # Load Data in format matching the PEFT Model configuration

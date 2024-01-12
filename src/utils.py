@@ -482,4 +482,5 @@ def plot_confusion_matrix(preds:List[int], labels:List[int], title:str = "Confus
         title (str, optional): Title. Defaults to "Confusion Matrix".
         id2label (dict, optional): Id to label mapping. Defaults to None.
     """    
-    ConfusionMatrixDisplay.from_predictions(labels, preds, display_labels=label2id, xticks_rotation="vertical")
+    ConfusionMatrixDisplay.from_predictions(y_true = labels, y_pred = preds, display_labels=label2id, xticks_rotation="vertical")
+    plt.title(title)

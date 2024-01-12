@@ -1,0 +1,119 @@
+Starting job with ID 3760258...
+Parsed Arguments:
+job_id: unknown
+model_name: medbert
+quantization: bfloat16
+truncation_size: 128
+batch_size: 4
+lr: 0.0001
+num_epochs: 8
+gradient_accumulation_steps: None
+data: original
+num_labels: 3
+GPU 0: NVIDIA GeForce GTX 1080 Ti
+   Total Memory: 10.91 GB
+   Free Memory: 10.45 GB
+   Allocated Memory : 0.00 GB
+   Reserved Memory : 0.00 GB
+Tokenizer pad token ID: 0
+Model pad token ID: 0
+Model config pad token ID: 0
+Vocabulary Size with Pad Token:  30000
+Loaded Model and Tokenizer
+Loaded Data
+Starting Training
+Saving Model at /cluster/dataset/midatams/inf-extr/resources/models/ms-diag_medbert_bfloat16_finetuned_original_128
+Saving Model at /cluster/dataset/midatams/inf-extr/resources/models/ms-diag_medbert_bfloat16_finetuned_original_128
+epoch=0: train_epoch_loss=tensor(0.5236, device='cuda:0') eval_epoch_loss=tensor(0.7148, device='cuda:0') f1=0.30769230769230765
+Saving Model at /cluster/dataset/midatams/inf-extr/resources/models/ms-diag_medbert_bfloat16_finetuned_original_128
+epoch=1: train_epoch_loss=tensor(0.4386, device='cuda:0') eval_epoch_loss=tensor(0.6379, device='cuda:0') f1=0.30769230769230765
+epoch=2: train_epoch_loss=tensor(0.4119, device='cuda:0') eval_epoch_loss=tensor(0.6910, device='cuda:0') f1=0.30769230769230765
+epoch=3: train_epoch_loss=tensor(0.4359, device='cuda:0') eval_epoch_loss=tensor(0.6880, device='cuda:0') f1=0.30769230769230765
+Saving Model at /cluster/dataset/midatams/inf-extr/resources/models/ms-diag_medbert_bfloat16_finetuned_original_128
+epoch=4: train_epoch_loss=tensor(0.4163, device='cuda:0') eval_epoch_loss=tensor(0.6261, device='cuda:0') f1=0.30769230769230765
+Saving Model at /cluster/dataset/midatams/inf-extr/resources/models/ms-diag_medbert_bfloat16_finetuned_original_128
+epoch=5: train_epoch_loss=tensor(0.3694, device='cuda:0') eval_epoch_loss=tensor(0.5869, device='cuda:0') f1=0.30769230769230765
+Saving Model at /cluster/dataset/midatams/inf-extr/resources/models/ms-diag_medbert_bfloat16_finetuned_original_128
+epoch=6: train_epoch_loss=tensor(0.1701, device='cuda:0') eval_epoch_loss=tensor(0.4991, device='cuda:0') f1=0.6533333333333333
+epoch=7: train_epoch_loss=tensor(0.0955, device='cuda:0') eval_epoch_loss=tensor(0.4678, device='cuda:0') f1=0.32
+Training Finished
+Saving Tokenizer at: /cluster/dataset/midatams/inf-extr/resources/models/ms-diag_medbert_bfloat16_finetuned_original_128
+Parsed Arguments:
+job_id: unknown
+model_name: medbert
+quantization: bfloat16
+truncation_size: 128
+batch_size: 4
+lr: 0.0001
+num_epochs: 8
+gradient_accumulation_steps: None
+data: zero-shot
+num_labels: 3
+GPU 0: NVIDIA GeForce GTX 1080 Ti
+   Total Memory: 10.91 GB
+   Free Memory: 10.45 GB
+   Allocated Memory : 0.00 GB
+   Reserved Memory : 0.00 GB
+Tokenizer pad token ID: 0
+Model pad token ID: 0
+Model config pad token ID: 0
+Vocabulary Size with Pad Token:  30000
+Loaded Model and Tokenizer
+Could not find data for rrms
+Loaded Data
+Starting Training
+Saving Model at /cluster/dataset/midatams/inf-extr/resources/models/ms-diag_medbert_bfloat16_finetuned_zero-shot_128
+Saving Model at /cluster/dataset/midatams/inf-extr/resources/models/ms-diag_medbert_bfloat16_finetuned_zero-shot_128
+epoch=0: train_epoch_loss=tensor(0.3178, device='cuda:0') eval_epoch_loss=tensor(0.2510, device='cuda:0') f1=0.6533333333333333
+epoch=1: train_epoch_loss=tensor(0.0127, device='cuda:0') eval_epoch_loss=tensor(0.3760, device='cuda:0') f1=0.6533333333333333
+epoch=2: train_epoch_loss=tensor(0.0430, device='cuda:0') eval_epoch_loss=tensor(0.5936, device='cuda:0') f1=0.6533333333333333
+epoch=3: train_epoch_loss=tensor(0.0089, device='cuda:0') eval_epoch_loss=tensor(0.5997, device='cuda:0') f1=0.6533333333333333
+epoch=4: train_epoch_loss=tensor(0.0212, device='cuda:0') eval_epoch_loss=tensor(0.2994, device='cuda:0') f1=0.5555555555555555
+epoch=5: train_epoch_loss=tensor(0.0686, device='cuda:0') eval_epoch_loss=tensor(0.6527, device='cuda:0') f1=0.6533333333333333
+epoch=6: train_epoch_loss=tensor(0.0072, device='cuda:0') eval_epoch_loss=tensor(0.6563, device='cuda:0') f1=0.6533333333333333
+epoch=7: train_epoch_loss=tensor(0.0064, device='cuda:0') eval_epoch_loss=tensor(0.6639, device='cuda:0') f1=0.6533333333333333
+Training Finished
+Saving Tokenizer at: /cluster/dataset/midatams/inf-extr/resources/models/ms-diag_medbert_bfloat16_finetuned_zero-shot_128
+Parsed Arguments:
+job_id: unknown
+model_name: medbert
+quantization: bfloat16
+truncation_size: 128
+batch_size: 4
+lr: 0.0001
+num_epochs: 8
+gradient_accumulation_steps: None
+data: augmented
+num_labels: 3
+GPU 0: NVIDIA GeForce GTX 1080 Ti
+   Total Memory: 10.91 GB
+   Free Memory: 10.45 GB
+   Allocated Memory : 0.00 GB
+   Reserved Memory : 0.00 GB
+Tokenizer pad token ID: 0
+Model pad token ID: 0
+Model config pad token ID: 0
+Vocabulary Size with Pad Token:  30000
+Loaded Model and Tokenizer
+Loaded Data
+Starting Training
+Saving Model at /cluster/dataset/midatams/inf-extr/resources/models/ms-diag_medbert_bfloat16_finetuned_augmented_128
+Saving Model at /cluster/dataset/midatams/inf-extr/resources/models/ms-diag_medbert_bfloat16_finetuned_augmented_128
+epoch=0: train_epoch_loss=tensor(1.1964, device='cuda:0') eval_epoch_loss=tensor(1.3086, device='cuda:0') f1=0.044444444444444446
+Saving Model at /cluster/dataset/midatams/inf-extr/resources/models/ms-diag_medbert_bfloat16_finetuned_augmented_128
+epoch=1: train_epoch_loss=tensor(0.7401, device='cuda:0') eval_epoch_loss=tensor(0.4865, device='cuda:0') f1=0.30769230769230765
+Saving Model at /cluster/dataset/midatams/inf-extr/resources/models/ms-diag_medbert_bfloat16_finetuned_augmented_128
+epoch=2: train_epoch_loss=tensor(0.0590, device='cuda:0') eval_epoch_loss=tensor(0.3141, device='cuda:0') f1=0.6533333333333333
+Saving Model at /cluster/dataset/midatams/inf-extr/resources/models/ms-diag_medbert_bfloat16_finetuned_augmented_128
+epoch=3: train_epoch_loss=tensor(0.0222, device='cuda:0') eval_epoch_loss=tensor(0.0177, device='cuda:0') f1=1.0
+Saving Model at /cluster/dataset/midatams/inf-extr/resources/models/ms-diag_medbert_bfloat16_finetuned_augmented_128
+epoch=4: train_epoch_loss=tensor(0.0119, device='cuda:0') eval_epoch_loss=tensor(0.0160, device='cuda:0') f1=1.0
+Saving Model at /cluster/dataset/midatams/inf-extr/resources/models/ms-diag_medbert_bfloat16_finetuned_augmented_128
+epoch=5: train_epoch_loss=tensor(0.0108, device='cuda:0') eval_epoch_loss=tensor(0.0145, device='cuda:0') f1=1.0
+Saving Model at /cluster/dataset/midatams/inf-extr/resources/models/ms-diag_medbert_bfloat16_finetuned_augmented_128
+epoch=6: train_epoch_loss=tensor(0.0099, device='cuda:0') eval_epoch_loss=tensor(0.0133, device='cuda:0') f1=1.0
+Saving Model at /cluster/dataset/midatams/inf-extr/resources/models/ms-diag_medbert_bfloat16_finetuned_augmented_128
+epoch=7: train_epoch_loss=tensor(0.0092, device='cuda:0') eval_epoch_loss=tensor(0.0128, device='cuda:0') f1=1.0
+Training Finished
+Saving Tokenizer at: /cluster/dataset/midatams/inf-extr/resources/models/ms-diag_medbert_bfloat16_finetuned_augmented_128
+Job finished

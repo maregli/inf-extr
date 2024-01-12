@@ -1,0 +1,53 @@
+Starting job with ID 3760304...
+Parsed Arguments:
+job_id: unknown
+model_name: ms-diag_medbert_bfloat16_finetuned_original_512
+quantization: bfloat16
+batch_size: 4
+split: test
+num_labels: 3
+GPU 0: NVIDIA GeForce GTX 1080 Ti
+   Total Memory: 10.91 GB
+   Free Memory: 10.45 GB
+   Allocated Memory : 0.00 GB
+   Reserved Memory : 0.00 GB
+Tokenizer pad token ID: 0
+Model pad token ID: 0
+Model config pad token ID: 0
+Vocabulary Size with Pad Token:  30000
+Loaded Model and Tokenizer
+Parsed Arguments:
+job_id: unknown
+model_name: ms-diag_medbert_bfloat16_finetuned_augmented_512
+quantization: bfloat16
+batch_size: 4
+split: test
+num_labels: 3
+GPU 0: NVIDIA GeForce GTX 1080 Ti
+   Total Memory: 10.91 GB
+   Free Memory: 10.45 GB
+   Allocated Memory : 0.00 GB
+   Reserved Memory : 0.00 GB
+Tokenizer pad token ID: 0
+Model pad token ID: 0
+Model config pad token ID: 0
+Vocabulary Size with Pad Token:  30000
+Loaded Model and Tokenizer
+Parsed Arguments:
+job_id: unknown
+model_name: ms-diag_medbert_bfloat16_finetuned_zero-shot_512
+quantization: bfloat16
+batch_size: 4
+split: test
+num_labels: 3
+GPU 0: NVIDIA GeForce GTX 1080 Ti
+   Total Memory: 10.91 GB
+   Free Memory: 10.45 GB
+   Allocated Memory : 0.00 GB
+   Reserved Memory : 0.00 GB
+Tokenizer pad token ID: 0
+Model pad token ID: 0
+Model config pad token ID: 0
+Vocabulary Size with Pad Token:  30000
+Loaded Model and Tokenizer
+Job finished

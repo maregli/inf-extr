@@ -17,18 +17,18 @@ python /cluster/home/eglimar/inf-extr/scripts/ms-diag/medBERT/train.py \
     --quantization bfloat16 \
     --lr 0.0001 \
     --data original \
-    --truncation_size 128 \
+    --truncation_size 512 \
     --num_epochs 8
 python /cluster/home/eglimar/inf-extr/scripts/ms-diag/medBERT/train.py \
     --quantization bfloat16 \
     --lr 0.0001 \
     --data zero-shot \
-    --truncation_size 128 \
+    --truncation_size 512 \
     --num_epochs 8
 python /cluster/home/eglimar/inf-extr/scripts/ms-diag/medBERT/train.py \
     --quantization bfloat16 \
     --lr 0.0001 \
     --data augmented \
-    --truncation_size 128 \
+    --truncation_size 512 \
     --num_epochs 8
 echo "Job finished"

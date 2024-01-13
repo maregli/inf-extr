@@ -34,5 +34,5 @@ dependencies:
     - vllm==0.2.6
     - autoawq==0.1.1
     - packaging ninja
-    - flash-attn
+    - flash-attn --no-build-isolation
   

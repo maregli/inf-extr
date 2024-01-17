@@ -18,5 +18,5 @@ python /cluster/home/eglimar/inf-extr/scripts/line_label/medbert/finetune-token.
     --task_type token \
     --batch_size 8 \
     --lr 2e-5 \
-    --num_epochs 12 \
+    --num_epochs 20
 echo "Job finished"

@@ -1,0 +1,14 @@
+/bin/bash: /cluster/customapps/biomed/grlab/users/eglimar/conda/envs/inf-extr/lib/libtinfo.so.6: no version information available (required by /bin/bash)
+/cluster/home/eglimar/.env_bootstrap/dotfiles/shell/bashrc: line 17: module: command not found
+/cluster/home/eglimar/.env_bootstrap/dotfiles/shell/bashrc: line 20: module: command not found
+Traceback (most recent call last):
+  File "/cluster/home/eglimar/inf-extr/scripts/line_label/medbert/finetune-token.py", line 183, in <module>
+    main()
+  File "/cluster/home/eglimar/inf-extr/scripts/line_label/medbert/finetune-token.py", line 102, in main
+    model, tokenizer = load_model_and_tokenizer(model_name=MODEL_NAME, 
+  File "/cluster/home/eglimar/inf-extr/src/utils.py", line 110, in load_model_and_tokenizer
+    model = AutoModelForTokenClassification.from_pretrained(**config_kwargs, 
+  File "/cluster/customapps/biomed/grlab/users/eglimar/conda/envs/inf-extr/lib/python3.9/site-packages/transformers/models/auto/auto_factory.py", line 569, in from_pretrained
+    raise ValueError(
+ValueError: Unrecognized configuration class <class 'transformers.models.llama.configuration_llama.LlamaConfig'> for this kind of AutoModel: AutoModelForTokenClassification.
+Model type should be one of AlbertConfig, BertConfig, BigBirdConfig, BioGptConfig, BloomConfig, BrosConfig, CamembertConfig, CanineConfig, ConvBertConfig, Data2VecTextConfig, DebertaConfig, DebertaV2Config, DistilBertConfig, ElectraConfig, ErnieConfig, ErnieMConfig, EsmConfig, FalconConfig, FlaubertConfig, FNetConfig, FunnelConfig, GPT2Config, GPT2Config, GPTBigCodeConfig, GPTNeoConfig, GPTNeoXConfig, IBertConfig, LayoutLMConfig, LayoutLMv2Config, LayoutLMv3Config, LiltConfig, LongformerConfig, LukeConfig, MarkupLMConfig, MegaConfig, MegatronBertConfig, MobileBertConfig, MPNetConfig, MptConfig, MraConfig, NezhaConfig, NystromformerConfig, PhiConfig, QDQBertConfig, RemBertConfig, RobertaConfig, RobertaPreLayerNormConfig, RoCBertConfig, RoFormerConfig, SqueezeBertConfig, XLMConfig, XLMRobertaConfig, XLMRobertaXLConfig, XLNetConfig, XmodConfig, YosoConfig.

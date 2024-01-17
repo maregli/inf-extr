@@ -53,7 +53,7 @@ def parse_args():
     return args
 
 
-seqeval = evaluate.load("seqeval")
+seqeval = evaluate.load(os.path.join(paths.METRICS_PATH,"seqeval"))
 label_list = list(line_label_token_id2label.values())
 def compute_metrics(p):
     predictions, labels = p

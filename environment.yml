@@ -35,4 +35,5 @@ dependencies:
     - autoawq==0.1.1
     - packaging ninja
     - flash-attn --no-build-isolation
+    - seqeval
   

@@ -119,15 +119,8 @@ def main():
     predictions, labels, metrics = trainer.predict(encoded_dataset[SPLIT])
 
     # Get Results
-    # preds, labs, rid, text = get_results_from_token_preds(predictions=predictions, dataset=encoded_dataset, tokenizer=tokenizer, split=SPLIT)
     results = get_results_from_token_preds(predictions=predictions, dataset=encoded_dataset, tokenizer=tokenizer, split=SPLIT)
     
-    # results = {"last_hidden_state": [], #ToDo - Add last hidden state
-    #         "labels": labs,
-    #         "preds": preds,
-    #         "rid": rid,
-    #         "text": text,} 
-
     for res in results:
         res.update({"last_hidden_state": []}) #ToDo - Add last hidden state
     

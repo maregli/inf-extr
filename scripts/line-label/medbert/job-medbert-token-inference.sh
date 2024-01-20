@@ -14,7 +14,7 @@ conda activate inf-extr
 
 echo "Starting job with ID $SLURM_JOB_ID..."
 python /cluster/home/eglimar/inf-extr/scripts/line_label/medbert/inference-token.py \
-    --model_name line-label_medbert-512_token_finetuned \
+    --model_name line-label_medbert-512_token \
     --task_type token \
     --split all \
     --batch_size 8

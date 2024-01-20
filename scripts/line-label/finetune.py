@@ -99,7 +99,7 @@ def main():
     arg_names = [MODEL_NAME, QUANTIZATION, config.get("peft_type", None), TASK_TYPE]
     arg_names = [arg_name for arg_name in arg_names if arg_name is not None]
 
-    finetuned_model_name = f"line-label_{'_'.join(arg_names)}_finetuned"
+    finetuned_model_name = f"line-label_{'_'.join(arg_names)}"
 
     # Training Arguments
     training_args = TrainingArguments(

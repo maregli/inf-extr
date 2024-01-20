@@ -5,7 +5,7 @@ from torch.utils.data import DataLoader
 
 from peft import PeftModel, LoraConfig, PromptEncoderConfig, PromptTuningConfig, PrefixTuningConfig, PromptTuningInit, PeftConfig, prepare_model_for_kbit_training
 
-from datasets import DatasetDict, Dataset, load_dataset, concatenate_datasets
+from datasets import DatasetDict, Dataset, load_dataset, concatenate_datasets, interleave_datasets
 
 import numpy as np
 
@@ -211,10 +211,10 @@ def load_line_label_data():
         DatasetDict: Returns the dataset dictionary
     """
 
-    dataset = DatasetDict.load_from_disk(paths.DATA_PATH_PREPROCESSED/'line_labelling/line_labelling_clean_dataset')
+    dataset = DatasetDict.load_from_disk(paths.DATA_PATH_PREPROCESSED/'line-label/line-label_clean_dataset')
     return dataset
 
-def prepare_line_label_data(dataset:DatasetDict, tokenizer:AutoTokenizer, truncation_size:int = 512)->DatasetDict:
+def prepare_line_label_data(dataset:DatasetDict, tokenizer:AutoTokenizer, truncation_size:int = 512, inference_mode = False)->DatasetDict:
     """Prepares the data for Line Label task and returns the dataset
 
     Args:
@@ -231,9 +231,13 @@ def prepare_line_label_data(dataset:DatasetDict, tokenizer:AutoTokenizer, trunca
 
     def tokenize_function(examples):
         outputs = tokenizer(examples["text"], truncation=True, max_length=truncation_size)
+
+        if not inference_mode:
+            outputs["labels"] = examples["labels"] # During inference labels are removed because None labels cause issues
+
         return outputs
 
-    encoded_dataset = dataset.map(tokenize_function, batched=True, remove_columns=["text"])
+    encoded_dataset = dataset.map(tokenize_function, batched=True, remove_columns=dataset["train"].column_names)
 
     return encoded_dataset
 
@@ -244,7 +248,7 @@ def load_line_label_token_data():
     Returns:
         DatasetDict: Returns the dataset dictionary
     """
-    dataset_token = DatasetDict.load_from_disk(paths.DATA_PATH_PREPROCESSED/"line_labelling/line_labelling_for_token_classification")
+    dataset_token = DatasetDict.load_from_disk(paths.DATA_PATH_PREPROCESSED/"line-label/line-label_for_token_classification")
     return dataset_token
 
 
@@ -260,7 +264,7 @@ def tokenize_and_align_labels(examples:dict, tokenizer:AutoTokenizer):
         dict: Returns the tokenized examples
     """
 
-    tokenized_inputs = tokenizer(examples["text"], truncation=True, is_split_into_words=True)
+    tokenized_inputs = tokenizer(examples["text"], truncation=True, is_split_into_words=True, max_length=tokenizer.model_max_length)
 
     labels = []
     for i, label in enumerate(examples[f"ner_tags"]):
@@ -283,21 +287,36 @@ def tokenize_and_align_labels(examples:dict, tokenizer:AutoTokenizer):
 
 
 
-def load_ms_data(data:str="original")->DatasetDict:
+def load_ms_data(data:str="line")->DatasetDict:
     """Loads the data for MS-Diag task and returns the dataset dictionary
 
     Args:
-        data (str, optional): Data. Must be one of original, zero-shot or augmented. Defaults to "original".
+        data (str, optional): Data. Must be one of "line" or "all". Defaults to "line".
     
     Returns:
         DatasetDict: Returns the dataset dictionary
     """
 
-    data_files = {"train": "ms-diag_clean_train.csv", "validation": "ms-diag_clean_val.csv", "test": "ms-diag_clean_test.csv", "augmented": "ms-diag_augmented.csv"}
+    df = DatasetDict.load_from_disk(os.path.join(paths.DATA_PATH_PREPROCESSED, f"ms-diag/ms_diag_{data}"))
+            
+    return df
+    
 
-    df = load_dataset(os.path.join(paths.DATA_PATH_PREPROCESSED,'ms-diag'), data_files = data_files)
+def prepare_ms_data(df:DatasetDict, tokenizer: AutoTokenizer, data_augmentation:str=None, inference_mode:bool = False)->DatasetDict:
+    """Prepares the data for MS-Diag task and returns the dataset
 
-    if data == "zero-shot":
+    Args:
+        df (DatasetDict): Dataset dictionary
+        tokenizer (AutoTokenizer): Tokenizer
+        data_augmentation (str, optional): Data Augmentation. Must be one of None, "zero-shot" or "augmented". Defaults to None.
+        inference_mode (bool, optional): Inference Mode, will . Defaults to False.
+
+    Returns:
+        DatasetDict: Returns the dataset
+    """
+
+    
+    if data_augmentation == "zero-shot":
                 
         def get_artifical_data_for_label(label:str):
             label_dict = {
@@ -324,48 +343,78 @@ def load_ms_data(data:str="original")->DatasetDict:
         
         df["train"] = concatenate_datasets([get_artifical_data_all(), df["train"]])
     
-    elif data == "augmented":
+    elif data_augmentation == "augmented":
         df["train"] = concatenate_datasets([df["augmented"], df["train"]])
 
-    elif data == "original":
+    elif data_augmentation == "undersample":
+        df["train"] = undersample_dataset(df["train"])
+
+    elif data_augmentation == "oversample":
+        df["train"] = oversample_dataset(df["train"])
+
+    elif data_augmentation == "original_approach":
+        df = df.filter(lambda e: e["labels"] != ms_label2id["no_ms"])
+        df["train"] = oversample_dataset(df["train"])
+    
+    elif not data_augmentation:
         pass
-    else:
-        raise ValueError("Data must be one of original, zero-shot or augmented")
-            
-    return df
     
-
-def prepare_ms_data(df:DatasetDict, tokenizer:AutoTokenizer, is_prompt_tuning:bool = False, num_virtual_tokens:int=20, truncation_size:int = 512)->DatasetDict:
-    """Prepares the data for MS-Diag task and returns the dataset
-
-    Args:
-        df (DatasetDict): Dataset dictionary
-        tokenizer (AutoTokenizer): Tokenizer
-        is_prompt_tuning (bool, optional): Whether to use prompt tuning. Defaults to False.
-        num_virtual_tokens (int, optional): Number of virtual tokens. Defaults to 20.
-        truncation_size (int, optional): Truncation size. Defaults to 512.
-
-    Returns:
-        DatasetDict: Returns the dataset
-    """
-    
-    # For Prompt Tuning, we need to add the prefix to the input text
-    if is_prompt_tuning:
-        assert num_virtual_tokens > 0, "Number of virtual tokens must be greater than 0 for prompt tuning"
-        max_length = tokenizer.model_max_length - num_virtual_tokens
     else:
-        max_length = tokenizer.model_max_length
-        
-    truncation_size = min(truncation_size, max_length)
-
+        raise ValueError("Data Augmentation must be one of None, zero-shot or augmented")
+    
+    # For evaluation during training will use undersampling
+    if not inference_mode:
+        df["val"] = undersample_dataset(df["val"])
+    
     def tokenize_function(examples):
-        outputs = tokenizer(examples["text"], truncation=True, max_length=truncation_size)
-        outputs["labels"] = [ms_label2id[label] for label in examples["labels"]]
-        return outputs
+        batch = tokenizer(examples["text"], truncation=True, max_length=tokenizer.model_max_length)
+        
+        if not inference_mode:
+            batch["labels"] = examples["labels"]  # During inference labels are removed because None labels cause issues
 
-    encoded_dataset = df.map(tokenize_function, batched=True, remove_columns=["text", "rid", "date"])
+        return batch
+    
+    encoded_dataset = df.map(tokenize_function, batched=True, remove_columns=df["train"].column_names)
 
     return encoded_dataset
+
+def undersample_dataset(df:Dataset)->Dataset:
+    """Undersamples the given dataset for the given label to the desired length. Assumes that the dataset has a column "labels".
+
+    Args:
+        dataset (Dataset): Dataset
+        label (str): Label
+        desired_len (int, optional): Desired Length. Defaults to 100.
+
+    Returns:
+        Dataset: Returns the undersampled dataset
+    """
+    dfs = [df.filter(lambda e: e["labels"] == label) for label in set(df["labels"])]
+    df = interleave_datasets(dfs, seed=42)
+
+    return df
+
+def oversample_dataset(df:Dataset, desired_len:int = 100)->Dataset:
+    """Oversamples the given dataset for the given label to the desired length. Assumes that the dataset has a column "labels".
+
+    Args:
+        dataset (Dataset): Dataset. Must have a column "labels".
+        label (str): Label
+        desired_len (int, optional): Desired Length. Defaults to 100.
+
+    Returns:
+        Dataset: Returns the oversampled dataset
+    """
+    dfs = []
+    for label in set(df["labels"]):
+        _df = df.filter(lambda e: e["labels"] == label)
+        if len(_df) > desired_len:
+            _df = _df.shuffle(seed=42).select(range(desired_len))
+        dfs.append(_df)
+    
+    df = interleave_datasets(dfs, seed=42, stopping_strategy="all_exhausted")
+
+    return df
 
 def encode_one_line(text: str, label: Optional[str] = None)->Tuple[List[str], List[str]]:
     """Encodes one line of text and returns the words and labels. For inference purposes label can be None.
@@ -421,7 +470,9 @@ def prepare_pd_dataset_for_lineclass(df: pd.DataFrame):
 # MS Label to id
 ms_label2id = {'primary_progressive_multiple_sclerosis': 0,
                 'relapsing_remitting_multiple_sclerosis': 1,
-                'secondary_progressive_multiple_sclerosis': 2}
+                'secondary_progressive_multiple_sclerosis': 2,
+                'no_ms': 3}
+
 ms_id2label = {v:k for k,v in ms_label2id.items()}
 
 # Line Label to id
@@ -432,7 +483,8 @@ line_label_id2label = {0: 'dm',
                        4: 'medms',
                        5: 'labr_labo',
                        6: 'mr',
-                       7: 'to_tr'}
+                       7: 'to_tr',
+                       } 
 
 line_Label_label2id = {v:k for k,v in line_label_id2label.items()}
 
@@ -452,7 +504,7 @@ line_label_token_label2id = {'B-dm': 0,
  'I-labr_labo': 13,
  'I-mr': 14,
  'I-to_tr': 15,
- 'O': 16}
+ 'O': 16} 
 
 line_label_token_id2label = {v:k for k,v in line_label_token_label2id.items()}
 
@@ -507,7 +559,10 @@ def get_optimizer_and_scheduler(model:Union[PeftModel, AutoModelForSequenceClass
 
 ### Inference
 
-def perform_inference(model:Union[PeftModel, AutoModelForSequenceClassification], dataloader:DataLoader, device:torch.device)->dict[str, Union[List[torch.Tensor], List[int]]]:
+def perform_inference(model:Union[PeftModel, AutoModelForSequenceClassification], 
+                      dataloader:DataLoader, 
+                      device:torch.device,
+                      output_hidden_states:bool=False)->dict[str, Union[List[torch.Tensor], List[int]]]:
     """Performs inference on the given dataloader using the given model and returns the last hidden states, labels and predictions.
 
     Args:
@@ -523,24 +578,26 @@ def perform_inference(model:Union[PeftModel, AutoModelForSequenceClassification]
 
     with torch.no_grad():
         test_preds = []
-        label_list = []
         last_hidden_states = []
 
         for batch in tqdm(dataloader):
             batch.to(device)
+
+            inputs = {k:v for k,v in batch.items() if k != "labels"} # For inference don't need labels. None labels could cause error.
             
-            outputs = model(**batch, output_hidden_states=True)
-            logits = outputs.logits.to("cpu")
-            labels = batch['labels'].to("cpu")
+            outputs = model(**inputs, output_hidden_states=True)
+            logits = outputs.logits
             
             predictions = logits.argmax(dim=-1)
             test_preds.extend(predictions.tolist())
             
-            label_list.extend(labels.tolist())
             last_hidden_states.extend(outputs.hidden_states[-1].to("cpu"))
 
+    # For memory efficiency if output_hidden_states is False we don't return the hidden states. Only need them for test evaluation.
+    if not output_hidden_states:
+        last_hidden_states = []
+
     return {"last_hidden_state": last_hidden_states, 
-            "labels": label_list,
             "preds": test_preds}   
 
 

@@ -2,7 +2,7 @@
 import os
 import sys
 from pathlib import Path
-sys.path.append(str(Path(__file__).parent.parent.parent.parent))
+sys.path.append(str(Path(__file__).parent.parent.parent))
 
 from src import paths
 from src.utils import (load_model_and_tokenizer, 
@@ -55,6 +55,7 @@ def parse_args():
 
 seqeval = evaluate.load(os.path.join(paths.METRICS_PATH,"seqeval"))
 label_list = list(line_label_token_id2label.values())
+
 def compute_metrics(p):
     predictions, labels = p
     predictions = np.argmax(predictions, axis=2)

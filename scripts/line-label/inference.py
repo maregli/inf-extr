@@ -5,7 +5,7 @@ import torch
 
 import sys
 from pathlib import Path
-sys.path.append(str(Path(__file__).parent.parent.parent.parent))
+sys.path.append(str(Path(__file__).parent.parent.parent))
 
 from src import paths
 from src.utils import load_line_label_data, prepare_line_label_data, get_DataLoader, load_model_and_tokenizer, perform_inference, check_gpu_memory
@@ -23,6 +23,7 @@ def parse_args():
     parser.add_argument("--batch_size", type=int, default=4, help="Batch Size. Defaults to 4")
     parser.add_argument("--split", type=str, default="test", help="Split. Must be one of train, validation or test. Defaults to test")
     parser.add_argument("--task_type", type=str, default="class", help="Task Type. Must be one of class or clm. Defaults to class")
+    parser.add_argument("--output_hidden_states", action="store_true", help="Whether to output hidden states. Defaults to False")
 
     args = parser.parse_args()
 
@@ -44,6 +45,7 @@ def main():
     BATCH_SIZE = args.batch_size
     SPLIT = args.split
     TASK_TYPE = args.task_type
+    OUTPUT_HIDDEN_STATES = args.output_hidden_states
     
     device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
 
@@ -66,13 +68,18 @@ def main():
     # Prepare Data
     truncation_size = tokenizer.model_max_length
     
-    encoded_dataset = prepare_line_label_data(df, tokenizer, truncation_size)
+    encoded_dataset = prepare_line_label_data(df, tokenizer, truncation_size, inference_mode=True)
 
     # Get DataLoaders
     dataloader = get_DataLoader(encoded_dataset[SPLIT], tokenizer, batch_size=BATCH_SIZE, shuffle=False)
 
     # Perform Inference
-    inference_results = perform_inference(model, dataloader, device)
+    inference_results = perform_inference(model, dataloader, device, output_hidden_states=OUTPUT_HIDDEN_STATES)
+
+    # Adding labels to inference results
+    inference_results["labels"] = df[SPLIT]["labels"]
+    inference_results["rid"] = df[SPLIT]["rid"]
+    inference_results["text"] = df[SPLIT]["text"]
 
     saving_model_name = PEFT_MODEL_NAME if PEFT_MODEL_NAME else MODEL_NAME
 

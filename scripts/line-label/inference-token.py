@@ -7,7 +7,7 @@ from transformers import Trainer, TrainingArguments, DataCollatorForTokenClassif
 
 import sys
 from pathlib import Path
-sys.path.append(str(Path(__file__).parent.parent.parent.parent))
+sys.path.append(str(Path(__file__).parent.parent.parent))
 
 from src import paths
 from src.utils import (load_line_label_token_data, 

@@ -1,8 +1,8 @@
 #!/bin/bash
  
 #SBATCH --job-name=medbert_line-label_token
-#SBATCH --output=/cluster/home/eglimar/inf-extr/scripts/line_label/medbert/logs/token-%j.out
-#SBATCH --error=/cluster/home/eglimar/inf-extr/scripts/line_label/medbert/logs/token-%j.err
+#SBATCH --output=/cluster/home/eglimar/inf-extr/scripts/line-label/medbert/logs/token-%j.out
+#SBATCH --error=/cluster/home/eglimar/inf-extr/scripts/line-label/medbert/logs/token-%j.err
 #SBATCH --cpus-per-task=1
 #SBATCH -p gpu
 #SBATCH --gres=gpu:rtx2080ti:1
@@ -13,7 +13,7 @@ source ~/.bashrc
 conda activate inf-extr
 
 echo "Starting job with ID $SLURM_JOB_ID..."
-python /cluster/home/eglimar/inf-extr/scripts/line_label/medbert/finetune-token.py \
+python /cluster/home/eglimar/inf-extr/scripts/line-label/finetune-token.py \
     --model_name medbert-512 \
     --task_type token \
     --batch_size 8 \

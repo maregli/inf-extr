@@ -1,0 +1,87 @@
+=====================================================================
+                   Welcome to Leonhard Med v.2.0.1                    
+
+ * Documentation:  https://unlimited.ethz.ch/display/LEOMED2
+ * Support:        leomed-support@id.ethz.ch
+ * Software stack: type "enable_modules" to use Modules
+
+Tenant name: BIOMED
+OS: Ubuntu 20.04.6 LTS x86_64 
+Uptime: 9 days, 14 hours, 30 mins 
+CPU: Intel Xeon (Cascadelake) (34) @ 2.593GHz 
+CPU Usage: 44% 
+GPU: NVIDIA GeForce RTX 2080 Ti 
+GPU: NVIDIA GeForce RTX 2080 Ti 
+GPU: NVIDIA GeForce RTX 2080 Ti 
+GPU: NVIDIA GeForce RTX 2080 Ti 
+GPU: NVIDIA GeForce RTX 2080 Ti 
+GPU: NVIDIA GeForce RTX 2080 Ti 
+GPU: NVIDIA GeForce RTX 2080 Ti 
+GPU: NVIDIA GeForce RTX 2080 Ti 
+Memory: 36651MiB / 365879MiB (10%) 
+
+=====================================================================
+Starting job with ID 3849655...
+Parsed Arguments:
+job_id: unknown
+model_name: medbert-512
+quantization: None
+task_type: token
+batch_size: 8
+lr: 2e-05
+num_epochs: 20
+gradient_accumulation_steps: 1
+peft_config: None
+attn_implementation: None
+GPU 0: NVIDIA GeForce RTX 2080 Ti
+   Total Memory: 10.75 GB
+   Free Memory: 10.20 GB
+   Allocated Memory : 0.00 GB
+   Reserved Memory : 0.00 GB
+Loaded Data
+Added special token [BRK] to tokenizer
+Tokenizer pad token ID: 0
+Tokenizer special tokens: {'unk_token': '[UNK]', 'sep_token': '[SEP]', 'pad_token': '[PAD]', 'cls_token': '[CLS]', 'mask_token': '[MASK]', 'additional_special_tokens': ['[BRK]']}
+Model pad token ID: 0
+Loaded Model and Tokenizer
+Got Optimizer, Scheduler and DataCollator
+Starting Training
+{'eval_loss': 1.8729139566421509, 'eval_precision': 0.004694835680751174, 'eval_recall': 0.014285714285714285, 'eval_f1': 0.007067137809187279, 'eval_accuracy': 0.44847605224963716, 'eval_runtime': 0.0935, 'eval_samples_per_second': 42.772, 'eval_steps_per_second': 10.693, 'epoch': 1.0}
+{'loss': 2.1063, 'learning_rate': 1.8333333333333333e-05, 'epoch': 1.43}
+{'eval_loss': 1.2683672904968262, 'eval_precision': 0.06417112299465241, 'eval_recall': 0.17142857142857143, 'eval_f1': 0.0933852140077821, 'eval_accuracy': 0.6226415094339622, 'eval_runtime': 0.3027, 'eval_samples_per_second': 13.213, 'eval_steps_per_second': 3.303, 'epoch': 2.0}
+{'loss': 1.1246, 'learning_rate': 1.6666666666666667e-05, 'epoch': 2.86}
+{'eval_loss': 0.8228127956390381, 'eval_precision': 0.16379310344827586, 'eval_recall': 0.2714285714285714, 'eval_f1': 0.2043010752688172, 'eval_accuracy': 0.7880986937590712, 'eval_runtime': 0.0759, 'eval_samples_per_second': 52.734, 'eval_steps_per_second': 13.183, 'epoch': 3.0}
+{'eval_loss': 0.629741907119751, 'eval_precision': 0.2336448598130841, 'eval_recall': 0.35714285714285715, 'eval_f1': 0.2824858757062147, 'eval_accuracy': 0.7982583454281568, 'eval_runtime': 0.0772, 'eval_samples_per_second': 51.83, 'eval_steps_per_second': 12.957, 'epoch': 4.0}
+{'loss': 0.6734, 'learning_rate': 1.5000000000000002e-05, 'epoch': 4.29}
+{'eval_loss': 0.5304816365242004, 'eval_precision': 0.2608695652173913, 'eval_recall': 0.42857142857142855, 'eval_f1': 0.3243243243243243, 'eval_accuracy': 0.8301886792452831, 'eval_runtime': 0.0779, 'eval_samples_per_second': 51.328, 'eval_steps_per_second': 12.832, 'epoch': 5.0}
+{'loss': 0.4634, 'learning_rate': 1.3333333333333333e-05, 'epoch': 5.71}
+{'eval_loss': 0.4008464813232422, 'eval_precision': 0.5164835164835165, 'eval_recall': 0.6714285714285714, 'eval_f1': 0.5838509316770187, 'eval_accuracy': 0.8563134978229318, 'eval_runtime': 0.0885, 'eval_samples_per_second': 45.221, 'eval_steps_per_second': 11.305, 'epoch': 6.0}
+{'eval_loss': 0.3452241122722626, 'eval_precision': 0.6835443037974683, 'eval_recall': 0.7714285714285715, 'eval_f1': 0.7248322147651006, 'eval_accuracy': 0.8824383164005806, 'eval_runtime': 0.352, 'eval_samples_per_second': 11.364, 'eval_steps_per_second': 2.841, 'epoch': 7.0}
+{'loss': 0.3109, 'learning_rate': 1.1666666666666668e-05, 'epoch': 7.14}
+{'eval_loss': 0.2878688871860504, 'eval_precision': 0.6867469879518072, 'eval_recall': 0.8142857142857143, 'eval_f1': 0.7450980392156863, 'eval_accuracy': 0.8984034833091437, 'eval_runtime': 0.0935, 'eval_samples_per_second': 42.803, 'eval_steps_per_second': 10.701, 'epoch': 8.0}
+{'loss': 0.2299, 'learning_rate': 1e-05, 'epoch': 8.57}
+{'eval_loss': 0.28069862723350525, 'eval_precision': 0.6021505376344086, 'eval_recall': 0.8, 'eval_f1': 0.6871165644171778, 'eval_accuracy': 0.8925979680696662, 'eval_runtime': 0.0772, 'eval_samples_per_second': 51.835, 'eval_steps_per_second': 12.959, 'epoch': 9.0}
+{'loss': 0.1881, 'learning_rate': 8.333333333333334e-06, 'epoch': 10.0}
+{'eval_loss': 0.31360286474227905, 'eval_precision': 0.6511627906976745, 'eval_recall': 0.8, 'eval_f1': 0.7179487179487181, 'eval_accuracy': 0.8809869375907112, 'eval_runtime': 0.0711, 'eval_samples_per_second': 56.241, 'eval_steps_per_second': 14.06, 'epoch': 10.0}
+{'eval_loss': 0.27862051129341125, 'eval_precision': 0.6941176470588235, 'eval_recall': 0.8428571428571429, 'eval_f1': 0.7612903225806451, 'eval_accuracy': 0.8940493468795355, 'eval_runtime': 0.0889, 'eval_samples_per_second': 44.991, 'eval_steps_per_second': 11.248, 'epoch': 11.0}
+{'loss': 0.1377, 'learning_rate': 6.666666666666667e-06, 'epoch': 11.43}
+{'eval_loss': 0.2611279785633087, 'eval_precision': 0.6629213483146067, 'eval_recall': 0.8428571428571429, 'eval_f1': 0.7421383647798743, 'eval_accuracy': 0.9143686502177069, 'eval_runtime': 0.0839, 'eval_samples_per_second': 47.692, 'eval_steps_per_second': 11.923, 'epoch': 12.0}
+{'loss': 0.1049, 'learning_rate': 5e-06, 'epoch': 12.86}
+{'eval_loss': 0.2618510127067566, 'eval_precision': 0.7407407407407407, 'eval_recall': 0.8571428571428571, 'eval_f1': 0.794701986754967, 'eval_accuracy': 0.9201741654571843, 'eval_runtime': 0.0792, 'eval_samples_per_second': 50.486, 'eval_steps_per_second': 12.621, 'epoch': 13.0}
+{'eval_loss': 0.25546377897262573, 'eval_precision': 0.6444444444444445, 'eval_recall': 0.8285714285714286, 'eval_f1': 0.7250000000000001, 'eval_accuracy': 0.9129172714078374, 'eval_runtime': 0.0806, 'eval_samples_per_second': 49.646, 'eval_steps_per_second': 12.412, 'epoch': 14.0}
+{'loss': 0.1014, 'learning_rate': 3.3333333333333333e-06, 'epoch': 14.29}
+{'eval_loss': 0.2664637863636017, 'eval_precision': 0.6444444444444445, 'eval_recall': 0.8285714285714286, 'eval_f1': 0.7250000000000001, 'eval_accuracy': 0.9042089985486212, 'eval_runtime': 0.0936, 'eval_samples_per_second': 42.719, 'eval_steps_per_second': 10.68, 'epoch': 15.0}
+{'loss': 0.0819, 'learning_rate': 1.6666666666666667e-06, 'epoch': 15.71}
+{'eval_loss': 0.27746713161468506, 'eval_precision': 0.6666666666666666, 'eval_recall': 0.8285714285714286, 'eval_f1': 0.7388535031847134, 'eval_accuracy': 0.9013062409288825, 'eval_runtime': 0.0822, 'eval_samples_per_second': 48.675, 'eval_steps_per_second': 12.169, 'epoch': 16.0}
+{'eval_loss': 0.27565306425094604, 'eval_precision': 0.651685393258427, 'eval_recall': 0.8285714285714286, 'eval_f1': 0.7295597484276731, 'eval_accuracy': 0.9042089985486212, 'eval_runtime': 0.0814, 'eval_samples_per_second': 49.163, 'eval_steps_per_second': 12.291, 'epoch': 17.0}
+{'loss': 0.0821, 'learning_rate': 0.0, 'epoch': 17.14}
+{'eval_loss': 0.27562469244003296, 'eval_precision': 0.651685393258427, 'eval_recall': 0.8285714285714286, 'eval_f1': 0.7295597484276731, 'eval_accuracy': 0.9042089985486212, 'eval_runtime': 0.0812, 'eval_samples_per_second': 49.258, 'eval_steps_per_second': 12.315, 'epoch': 18.0}
+{'loss': 0.0733, 'learning_rate': 0.0, 'epoch': 18.57}
+{'eval_loss': 0.27562469244003296, 'eval_precision': 0.651685393258427, 'eval_recall': 0.8285714285714286, 'eval_f1': 0.7295597484276731, 'eval_accuracy': 0.9042089985486212, 'eval_runtime': 0.0802, 'eval_samples_per_second': 49.874, 'eval_steps_per_second': 12.469, 'epoch': 19.0}
+{'loss': 0.0813, 'learning_rate': 0.0, 'epoch': 20.0}
+{'eval_loss': 0.27562469244003296, 'eval_precision': 0.651685393258427, 'eval_recall': 0.8285714285714286, 'eval_f1': 0.7295597484276731, 'eval_accuracy': 0.9042089985486212, 'eval_runtime': 0.0718, 'eval_samples_per_second': 55.679, 'eval_steps_per_second': 13.92, 'epoch': 20.0}
+{'train_runtime': 125.7642, 'train_samples_per_second': 8.747, 'train_steps_per_second': 1.113, 'train_loss': 0.4113683304616383, 'epoch': 20.0}
+Finished Training
+Saving Model at: /cluster/dataset/midatams/inf-extr/resources/models/line-label_medbert-512_token
+Saving Tokenizer at: /cluster/dataset/midatams/inf-extr/resources/models/line-label_medbert-512_token
+Job finished

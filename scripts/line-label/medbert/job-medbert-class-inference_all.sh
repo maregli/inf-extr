@@ -16,7 +16,6 @@ echo "Starting job with ID $SLURM_JOB_ID..."
 python /cluster/home/eglimar/inf-extr/scripts/line-label/inference.py \
     --model_name line-label_medbert-512_class \
     --task_type class \
-    --split test \
-    --batch_size 8 \
-    --output_hidden_states
+    --split all \
+    --batch_size 8
 echo "Job finished"

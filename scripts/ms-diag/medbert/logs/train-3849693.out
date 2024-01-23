@@ -1,0 +1,51 @@
+=====================================================================
+                   Welcome to Leonhard Med v.2.0.1                    
+
+ * Documentation:  https://unlimited.ethz.ch/display/LEOMED2
+ * Support:        leomed-support@id.ethz.ch
+ * Software stack: type "enable_modules" to use Modules
+
+Tenant name: BIOMED
+OS: Ubuntu 20.04.6 LTS x86_64 
+Uptime: 9 days, 4 hours, 49 mins 
+CPU: Intel (Broadwell, IBRS) (18) @ 2.199GHz 
+CPU Usage: 4% 
+GPU: NVIDIA GeForce GTX 1080 Ti 
+GPU: NVIDIA GeForce GTX 1080 Ti 
+GPU: NVIDIA GeForce GTX 1080 Ti 
+GPU: NVIDIA GeForce GTX 1080 Ti 
+GPU: NVIDIA GeForce GTX 1080 Ti 
+GPU: NVIDIA GeForce GTX 1080 Ti 
+GPU: NVIDIA GeForce GTX 1080 Ti 
+GPU: NVIDIA GeForce GTX 1080 Ti 
+Memory: 1579MiB / 243821MiB (0%) 
+
+=====================================================================
+Starting job with ID 3849693...
+Parsed Arguments:
+job_id: unknown
+model_name: medbert-512
+quantization: None
+batch_size: 16
+lr: 0.0002
+num_epochs: 12
+gradient_accumulation_steps: 1
+task_type: class
+data: all
+data_augmentation: original_approach
+num_labels: 3
+peft_config: None
+attn_implementation: None
+GPU 0: NVIDIA GeForce GTX 1080 Ti
+   Total Memory: 10.91 GB
+   Free Memory: 10.45 GB
+   Allocated Memory : 0.00 GB
+   Reserved Memory : 0.00 GB
+Tokenizer pad token ID: 0
+Tokenizer special tokens: {'unk_token': '[UNK]', 'sep_token': '[SEP]', 'pad_token': '[PAD]', 'cls_token': '[CLS]', 'mask_token': '[MASK]'}
+Model pad token ID: 0
+Loaded Model and Tokenizer
+Loaded Data
+Starting Training
+{'eval_loss': 2.3956124782562256, 'eval_accuracy': 0.3333333333333333, 'eval_f1': 0.16666666666666666, 'eval_precision': 0.1111111111111111, 'eval_recall': 0.3333333333333333, 'eval_runtime': 0.0977, 'eval_samples_per_second': 30.702, 'eval_steps_per_second': 10.234, 'epoch': 1.0}
+{'loss': 0.6677, 'learning_rate': 0.00017777777777777779, 'epoch': 1.25}

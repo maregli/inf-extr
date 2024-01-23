@@ -1,0 +1,5 @@
+/bin/bash: /cluster/customapps/biomed/grlab/users/eglimar/conda/envs/inf-extr/lib/libtinfo.so.6: no version information available (required by /bin/bash)
+/cluster/home/eglimar/.env_bootstrap/dotfiles/shell/bashrc: line 17: module: command not found
+/cluster/home/eglimar/.env_bootstrap/dotfiles/shell/bashrc: line 20: module: command not found
+  0%|          | 0/46 [00:00<?, ?it/s]You're using a BertTokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
+  2%|▏         | 1/46 [00:01<00:55,  1.23s/it] 17%|█▋        | 8/46 [00:01<00:04,  7.97it/s] 37%|███▋      | 17/46 [00:01<00:01, 18.17it/s] 54%|█████▍    | 25/46 [00:01<00:00, 27.36it/s] 70%|██████▉   | 32/46 [00:01<00:00, 34.72it/s] 87%|████████▋ | 40/46 [00:01<00:00, 43.48it/s]100%|██████████| 46/46 [00:01<00:00, 24.80it/s]

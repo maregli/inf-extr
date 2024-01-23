@@ -1,0 +1,75 @@
+=====================================================================
+                   Welcome to Leonhard Med v.2.0.1                    
+
+ * Documentation:  https://unlimited.ethz.ch/display/LEOMED2
+ * Support:        leomed-support@id.ethz.ch
+ * Software stack: type "enable_modules" to use Modules
+
+Tenant name: BIOMED
+OS: Ubuntu 20.04.6 LTS x86_64 
+Uptime: 9 days, 4 hours, 34 mins 
+CPU: Intel (Broadwell, IBRS) (18) @ 2.199GHz 
+CPU Usage: 4% 
+GPU: NVIDIA GeForce GTX 1080 Ti 
+GPU: NVIDIA GeForce GTX 1080 Ti 
+GPU: NVIDIA GeForce GTX 1080 Ti 
+GPU: NVIDIA GeForce GTX 1080 Ti 
+GPU: NVIDIA GeForce GTX 1080 Ti 
+GPU: NVIDIA GeForce GTX 1080 Ti 
+GPU: NVIDIA GeForce GTX 1080 Ti 
+GPU: NVIDIA GeForce GTX 1080 Ti 
+Memory: 1580MiB / 243821MiB (0%) 
+
+=====================================================================
+Starting job with ID 3849688...
+Parsed Arguments:
+job_id: unknown
+model_name: medbert-512
+quantization: None
+batch_size: 16
+lr: 0.0002
+num_epochs: 12
+gradient_accumulation_steps: 1
+task_type: class
+data: line
+data_augmentation: original_approach
+num_labels: 3
+peft_config: None
+attn_implementation: None
+GPU 0: NVIDIA GeForce GTX 1080 Ti
+   Total Memory: 10.91 GB
+   Free Memory: 10.45 GB
+   Allocated Memory : 0.00 GB
+   Reserved Memory : 0.00 GB
+Tokenizer pad token ID: 0
+Tokenizer special tokens: {'unk_token': '[UNK]', 'sep_token': '[SEP]', 'pad_token': '[PAD]', 'cls_token': '[CLS]', 'mask_token': '[MASK]'}
+Model pad token ID: 0
+Loaded Model and Tokenizer
+Loaded Data
+Starting Training
+{'eval_loss': 0.0066606588661670685, 'eval_accuracy': 1.0, 'eval_f1': 1.0, 'eval_precision': 1.0, 'eval_recall': 1.0, 'eval_runtime': 0.0375, 'eval_samples_per_second': 80.079, 'eval_steps_per_second': 26.693, 'epoch': 1.0}
+{'loss': 0.4401, 'learning_rate': 0.00017777777777777779, 'epoch': 1.25}
+{'eval_loss': 0.0008857194916345179, 'eval_accuracy': 1.0, 'eval_f1': 1.0, 'eval_precision': 1.0, 'eval_recall': 1.0, 'eval_runtime': 0.0368, 'eval_samples_per_second': 81.512, 'eval_steps_per_second': 27.171, 'epoch': 2.0}
+{'loss': 0.3553, 'learning_rate': 0.00015555555555555556, 'epoch': 2.5}
+{'eval_loss': 0.000822039321064949, 'eval_accuracy': 1.0, 'eval_f1': 1.0, 'eval_precision': 1.0, 'eval_recall': 1.0, 'eval_runtime': 0.0366, 'eval_samples_per_second': 82.057, 'eval_steps_per_second': 27.352, 'epoch': 3.0}
+{'loss': 0.0781, 'learning_rate': 0.00013333333333333334, 'epoch': 3.75}
+{'eval_loss': 0.00039751571603119373, 'eval_accuracy': 1.0, 'eval_f1': 1.0, 'eval_precision': 1.0, 'eval_recall': 1.0, 'eval_runtime': 0.0368, 'eval_samples_per_second': 81.503, 'eval_steps_per_second': 27.168, 'epoch': 4.0}
+{'loss': 0.0433, 'learning_rate': 0.00011111111111111112, 'epoch': 5.0}
+{'eval_loss': 0.0003800267295446247, 'eval_accuracy': 1.0, 'eval_f1': 1.0, 'eval_precision': 1.0, 'eval_recall': 1.0, 'eval_runtime': 0.0175, 'eval_samples_per_second': 171.348, 'eval_steps_per_second': 57.116, 'epoch': 5.0}
+{'eval_loss': 0.0005352115258574486, 'eval_accuracy': 1.0, 'eval_f1': 1.0, 'eval_precision': 1.0, 'eval_recall': 1.0, 'eval_runtime': 0.0366, 'eval_samples_per_second': 81.958, 'eval_steps_per_second': 27.319, 'epoch': 6.0}
+{'loss': 0.0262, 'learning_rate': 8.888888888888889e-05, 'epoch': 6.25}
+{'eval_loss': 0.0002760824281722307, 'eval_accuracy': 1.0, 'eval_f1': 1.0, 'eval_precision': 1.0, 'eval_recall': 1.0, 'eval_runtime': 0.0367, 'eval_samples_per_second': 81.834, 'eval_steps_per_second': 27.278, 'epoch': 7.0}
+{'loss': 0.0004, 'learning_rate': 6.666666666666667e-05, 'epoch': 7.5}
+{'eval_loss': 0.00022734170488547534, 'eval_accuracy': 1.0, 'eval_f1': 1.0, 'eval_precision': 1.0, 'eval_recall': 1.0, 'eval_runtime': 0.0374, 'eval_samples_per_second': 80.289, 'eval_steps_per_second': 26.763, 'epoch': 8.0}
+{'loss': 0.0003, 'learning_rate': 4.4444444444444447e-05, 'epoch': 8.75}
+{'eval_loss': 0.00020223490719217807, 'eval_accuracy': 1.0, 'eval_f1': 1.0, 'eval_precision': 1.0, 'eval_recall': 1.0, 'eval_runtime': 0.036, 'eval_samples_per_second': 83.411, 'eval_steps_per_second': 27.804, 'epoch': 9.0}
+{'loss': 0.0003, 'learning_rate': 2.2222222222222223e-05, 'epoch': 10.0}
+{'eval_loss': 0.00018900579016190022, 'eval_accuracy': 1.0, 'eval_f1': 1.0, 'eval_precision': 1.0, 'eval_recall': 1.0, 'eval_runtime': 0.0171, 'eval_samples_per_second': 175.159, 'eval_steps_per_second': 58.386, 'epoch': 10.0}
+{'eval_loss': 0.00018372201884631068, 'eval_accuracy': 1.0, 'eval_f1': 1.0, 'eval_precision': 1.0, 'eval_recall': 1.0, 'eval_runtime': 0.0365, 'eval_samples_per_second': 82.21, 'eval_steps_per_second': 27.403, 'epoch': 11.0}
+{'loss': 0.0002, 'learning_rate': 0.0, 'epoch': 11.25}
+{'eval_loss': 0.0001834439462982118, 'eval_accuracy': 1.0, 'eval_f1': 1.0, 'eval_precision': 1.0, 'eval_recall': 1.0, 'eval_runtime': 0.0451, 'eval_samples_per_second': 66.471, 'eval_steps_per_second': 22.157, 'epoch': 12.0}
+{'train_runtime': 66.6888, 'train_samples_per_second': 44.805, 'train_steps_per_second': 2.879, 'train_loss': 0.09837424311020489, 'epoch': 12.0}
+Finished Training
+Saving Model at: /cluster/dataset/midatams/inf-extr/resources/models/ms-diag_medbert-512_class_line_original_approach
+Saving Tokenizer at: /cluster/dataset/midatams/inf-extr/resources/models/ms-diag_medbert-512_class_line_original_approach
+Job finished

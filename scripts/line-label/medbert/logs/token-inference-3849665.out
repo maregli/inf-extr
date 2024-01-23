@@ -1,0 +1,44 @@
+=====================================================================
+                   Welcome to Leonhard Med v.2.0.1                    
+
+ * Documentation:  https://unlimited.ethz.ch/display/LEOMED2
+ * Support:        leomed-support@id.ethz.ch
+ * Software stack: type "enable_modules" to use Modules
+
+Tenant name: BIOMED
+OS: Ubuntu 20.04.6 LTS x86_64 
+Uptime: 9 days, 14 hours, 50 mins 
+CPU: Intel Xeon (Cascadelake) (34) @ 2.593GHz 
+CPU Usage: 21% 
+GPU: NVIDIA GeForce RTX 2080 Ti 
+GPU: NVIDIA GeForce RTX 2080 Ti 
+GPU: NVIDIA GeForce RTX 2080 Ti 
+GPU: NVIDIA GeForce RTX 2080 Ti 
+GPU: NVIDIA GeForce RTX 2080 Ti 
+GPU: NVIDIA GeForce RTX 2080 Ti 
+GPU: NVIDIA GeForce RTX 2080 Ti 
+GPU: NVIDIA GeForce RTX 2080 Ti 
+Memory: 10381MiB / 365879MiB (2%) 
+
+=====================================================================
+Starting job with ID 3849665...
+Parsed Arguments:
+job_id: unknown
+model_name: line-label_medbert-512_token
+peft_model_name: None
+quantization: None
+batch_size: 8
+split: test
+task_type: token
+GPU 0: NVIDIA GeForce RTX 2080 Ti
+   Total Memory: 10.75 GB
+   Free Memory: 10.20 GB
+   Allocated Memory : 0.00 GB
+   Reserved Memory : 0.00 GB
+Tokenizer pad token ID: 0
+Tokenizer special tokens: {'unk_token': '[UNK]', 'sep_token': '[SEP]', 'pad_token': '[PAD]', 'cls_token': '[CLS]', 'mask_token': '[MASK]', 'additional_special_tokens': ['[BRK]']}
+Model pad token ID: 0
+Loaded Model and Tokenizer
+Predictions shape: (15, 512)
+Saving Inference Results at: /cluster/dataset/midatams/inf-extr/results/line-label/line-label_medbert-512_token_test.pt
+Job finished

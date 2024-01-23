@@ -21,8 +21,7 @@ python /cluster/home/eglimar/inf-extr/scripts/ms-diag/finetune.py \
     --data_augmentation oversample \
     --task_type class \
     --num_labels 4 \
-    --peft_config '{"peft_type":"LORA","lora_alpha":16,"lora_dropout":0.
-1, "r":64, "bias":"none","task_type":"SEQ_CLS"}' \
+    --peft_config '{"peft_type":"LORA","lora_alpha":16,"lora_dropout":0.1, "r":64, "bias":"none","task_type":"SEQ_CLS"}' \
     --batch_size 16 \
     --lr 2e-4 \
     --attn_implementation flash_attention_2

@@ -1,0 +1,20 @@
+Starting job with ID 3855045...
+Parsed Arguments:
+job_id: unknown
+model_name: Llama2-MedTuned-13b
+quantization: 4bit
+batch_size: 16
+lr: 0.0002
+num_epochs: 8
+gradient_accumulation_steps: 1
+task_type: class
+data: line
+data_augmentation: oversample
+num_labels: 4
+peft_config: {"peft_type":"LORA","lora_alpha":16,"lora_dropout":0.1, "r":64, "bias":"none","task_type":"SEQ_CLS"}
+attn_implementation: flash_attention_2
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 23.43 GB
+   Allocated Memory : 0.00 GB
+   Reserved Memory : 0.00 GB

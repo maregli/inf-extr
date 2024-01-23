@@ -53,7 +53,8 @@ def load_model_and_tokenizer(model_name:str,
                              num_labels:int = 0, 
                              task_type:str="class", 
                              quantization: Optional[str] = None, 
-                             attn_implementation: Optional[str] = None
+                             attn_implementation: Optional[str] = None,
+                             truncation_side:str = "right",
                              )->Tuple[Union[AutoModelForSequenceClassification, AutoModelForCausalLM, AutoModelForTokenClassification], AutoTokenizer]:
     """Loads the model and tokenizer from the given path and returns the compiled model and tokenizer.
     
@@ -63,6 +64,7 @@ def load_model_and_tokenizer(model_name:str,
         task_type (str): Task Type. Must be one of class, token or clm. Defaults to "class".
         quantization (str, optional): Quantization. Can be one of 4bit, bfloat16 or float16. Defaults to None.
         attn_implementation (str, optional): To implement Flash Attention 2 provide "flash_attention_2". Defaults to None.
+        truncation_side (str, optional): Truncation Side. Defaults to "right".
 
         Returns:
             Tuple[Union[AutoModelForSequenceClassification, AutoModelForCausalLM, AutoModelForTokenClassification], AutoTokenizer]:
@@ -121,7 +123,7 @@ def load_model_and_tokenizer(model_name:str,
     else:
         padding_side = "left"
 
-    tokenizer = AutoTokenizer.from_pretrained(paths.MODEL_PATH/model_name, padding_side=padding_side)
+    tokenizer = AutoTokenizer.from_pretrained(paths.MODEL_PATH/model_name, padding_side=padding_side, truncation_side=truncation_side)
 
     # Check if the pad token is already in the tokenizer vocabulary
     if tokenizer.pad_token_id is None:
@@ -291,7 +293,7 @@ def load_ms_data(data:str="line")->DatasetDict:
     """Loads the data for MS-Diag task and returns the dataset dictionary
 
     Args:
-        data (str, optional): Data. Must be one of "line" or "all". Defaults to "line".
+        data (str, optional): Data. Must be one of "line", "all" or "all_first_line_last". Defaults to "line".
     
     Returns:
         DatasetDict: Returns the dataset dictionary

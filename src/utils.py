@@ -125,6 +125,9 @@ def load_model_and_tokenizer(model_name:str,
 
     tokenizer = AutoTokenizer.from_pretrained(paths.MODEL_PATH/model_name, padding_side=padding_side, truncation_side=truncation_side)
 
+    # Set max length to max of 2048 and model max length, can cause issues with int too large
+    tokenizer.model_max_length = min(tokenizer.model_max_length, 2048)
+
     # Check if the pad token is already in the tokenizer vocabulary
     if tokenizer.pad_token_id is None:
         # Add the pad token

@@ -79,6 +79,7 @@ def main():
     # Adding labels to inference results
     inference_results["labels"] = df[SPLIT]["labels"]
     inference_results["rid"] = df[SPLIT]["rid"]
+    inference_results["index_within_rid"] = df[SPLIT]["index_within_rid"]
     inference_results["text"] = df[SPLIT]["text"]
 
     saving_model_name = PEFT_MODEL_NAME if PEFT_MODEL_NAME else MODEL_NAME

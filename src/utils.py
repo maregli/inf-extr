@@ -369,7 +369,7 @@ def prepare_ms_data(df:DatasetDict, tokenizer: AutoTokenizer, data_augmentation:
     
     # For evaluation during training will use undersampling
     if not inference_mode:
-        df["val"] = undersample_dataset(df["val"])
+        df["val"] = oversample_dataset(df["val"])
     
     def tokenize_function(examples):
         batch = tokenizer(examples["text"], truncation=True, max_length=tokenizer.model_max_length)
@@ -582,7 +582,8 @@ def perform_inference(model:Union[PeftModel, AutoModelForSequenceClassification]
     model.eval()
 
     with torch.no_grad():
-        test_preds = []
+        preds = []
+        logits_list = []
         last_hidden_states = []
 
         for batch in tqdm(dataloader):
@@ -592,9 +593,10 @@ def perform_inference(model:Union[PeftModel, AutoModelForSequenceClassification]
             
             outputs = model(**inputs, output_hidden_states=True)
             logits = outputs.logits
+            logits_list.extend(logits.tolist())
             
             predictions = logits.argmax(dim=-1)
-            test_preds.extend(predictions.tolist())
+            preds.extend(predictions.tolist())
             
             last_hidden_states.extend(outputs.hidden_states[-1].to("cpu"))
 
@@ -603,7 +605,8 @@ def perform_inference(model:Union[PeftModel, AutoModelForSequenceClassification]
         last_hidden_states = []
 
     return {"last_hidden_state": last_hidden_states, 
-            "preds": test_preds}   
+            "preds": preds,
+            "logits": logits_list,}   
 
 
 ### Training

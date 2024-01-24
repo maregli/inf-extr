@@ -18,3 +18,8 @@ GPU 0: NVIDIA GeForce RTX 3090
    Free Memory: 23.43 GB
    Allocated Memory : 0.00 GB
    Reserved Memory : 0.00 GB
+Tokenizer pad token ID: 32000
+Tokenizer special tokens: {'bos_token': '<s>', 'eos_token': '</s>', 'unk_token': '<unk>', 'pad_token': '<pad>'}
+Model pad token ID: 32000
+Loaded Model and Tokenizer
+Job finished

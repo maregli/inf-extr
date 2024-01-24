@@ -2,4 +2,41 @@
 cat: /run/motd.dynamic: No such file or directory
 /cluster/home/eglimar/.env_bootstrap/dotfiles/shell/bashrc: line 17: module: command not found
 /cluster/home/eglimar/.env_bootstrap/dotfiles/shell/bashrc: line 20: module: command not found
-Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [07:20<14:40, 440.34s/it]
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [07:20<14:40, 440.34s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [13:48<06:49, 409.91s/it]Loading checkpoint shards: 100%|██████████| 3/3 [18:50<00:00, 360.60s/it]Loading checkpoint shards: 100%|██████████| 3/3 [18:50<00:00, 376.95s/it]
+Some weights of LlamaForSequenceClassification were not initialized from the model checkpoint at /cluster/dataset/midatams/inf-extr/resources/models/Llama2-MedTuned-13b and are newly initialized: ['score.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Map:   0%|          | 0/400 [00:00<?, ? examples/s]Map:   0%|          | 0/400 [00:00<?, ? examples/s]
+Traceback (most recent call last):
+  File "/cluster/home/eglimar/inf-extr/scripts/ms-diag/finetune.py", line 179, in <module>
+    main()
+  File "/cluster/home/eglimar/inf-extr/scripts/ms-diag/finetune.py", line 116, in main
+    encoded_dataset = prepare_ms_data(df, tokenizer=tokenizer, data_augmentation = DATA_AUGMENTATION)
+  File "/cluster/home/eglimar/inf-extr/src/utils.py", line 377, in prepare_ms_data
+    encoded_dataset = df.map(tokenize_function, batched=True, remove_columns=df["train"].column_names)
+  File "/cluster/customapps/biomed/grlab/users/eglimar/conda/envs/inf-extr/lib/python3.9/site-packages/datasets/dataset_dict.py", line 868, in map
+    {
+  File "/cluster/customapps/biomed/grlab/users/eglimar/conda/envs/inf-extr/lib/python3.9/site-packages/datasets/dataset_dict.py", line 869, in <dictcomp>
+    k: dataset.map(
+  File "/cluster/customapps/biomed/grlab/users/eglimar/conda/envs/inf-extr/lib/python3.9/site-packages/datasets/arrow_dataset.py", line 592, in wrapper
+    out: Union["Dataset", "DatasetDict"] = func(self, *args, **kwargs)
+  File "/cluster/customapps/biomed/grlab/users/eglimar/conda/envs/inf-extr/lib/python3.9/site-packages/datasets/arrow_dataset.py", line 557, in wrapper
+    out: Union["Dataset", "DatasetDict"] = func(self, *args, **kwargs)
+  File "/cluster/customapps/biomed/grlab/users/eglimar/conda/envs/inf-extr/lib/python3.9/site-packages/datasets/arrow_dataset.py", line 3093, in map
+    for rank, done, content in Dataset._map_single(**dataset_kwargs):
+  File "/cluster/customapps/biomed/grlab/users/eglimar/conda/envs/inf-extr/lib/python3.9/site-packages/datasets/arrow_dataset.py", line 3470, in _map_single
+    batch = apply_function_on_filtered_inputs(
+  File "/cluster/customapps/biomed/grlab/users/eglimar/conda/envs/inf-extr/lib/python3.9/site-packages/datasets/arrow_dataset.py", line 3349, in apply_function_on_filtered_inputs
+    processed_inputs = function(*fn_args, *additional_args, **fn_kwargs)
+  File "/cluster/home/eglimar/inf-extr/src/utils.py", line 370, in tokenize_function
+    batch = tokenizer(examples["text"], truncation=True, max_length=tokenizer.model_max_length)
+  File "/cluster/customapps/biomed/grlab/users/eglimar/conda/envs/inf-extr/lib/python3.9/site-packages/transformers/tokenization_utils_base.py", line 2802, in __call__
+    encodings = self._call_one(text=text, text_pair=text_pair, **all_kwargs)
+  File "/cluster/customapps/biomed/grlab/users/eglimar/conda/envs/inf-extr/lib/python3.9/site-packages/transformers/tokenization_utils_base.py", line 2888, in _call_one
+    return self.batch_encode_plus(
+  File "/cluster/customapps/biomed/grlab/users/eglimar/conda/envs/inf-extr/lib/python3.9/site-packages/transformers/tokenization_utils_base.py", line 3079, in batch_encode_plus
+    return self._batch_encode_plus(
+  File "/cluster/customapps/biomed/grlab/users/eglimar/conda/envs/inf-extr/lib/python3.9/site-packages/transformers/tokenization_utils_fast.py", line 496, in _batch_encode_plus
+    self.set_truncation_and_padding(
+  File "/cluster/customapps/biomed/grlab/users/eglimar/conda/envs/inf-extr/lib/python3.9/site-packages/transformers/tokenization_utils_fast.py", line 451, in set_truncation_and_padding
+    self._tokenizer.enable_truncation(**target)
+OverflowError: int too big to convert

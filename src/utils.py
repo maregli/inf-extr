@@ -104,7 +104,8 @@ def load_model_and_tokenizer(model_name:str,
         model = AutoModelForSequenceClassification.from_pretrained(**config_kwargs, num_labels = num_labels)
         
     elif task_type == "clm":
-        model = AutoModelForCausalLM.from_pretrained(**config_kwargs)
+        model = AutoModelForCausalLM.from_pretrained(**config_kwargs,
+                                                    device_map = "auto")
     
     elif task_type == "token":
         # As the only task that needs this is line labelling, we can hardcode the number of labels and id2label mappings

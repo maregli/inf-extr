@@ -31,7 +31,7 @@ def parse_args():
     parser.add_argument("--quantization", type=str, default=None, help="Quantization. Must be one of 4bit, bfloat16, float16 or None. Defaults to None")
     parser.add_argument("--batch_size", type=int, default=4, help="Batch Size. Defaults to 4")
     parser.add_argument("--gen_config", type=str, default=None, help="Generation Config. JSON-formatted configuration. Defaults to None in which case default config is used.")
-    parser.add_argument("--data", type=str, default="line", help="Data. Must be one of line or all. Whether dataset consisting of single lines should be used or all text per rid.")
+    parser.add_argument("--data", type=str, default="line", help="Data. Must be one of line, all or all_first_line_last. Whether dataset consisting of single lines should be used or all text per rid.")
     parser.add_argument("--split", type=str, default="test", help="Split. Must be one of train, val, test or all. Defaults to test.")
     parser.add_argument("--attn_implementation", type=str, default=None, help="To implement Flash Attention 2 provide flash_attention_2. Defaults to None.")
 
@@ -71,6 +71,7 @@ def label_encoding(labels:list[str], model:AutoModel, tokenizer:AutoTokenizer, d
         del last_hidden_state
         del outputs
         del input
+        torch.cuda.empty_cache()
 
     return encodings
 
@@ -110,13 +111,17 @@ def single_round_inference(reports:list[str],
     last_hidden_states = []
     input_lengths = [len(t["input_ids"]) for t in tokens]
 
-    for batch in tqdm(dataloader):
+    for idx, batch in tqdm(enumerate(dataloader)):
         batch.to(device)
         with torch.no_grad():
             outputs = model.generate(
                 **batch,
                 generation_config=generation_config,
             )
+
+        if idx % 5 == 0:
+            check_gpu_memory()
+
         if generation_config.output_hidden_states:
             for idx in range(len(outputs.sequences)):
                 # Find the index of eos_token_id in generated tokens if it exists
@@ -456,7 +461,7 @@ def main()->None:
                                      temperature=1,
                                      top_p=1,
                                      do_sample=False,
-                                     output_hidden_states = True,
+                                     output_hidden_states = False,
                                      return_dict_in_generate = True,
                                     )
 

@@ -17,8 +17,8 @@ python /cluster/home/eglimar/inf-extr/scripts/ms-diag/hidden_state_inference.py 
     --model_name Llama2-MedTuned-13b \
     --quantization 4bit \
     --results_files ms-diag_Llama2-MedTuned-13b_4bit_all_all_few_shot_instruction.pt \
-                   ms-diag_Llama2-MedTuned-13b_4bit_all_all_few_shot_vanilla \
-                   ms-diag_Llama2-MedTuned-13b_4bit_all_all_two_steps \
-                   ms-diag_Llama2-MedTuned-13b_4bit_all_all_zero_shot_instruction \
-                   ms-diag_Llama2-MedTuned-13b_4bit_all_all_zero_shot_vanilla
+                   ms-diag_Llama2-MedTuned-13b_4bit_all_all_few_shot_vanilla.pt \
+                   ms-diag_Llama2-MedTuned-13b_4bit_all_all_two_steps.pt \
+                   ms-diag_Llama2-MedTuned-13b_4bit_all_all_zero_shot_instruction.pt \
+                   ms-diag_Llama2-MedTuned-13b_4bit_all_all_zero_shot_vanilla.pt
 echo "Job finished"

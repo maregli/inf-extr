@@ -111,7 +111,7 @@ def single_round_inference(reports:list[str],
     last_hidden_states = []
     input_lengths = [len(t["input_ids"]) for t in tokens]
 
-    for idx, batch in tqdm(enumerate(dataloader)):
+    for idx, batch in tqdm(enumerate(dataloader), total = len(dataloader)):
         batch.to(device)
         with torch.no_grad():
             outputs = model.generate(
@@ -419,7 +419,7 @@ def main()->None:
                                                 quantization = QUANTIZATION,
                                                 attn_implementation = ATTN_IMPLEMENTATION,
                                                 )
-    model.config.use_cache = False
+    model.config.use_cache = True
     
     check_gpu_memory()
 
@@ -456,7 +456,7 @@ def main()->None:
         GENERATION_CONFIG = GenerationConfig(bos_token_id = tokenizer.bos_token_id,
                                      eos_token_id = tokenizer.eos_token_id,
                                      pad_token_id = tokenizer.pad_token_id,
-                                     use_cache = False,
+                                     use_cache = True,
                                      max_new_tokens = 20,
                                      temperature=1,
                                      top_p=1,

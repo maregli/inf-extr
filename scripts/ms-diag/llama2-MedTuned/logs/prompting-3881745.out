@@ -1,0 +1,494 @@
+=====================================================================
+                   Welcome to Leonhard Med v.2.0.1                    
+
+ * Documentation:  https://unlimited.ethz.ch/display/LEOMED2
+ * Support:        leomed-support@id.ethz.ch
+ * Software stack: type "enable_modules" to use Modules
+
+Tenant name: BIOMED
+OS: Ubuntu 20.04.6 LTS x86_64 
+Uptime: 19 days, 9 hours, 55 mins 
+CPU: Intel (Broadwell, IBRS) (42) @ 2.195GHz 
+CPU Usage: 24% 
+GPU: NVIDIA Tesla V100 SXM2 32GB 
+GPU: NVIDIA Tesla V100 SXM2 32GB 
+GPU: NVIDIA Tesla V100 SXM2 32GB 
+GPU: NVIDIA Tesla V100 SXM2 32GB 
+GPU: NVIDIA Tesla V100 SXM2 32GB 
+GPU: NVIDIA Tesla V100 SXM2 32GB 
+GPU: NVIDIA Tesla V100 SXM2 32GB 
+GPU: NVIDIA Tesla V100 SXM2 32GB 
+Memory: 21369MiB / 487941MiB (4%) 
+
+=====================================================================
+Starting job with ID 3881745...
+Parsed Arguments:
+job_id: unknown
+model_name: Llama2-MedTuned-13b
+quantization: 4bit
+batch_size: 8
+gen_config: None
+data: line
+split: all
+attn_implementation: None
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 31.00 GB
+   Allocated Memory : 0.00 GB
+   Reserved Memory : 0.00 GB
+Tokenizer pad token ID: 32000
+Tokenizer special tokens: {'bos_token': '<s>', 'eos_token': '</s>', 'unk_token': '<unk>', 'pad_token': '<pad>'}
+Model pad token ID: 32000
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 23.41 GB
+   Allocated Memory : 7.42 GB
+   Reserved Memory : 7.59 GB
+Loaded Model and Tokenizer
+Loaded Data
+Saved Label Encodings
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 17.20 GB
+   Allocated Memory : 9.97 GB
+   Reserved Memory : 13.65 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 17.19 GB
+   Allocated Memory : 10.00 GB
+   Reserved Memory : 13.65 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 17.43 GB
+   Allocated Memory : 9.59 GB
+   Reserved Memory : 13.42 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 17.12 GB
+   Allocated Memory : 9.73 GB
+   Reserved Memory : 13.72 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 17.28 GB
+   Allocated Memory : 9.66 GB
+   Reserved Memory : 13.57 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 17.42 GB
+   Allocated Memory : 9.63 GB
+   Reserved Memory : 13.43 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 16.87 GB
+   Allocated Memory : 10.08 GB
+   Reserved Memory : 13.98 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 17.23 GB
+   Allocated Memory : 9.78 GB
+   Reserved Memory : 13.62 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 17.21 GB
+   Allocated Memory : 9.83 GB
+   Reserved Memory : 13.64 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 17.19 GB
+   Allocated Memory : 9.89 GB
+   Reserved Memory : 13.66 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 17.24 GB
+   Allocated Memory : 9.73 GB
+   Reserved Memory : 13.61 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 17.08 GB
+   Allocated Memory : 9.81 GB
+   Reserved Memory : 13.77 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 17.05 GB
+   Allocated Memory : 10.02 GB
+   Reserved Memory : 13.79 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 15.82 GB
+   Allocated Memory : 10.12 GB
+   Reserved Memory : 15.03 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 17.26 GB
+   Allocated Memory : 9.72 GB
+   Reserved Memory : 13.59 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 15.22 GB
+   Allocated Memory : 10.28 GB
+   Reserved Memory : 15.62 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 14.95 GB
+   Allocated Memory : 10.88 GB
+   Reserved Memory : 15.90 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 15.68 GB
+   Allocated Memory : 10.14 GB
+   Reserved Memory : 15.17 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 17.25 GB
+   Allocated Memory : 9.74 GB
+   Reserved Memory : 13.60 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 15.38 GB
+   Allocated Memory : 10.24 GB
+   Reserved Memory : 15.47 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 17.05 GB
+   Allocated Memory : 10.03 GB
+   Reserved Memory : 13.79 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 17.42 GB
+   Allocated Memory : 9.64 GB
+   Reserved Memory : 13.43 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 17.12 GB
+   Allocated Memory : 9.73 GB
+   Reserved Memory : 13.72 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 17.02 GB
+   Allocated Memory : 10.02 GB
+   Reserved Memory : 13.82 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 17.17 GB
+   Allocated Memory : 9.94 GB
+   Reserved Memory : 13.67 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 17.26 GB
+   Allocated Memory : 9.68 GB
+   Reserved Memory : 13.58 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 17.16 GB
+   Allocated Memory : 9.97 GB
+   Reserved Memory : 13.69 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 17.24 GB
+   Allocated Memory : 9.74 GB
+   Reserved Memory : 13.61 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 17.04 GB
+   Allocated Memory : 10.05 GB
+   Reserved Memory : 13.81 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 17.17 GB
+   Allocated Memory : 9.94 GB
+   Reserved Memory : 13.67 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 17.22 GB
+   Allocated Memory : 9.80 GB
+   Reserved Memory : 13.62 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 17.03 GB
+   Allocated Memory : 9.93 GB
+   Reserved Memory : 13.81 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 15.38 GB
+   Allocated Memory : 10.22 GB
+   Reserved Memory : 15.47 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 17.04 GB
+   Allocated Memory : 10.05 GB
+   Reserved Memory : 13.81 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 17.23 GB
+   Allocated Memory : 9.77 GB
+   Reserved Memory : 13.62 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 17.24 GB
+   Allocated Memory : 9.75 GB
+   Reserved Memory : 13.61 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 17.19 GB
+   Allocated Memory : 10.01 GB
+   Reserved Memory : 13.66 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 17.43 GB
+   Allocated Memory : 9.60 GB
+   Reserved Memory : 13.42 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 17.16 GB
+   Allocated Memory : 9.97 GB
+   Reserved Memory : 13.69 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 17.20 GB
+   Allocated Memory : 9.86 GB
+   Reserved Memory : 13.64 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 17.27 GB
+   Allocated Memory : 9.67 GB
+   Reserved Memory : 13.57 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 17.43 GB
+   Allocated Memory : 9.59 GB
+   Reserved Memory : 13.42 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 17.27 GB
+   Allocated Memory : 9.65 GB
+   Reserved Memory : 13.57 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 17.20 GB
+   Allocated Memory : 9.88 GB
+   Reserved Memory : 13.65 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 17.21 GB
+   Allocated Memory : 9.81 GB
+   Reserved Memory : 13.64 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 17.19 GB
+   Allocated Memory : 10.02 GB
+   Reserved Memory : 13.66 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 15.68 GB
+   Allocated Memory : 10.16 GB
+   Reserved Memory : 15.17 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 17.22 GB
+   Allocated Memory : 9.77 GB
+   Reserved Memory : 13.62 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 17.16 GB
+   Allocated Memory : 9.97 GB
+   Reserved Memory : 13.69 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 17.18 GB
+   Allocated Memory : 9.90 GB
+   Reserved Memory : 13.67 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 15.82 GB
+   Allocated Memory : 10.13 GB
+   Reserved Memory : 15.03 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 17.27 GB
+   Allocated Memory : 9.67 GB
+   Reserved Memory : 13.58 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 17.20 GB
+   Allocated Memory : 9.87 GB
+   Reserved Memory : 13.65 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 17.26 GB
+   Allocated Memory : 9.72 GB
+   Reserved Memory : 13.59 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 17.28 GB
+   Allocated Memory : 9.64 GB
+   Reserved Memory : 13.57 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 17.23 GB
+   Allocated Memory : 9.78 GB
+   Reserved Memory : 13.61 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 17.19 GB
+   Allocated Memory : 10.00 GB
+   Reserved Memory : 13.66 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 17.23 GB
+   Allocated Memory : 9.76 GB
+   Reserved Memory : 13.62 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 17.20 GB
+   Allocated Memory : 9.82 GB
+   Reserved Memory : 13.64 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 18.22 GB
+   Allocated Memory : 9.52 GB
+   Reserved Memory : 12.62 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 17.26 GB
+   Allocated Memory : 9.63 GB
+   Reserved Memory : 13.59 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 17.08 GB
+   Allocated Memory : 9.83 GB
+   Reserved Memory : 13.77 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 17.24 GB
+   Allocated Memory : 9.77 GB
+   Reserved Memory : 13.61 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 17.18 GB
+   Allocated Memory : 9.92 GB
+   Reserved Memory : 13.67 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 17.21 GB
+   Allocated Memory : 9.85 GB
+   Reserved Memory : 13.64 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 17.24 GB
+   Allocated Memory : 9.74 GB
+   Reserved Memory : 13.61 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 17.41 GB
+   Allocated Memory : 9.64 GB
+   Reserved Memory : 13.44 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 17.18 GB
+   Allocated Memory : 9.88 GB
+   Reserved Memory : 13.67 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 15.80 GB
+   Allocated Memory : 10.15 GB
+   Reserved Memory : 15.04 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 17.20 GB
+   Allocated Memory : 9.78 GB
+   Reserved Memory : 13.65 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 17.28 GB
+   Allocated Memory : 9.64 GB
+   Reserved Memory : 13.57 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 17.19 GB
+   Allocated Memory : 10.03 GB
+   Reserved Memory : 13.66 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 17.54 GB
+   Allocated Memory : 9.60 GB
+   Reserved Memory : 13.30 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 17.20 GB
+   Allocated Memory : 9.86 GB
+   Reserved Memory : 13.64 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 17.21 GB
+   Allocated Memory : 9.83 GB
+   Reserved Memory : 13.64 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 17.21 GB
+   Allocated Memory : 9.85 GB
+   Reserved Memory : 13.64 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 17.24 GB
+   Allocated Memory : 9.75 GB
+   Reserved Memory : 13.61 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 17.22 GB
+   Allocated Memory : 9.80 GB
+   Reserved Memory : 13.62 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 17.24 GB
+   Allocated Memory : 9.77 GB
+   Reserved Memory : 13.61 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 17.03 GB
+   Allocated Memory : 10.09 GB
+   Reserved Memory : 13.81 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 17.22 GB
+   Allocated Memory : 9.79 GB
+   Reserved Memory : 13.63 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 17.28 GB
+   Allocated Memory : 9.66 GB
+   Reserved Memory : 13.57 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 17.18 GB
+   Allocated Memory : 9.92 GB
+   Reserved Memory : 13.67 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 17.25 GB
+   Allocated Memory : 9.74 GB
+   Reserved Memory : 13.60 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 17.21 GB
+   Allocated Memory : 9.84 GB
+   Reserved Memory : 13.64 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 17.27 GB
+   Allocated Memory : 9.68 GB
+   Reserved Memory : 13.58 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 17.19 GB
+   Allocated Memory : 10.02 GB
+   Reserved Memory : 13.66 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 15.38 GB
+   Allocated Memory : 10.22 GB
+   Reserved Memory : 15.46 GB
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 17.27 GB
+   Allocated Memory : 9.68 GB
+   Reserved Memory : 13.58 GB

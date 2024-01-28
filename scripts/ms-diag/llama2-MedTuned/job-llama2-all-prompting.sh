@@ -6,7 +6,7 @@
 #SBATCH --cpus-per-task=1
 #SBATCH -p gpu
 #SBATCH --gres=gpu:v100:1
-#SBATCH --time=06:00:00
+#SBATCH --time=12:00:00
 #SBATCH --mem-per-cpu=15G
  
 source ~/.bashrc
@@ -18,5 +18,5 @@ python /cluster/home/eglimar/inf-extr/scripts/ms-diag/prompting.py \
     --quantization 4bit \
     --data all \
     --split all \
-    --batch_size 1
+    --batch_size 2
 echo "Job finished"

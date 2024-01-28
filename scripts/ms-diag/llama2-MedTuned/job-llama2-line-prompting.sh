@@ -5,7 +5,7 @@
 #SBATCH --error=/cluster/home/eglimar/inf-extr/scripts/ms-diag/llama2-MedTuned/logs/prompting-%j.err
 #SBATCH --cpus-per-task=1
 #SBATCH -p gpu
-#SBATCH --gres=gpu:rtx3090:1
+#SBATCH --gres=gpu:v100:1
 #SBATCH --time=06:00:00
 #SBATCH --mem-per-cpu=15G
  
@@ -18,6 +18,5 @@ python /cluster/home/eglimar/inf-extr/scripts/ms-diag/prompting.py \
     --quantization 4bit \
     --data line \
     --split all \
-    --batch_size 8 \
-    --attn_implementation flash_attention_2
+    --batch_size 8
 echo "Job finished"

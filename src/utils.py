@@ -95,7 +95,6 @@ def load_model_and_tokenizer(model_name:str,
     config_kwargs = {
         "pretrained_model_name_or_path": paths.MODEL_PATH/model_name,
         "quantization_config":quantization_config,
-        "torch_dtype":torch_dtype,
         "attn_implementation": attn_implementation,
     }
 
@@ -114,8 +113,8 @@ def load_model_and_tokenizer(model_name:str,
                                                                 num_labels=num_labels, 
                                                                 id2label=line_label_token_id2label, 
                                                                 label2id=line_label_token_label2id)
-    if quantization == "4bit":
-        model = prepare_model_for_kbit_training(model)
+    #if quantization == "4bit":
+        #model = prepare_model_for_kbit_training(model)
 
     ### Tokenizer
     # If model is bert model, use bert tokenizer

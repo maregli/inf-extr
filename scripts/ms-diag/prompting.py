@@ -68,6 +68,7 @@ def label_encoding(labels:list[str], model:AutoModel, tokenizer:AutoTokenizer, d
         last_hidden_state = outputs["hidden_states"][-1]
         last_hidden_state = torch.mean(last_hidden_state, dim = 1)
         encodings[label] = last_hidden_state.to("cpu").squeeze()
+        del last_hidden_state
         del outputs
         del input
 
@@ -96,7 +97,7 @@ def single_round_inference(reports:list[str],
             
     """
 
-    tokens = [tokenizer(format_fun(t), add_special_tokens = False) for t in reports]
+    tokens = [tokenizer(format_fun(t), add_special_tokens = False, truncation = True) for t in reports]
     
     collate_fn = DataCollatorWithPadding(tokenizer, padding=True)
 
@@ -139,6 +140,7 @@ def single_round_inference(reports:list[str],
 
         results.extend(batch_result)
         del outputs
+        torch.cuda.empty_cache()
 
         
     return {"report": reports, 
@@ -413,6 +415,8 @@ def main()->None:
                                                 attn_implementation = ATTN_IMPLEMENTATION,
                                                 )
     model.config.use_cache = False
+    
+    check_gpu_memory()
 
     print("Loaded Model and Tokenizer")
 

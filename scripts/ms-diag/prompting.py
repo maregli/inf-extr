@@ -157,8 +157,12 @@ def single_round_inference(reports:list[str],
     if output_hidden_states:
         # This separate pass is not time but memory efficient as if the hidden states are calculated during inference,
         # hidden states are calculated for every token in the batch and the generated sequence.
+
+        # Error handling for empty results
+        results_hs = [result if result != "" else " " for result in results]
+        
         print("Starting Hidden State Calculation")
-        last_hidden_states = get_hidden_state(results, model, tokenizer, device, batch_size)
+        last_hidden_states = get_hidden_state(results_hs, model, tokenizer, device, batch_size)
         print("Finished Hidden State Calculation")
 
     else:

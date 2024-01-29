@@ -1,5 +1,6 @@
 
 import torch
+from torch.utils.data import DataLoader
 
 import sys
 from pathlib import Path
@@ -12,7 +13,7 @@ from src.utils import (load_model_and_tokenizer,
 
 import argparse
 
-from transformers import  AutoTokenizer, AutoModel
+from transformers import  AutoTokenizer, AutoModel, DataCollatorWithPadding
 
 from tqdm import tqdm
 
@@ -47,22 +48,31 @@ def get_hidden_state(results:dict, model:AutoModel, tokenizer:AutoTokenizer, dev
             
             
     """
+
+    inputs = tokenizer(results["prediction"], add_special_tokens = False)
+    collate_fn = DataCollatorWithPadding(tokenizer = tokenizer, padding = "longest")
+
+    dataset = torch.utils.data.TensorDataset(inputs["input_ids"], inputs["attention_mask"])
+    dataloader = DataLoader(dataset = dataset, batch_size = 16, collate_fn = collate_fn)
+    
     encodings = []
 
-    for prediction in tqdm(results["prediction"]):
-        input = tokenizer(prediction, return_tensors = "pt", add_special_tokens = False)
-        input.to(device)
+    for batch in tqdm(dataloader):
+        batch.to(device)
+
         with torch.no_grad():
             outputs = model(**input, output_hidden_states = True)
+
         last_hidden_state = outputs["hidden_states"][-1]
-        last_hidden_state = torch.mean(last_hidden_state, dim = 1)
-        encodings.append(last_hidden_state.to("cpu").squeeze())
+        # Take last token of last hidden state
+        last_hidden_state = last_hidden_state[:, -1, :]
+        encodings.append(last_hidden_state)
         del last_hidden_state
         del outputs
         del input
         torch.cuda.empty_cache()
     
-    results["last_hidden_states"] = encodings
+    results["last_hidden_states"] = torch.cat(encodings, dim=0)
 
     return results
 

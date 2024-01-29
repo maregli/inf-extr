@@ -567,9 +567,9 @@ def main()->None:
     print("Loaded Data")
 
     # Encode Labels
-    labels = ["primary progressive multiple sclerosis", 
-              "secondary progressive multiple sclerosis",
-              "relapsing remitting multiple sclerosis",
+    labels = ["Schubförmig remittierende Multiple Sklerose (RRMS)",
+              "Sekundär progrediente Multiple Sklerose (SPMS)",
+              "Primär progrediente Multiple Sklerosis (PPMS)", 
               "not enough info"]
     
     encoded_labels = get_hidden_state(labels, model, tokenizer, device)

@@ -76,7 +76,7 @@ def get_hidden_state(text: list[str], model:AutoModel, tokenizer:AutoTokenizer, 
         with torch.no_grad():
             outputs = model(**batch, output_hidden_states = True)
 
-        last_hidden_state = outputs["hidden_states"][-1]
+        last_hidden_state = outputs["hidden_states"][-1].to("cpu")
 
         # For decoder architectures the last token of the sequence contains information about the whole sequence
         last_hidden_state = last_hidden_state[:, -1, :]

@@ -1,0 +1,3611 @@
+=====================================================================
+                   Welcome to Leonhard Med v.2.0.1                    
+
+ * Documentation:  https://unlimited.ethz.ch/display/LEOMED2
+ * Support:        leomed-support@id.ethz.ch
+ * Software stack: type "enable_modules" to use Modules
+
+Tenant name: BIOMED
+OS: Ubuntu 20.04.6 LTS x86_64 
+Uptime: 1 day, 4 hours, 55 mins 
+CPU: AMD EPYC-Rome (60) @ 2.250GHz 
+CPU Usage: 38% 
+GPU: NVIDIA 00:09.0 NVIDIA Corporation Device 2204 
+GPU: NVIDIA 00:08.0 NVIDIA Corporation Device 2204 
+GPU: NVIDIA 00:07.0 NVIDIA Corporation Device 2204 
+GPU: NVIDIA 00:0a.0 NVIDIA Corporation Device 2204 
+Memory: 42391MiB / 243811MiB (17%) 
+
+=====================================================================Starting job with ID 3889911...
+Parsed Arguments:
+job_id: unknown
+model_name: Llama2-MedTuned-7b
+quantization: 4bit
+batch_size: 4
+gen_config: None
+prompt_strategies: ['zero_shot_vanilla', 'zero_shot_instruction', 'few_shot_vanilla', 'few_shot_instruction']
+data: line
+split: all
+attn_implementation: flash_attention_2
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 23.43 GB
+   Allocated Memory : 0.00 GB
+   Reserved Memory : 0.00 GB
+Tokenizer pad token ID: 32000
+Tokenizer special tokens: {'bos_token': '<s>', 'eos_token': '</s>', 'unk_token': '<unk>', 'pad_token': '<pad>'}
+Model pad token ID: 32000
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 19.08 GB
+   Allocated Memory : 4.17 GB
+   Reserved Memory : 4.31 GB
+Loaded Model and Tokenizer
+Loaded Data
+Saved Label Encodings
+Loaded Generation Config
+Prompting Strategy: zero_shot_vanilla
+Starting Inference
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.84 GB
+   Allocated Memory : 5.03 GB
+   Reserved Memory : 6.53 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.85 GB
+   Allocated Memory : 5.01 GB
+   Reserved Memory : 6.52 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.05 GB
+   Allocated Memory : 4.95 GB
+   Reserved Memory : 6.33 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.85 GB
+   Allocated Memory : 5.00 GB
+   Reserved Memory : 6.52 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.07 GB
+   Allocated Memory : 4.90 GB
+   Reserved Memory : 6.30 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.32 GB
+   Allocated Memory : 5.21 GB
+   Reserved Memory : 7.05 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.07 GB
+   Allocated Memory : 4.90 GB
+   Reserved Memory : 6.30 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.06 GB
+   Allocated Memory : 4.91 GB
+   Reserved Memory : 6.31 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.06 GB
+   Allocated Memory : 4.92 GB
+   Reserved Memory : 6.31 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.06 GB
+   Allocated Memory : 4.91 GB
+   Reserved Memory : 6.31 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.06 GB
+   Allocated Memory : 4.92 GB
+   Reserved Memory : 6.31 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.06 GB
+   Allocated Memory : 4.93 GB
+   Reserved Memory : 6.32 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.48 GB
+   Allocated Memory : 5.08 GB
+   Reserved Memory : 6.89 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.06 GB
+   Allocated Memory : 4.93 GB
+   Reserved Memory : 6.32 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.87 GB
+   Allocated Memory : 4.96 GB
+   Reserved Memory : 6.50 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.86 GB
+   Allocated Memory : 4.99 GB
+   Reserved Memory : 6.51 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.86 GB
+   Allocated Memory : 4.98 GB
+   Reserved Memory : 6.51 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.06 GB
+   Allocated Memory : 4.91 GB
+   Reserved Memory : 6.31 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.77 GB
+   Allocated Memory : 5.00 GB
+   Reserved Memory : 6.60 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.82 GB
+   Allocated Memory : 5.08 GB
+   Reserved Memory : 6.55 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.06 GB
+   Allocated Memory : 4.93 GB
+   Reserved Memory : 6.32 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.07 GB
+   Allocated Memory : 4.89 GB
+   Reserved Memory : 6.30 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.06 GB
+   Allocated Memory : 4.91 GB
+   Reserved Memory : 6.31 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.06 GB
+   Allocated Memory : 4.92 GB
+   Reserved Memory : 6.31 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.06 GB
+   Allocated Memory : 4.91 GB
+   Reserved Memory : 6.31 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.87 GB
+   Allocated Memory : 4.96 GB
+   Reserved Memory : 6.50 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.82 GB
+   Allocated Memory : 5.08 GB
+   Reserved Memory : 6.55 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.85 GB
+   Allocated Memory : 5.00 GB
+   Reserved Memory : 6.52 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.07 GB
+   Allocated Memory : 4.89 GB
+   Reserved Memory : 6.30 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.86 GB
+   Allocated Memory : 4.99 GB
+   Reserved Memory : 6.51 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.10 GB
+   Allocated Memory : 4.89 GB
+   Reserved Memory : 6.27 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.85 GB
+   Allocated Memory : 5.00 GB
+   Reserved Memory : 6.52 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.84 GB
+   Allocated Memory : 5.04 GB
+   Reserved Memory : 6.53 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.75 GB
+   Allocated Memory : 5.06 GB
+   Reserved Memory : 6.62 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.82 GB
+   Allocated Memory : 5.08 GB
+   Reserved Memory : 6.55 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.83 GB
+   Allocated Memory : 5.05 GB
+   Reserved Memory : 6.54 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.04 GB
+   Allocated Memory : 4.95 GB
+   Reserved Memory : 6.33 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.06 GB
+   Allocated Memory : 4.91 GB
+   Reserved Memory : 6.31 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.06 GB
+   Allocated Memory : 4.91 GB
+   Reserved Memory : 6.31 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.86 GB
+   Allocated Memory : 4.99 GB
+   Reserved Memory : 6.51 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.06 GB
+   Allocated Memory : 4.92 GB
+   Reserved Memory : 6.31 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.87 GB
+   Allocated Memory : 4.96 GB
+   Reserved Memory : 6.50 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.06 GB
+   Allocated Memory : 4.92 GB
+   Reserved Memory : 6.31 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.87 GB
+   Allocated Memory : 4.97 GB
+   Reserved Memory : 6.50 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.05 GB
+   Allocated Memory : 4.95 GB
+   Reserved Memory : 6.33 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.06 GB
+   Allocated Memory : 4.92 GB
+   Reserved Memory : 6.31 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.84 GB
+   Allocated Memory : 5.05 GB
+   Reserved Memory : 6.54 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.83 GB
+   Allocated Memory : 5.05 GB
+   Reserved Memory : 6.54 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.06 GB
+   Allocated Memory : 4.91 GB
+   Reserved Memory : 6.31 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.05 GB
+   Allocated Memory : 4.94 GB
+   Reserved Memory : 6.33 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.06 GB
+   Allocated Memory : 4.93 GB
+   Reserved Memory : 6.32 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.07 GB
+   Allocated Memory : 4.89 GB
+   Reserved Memory : 6.30 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.84 GB
+   Allocated Memory : 5.02 GB
+   Reserved Memory : 6.53 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.87 GB
+   Allocated Memory : 4.97 GB
+   Reserved Memory : 6.50 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.04 GB
+   Allocated Memory : 4.95 GB
+   Reserved Memory : 6.33 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.04 GB
+   Allocated Memory : 4.95 GB
+   Reserved Memory : 6.33 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.07 GB
+   Allocated Memory : 4.90 GB
+   Reserved Memory : 6.30 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.40 GB
+   Allocated Memory : 5.13 GB
+   Reserved Memory : 6.97 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.85 GB
+   Allocated Memory : 5.01 GB
+   Reserved Memory : 6.52 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.84 GB
+   Allocated Memory : 5.02 GB
+   Reserved Memory : 6.53 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.87 GB
+   Allocated Memory : 4.96 GB
+   Reserved Memory : 6.50 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.07 GB
+   Allocated Memory : 4.89 GB
+   Reserved Memory : 6.30 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.06 GB
+   Allocated Memory : 4.92 GB
+   Reserved Memory : 6.31 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.41 GB
+   Allocated Memory : 5.13 GB
+   Reserved Memory : 6.96 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.07 GB
+   Allocated Memory : 4.89 GB
+   Reserved Memory : 6.30 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.47 GB
+   Allocated Memory : 5.11 GB
+   Reserved Memory : 6.90 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.83 GB
+   Allocated Memory : 5.05 GB
+   Reserved Memory : 6.54 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.87 GB
+   Allocated Memory : 4.97 GB
+   Reserved Memory : 6.51 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.05 GB
+   Allocated Memory : 4.95 GB
+   Reserved Memory : 6.33 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.06 GB
+   Allocated Memory : 4.91 GB
+   Reserved Memory : 6.31 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.04 GB
+   Allocated Memory : 4.95 GB
+   Reserved Memory : 6.33 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.85 GB
+   Allocated Memory : 5.01 GB
+   Reserved Memory : 6.52 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.05 GB
+   Allocated Memory : 4.93 GB
+   Reserved Memory : 6.32 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.47 GB
+   Allocated Memory : 5.11 GB
+   Reserved Memory : 6.90 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.07 GB
+   Allocated Memory : 4.89 GB
+   Reserved Memory : 6.30 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.06 GB
+   Allocated Memory : 4.93 GB
+   Reserved Memory : 6.32 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.84 GB
+   Allocated Memory : 5.03 GB
+   Reserved Memory : 6.53 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.86 GB
+   Allocated Memory : 4.98 GB
+   Reserved Memory : 6.51 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.86 GB
+   Allocated Memory : 4.99 GB
+   Reserved Memory : 6.51 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.06 GB
+   Allocated Memory : 4.92 GB
+   Reserved Memory : 6.31 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.06 GB
+   Allocated Memory : 4.92 GB
+   Reserved Memory : 6.31 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.06 GB
+   Allocated Memory : 4.92 GB
+   Reserved Memory : 6.31 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.06 GB
+   Allocated Memory : 4.91 GB
+   Reserved Memory : 6.31 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.86 GB
+   Allocated Memory : 4.99 GB
+   Reserved Memory : 6.51 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.06 GB
+   Allocated Memory : 4.93 GB
+   Reserved Memory : 6.31 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.06 GB
+   Allocated Memory : 4.91 GB
+   Reserved Memory : 6.31 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.86 GB
+   Allocated Memory : 4.99 GB
+   Reserved Memory : 6.51 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.06 GB
+   Allocated Memory : 4.91 GB
+   Reserved Memory : 6.31 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.05 GB
+   Allocated Memory : 4.95 GB
+   Reserved Memory : 6.33 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.06 GB
+   Allocated Memory : 4.92 GB
+   Reserved Memory : 6.31 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.84 GB
+   Allocated Memory : 5.04 GB
+   Reserved Memory : 6.53 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.07 GB
+   Allocated Memory : 4.88 GB
+   Reserved Memory : 6.30 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.48 GB
+   Allocated Memory : 5.08 GB
+   Reserved Memory : 6.89 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.06 GB
+   Allocated Memory : 4.93 GB
+   Reserved Memory : 6.32 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.87 GB
+   Allocated Memory : 4.97 GB
+   Reserved Memory : 6.50 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.07 GB
+   Allocated Memory : 4.90 GB
+   Reserved Memory : 6.30 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.84 GB
+   Allocated Memory : 5.02 GB
+   Reserved Memory : 6.53 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.07 GB
+   Allocated Memory : 4.90 GB
+   Reserved Memory : 6.30 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.85 GB
+   Allocated Memory : 5.00 GB
+   Reserved Memory : 6.52 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.84 GB
+   Allocated Memory : 5.02 GB
+   Reserved Memory : 6.53 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.82 GB
+   Allocated Memory : 5.08 GB
+   Reserved Memory : 6.55 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.82 GB
+   Allocated Memory : 5.08 GB
+   Reserved Memory : 6.55 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.06 GB
+   Allocated Memory : 4.93 GB
+   Reserved Memory : 6.31 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.06 GB
+   Allocated Memory : 4.92 GB
+   Reserved Memory : 6.31 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.86 GB
+   Allocated Memory : 4.99 GB
+   Reserved Memory : 6.51 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.06 GB
+   Allocated Memory : 4.92 GB
+   Reserved Memory : 6.31 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.06 GB
+   Allocated Memory : 4.92 GB
+   Reserved Memory : 6.31 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.86 GB
+   Allocated Memory : 4.99 GB
+   Reserved Memory : 6.51 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.06 GB
+   Allocated Memory : 4.95 GB
+   Reserved Memory : 6.31 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.89 GB
+   Allocated Memory : 4.96 GB
+   Reserved Memory : 6.48 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.05 GB
+   Allocated Memory : 4.93 GB
+   Reserved Memory : 6.32 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.96 GB
+   Allocated Memory : 4.98 GB
+   Reserved Memory : 6.41 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.06 GB
+   Allocated Memory : 4.93 GB
+   Reserved Memory : 6.32 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.06 GB
+   Allocated Memory : 4.91 GB
+   Reserved Memory : 6.31 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.87 GB
+   Allocated Memory : 4.96 GB
+   Reserved Memory : 6.50 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.85 GB
+   Allocated Memory : 5.00 GB
+   Reserved Memory : 6.52 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.06 GB
+   Allocated Memory : 4.93 GB
+   Reserved Memory : 6.31 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.86 GB
+   Allocated Memory : 4.99 GB
+   Reserved Memory : 6.51 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.06 GB
+   Allocated Memory : 4.91 GB
+   Reserved Memory : 6.31 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.06 GB
+   Allocated Memory : 4.93 GB
+   Reserved Memory : 6.32 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.05 GB
+   Allocated Memory : 4.94 GB
+   Reserved Memory : 6.33 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.84 GB
+   Allocated Memory : 5.03 GB
+   Reserved Memory : 6.53 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.05 GB
+   Allocated Memory : 4.95 GB
+   Reserved Memory : 6.33 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.05 GB
+   Allocated Memory : 4.95 GB
+   Reserved Memory : 6.33 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.87 GB
+   Allocated Memory : 4.99 GB
+   Reserved Memory : 6.50 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.39 GB
+   Allocated Memory : 5.17 GB
+   Reserved Memory : 6.98 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.04 GB
+   Allocated Memory : 4.95 GB
+   Reserved Memory : 6.33 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.05 GB
+   Allocated Memory : 4.94 GB
+   Reserved Memory : 6.33 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.86 GB
+   Allocated Memory : 4.98 GB
+   Reserved Memory : 6.51 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.06 GB
+   Allocated Memory : 4.93 GB
+   Reserved Memory : 6.32 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.04 GB
+   Allocated Memory : 4.95 GB
+   Reserved Memory : 6.33 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.06 GB
+   Allocated Memory : 4.92 GB
+   Reserved Memory : 6.31 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.06 GB
+   Allocated Memory : 4.92 GB
+   Reserved Memory : 6.31 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.87 GB
+   Allocated Memory : 4.97 GB
+   Reserved Memory : 6.51 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.85 GB
+   Allocated Memory : 5.00 GB
+   Reserved Memory : 6.52 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.05 GB
+   Allocated Memory : 4.93 GB
+   Reserved Memory : 6.32 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.48 GB
+   Allocated Memory : 5.08 GB
+   Reserved Memory : 6.89 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.06 GB
+   Allocated Memory : 4.91 GB
+   Reserved Memory : 6.31 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.86 GB
+   Allocated Memory : 4.99 GB
+   Reserved Memory : 6.51 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.04 GB
+   Allocated Memory : 4.95 GB
+   Reserved Memory : 6.33 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.06 GB
+   Allocated Memory : 4.92 GB
+   Reserved Memory : 6.31 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.87 GB
+   Allocated Memory : 4.97 GB
+   Reserved Memory : 6.51 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.07 GB
+   Allocated Memory : 4.90 GB
+   Reserved Memory : 6.30 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.87 GB
+   Allocated Memory : 4.97 GB
+   Reserved Memory : 6.51 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.07 GB
+   Allocated Memory : 4.89 GB
+   Reserved Memory : 6.30 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.07 GB
+   Allocated Memory : 4.90 GB
+   Reserved Memory : 6.30 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.06 GB
+   Allocated Memory : 4.91 GB
+   Reserved Memory : 6.31 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.83 GB
+   Allocated Memory : 5.05 GB
+   Reserved Memory : 6.54 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.05 GB
+   Allocated Memory : 4.94 GB
+   Reserved Memory : 6.33 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.07 GB
+   Allocated Memory : 4.89 GB
+   Reserved Memory : 6.30 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.06 GB
+   Allocated Memory : 4.92 GB
+   Reserved Memory : 6.31 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.06 GB
+   Allocated Memory : 4.92 GB
+   Reserved Memory : 6.31 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.06 GB
+   Allocated Memory : 4.92 GB
+   Reserved Memory : 6.31 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.06 GB
+   Allocated Memory : 4.91 GB
+   Reserved Memory : 6.31 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.87 GB
+   Allocated Memory : 4.97 GB
+   Reserved Memory : 6.50 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.07 GB
+   Allocated Memory : 4.90 GB
+   Reserved Memory : 6.30 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.06 GB
+   Allocated Memory : 4.91 GB
+   Reserved Memory : 6.31 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.47 GB
+   Allocated Memory : 5.11 GB
+   Reserved Memory : 6.90 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.83 GB
+   Allocated Memory : 5.06 GB
+   Reserved Memory : 6.54 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.04 GB
+   Allocated Memory : 4.95 GB
+   Reserved Memory : 6.33 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.05 GB
+   Allocated Memory : 4.94 GB
+   Reserved Memory : 6.33 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.87 GB
+   Allocated Memory : 4.97 GB
+   Reserved Memory : 6.51 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.07 GB
+   Allocated Memory : 4.89 GB
+   Reserved Memory : 6.30 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.06 GB
+   Allocated Memory : 4.93 GB
+   Reserved Memory : 6.32 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.85 GB
+   Allocated Memory : 5.00 GB
+   Reserved Memory : 6.52 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.06 GB
+   Allocated Memory : 4.93 GB
+   Reserved Memory : 6.32 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.06 GB
+   Allocated Memory : 4.91 GB
+   Reserved Memory : 6.31 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.06 GB
+   Allocated Memory : 4.92 GB
+   Reserved Memory : 6.31 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.04 GB
+   Allocated Memory : 4.95 GB
+   Reserved Memory : 6.33 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.86 GB
+   Allocated Memory : 4.99 GB
+   Reserved Memory : 6.51 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.06 GB
+   Allocated Memory : 4.92 GB
+   Reserved Memory : 6.31 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.47 GB
+   Allocated Memory : 5.10 GB
+   Reserved Memory : 6.90 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.84 GB
+   Allocated Memory : 5.04 GB
+   Reserved Memory : 6.53 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.05 GB
+   Allocated Memory : 4.93 GB
+   Reserved Memory : 6.32 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.47 GB
+   Allocated Memory : 5.10 GB
+   Reserved Memory : 6.90 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.06 GB
+   Allocated Memory : 4.91 GB
+   Reserved Memory : 6.31 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.89 GB
+   Allocated Memory : 4.97 GB
+   Reserved Memory : 6.49 GB
+Finished Inference
+Starting Hidden State Calculation
+Finished Hidden State Calculation
+Saved Results
+Prompting Strategy: zero_shot_instruction
+Starting Inference
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.40 GB
+   Allocated Memory : 4.81 GB
+   Reserved Memory : 5.97 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.40 GB
+   Allocated Memory : 4.79 GB
+   Reserved Memory : 5.97 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.59 GB
+   Allocated Memory : 4.73 GB
+   Reserved Memory : 5.78 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.41 GB
+   Allocated Memory : 4.79 GB
+   Reserved Memory : 5.96 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.78 GB
+   Allocated Memory : 4.66 GB
+   Reserved Memory : 5.60 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.82 GB
+   Allocated Memory : 5.00 GB
+   Reserved Memory : 6.56 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.69 GB
+   Allocated Memory : 4.68 GB
+   Reserved Memory : 5.68 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.69 GB
+   Allocated Memory : 4.70 GB
+   Reserved Memory : 5.68 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.69 GB
+   Allocated Memory : 4.71 GB
+   Reserved Memory : 5.69 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.69 GB
+   Allocated Memory : 4.70 GB
+   Reserved Memory : 5.68 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.69 GB
+   Allocated Memory : 4.69 GB
+   Reserved Memory : 5.68 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.60 GB
+   Allocated Memory : 4.72 GB
+   Reserved Memory : 5.77 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.13 GB
+   Allocated Memory : 4.87 GB
+   Reserved Memory : 6.24 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.68 GB
+   Allocated Memory : 4.69 GB
+   Reserved Memory : 5.69 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.50 GB
+   Allocated Memory : 4.75 GB
+   Reserved Memory : 5.87 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.50 GB
+   Allocated Memory : 4.78 GB
+   Reserved Memory : 5.88 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.50 GB
+   Allocated Memory : 4.77 GB
+   Reserved Memory : 5.87 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.69 GB
+   Allocated Memory : 4.69 GB
+   Reserved Memory : 5.68 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.41 GB
+   Allocated Memory : 4.78 GB
+   Reserved Memory : 5.96 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.30 GB
+   Allocated Memory : 4.85 GB
+   Reserved Memory : 6.07 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.68 GB
+   Allocated Memory : 4.72 GB
+   Reserved Memory : 5.69 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.78 GB
+   Allocated Memory : 4.68 GB
+   Reserved Memory : 5.59 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.69 GB
+   Allocated Memory : 4.70 GB
+   Reserved Memory : 5.68 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.69 GB
+   Allocated Memory : 4.68 GB
+   Reserved Memory : 5.68 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.77 GB
+   Allocated Memory : 4.67 GB
+   Reserved Memory : 5.60 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.51 GB
+   Allocated Memory : 4.74 GB
+   Reserved Memory : 5.87 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.30 GB
+   Allocated Memory : 4.85 GB
+   Reserved Memory : 6.07 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.41 GB
+   Allocated Memory : 4.79 GB
+   Reserved Memory : 5.96 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.69 GB
+   Allocated Memory : 4.67 GB
+   Reserved Memory : 5.68 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.50 GB
+   Allocated Memory : 4.78 GB
+   Reserved Memory : 5.88 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.73 GB
+   Allocated Memory : 4.68 GB
+   Reserved Memory : 5.65 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.49 GB
+   Allocated Memory : 4.78 GB
+   Reserved Memory : 5.88 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.32 GB
+   Allocated Memory : 4.82 GB
+   Reserved Memory : 6.06 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.31 GB
+   Allocated Memory : 4.84 GB
+   Reserved Memory : 6.07 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.22 GB
+   Allocated Memory : 4.86 GB
+   Reserved Memory : 6.15 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.31 GB
+   Allocated Memory : 4.84 GB
+   Reserved Memory : 6.06 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.59 GB
+   Allocated Memory : 4.73 GB
+   Reserved Memory : 5.78 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.69 GB
+   Allocated Memory : 4.70 GB
+   Reserved Memory : 5.68 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.69 GB
+   Allocated Memory : 4.69 GB
+   Reserved Memory : 5.68 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.50 GB
+   Allocated Memory : 4.78 GB
+   Reserved Memory : 5.88 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.69 GB
+   Allocated Memory : 4.70 GB
+   Reserved Memory : 5.68 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.50 GB
+   Allocated Memory : 4.75 GB
+   Reserved Memory : 5.87 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.69 GB
+   Allocated Memory : 4.70 GB
+   Reserved Memory : 5.68 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.50 GB
+   Allocated Memory : 4.75 GB
+   Reserved Memory : 5.87 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.59 GB
+   Allocated Memory : 4.73 GB
+   Reserved Memory : 5.78 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.69 GB
+   Allocated Memory : 4.71 GB
+   Reserved Memory : 5.69 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.31 GB
+   Allocated Memory : 4.82 GB
+   Reserved Memory : 6.06 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.31 GB
+   Allocated Memory : 4.83 GB
+   Reserved Memory : 6.06 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.69 GB
+   Allocated Memory : 4.69 GB
+   Reserved Memory : 5.68 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.59 GB
+   Allocated Memory : 4.73 GB
+   Reserved Memory : 5.78 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.60 GB
+   Allocated Memory : 4.72 GB
+   Reserved Memory : 5.78 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.70 GB
+   Allocated Memory : 4.67 GB
+   Reserved Memory : 5.68 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.40 GB
+   Allocated Memory : 4.81 GB
+   Reserved Memory : 5.97 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.59 GB
+   Allocated Memory : 4.72 GB
+   Reserved Memory : 5.78 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.59 GB
+   Allocated Memory : 4.74 GB
+   Reserved Memory : 5.78 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.59 GB
+   Allocated Memory : 4.73 GB
+   Reserved Memory : 5.78 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.69 GB
+   Allocated Memory : 4.69 GB
+   Reserved Memory : 5.68 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.10 GB
+   Allocated Memory : 4.92 GB
+   Reserved Memory : 6.27 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.49 GB
+   Allocated Memory : 4.77 GB
+   Reserved Memory : 5.88 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.40 GB
+   Allocated Memory : 4.80 GB
+   Reserved Memory : 5.97 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.59 GB
+   Allocated Memory : 4.73 GB
+   Reserved Memory : 5.78 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.70 GB
+   Allocated Memory : 4.67 GB
+   Reserved Memory : 5.68 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.69 GB
+   Allocated Memory : 4.71 GB
+   Reserved Memory : 5.69 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.10 GB
+   Allocated Memory : 4.89 GB
+   Reserved Memory : 6.27 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.78 GB
+   Allocated Memory : 4.68 GB
+   Reserved Memory : 5.59 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.03 GB
+   Allocated Memory : 4.90 GB
+   Reserved Memory : 6.34 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.31 GB
+   Allocated Memory : 4.84 GB
+   Reserved Memory : 6.06 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.50 GB
+   Allocated Memory : 4.76 GB
+   Reserved Memory : 5.87 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.59 GB
+   Allocated Memory : 4.73 GB
+   Reserved Memory : 5.78 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.69 GB
+   Allocated Memory : 4.69 GB
+   Reserved Memory : 5.68 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.59 GB
+   Allocated Memory : 4.73 GB
+   Reserved Memory : 5.78 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.40 GB
+   Allocated Memory : 4.79 GB
+   Reserved Memory : 5.97 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.60 GB
+   Allocated Memory : 4.69 GB
+   Reserved Memory : 5.78 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.03 GB
+   Allocated Memory : 4.87 GB
+   Reserved Memory : 6.34 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.69 GB
+   Allocated Memory : 4.67 GB
+   Reserved Memory : 5.68 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.68 GB
+   Allocated Memory : 4.69 GB
+   Reserved Memory : 5.69 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.40 GB
+   Allocated Memory : 4.81 GB
+   Reserved Memory : 5.97 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.50 GB
+   Allocated Memory : 4.77 GB
+   Reserved Memory : 5.87 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.50 GB
+   Allocated Memory : 4.78 GB
+   Reserved Memory : 5.87 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.69 GB
+   Allocated Memory : 4.71 GB
+   Reserved Memory : 5.69 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.69 GB
+   Allocated Memory : 4.70 GB
+   Reserved Memory : 5.68 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.69 GB
+   Allocated Memory : 4.70 GB
+   Reserved Memory : 5.68 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.69 GB
+   Allocated Memory : 4.68 GB
+   Reserved Memory : 5.68 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.50 GB
+   Allocated Memory : 4.78 GB
+   Reserved Memory : 5.87 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.69 GB
+   Allocated Memory : 4.71 GB
+   Reserved Memory : 5.69 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.69 GB
+   Allocated Memory : 4.69 GB
+   Reserved Memory : 5.68 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.50 GB
+   Allocated Memory : 4.75 GB
+   Reserved Memory : 5.88 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.69 GB
+   Allocated Memory : 4.68 GB
+   Reserved Memory : 5.68 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.59 GB
+   Allocated Memory : 4.73 GB
+   Reserved Memory : 5.78 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.69 GB
+   Allocated Memory : 4.68 GB
+   Reserved Memory : 5.68 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.32 GB
+   Allocated Memory : 4.82 GB
+   Reserved Memory : 6.06 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.70 GB
+   Allocated Memory : 4.64 GB
+   Reserved Memory : 5.68 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.22 GB
+   Allocated Memory : 4.87 GB
+   Reserved Memory : 6.16 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.68 GB
+   Allocated Memory : 4.72 GB
+   Reserved Memory : 5.69 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.50 GB
+   Allocated Memory : 4.75 GB
+   Reserved Memory : 5.87 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.78 GB
+   Allocated Memory : 4.66 GB
+   Reserved Memory : 5.60 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.40 GB
+   Allocated Memory : 4.81 GB
+   Reserved Memory : 5.97 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.78 GB
+   Allocated Memory : 4.67 GB
+   Reserved Memory : 5.60 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.49 GB
+   Allocated Memory : 4.77 GB
+   Reserved Memory : 5.88 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.40 GB
+   Allocated Memory : 4.81 GB
+   Reserved Memory : 5.97 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.22 GB
+   Allocated Memory : 4.86 GB
+   Reserved Memory : 6.15 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.30 GB
+   Allocated Memory : 4.85 GB
+   Reserved Memory : 6.07 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.69 GB
+   Allocated Memory : 4.71 GB
+   Reserved Memory : 5.69 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.69 GB
+   Allocated Memory : 4.71 GB
+   Reserved Memory : 5.69 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.50 GB
+   Allocated Memory : 4.75 GB
+   Reserved Memory : 5.87 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.69 GB
+   Allocated Memory : 4.71 GB
+   Reserved Memory : 5.69 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.69 GB
+   Allocated Memory : 4.69 GB
+   Reserved Memory : 5.68 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.41 GB
+   Allocated Memory : 4.78 GB
+   Reserved Memory : 5.96 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.69 GB
+   Allocated Memory : 4.70 GB
+   Reserved Memory : 5.68 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.69 GB
+   Allocated Memory : 4.71 GB
+   Reserved Memory : 5.69 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.60 GB
+   Allocated Memory : 4.72 GB
+   Reserved Memory : 5.78 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.59 GB
+   Allocated Memory : 4.73 GB
+   Reserved Memory : 5.78 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.60 GB
+   Allocated Memory : 4.72 GB
+   Reserved Memory : 5.77 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.69 GB
+   Allocated Memory : 4.70 GB
+   Reserved Memory : 5.68 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.59 GB
+   Allocated Memory : 4.72 GB
+   Reserved Memory : 5.78 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.49 GB
+   Allocated Memory : 4.76 GB
+   Reserved Memory : 5.88 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.69 GB
+   Allocated Memory : 4.71 GB
+   Reserved Memory : 5.69 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.50 GB
+   Allocated Memory : 4.77 GB
+   Reserved Memory : 5.87 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.69 GB
+   Allocated Memory : 4.69 GB
+   Reserved Memory : 5.68 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.68 GB
+   Allocated Memory : 4.70 GB
+   Reserved Memory : 5.69 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.59 GB
+   Allocated Memory : 4.73 GB
+   Reserved Memory : 5.78 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.32 GB
+   Allocated Memory : 4.82 GB
+   Reserved Memory : 6.06 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.59 GB
+   Allocated Memory : 4.73 GB
+   Reserved Memory : 5.78 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.59 GB
+   Allocated Memory : 4.73 GB
+   Reserved Memory : 5.78 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.59 GB
+   Allocated Memory : 4.74 GB
+   Reserved Memory : 5.78 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.08 GB
+   Allocated Memory : 4.95 GB
+   Reserved Memory : 6.29 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.59 GB
+   Allocated Memory : 4.73 GB
+   Reserved Memory : 5.78 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.59 GB
+   Allocated Memory : 4.72 GB
+   Reserved Memory : 5.78 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.50 GB
+   Allocated Memory : 4.75 GB
+   Reserved Memory : 5.87 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.60 GB
+   Allocated Memory : 4.72 GB
+   Reserved Memory : 5.78 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.59 GB
+   Allocated Memory : 4.73 GB
+   Reserved Memory : 5.78 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.69 GB
+   Allocated Memory : 4.68 GB
+   Reserved Memory : 5.69 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.69 GB
+   Allocated Memory : 4.71 GB
+   Reserved Memory : 5.69 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.50 GB
+   Allocated Memory : 4.73 GB
+   Reserved Memory : 5.87 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.41 GB
+   Allocated Memory : 4.79 GB
+   Reserved Memory : 5.96 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.60 GB
+   Allocated Memory : 4.72 GB
+   Reserved Memory : 5.78 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.13 GB
+   Allocated Memory : 4.87 GB
+   Reserved Memory : 6.24 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.69 GB
+   Allocated Memory : 4.70 GB
+   Reserved Memory : 5.68 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.50 GB
+   Allocated Memory : 4.78 GB
+   Reserved Memory : 5.87 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.59 GB
+   Allocated Memory : 4.72 GB
+   Reserved Memory : 5.78 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.69 GB
+   Allocated Memory : 4.71 GB
+   Reserved Memory : 5.69 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.50 GB
+   Allocated Memory : 4.76 GB
+   Reserved Memory : 5.87 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.69 GB
+   Allocated Memory : 4.68 GB
+   Reserved Memory : 5.68 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.50 GB
+   Allocated Memory : 4.76 GB
+   Reserved Memory : 5.87 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.78 GB
+   Allocated Memory : 4.65 GB
+   Reserved Memory : 5.59 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.69 GB
+   Allocated Memory : 4.69 GB
+   Reserved Memory : 5.68 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.69 GB
+   Allocated Memory : 4.68 GB
+   Reserved Memory : 5.68 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.31 GB
+   Allocated Memory : 4.84 GB
+   Reserved Memory : 6.06 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.59 GB
+   Allocated Memory : 4.73 GB
+   Reserved Memory : 5.78 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.69 GB
+   Allocated Memory : 4.68 GB
+   Reserved Memory : 5.68 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.69 GB
+   Allocated Memory : 4.68 GB
+   Reserved Memory : 5.69 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.69 GB
+   Allocated Memory : 4.71 GB
+   Reserved Memory : 5.69 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.69 GB
+   Allocated Memory : 4.69 GB
+   Reserved Memory : 5.68 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.69 GB
+   Allocated Memory : 4.70 GB
+   Reserved Memory : 5.68 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.50 GB
+   Allocated Memory : 4.75 GB
+   Reserved Memory : 5.87 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.78 GB
+   Allocated Memory : 4.67 GB
+   Reserved Memory : 5.60 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.69 GB
+   Allocated Memory : 4.69 GB
+   Reserved Memory : 5.68 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.03 GB
+   Allocated Memory : 4.88 GB
+   Reserved Memory : 6.34 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.31 GB
+   Allocated Memory : 4.84 GB
+   Reserved Memory : 6.06 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.59 GB
+   Allocated Memory : 4.74 GB
+   Reserved Memory : 5.78 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.59 GB
+   Allocated Memory : 4.72 GB
+   Reserved Memory : 5.78 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.50 GB
+   Allocated Memory : 4.76 GB
+   Reserved Memory : 5.87 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.69 GB
+   Allocated Memory : 4.68 GB
+   Reserved Memory : 5.68 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.68 GB
+   Allocated Memory : 4.72 GB
+   Reserved Memory : 5.69 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.41 GB
+   Allocated Memory : 4.79 GB
+   Reserved Memory : 5.96 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.68 GB
+   Allocated Memory : 4.72 GB
+   Reserved Memory : 5.69 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.69 GB
+   Allocated Memory : 4.69 GB
+   Reserved Memory : 5.68 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.69 GB
+   Allocated Memory : 4.71 GB
+   Reserved Memory : 5.69 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.59 GB
+   Allocated Memory : 4.74 GB
+   Reserved Memory : 5.78 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.50 GB
+   Allocated Memory : 4.76 GB
+   Reserved Memory : 5.87 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.69 GB
+   Allocated Memory : 4.71 GB
+   Reserved Memory : 5.69 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.12 GB
+   Allocated Memory : 4.87 GB
+   Reserved Memory : 6.26 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.32 GB
+   Allocated Memory : 4.82 GB
+   Reserved Memory : 6.06 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.60 GB
+   Allocated Memory : 4.72 GB
+   Reserved Memory : 5.78 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.12 GB
+   Allocated Memory : 4.88 GB
+   Reserved Memory : 6.26 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.69 GB
+   Allocated Memory : 4.70 GB
+   Reserved Memory : 5.68 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 17.60 GB
+   Allocated Memory : 4.72 GB
+   Reserved Memory : 5.77 GB
+Finished Inference
+Starting Hidden State Calculation
+Finished Hidden State Calculation
+Saved Results
+Prompting Strategy: few_shot_vanilla
+Starting Inference
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 14.87 GB
+   Allocated Memory : 5.56 GB
+   Reserved Memory : 8.51 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 14.79 GB
+   Allocated Memory : 5.54 GB
+   Reserved Memory : 8.58 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 15.78 GB
+   Allocated Memory : 5.48 GB
+   Reserved Memory : 7.59 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 15.21 GB
+   Allocated Memory : 5.53 GB
+   Reserved Memory : 8.16 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.27 GB
+   Allocated Memory : 4.94 GB
+   Reserved Memory : 7.11 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 15.13 GB
+   Allocated Memory : 5.26 GB
+   Reserved Memory : 8.24 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.27 GB
+   Allocated Memory : 4.94 GB
+   Reserved Memory : 7.10 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.21 GB
+   Allocated Memory : 4.95 GB
+   Reserved Memory : 7.16 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.21 GB
+   Allocated Memory : 4.96 GB
+   Reserved Memory : 7.17 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.21 GB
+   Allocated Memory : 4.95 GB
+   Reserved Memory : 7.16 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.21 GB
+   Allocated Memory : 4.96 GB
+   Reserved Memory : 7.16 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.20 GB
+   Allocated Memory : 4.98 GB
+   Reserved Memory : 7.17 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 15.36 GB
+   Allocated Memory : 5.13 GB
+   Reserved Memory : 8.01 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.20 GB
+   Allocated Memory : 4.97 GB
+   Reserved Memory : 7.17 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.19 GB
+   Allocated Memory : 5.00 GB
+   Reserved Memory : 7.18 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.04 GB
+   Allocated Memory : 5.04 GB
+   Reserved Memory : 7.33 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 15.80 GB
+   Allocated Memory : 5.05 GB
+   Reserved Memory : 7.57 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.27 GB
+   Allocated Memory : 4.95 GB
+   Reserved Memory : 7.11 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.04 GB
+   Allocated Memory : 5.04 GB
+   Reserved Memory : 7.33 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 15.37 GB
+   Allocated Memory : 5.11 GB
+   Reserved Memory : 8.01 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.20 GB
+   Allocated Memory : 4.99 GB
+   Reserved Memory : 7.17 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.27 GB
+   Allocated Memory : 4.94 GB
+   Reserved Memory : 7.10 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.21 GB
+   Allocated Memory : 4.96 GB
+   Reserved Memory : 7.16 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.21 GB
+   Allocated Memory : 4.96 GB
+   Reserved Memory : 7.17 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.26 GB
+   Allocated Memory : 4.95 GB
+   Reserved Memory : 7.11 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.19 GB
+   Allocated Memory : 5.00 GB
+   Reserved Memory : 7.18 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 15.37 GB
+   Allocated Memory : 5.11 GB
+   Reserved Memory : 8.01 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 15.78 GB
+   Allocated Memory : 5.04 GB
+   Reserved Memory : 7.59 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.27 GB
+   Allocated Memory : 4.93 GB
+   Reserved Memory : 7.10 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.13 GB
+   Allocated Memory : 5.04 GB
+   Reserved Memory : 7.24 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.25 GB
+   Allocated Memory : 4.93 GB
+   Reserved Memory : 7.12 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 15.78 GB
+   Allocated Memory : 5.04 GB
+   Reserved Memory : 7.59 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 15.31 GB
+   Allocated Memory : 5.08 GB
+   Reserved Memory : 8.06 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 15.37 GB
+   Allocated Memory : 5.10 GB
+   Reserved Memory : 8.00 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 15.37 GB
+   Allocated Memory : 5.12 GB
+   Reserved Memory : 8.01 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 15.37 GB
+   Allocated Memory : 5.09 GB
+   Reserved Memory : 8.00 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.20 GB
+   Allocated Memory : 4.99 GB
+   Reserved Memory : 7.18 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.21 GB
+   Allocated Memory : 4.96 GB
+   Reserved Memory : 7.16 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.26 GB
+   Allocated Memory : 4.95 GB
+   Reserved Memory : 7.11 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.13 GB
+   Allocated Memory : 5.04 GB
+   Reserved Memory : 7.24 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.21 GB
+   Allocated Memory : 4.96 GB
+   Reserved Memory : 7.17 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.19 GB
+   Allocated Memory : 5.00 GB
+   Reserved Memory : 7.18 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.21 GB
+   Allocated Memory : 4.96 GB
+   Reserved Memory : 7.16 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.19 GB
+   Allocated Memory : 5.01 GB
+   Reserved Memory : 7.18 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.20 GB
+   Allocated Memory : 4.99 GB
+   Reserved Memory : 7.18 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.21 GB
+   Allocated Memory : 4.96 GB
+   Reserved Memory : 7.17 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 15.38 GB
+   Allocated Memory : 5.09 GB
+   Reserved Memory : 8.00 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 15.38 GB
+   Allocated Memory : 5.09 GB
+   Reserved Memory : 8.00 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.27 GB
+   Allocated Memory : 4.95 GB
+   Reserved Memory : 7.11 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.20 GB
+   Allocated Memory : 5.01 GB
+   Reserved Memory : 7.17 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.20 GB
+   Allocated Memory : 4.98 GB
+   Reserved Memory : 7.17 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.27 GB
+   Allocated Memory : 4.93 GB
+   Reserved Memory : 7.10 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 15.35 GB
+   Allocated Memory : 5.06 GB
+   Reserved Memory : 8.02 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.19 GB
+   Allocated Memory : 5.01 GB
+   Reserved Memory : 7.18 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.19 GB
+   Allocated Memory : 4.99 GB
+   Reserved Memory : 7.18 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.20 GB
+   Allocated Memory : 5.01 GB
+   Reserved Memory : 7.18 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.27 GB
+   Allocated Memory : 4.94 GB
+   Reserved Memory : 7.11 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 15.38 GB
+   Allocated Memory : 5.18 GB
+   Reserved Memory : 7.99 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 15.28 GB
+   Allocated Memory : 5.05 GB
+   Reserved Memory : 8.10 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 15.27 GB
+   Allocated Memory : 5.06 GB
+   Reserved Memory : 8.10 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.19 GB
+   Allocated Memory : 5.00 GB
+   Reserved Memory : 7.18 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.27 GB
+   Allocated Memory : 4.93 GB
+   Reserved Memory : 7.10 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.21 GB
+   Allocated Memory : 4.97 GB
+   Reserved Memory : 7.17 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 15.39 GB
+   Allocated Memory : 5.17 GB
+   Reserved Memory : 7.98 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.27 GB
+   Allocated Memory : 4.94 GB
+   Reserved Memory : 7.10 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 15.31 GB
+   Allocated Memory : 5.15 GB
+   Reserved Memory : 8.06 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 15.38 GB
+   Allocated Memory : 5.09 GB
+   Reserved Memory : 8.00 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.19 GB
+   Allocated Memory : 5.01 GB
+   Reserved Memory : 7.18 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.20 GB
+   Allocated Memory : 4.98 GB
+   Reserved Memory : 7.18 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.26 GB
+   Allocated Memory : 4.95 GB
+   Reserved Memory : 7.11 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.20 GB
+   Allocated Memory : 4.99 GB
+   Reserved Memory : 7.18 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 15.28 GB
+   Allocated Memory : 5.05 GB
+   Reserved Memory : 8.10 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.20 GB
+   Allocated Memory : 4.98 GB
+   Reserved Memory : 7.17 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 15.31 GB
+   Allocated Memory : 5.16 GB
+   Reserved Memory : 8.06 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.27 GB
+   Allocated Memory : 4.93 GB
+   Reserved Memory : 7.10 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.20 GB
+   Allocated Memory : 4.97 GB
+   Reserved Memory : 7.17 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 15.35 GB
+   Allocated Memory : 5.07 GB
+   Reserved Memory : 8.02 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 15.80 GB
+   Allocated Memory : 5.05 GB
+   Reserved Memory : 7.57 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.14 GB
+   Allocated Memory : 5.04 GB
+   Reserved Memory : 7.24 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.21 GB
+   Allocated Memory : 4.96 GB
+   Reserved Memory : 7.17 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.21 GB
+   Allocated Memory : 4.96 GB
+   Reserved Memory : 7.16 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.21 GB
+   Allocated Memory : 4.96 GB
+   Reserved Memory : 7.17 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.27 GB
+   Allocated Memory : 4.95 GB
+   Reserved Memory : 7.11 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.14 GB
+   Allocated Memory : 5.04 GB
+   Reserved Memory : 7.24 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.20 GB
+   Allocated Memory : 4.99 GB
+   Reserved Memory : 7.17 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.27 GB
+   Allocated Memory : 4.95 GB
+   Reserved Memory : 7.11 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.13 GB
+   Allocated Memory : 5.04 GB
+   Reserved Memory : 7.24 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.21 GB
+   Allocated Memory : 4.95 GB
+   Reserved Memory : 7.16 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.20 GB
+   Allocated Memory : 5.01 GB
+   Reserved Memory : 7.18 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.21 GB
+   Allocated Memory : 4.96 GB
+   Reserved Memory : 7.17 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 15.38 GB
+   Allocated Memory : 5.08 GB
+   Reserved Memory : 7.99 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.27 GB
+   Allocated Memory : 4.92 GB
+   Reserved Memory : 7.10 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 15.36 GB
+   Allocated Memory : 5.12 GB
+   Reserved Memory : 8.01 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.20 GB
+   Allocated Memory : 4.97 GB
+   Reserved Memory : 7.17 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.19 GB
+   Allocated Memory : 5.01 GB
+   Reserved Memory : 7.18 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.27 GB
+   Allocated Memory : 4.94 GB
+   Reserved Memory : 7.10 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 15.35 GB
+   Allocated Memory : 5.06 GB
+   Reserved Memory : 8.02 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.27 GB
+   Allocated Memory : 4.94 GB
+   Reserved Memory : 7.11 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 15.78 GB
+   Allocated Memory : 5.04 GB
+   Reserved Memory : 7.59 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 15.35 GB
+   Allocated Memory : 5.09 GB
+   Reserved Memory : 8.02 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 15.37 GB
+   Allocated Memory : 5.11 GB
+   Reserved Memory : 8.01 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 15.37 GB
+   Allocated Memory : 5.11 GB
+   Reserved Memory : 8.01 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.20 GB
+   Allocated Memory : 4.97 GB
+   Reserved Memory : 7.17 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.21 GB
+   Allocated Memory : 4.96 GB
+   Reserved Memory : 7.17 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.13 GB
+   Allocated Memory : 5.04 GB
+   Reserved Memory : 7.24 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.21 GB
+   Allocated Memory : 4.99 GB
+   Reserved Memory : 7.17 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.21 GB
+   Allocated Memory : 4.96 GB
+   Reserved Memory : 7.16 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.04 GB
+   Allocated Memory : 5.04 GB
+   Reserved Memory : 7.33 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.21 GB
+   Allocated Memory : 4.99 GB
+   Reserved Memory : 7.17 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.21 GB
+   Allocated Memory : 4.99 GB
+   Reserved Memory : 7.17 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.20 GB
+   Allocated Memory : 5.00 GB
+   Reserved Memory : 7.17 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.20 GB
+   Allocated Memory : 5.01 GB
+   Reserved Memory : 7.18 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.20 GB
+   Allocated Memory : 5.00 GB
+   Reserved Memory : 7.17 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.21 GB
+   Allocated Memory : 4.95 GB
+   Reserved Memory : 7.16 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.19 GB
+   Allocated Memory : 5.00 GB
+   Reserved Memory : 7.18 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 15.78 GB
+   Allocated Memory : 5.04 GB
+   Reserved Memory : 7.59 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.20 GB
+   Allocated Memory : 4.97 GB
+   Reserved Memory : 7.17 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.14 GB
+   Allocated Memory : 5.04 GB
+   Reserved Memory : 7.24 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.27 GB
+   Allocated Memory : 4.95 GB
+   Reserved Memory : 7.11 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.20 GB
+   Allocated Memory : 4.97 GB
+   Reserved Memory : 7.17 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.20 GB
+   Allocated Memory : 4.98 GB
+   Reserved Memory : 7.17 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 15.35 GB
+   Allocated Memory : 5.08 GB
+   Reserved Memory : 8.02 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.20 GB
+   Allocated Memory : 4.98 GB
+   Reserved Memory : 7.18 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.20 GB
+   Allocated Memory : 5.01 GB
+   Reserved Memory : 7.18 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.19 GB
+   Allocated Memory : 5.04 GB
+   Reserved Memory : 7.18 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 15.31 GB
+   Allocated Memory : 5.22 GB
+   Reserved Memory : 8.06 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.20 GB
+   Allocated Memory : 4.99 GB
+   Reserved Memory : 7.18 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.20 GB
+   Allocated Memory : 4.98 GB
+   Reserved Memory : 7.17 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.14 GB
+   Allocated Memory : 5.04 GB
+   Reserved Memory : 7.24 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.20 GB
+   Allocated Memory : 4.98 GB
+   Reserved Memory : 7.17 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.20 GB
+   Allocated Memory : 4.99 GB
+   Reserved Memory : 7.18 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.21 GB
+   Allocated Memory : 4.96 GB
+   Reserved Memory : 7.17 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.21 GB
+   Allocated Memory : 4.99 GB
+   Reserved Memory : 7.17 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.18 GB
+   Allocated Memory : 5.02 GB
+   Reserved Memory : 7.19 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 15.70 GB
+   Allocated Memory : 5.05 GB
+   Reserved Memory : 7.67 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.20 GB
+   Allocated Memory : 4.98 GB
+   Reserved Memory : 7.17 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 15.36 GB
+   Allocated Memory : 5.13 GB
+   Reserved Memory : 8.01 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.13 GB
+   Allocated Memory : 4.95 GB
+   Reserved Memory : 7.24 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.13 GB
+   Allocated Memory : 5.04 GB
+   Reserved Memory : 7.24 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.19 GB
+   Allocated Memory : 4.99 GB
+   Reserved Memory : 7.18 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.21 GB
+   Allocated Memory : 4.96 GB
+   Reserved Memory : 7.17 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.14 GB
+   Allocated Memory : 5.02 GB
+   Reserved Memory : 7.23 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.27 GB
+   Allocated Memory : 4.94 GB
+   Reserved Memory : 7.10 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.18 GB
+   Allocated Memory : 5.02 GB
+   Reserved Memory : 7.19 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.27 GB
+   Allocated Memory : 4.94 GB
+   Reserved Memory : 7.10 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.27 GB
+   Allocated Memory : 4.94 GB
+   Reserved Memory : 7.11 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.21 GB
+   Allocated Memory : 4.95 GB
+   Reserved Memory : 7.16 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 15.37 GB
+   Allocated Memory : 5.10 GB
+   Reserved Memory : 8.00 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.20 GB
+   Allocated Memory : 5.01 GB
+   Reserved Memory : 7.17 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.27 GB
+   Allocated Memory : 4.93 GB
+   Reserved Memory : 7.10 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.21 GB
+   Allocated Memory : 4.97 GB
+   Reserved Memory : 7.17 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.21 GB
+   Allocated Memory : 4.96 GB
+   Reserved Memory : 7.17 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.21 GB
+   Allocated Memory : 4.96 GB
+   Reserved Memory : 7.17 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.21 GB
+   Allocated Memory : 4.96 GB
+   Reserved Memory : 7.16 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.19 GB
+   Allocated Memory : 5.01 GB
+   Reserved Memory : 7.18 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.27 GB
+   Allocated Memory : 4.94 GB
+   Reserved Memory : 7.11 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.27 GB
+   Allocated Memory : 4.95 GB
+   Reserved Memory : 7.11 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 15.31 GB
+   Allocated Memory : 5.15 GB
+   Reserved Memory : 8.06 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 15.37 GB
+   Allocated Memory : 5.10 GB
+   Reserved Memory : 8.00 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.19 GB
+   Allocated Memory : 4.99 GB
+   Reserved Memory : 7.18 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.20 GB
+   Allocated Memory : 4.98 GB
+   Reserved Memory : 7.17 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.19 GB
+   Allocated Memory : 5.01 GB
+   Reserved Memory : 7.18 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.27 GB
+   Allocated Memory : 4.94 GB
+   Reserved Memory : 7.10 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.20 GB
+   Allocated Memory : 4.97 GB
+   Reserved Memory : 7.17 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 15.70 GB
+   Allocated Memory : 5.07 GB
+   Reserved Memory : 7.67 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.20 GB
+   Allocated Memory : 4.97 GB
+   Reserved Memory : 7.17 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.21 GB
+   Allocated Memory : 4.96 GB
+   Reserved Memory : 7.16 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.21 GB
+   Allocated Memory : 4.99 GB
+   Reserved Memory : 7.17 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.19 GB
+   Allocated Memory : 4.99 GB
+   Reserved Memory : 7.18 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.13 GB
+   Allocated Memory : 5.04 GB
+   Reserved Memory : 7.24 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.21 GB
+   Allocated Memory : 4.96 GB
+   Reserved Memory : 7.17 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 15.31 GB
+   Allocated Memory : 5.17 GB
+   Reserved Memory : 8.06 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 15.38 GB
+   Allocated Memory : 5.08 GB
+   Reserved Memory : 7.99 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.20 GB
+   Allocated Memory : 4.98 GB
+   Reserved Memory : 7.17 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 15.32 GB
+   Allocated Memory : 5.14 GB
+   Reserved Memory : 8.06 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.21 GB
+   Allocated Memory : 4.98 GB
+   Reserved Memory : 7.16 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.20 GB
+   Allocated Memory : 5.00 GB
+   Reserved Memory : 7.17 GB
+Finished Inference
+Starting Hidden State Calculation
+Finished Hidden State Calculation
+Saved Results
+Prompting Strategy: few_shot_instruction
+Starting Inference
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.26 GB
+   Allocated Memory : 4.85 GB
+   Reserved Memory : 7.11 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.27 GB
+   Allocated Memory : 4.83 GB
+   Reserved Memory : 7.10 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.81 GB
+   Allocated Memory : 4.77 GB
+   Reserved Memory : 6.56 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.33 GB
+   Allocated Memory : 4.83 GB
+   Reserved Memory : 7.04 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.82 GB
+   Allocated Memory : 4.72 GB
+   Reserved Memory : 6.55 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.13 GB
+   Allocated Memory : 5.04 GB
+   Reserved Memory : 7.24 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.83 GB
+   Allocated Memory : 4.72 GB
+   Reserved Memory : 6.54 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.82 GB
+   Allocated Memory : 4.73 GB
+   Reserved Memory : 6.55 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.82 GB
+   Allocated Memory : 4.74 GB
+   Reserved Memory : 6.56 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.82 GB
+   Allocated Memory : 4.73 GB
+   Reserved Memory : 6.55 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.82 GB
+   Allocated Memory : 4.74 GB
+   Reserved Memory : 6.55 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.81 GB
+   Allocated Memory : 4.75 GB
+   Reserved Memory : 6.56 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.28 GB
+   Allocated Memory : 4.91 GB
+   Reserved Memory : 7.09 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.82 GB
+   Allocated Memory : 4.75 GB
+   Reserved Memory : 6.56 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.34 GB
+   Allocated Memory : 4.78 GB
+   Reserved Memory : 7.03 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.33 GB
+   Allocated Memory : 4.82 GB
+   Reserved Memory : 7.04 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.34 GB
+   Allocated Memory : 4.80 GB
+   Reserved Memory : 7.04 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.82 GB
+   Allocated Memory : 4.73 GB
+   Reserved Memory : 6.55 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.33 GB
+   Allocated Memory : 4.82 GB
+   Reserved Memory : 7.04 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.24 GB
+   Allocated Memory : 4.89 GB
+   Reserved Memory : 7.13 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.56 GB
+   Allocated Memory : 4.78 GB
+   Reserved Memory : 6.81 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.83 GB
+   Allocated Memory : 4.72 GB
+   Reserved Memory : 6.54 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.82 GB
+   Allocated Memory : 4.74 GB
+   Reserved Memory : 6.55 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.82 GB
+   Allocated Memory : 4.74 GB
+   Reserved Memory : 6.55 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.82 GB
+   Allocated Memory : 4.73 GB
+   Reserved Memory : 6.55 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.34 GB
+   Allocated Memory : 4.78 GB
+   Reserved Memory : 7.03 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.24 GB
+   Allocated Memory : 4.89 GB
+   Reserved Memory : 7.13 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.33 GB
+   Allocated Memory : 4.82 GB
+   Reserved Memory : 7.04 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.83 GB
+   Allocated Memory : 4.71 GB
+   Reserved Memory : 6.54 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.33 GB
+   Allocated Memory : 4.81 GB
+   Reserved Memory : 7.04 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.76 GB
+   Allocated Memory : 4.71 GB
+   Reserved Memory : 6.61 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.33 GB
+   Allocated Memory : 4.82 GB
+   Reserved Memory : 7.04 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.26 GB
+   Allocated Memory : 4.86 GB
+   Reserved Memory : 7.12 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.25 GB
+   Allocated Memory : 4.88 GB
+   Reserved Memory : 7.12 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.28 GB
+   Allocated Memory : 4.90 GB
+   Reserved Memory : 7.09 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.25 GB
+   Allocated Memory : 4.87 GB
+   Reserved Memory : 7.12 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.77 GB
+   Allocated Memory : 4.77 GB
+   Reserved Memory : 6.60 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.82 GB
+   Allocated Memory : 4.74 GB
+   Reserved Memory : 6.55 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.82 GB
+   Allocated Memory : 4.73 GB
+   Reserved Memory : 6.55 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.33 GB
+   Allocated Memory : 4.81 GB
+   Reserved Memory : 7.04 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.82 GB
+   Allocated Memory : 4.74 GB
+   Reserved Memory : 6.55 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.34 GB
+   Allocated Memory : 4.78 GB
+   Reserved Memory : 7.03 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.82 GB
+   Allocated Memory : 4.74 GB
+   Reserved Memory : 6.55 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.34 GB
+   Allocated Memory : 4.79 GB
+   Reserved Memory : 7.03 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.81 GB
+   Allocated Memory : 4.77 GB
+   Reserved Memory : 6.56 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.82 GB
+   Allocated Memory : 4.74 GB
+   Reserved Memory : 6.56 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.25 GB
+   Allocated Memory : 4.87 GB
+   Reserved Memory : 7.12 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.25 GB
+   Allocated Memory : 4.90 GB
+   Reserved Memory : 7.12 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.82 GB
+   Allocated Memory : 4.73 GB
+   Reserved Memory : 6.55 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.81 GB
+   Allocated Memory : 4.77 GB
+   Reserved Memory : 6.56 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.81 GB
+   Allocated Memory : 4.77 GB
+   Reserved Memory : 6.56 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.83 GB
+   Allocated Memory : 4.71 GB
+   Reserved Memory : 6.54 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.26 GB
+   Allocated Memory : 4.84 GB
+   Reserved Memory : 7.11 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.34 GB
+   Allocated Memory : 4.79 GB
+   Reserved Memory : 7.03 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.60 GB
+   Allocated Memory : 4.77 GB
+   Reserved Memory : 6.77 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.77 GB
+   Allocated Memory : 4.77 GB
+   Reserved Memory : 6.60 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.82 GB
+   Allocated Memory : 4.72 GB
+   Reserved Memory : 6.55 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.21 GB
+   Allocated Memory : 4.96 GB
+   Reserved Memory : 7.16 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.27 GB
+   Allocated Memory : 4.83 GB
+   Reserved Memory : 7.11 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.26 GB
+   Allocated Memory : 4.84 GB
+   Reserved Memory : 7.11 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.34 GB
+   Allocated Memory : 4.78 GB
+   Reserved Memory : 7.03 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.76 GB
+   Allocated Memory : 4.71 GB
+   Reserved Memory : 6.61 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.82 GB
+   Allocated Memory : 4.75 GB
+   Reserved Memory : 6.56 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.27 GB
+   Allocated Memory : 4.95 GB
+   Reserved Memory : 7.11 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.83 GB
+   Allocated Memory : 4.72 GB
+   Reserved Memory : 6.54 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.27 GB
+   Allocated Memory : 4.93 GB
+   Reserved Memory : 7.10 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.25 GB
+   Allocated Memory : 4.87 GB
+   Reserved Memory : 7.12 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.34 GB
+   Allocated Memory : 4.79 GB
+   Reserved Memory : 7.03 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.81 GB
+   Allocated Memory : 4.77 GB
+   Reserved Memory : 6.56 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.82 GB
+   Allocated Memory : 4.73 GB
+   Reserved Memory : 6.55 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.77 GB
+   Allocated Memory : 4.77 GB
+   Reserved Memory : 6.60 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.27 GB
+   Allocated Memory : 4.83 GB
+   Reserved Memory : 7.10 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.81 GB
+   Allocated Memory : 4.77 GB
+   Reserved Memory : 6.56 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.27 GB
+   Allocated Memory : 4.94 GB
+   Reserved Memory : 7.10 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.76 GB
+   Allocated Memory : 4.71 GB
+   Reserved Memory : 6.61 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.81 GB
+   Allocated Memory : 4.75 GB
+   Reserved Memory : 6.56 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.26 GB
+   Allocated Memory : 4.85 GB
+   Reserved Memory : 7.11 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.34 GB
+   Allocated Memory : 4.80 GB
+   Reserved Memory : 7.04 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.33 GB
+   Allocated Memory : 4.81 GB
+   Reserved Memory : 7.04 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.82 GB
+   Allocated Memory : 4.74 GB
+   Reserved Memory : 6.55 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.82 GB
+   Allocated Memory : 4.74 GB
+   Reserved Memory : 6.55 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.82 GB
+   Allocated Memory : 4.74 GB
+   Reserved Memory : 6.55 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.82 GB
+   Allocated Memory : 4.73 GB
+   Reserved Memory : 6.55 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.33 GB
+   Allocated Memory : 4.81 GB
+   Reserved Memory : 7.04 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.82 GB
+   Allocated Memory : 4.75 GB
+   Reserved Memory : 6.56 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.82 GB
+   Allocated Memory : 4.73 GB
+   Reserved Memory : 6.55 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.33 GB
+   Allocated Memory : 4.81 GB
+   Reserved Memory : 7.04 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.82 GB
+   Allocated Memory : 4.73 GB
+   Reserved Memory : 6.55 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.81 GB
+   Allocated Memory : 4.77 GB
+   Reserved Memory : 6.56 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.82 GB
+   Allocated Memory : 4.74 GB
+   Reserved Memory : 6.55 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.26 GB
+   Allocated Memory : 4.86 GB
+   Reserved Memory : 7.12 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.84 GB
+   Allocated Memory : 4.70 GB
+   Reserved Memory : 6.53 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.28 GB
+   Allocated Memory : 4.90 GB
+   Reserved Memory : 7.09 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.81 GB
+   Allocated Memory : 4.75 GB
+   Reserved Memory : 6.56 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.34 GB
+   Allocated Memory : 4.79 GB
+   Reserved Memory : 7.03 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.82 GB
+   Allocated Memory : 4.72 GB
+   Reserved Memory : 6.55 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.26 GB
+   Allocated Memory : 4.84 GB
+   Reserved Memory : 7.11 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.82 GB
+   Allocated Memory : 4.72 GB
+   Reserved Memory : 6.55 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.33 GB
+   Allocated Memory : 4.82 GB
+   Reserved Memory : 7.04 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.26 GB
+   Allocated Memory : 4.84 GB
+   Reserved Memory : 7.11 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.29 GB
+   Allocated Memory : 4.89 GB
+   Reserved Memory : 7.09 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.24 GB
+   Allocated Memory : 4.89 GB
+   Reserved Memory : 7.13 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.82 GB
+   Allocated Memory : 4.75 GB
+   Reserved Memory : 6.56 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.82 GB
+   Allocated Memory : 4.74 GB
+   Reserved Memory : 6.55 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.33 GB
+   Allocated Memory : 4.81 GB
+   Reserved Memory : 7.04 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.82 GB
+   Allocated Memory : 4.74 GB
+   Reserved Memory : 6.56 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.82 GB
+   Allocated Memory : 4.74 GB
+   Reserved Memory : 6.55 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.33 GB
+   Allocated Memory : 4.82 GB
+   Reserved Memory : 7.04 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.82 GB
+   Allocated Memory : 4.77 GB
+   Reserved Memory : 6.55 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.82 GB
+   Allocated Memory : 4.77 GB
+   Reserved Memory : 6.56 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.56 GB
+   Allocated Memory : 4.78 GB
+   Reserved Memory : 6.81 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.56 GB
+   Allocated Memory : 4.79 GB
+   Reserved Memory : 6.81 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.56 GB
+   Allocated Memory : 4.78 GB
+   Reserved Memory : 6.81 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.82 GB
+   Allocated Memory : 4.73 GB
+   Reserved Memory : 6.55 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.34 GB
+   Allocated Memory : 4.78 GB
+   Reserved Memory : 7.03 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.33 GB
+   Allocated Memory : 4.82 GB
+   Reserved Memory : 7.04 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.82 GB
+   Allocated Memory : 4.75 GB
+   Reserved Memory : 6.56 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.33 GB
+   Allocated Memory : 4.81 GB
+   Reserved Memory : 7.04 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.82 GB
+   Allocated Memory : 4.73 GB
+   Reserved Memory : 6.55 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.82 GB
+   Allocated Memory : 4.75 GB
+   Reserved Memory : 6.56 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.81 GB
+   Allocated Memory : 4.77 GB
+   Reserved Memory : 6.56 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.26 GB
+   Allocated Memory : 4.86 GB
+   Reserved Memory : 7.12 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.81 GB
+   Allocated Memory : 4.77 GB
+   Reserved Memory : 6.56 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.81 GB
+   Allocated Memory : 4.77 GB
+   Reserved Memory : 6.56 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.51 GB
+   Allocated Memory : 4.80 GB
+   Reserved Memory : 6.86 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.19 GB
+   Allocated Memory : 5.00 GB
+   Reserved Memory : 7.18 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.77 GB
+   Allocated Memory : 4.77 GB
+   Reserved Memory : 6.60 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.81 GB
+   Allocated Memory : 4.77 GB
+   Reserved Memory : 6.56 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.34 GB
+   Allocated Memory : 4.80 GB
+   Reserved Memory : 7.04 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.81 GB
+   Allocated Memory : 4.77 GB
+   Reserved Memory : 6.56 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.77 GB
+   Allocated Memory : 4.77 GB
+   Reserved Memory : 6.60 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.82 GB
+   Allocated Memory : 4.74 GB
+   Reserved Memory : 6.56 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.82 GB
+   Allocated Memory : 4.75 GB
+   Reserved Memory : 6.56 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.34 GB
+   Allocated Memory : 4.80 GB
+   Reserved Memory : 7.03 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.33 GB
+   Allocated Memory : 4.83 GB
+   Reserved Memory : 7.04 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.81 GB
+   Allocated Memory : 4.77 GB
+   Reserved Memory : 6.56 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.28 GB
+   Allocated Memory : 4.91 GB
+   Reserved Memory : 7.09 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.82 GB
+   Allocated Memory : 4.73 GB
+   Reserved Memory : 6.55 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.33 GB
+   Allocated Memory : 4.81 GB
+   Reserved Memory : 7.04 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.60 GB
+   Allocated Memory : 4.77 GB
+   Reserved Memory : 6.77 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.82 GB
+   Allocated Memory : 4.74 GB
+   Reserved Memory : 6.56 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.34 GB
+   Allocated Memory : 4.80 GB
+   Reserved Memory : 7.03 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.83 GB
+   Allocated Memory : 4.72 GB
+   Reserved Memory : 6.54 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.34 GB
+   Allocated Memory : 4.80 GB
+   Reserved Memory : 7.03 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.83 GB
+   Allocated Memory : 4.72 GB
+   Reserved Memory : 6.54 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.82 GB
+   Allocated Memory : 4.72 GB
+   Reserved Memory : 6.55 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.82 GB
+   Allocated Memory : 4.73 GB
+   Reserved Memory : 6.55 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.25 GB
+   Allocated Memory : 4.88 GB
+   Reserved Memory : 7.12 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.47 GB
+   Allocated Memory : 4.79 GB
+   Reserved Memory : 6.90 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.83 GB
+   Allocated Memory : 4.71 GB
+   Reserved Memory : 6.54 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.82 GB
+   Allocated Memory : 4.75 GB
+   Reserved Memory : 6.56 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.82 GB
+   Allocated Memory : 4.74 GB
+   Reserved Memory : 6.55 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.82 GB
+   Allocated Memory : 4.74 GB
+   Reserved Memory : 6.55 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.82 GB
+   Allocated Memory : 4.74 GB
+   Reserved Memory : 6.55 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.34 GB
+   Allocated Memory : 4.79 GB
+   Reserved Memory : 7.03 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.82 GB
+   Allocated Memory : 4.72 GB
+   Reserved Memory : 6.55 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.82 GB
+   Allocated Memory : 4.73 GB
+   Reserved Memory : 6.55 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.27 GB
+   Allocated Memory : 4.93 GB
+   Reserved Memory : 7.10 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.25 GB
+   Allocated Memory : 4.88 GB
+   Reserved Memory : 7.12 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.60 GB
+   Allocated Memory : 4.77 GB
+   Reserved Memory : 6.77 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.81 GB
+   Allocated Memory : 4.77 GB
+   Reserved Memory : 6.56 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.34 GB
+   Allocated Memory : 4.79 GB
+   Reserved Memory : 7.03 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.83 GB
+   Allocated Memory : 4.71 GB
+   Reserved Memory : 6.54 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.81 GB
+   Allocated Memory : 4.75 GB
+   Reserved Memory : 6.56 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.33 GB
+   Allocated Memory : 4.83 GB
+   Reserved Memory : 7.04 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.81 GB
+   Allocated Memory : 4.75 GB
+   Reserved Memory : 6.56 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.82 GB
+   Allocated Memory : 4.74 GB
+   Reserved Memory : 6.55 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.82 GB
+   Allocated Memory : 4.74 GB
+   Reserved Memory : 6.55 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.60 GB
+   Allocated Memory : 4.77 GB
+   Reserved Memory : 6.77 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.33 GB
+   Allocated Memory : 4.81 GB
+   Reserved Memory : 7.04 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.82 GB
+   Allocated Memory : 4.74 GB
+   Reserved Memory : 6.55 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.27 GB
+   Allocated Memory : 4.93 GB
+   Reserved Memory : 7.10 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.26 GB
+   Allocated Memory : 4.86 GB
+   Reserved Memory : 7.12 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.81 GB
+   Allocated Memory : 4.77 GB
+   Reserved Memory : 6.56 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.27 GB
+   Allocated Memory : 4.92 GB
+   Reserved Memory : 7.10 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.82 GB
+   Allocated Memory : 4.77 GB
+   Reserved Memory : 6.55 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.56 GB
+   Allocated Memory : 4.78 GB
+   Reserved Memory : 6.81 GB
+Finished Inference
+Starting Hidden State Calculation
+Finished Hidden State Calculation
+Saved Results
+Job finished

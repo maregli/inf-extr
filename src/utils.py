@@ -13,6 +13,8 @@ import pandas as pd
 
 import matplotlib.pyplot as plt
 
+import seaborn as sns
+
 from transformers import (AutoModelForSequenceClassification,
                           AutoModelForCausalLM,
                           AutoModelForTokenClassification, 
@@ -492,7 +494,7 @@ line_label_id2label = {0: 'dm',
                        7: 'to_tr',
                        } 
 
-line_Label_label2id = {v:k for k,v in line_label_id2label.items()}
+line_label_label2id = {v:k for k,v in line_label_id2label.items()}
 
 line_label_token_label2id = {'B-dm': 0,
  'B-medo_unk_do_so': 1,
@@ -727,8 +729,8 @@ def check_gpu_memory()->None:
 
 
 ### Evaluation
-        
-def plot_embeddings(embeddings: torch.tensor, labels:List[int], title = "plot", method="pca")->None:
+
+def plot_embeddings(embeddings: torch.tensor, labels: list[int], title="plot", method="pca") -> None:
     """
     Plot embeddings using PCA or UMAP
 
@@ -756,15 +758,18 @@ def plot_embeddings(embeddings: torch.tensor, labels:List[int], title = "plot", 
     # Create a dataframe with the embeddings and the corresponding labels
     df_embeddings = pd.DataFrame(principalComponents, columns=['x', 'y'])
     df_embeddings['label'] = labels
+
+    # Plot using Seaborn
+    plt.figure(figsize=(8, 6))
+    sns.set_theme(style='whitegrid')
+    sns.scatterplot(data=df_embeddings, x='x', y='y', hue='label', palette='viridis', alpha=0.7)
     
-    for label in df_embeddings['label'].unique():
-        _df = df_embeddings[df_embeddings['label'] == label]
-        plt.scatter(_df['x'], _df['y'], alpha=0.5)
-        plt.legend(df_embeddings['label'].unique())
-
-    # Add a title and show the plot
+    # Add a title and legend
     plt.title(title)
-
+    plt.legend(title='Label', loc='upper left')
+    
+    # Show plot
+    plt.tight_layout()
     plt.show()
 
 def performance_metrics(preds:List[int], labels:List[int])->dict[str, float]:
@@ -971,6 +976,7 @@ def get_results_from_token_preds(predictions:np.ndarray,
         data_dict["text"] = dataset[split][i]["line_text"][:max_len]
         # text.append(dataset[split][i]["line_text"][:max_len])
         data.append(data_dict)
+        
 
     # return preds, labs, rid, text
     return data

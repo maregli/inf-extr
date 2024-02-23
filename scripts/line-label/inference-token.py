@@ -29,7 +29,7 @@ import numpy as np
 import os
 
 def parse_args():
-    parser = argparse.ArgumentParser(description="Zero Shot Classification with Llama2-Chat")
+    parser = argparse.ArgumentParser(description="Inference for Line Label Token Classification Task")
     parser.add_argument("--job_id", type=str, default="unknown", help="Job ID")
     parser.add_argument("--model_name", type=str, default="medbert-512", help="Name of model to be used. Defaults to medbert-512. Must be saved in the path: paths.MODEL_PATH/model_name")
     parser.add_argument("--peft_model_name", type=str, help="PEFT model for which to perform inference. Must be saved in the path: paths.MODEL_PATH/model_name. Must be compatible with base model.")
@@ -37,6 +37,8 @@ def parse_args():
     parser.add_argument("--batch_size", type=int, default=4, help="Batch Size. Defaults to 4")
     parser.add_argument("--split", type=str, default="test", help="Split. Must be one of train, validation or test. Defaults to test")
     parser.add_argument("--task_type", type=str, default="token", help="Task Type. Must be one of class, token or clm. Defaults to token")
+    parser.add_argument("--output_hidden_states", action="store_true", help="Whether to output hidden states. Defaults to False")
+
 
     args = parser.parse_args()
 
@@ -81,6 +83,8 @@ def main():
     BATCH_SIZE = args.batch_size
     SPLIT = args.split
     TASK_TYPE = args.task_type
+    OUTPUT_HIDDEN_STATES = args.output_hidden_states
+
 
     
     # Check GPU Memory
@@ -121,14 +125,38 @@ def main():
     # Get Results
     results = get_results_from_token_preds(predictions=predictions, dataset=encoded_dataset, tokenizer=tokenizer, split=SPLIT)
     
-    for res in results:
-        res.update({"last_hidden_state": []}) #ToDo - Add last hidden state
-    
+    if OUTPUT_HIDDEN_STATES:
+        print("Outputting Hidden States")
+        labels = []
+        last_hidden_states = []
+        for report_idx in tqdm(range(len(encoded_dataset[SPLIT]))):
+            # Input ids, attention mask to tensor
+            input_ids = torch.tensor(encoded_dataset["test"]["input_ids"][report_idx]).unsqueeze(0).to(model.device)
+            attention_mask = torch.tensor(encoded_dataset["test"]["attention_mask"][report_idx]).unsqueeze(0).to(model.device)
+
+            # Get hidden states
+            with torch.no_grad():
+                outputs = model(input_ids=input_ids, attention_mask=attention_mask, output_hidden_states=True)
+                
+            last_hidden_state = outputs.hidden_states[-1].to("cpu")
+
+            last_hidden_states.append(last_hidden_state.squeeze(0))
+            labels.extend(encoded_dataset[SPLIT]["labels"][report_idx])
+
+        last_hidden_states = torch.cat(last_hidden_states, dim = 0)
+
+        results_hidden_states = {
+            "last_hidden_states": last_hidden_states,
+            "labels": labels,
+        }
+
     saving_model_name = PEFT_MODEL_NAME if PEFT_MODEL_NAME else MODEL_NAME
 
     # Save Inference Results
     print("Saving Inference Results at:", paths.RESULTS_PATH/"line-label"/f"{saving_model_name}_{SPLIT}.pt")
     torch.save(results, paths.RESULTS_PATH/"line-label"/f"{saving_model_name}_{SPLIT}.pt")
+    print("Saving Last Hidden States at:", paths.RESULTS_PATH/"line-label"/f"{saving_model_name}_{SPLIT}_hidden_states.pt")
+    torch.save(results_hidden_states, paths.RESULTS_PATH/"line-label"/f"{saving_model_name}_{SPLIT}_hidden_states.pt")
 
     return
 

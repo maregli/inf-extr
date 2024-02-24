@@ -29,6 +29,7 @@ def parse_args():
     parser.add_argument("--peft_config", type=str, default=None, help="PEFT Config. JSON-formatted configuration. Defaults to None")
     parser.add_argument("--quantization", type=str, default=None, help="Quantization. Must be one of 4bit, bfloat16 or float16. Defaults to None")
     parser.add_argument("--task_type", type=str, default="class", help="Task Type. Must be one of class or clm. Defaults to class")
+    parser.add_argument("--data_version", type=str, default="base", help="Data Version. Must be one of base or pipeline. Defaults to base")
     parser.add_argument("--batch_size", type=int, default=4, help="Batch Size. Defaults to 4")
     parser.add_argument("--lr", type=float, default=1e-3, help="Learning Rate. Defaults to 1e-3")
     parser.add_argument("--num_epochs", type=int, default=4, help="Number of Epochs. Defaults to 4")
@@ -53,6 +54,7 @@ def main():
     PEFT_CONFIG = args.peft_config
     QUANTIZATION = args.quantization
     TASK_TYPE = args.task_type
+    DATA_VERSION = args.data_version
     BATCH_SIZE = args.batch_size
     LEARNING_RATE = args.lr
     NUM_EPOCHS = args.num_epochs
@@ -63,7 +65,7 @@ def main():
     check_gpu_memory()
 
     # Load Data
-    df = load_line_label_data()
+    df = load_line_label_data(version=DATA_VERSION)
     
     if NUM_LABELS is None and TASK_TYPE == "class":
         NUM_LABELS = len(set(df['train']["labels"]))
@@ -97,7 +99,11 @@ def main():
     print("Got Optimizer and Scheduler")
 
     arg_names = [MODEL_NAME, QUANTIZATION, config.get("peft_type", None), TASK_TYPE]
+    if DATA_VERSION != "base":
+        arg_names.append(DATA_VERSION)
     arg_names = [arg_name for arg_name in arg_names if arg_name is not None]
+
+
 
     finetuned_model_name = f"line-label_{'_'.join(arg_names)}"
 

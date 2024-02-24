@@ -15,12 +15,13 @@ from tqdm import tqdm
 import argparse
 
 def parse_args():
-    parser = argparse.ArgumentParser(description="Zero Shot Classification with Llama2-Chat")
+    parser = argparse.ArgumentParser(description="Inference for Line Label Task")
     parser.add_argument("--job_id", type=str, default="unknown", help="Job ID")
     parser.add_argument("--model_name", type=str, default="medbert-512", help="Name of model to be used. Defaults to medbert-512. Must be saved in the path: paths.MODEL_PATH/model_name")
     parser.add_argument("--peft_model_name", type=str, help="PEFT model for which to perform inference. Must be saved in the path: paths.MODEL_PATH/model_name. Must be compatible with base model.")
     parser.add_argument("--quantization", type=str, default=None, help="Quantization. Must be one of 4bit, bfloat16 or float16. Defaults to None")
     parser.add_argument("--batch_size", type=int, default=4, help="Batch Size. Defaults to 4")
+    parser.add_argument("--data_version", type=str, default="base", help="Data Version. Must be one of base or pipeline. Defaults to base")
     parser.add_argument("--split", type=str, default="test", help="Split. Must be one of train, validation or test. Defaults to test")
     parser.add_argument("--task_type", type=str, default="class", help="Task Type. Must be one of class or clm. Defaults to class")
     parser.add_argument("--output_hidden_states", action="store_true", help="Whether to output hidden states. Defaults to False")
@@ -43,6 +44,7 @@ def main():
     PEFT_MODEL_NAME = args.peft_model_name
     QUANTIZATION = args.quantization
     BATCH_SIZE = args.batch_size
+    DATA_VERSION = args.data_version
     SPLIT = args.split
     TASK_TYPE = args.task_type
     OUTPUT_HIDDEN_STATES = args.output_hidden_states
@@ -53,7 +55,8 @@ def main():
     check_gpu_memory()
 
     # Load data
-    df = load_line_label_data()
+    df = load_line_label_data(version=DATA_VERSION)
+
     if TASK_TYPE == "class":
         NUM_LABELS = len(set(df['train']["labels"]))
 
@@ -85,8 +88,12 @@ def main():
     saving_model_name = PEFT_MODEL_NAME if PEFT_MODEL_NAME else MODEL_NAME
 
     # Save Inference Results
-    print("Saving Inference Results at:", paths.RESULTS_PATH/"line-label"/f"{saving_model_name}_{SPLIT}.pt")
-    torch.save(inference_results, paths.RESULTS_PATH/"line-label"/f"{saving_model_name}_{SPLIT}.pt")
+    if DATA_VERSION == "base":
+        print("Saving Inference Results at:", paths.RESULTS_PATH/"line-label"/f"{saving_model_name}_{SPLIT}.pt")
+        torch.save(inference_results, paths.RESULTS_PATH/"line-label"/f"{saving_model_name}_{SPLIT}.pt")
+    else:
+        print("Saving Inference Results at:", paths.RESULTS_PATH/"line-label"/f"{saving_model_name}_{DATA_VERSION}_{SPLIT}.pt")
+        torch.save(inference_results, paths.RESULTS_PATH/"line-label"/f"{saving_model_name}_{DATA_VERSION}_{SPLIT}.pt")
 
     return
 

@@ -212,15 +212,29 @@ def select_peft_config(model:AutoModelForSequenceClassification, peft_type:str)-
 
 ### Data
 
-def load_line_label_data():
+def load_line_label_data(version:str="base")->DatasetDict:
     """Loads the data for Line Label task and returns the dataset dictionary
+
+    Args:
+        version (str, optional): Version. Must be one of base or pipeline. Defaults to "base".
 
     Returns:
         DatasetDict: Returns the dataset dictionary
     """
 
-    dataset = DatasetDict.load_from_disk(paths.DATA_PATH_PREPROCESSED/'line-label/line-label_clean_dataset')
+    if version == "base":
+        try:
+            dataset = DatasetDict.load_from_disk(paths.DATA_PATH_PREPROCESSED/'line-label/line-label_clean_dataset')
+        except:
+            print("Could not find the dataset. Try running the preprocessing notebook: notebooks/01_classifying_text_lines.ipynb")
+    elif version == "pipeline":
+        try:
+            dataset = DatasetDict.load_from_disk(paths.DATA_PATH_PREPROCESSED/'line-label/line-label_clean_dataset_pipeline')
+        except:
+            print("Could not find the dataset. Try running the preprocessing notebook: notebooks/01_classifying_text_lines.ipynb")
     return dataset
+
+
 
 def prepare_line_label_data(dataset:DatasetDict, tokenizer:AutoTokenizer, truncation_size:int = 512, inference_mode = False)->DatasetDict:
     """Prepares the data for Line Label task and returns the dataset

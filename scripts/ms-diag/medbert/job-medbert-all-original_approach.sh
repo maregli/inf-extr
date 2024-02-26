@@ -17,7 +17,7 @@ python /cluster/home/eglimar/inf-extr/scripts/ms-diag/finetune.py \
     --num_labels 3 \
     --data all \
     --data_augmentation original_approach \
-    --num_epochs 12 \
+    --num_epochs 16 \
     --batch_size 8 \
     --lr 2e-4 
 echo "Job finished"

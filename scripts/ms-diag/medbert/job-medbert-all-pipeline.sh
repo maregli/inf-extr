@@ -14,7 +14,8 @@ conda activate inf-extr
 
 echo "Starting job with ID $SLURM_JOB_ID..."
 python /cluster/home/eglimar/inf-extr/scripts/ms-diag/pipeline_finetune.py \
+    --data_augmentation oversample \
     --num_epochs 16 \
     --batch_size 16 \
-    --lr 1e-5
+    --lr 2e-4 
 echo "Job finished"

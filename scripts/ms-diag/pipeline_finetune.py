@@ -36,7 +36,7 @@ def parse_args():
     parser.add_argument("--retrieval_model_name", type=str, default="line-label_medbert-512_class_pipeline", help="Name of retrieval model to be used. Defaults to line-label_medbert-512_class_pipeline. Must be saved in the path: paths.MODEL_PATH/retrieval_model_name")
     parser.add_argument("--quantization", type=str, default=None, help="Quantization. Must be one of 4bit, bfloat16, float16 or None. Defaults to None")
     parser.add_argument("--batch_size", type=int, default=4, help="Batch Size. Defaults to 4")
-    parser.add_argument("data_augmentation", type=str, default="oversample", help="Data Augmentation. Must be one of oversample, undersample or None. Defaults to oversample")
+    parser.add_argument("--data_augmentation", type=str, default="oversample", help="Data Augmentation. Must be one of oversample, undersample or None. Defaults to oversample")
     parser.add_argument("--lr", type=float, default=2e-4, help="Learning Rate. Defaults to 2e-4")
     parser.add_argument("--num_epochs", type=int, default=4, help="Number of Epochs. Defaults to 4")
     parser.add_argument("--gradient_accumulation_steps", type=int, default=1, help="Gradient Accumulation Steps. Defaults to 1.")

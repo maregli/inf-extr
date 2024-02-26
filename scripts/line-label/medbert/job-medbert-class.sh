@@ -6,7 +6,7 @@
 #SBATCH --cpus-per-task=1
 #SBATCH -p gpu
 #SBATCH --gres=gpu:rtx1080ti:1
-#SBATCH --time=01:00:00
+#SBATCH --time=04:00:00
 #SBATCH --mem-per-cpu=10G
  
 source ~/.bashrc
@@ -18,5 +18,5 @@ python /cluster/home/eglimar/inf-extr/scripts/line-label/finetune.py \
     --task_type class \
     --batch_size 16 \
     --lr 2e-5 \
-    --num_epochs 20
+    --num_epochs 16
 echo "Job finished"

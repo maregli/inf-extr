@@ -17,5 +17,6 @@ python /cluster/home/eglimar/inf-extr/scripts/line-label/inference-token.py \
     --model_name line-label_medbert-512_token \
     --task_type token \
     --split test \
-    --batch_size 8
+    --batch_size 8 \
+    --output_hidden_states
 echo "Job finished"

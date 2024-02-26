@@ -6,7 +6,7 @@
 #SBATCH --cpus-per-task=1
 #SBATCH -p gpu
 #SBATCH --gres=gpu:rtx2080ti:1
-#SBATCH --time=02:00:00
+#SBATCH --time=04:00:00
 #SBATCH --mem-per-cpu=10G
  
 source ~/.bashrc
@@ -16,8 +16,8 @@ echo "Starting job with ID $SLURM_JOB_ID..."
 python /cluster/home/eglimar/inf-extr/scripts/line-label/finetune.py \
     --model_name medbert-512 \
     --task_type class \
-    --batch_size 32 \
+    --batch_size 16 \
     --lr 2e-5 \
-    --num_epochs 20 \
+    --num_epochs 16 \
     --data_version pipeline
 echo "Job finished"

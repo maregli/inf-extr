@@ -1,8 +1,8 @@
 #!/bin/bash
  
-#SBATCH --job-name=ms_medbert_train
-#SBATCH --output=/cluster/home/eglimar/inf-extr/scripts/ms-diag/medbert/logs/train-%j.out
-#SBATCH --error=/cluster/home/eglimar/inf-extr/scripts/ms-diag/medbert/logs/train-%j.err
+#SBATCH --job-name=ms_medbert_train_original_all
+#SBATCH --output=/cluster/home/eglimar/inf-extr/scripts/ms-diag/medbert/logs/original-all-train-%j.out
+#SBATCH --error=/cluster/home/eglimar/inf-extr/scripts/ms-diag/medbert/logs/original-all-train-%j.err
 #SBATCH --cpus-per-task=1
 #SBATCH -p gpu
 #SBATCH --gres=gpu:rtx1080ti:1

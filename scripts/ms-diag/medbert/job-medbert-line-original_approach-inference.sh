@@ -1,12 +1,12 @@
 #!/bin/bash
  
 #SBATCH --job-name=medbert_inference_line_original
-#SBATCH --output=/cluster/home/eglimar/inf-extr/scripts/ms-diag/medbert/logs/original-line-inference-%j.out
-#SBATCH --error=/cluster/home/eglimar/inf-extr/scripts/ms-diag/medbert/logs/original-line-inference-%j.err
+#SBATCH --output=/cluster/home/eglimar/inf-extr/scripts/ms-diag/medbert/logs/line-original-inference-%j.out
+#SBATCH --error=/cluster/home/eglimar/inf-extr/scripts/ms-diag/medbert/logs/line-original-inference-%j.err
 #SBATCH --cpus-per-task=1
 #SBATCH -p gpu
 #SBATCH --gres=gpu:rtx1080ti:1
-#SBATCH --time=00:15:00
+#SBATCH --time=01:00:00
 #SBATCH --mem-per-cpu=10G
  
 source ~/.bashrc

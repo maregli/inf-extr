@@ -5,7 +5,7 @@
 #SBATCH --error=/cluster/home/eglimar/inf-extr/scripts/line-label/medbert/logs/class-pipeline-%j.err
 #SBATCH --cpus-per-task=1
 #SBATCH -p gpu
-#SBATCH --gres=gpu:rtx2080ti:1
+#SBATCH --gres=gpu:1
 #SBATCH --time=04:00:00
 #SBATCH --mem-per-cpu=10G
  

@@ -5,7 +5,7 @@
 #SBATCH --error=/cluster/home/eglimar/inf-extr/scripts/ms-diag/medbert/logs/line-oversample-train-%j.err
 #SBATCH --cpus-per-task=1
 #SBATCH -p gpu
-#SBATCH --gres=gpu:rtx1080ti:1
+#SBATCH --gres=gpu:1
 #SBATCH --time=08:00:00
 #SBATCH --mem-per-cpu=10G
  

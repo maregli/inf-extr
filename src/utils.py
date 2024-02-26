@@ -328,7 +328,7 @@ def prepare_ms_data(df:DatasetDict, tokenizer: AutoTokenizer, data_augmentation:
     """Prepares the data for MS-Diag task and returns the dataset
 
     Args:
-        df (DatasetDict): Dataset dictionary
+        df (DatasetDict): Dataset dictionary. Must have keys "train", "val" and "test". Each subdataset must have columns "text" (and "labels" if training).
         tokenizer (AutoTokenizer): Tokenizer
         data_augmentation (str, optional): Data Augmentation. Must be one of None, "zero-shot" or "augmented". Defaults to None.
         inference_mode (bool, optional): Inference Mode, will . Defaults to False.
@@ -384,7 +384,7 @@ def prepare_ms_data(df:DatasetDict, tokenizer: AutoTokenizer, data_augmentation:
     else:
         raise ValueError("Data Augmentation must be one of None, zero-shot or augmented")
     
-    # For evaluation during training will use undersampling
+    # For evaluation during training will use oversampling
     if not inference_mode:
         df["val"] = oversample_dataset(df["val"])
     
@@ -486,6 +486,66 @@ def prepare_pd_dataset_for_lineclass(df: pd.DataFrame):
         dict_list.append(obs_dict)
     return pd.DataFrame(data = dict_list)
 
+
+def information_retrieval(retrieval_model:AutoModelForSequenceClassification,
+                          retrieval_tokenizer:AutoTokenizer,
+                          text:list[str],
+                          label:str)->list[str]:
+                          
+    """Retrieves relevant information from the given text using the given retrieval model and tokenizer
+
+    Args:
+        retrieval_model (AutoModelForSequenceClassification): Retrieval Model
+        retrieval_tokenizer (AutoTokenizer): Retrieval Tokenizer
+        text (list[str]): Text
+        label (str): Label of the relevant information
+
+    Returns:
+        list[str]: Returns the relevant text. Output list should have same length as input list.
+    """
+
+    print("Retrieving relevant information")
+
+    device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
+
+    # Prepare Data
+    max_length = retrieval_tokenizer.model_max_length
+    splitted_text = [report.splitlines() for report in text] # Split the text into lines as the retrieval model is trained on line level
+    splitted_text = [[line for line in report if line != ""] for report in splitted_text] # Exclude "" lines
+
+    report_lengths = [len(report) for report in splitted_text] # Get the length of each report
+
+    # Flatten the list
+    splitted_text = [item for sublist in splitted_text for item in sublist]
+    encoded_dataset = retrieval_tokenizer(splitted_text, truncation=True, max_length=max_length, padding = False)
+    encoded_dataset = Dataset.from_dict(encoded_dataset)
+
+    # Get DataLoaders
+    dataloader = get_DataLoader(encoded_dataset, retrieval_tokenizer, batch_size=32, shuffle=False)
+
+    # Perform Inference
+    inference_results = perform_inference(retrieval_model, dataloader, device, output_hidden_states=False)
+
+    # Get the relevant text
+    relevant_lines = [splitted_text[i] if line_label_id2label[pred] == label else "" for i, pred in enumerate(inference_results["preds"])]
+
+    # Get back original reports
+    relevant_text = []
+
+    for i, report_length in enumerate(report_lengths):
+        start_index = sum(report_lengths[:i])
+        end_index = start_index + report_length
+        relevant_report_text = relevant_lines[start_index:end_index]
+
+        # Remove empty strings
+        relevant_report_text = [line for line in relevant_report_text if line != ""]
+        relevant_text.append("\n".join(relevant_report_text))
+
+    assert len(relevant_text) == len(text), "Length of relevant text does not match length of input text"
+
+    print("Retrieved relevant information")
+
+    return relevant_text
 
 ### Label to id mapping
 
@@ -609,7 +669,7 @@ def perform_inference(model:Union[PeftModel, AutoModelForSequenceClassification]
             inputs = {k:v for k,v in batch.items() if k != "labels"} # For inference don't need labels. None labels could cause error.
             
             outputs = model(**inputs, output_hidden_states=True)
-            logits = outputs.logits
+            logits = outputs.logits.detach().clone().to("cpu")
             logits_list.extend(logits.tolist())
             
             predictions = logits.argmax(dim=-1)

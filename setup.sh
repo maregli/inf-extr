@@ -7,9 +7,9 @@ echo "Starting project setup..."
 echo "Installing poetry dependencies..."
 poetry install
 
-# Install flash-attn
+# Install flash-attn, skipping the CUDA build should be fine
 echo "Installing flash-attn..."
-poetry run python -m pip install flash-attn --no-build-isolation
+FLASH_ATTENTION_SKIP_CUDA_BUILD=TRUE poetry run python -m pip install flash-attn --no-build-isolation
 
 # Print a completion message
 echo "Setup complete."

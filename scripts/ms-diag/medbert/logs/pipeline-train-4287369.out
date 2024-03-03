@@ -1,0 +1,64 @@
+Starting job with ID 4287369...
+Parsed Arguments:
+job_id: unknown
+model_name: medbert-512
+retrieval_model_name: line-label_medbert-512_class_pipeline
+quantization: None
+batch_size: 16
+data_augmentation: oversample
+lr: 0.0002
+num_epochs: 16
+gradient_accumulation_steps: 1
+num_labels: 3
+peft_config: None
+GPU 0: NVIDIA GeForce RTX 2080 Ti
+   Total Memory: 10.75 GB
+   Free Memory: 10.14 GB
+   Allocated Memory : 0.00 GB
+   Reserved Memory : 0.00 GB
+Tokenizer pad token ID: 0
+Tokenizer special tokens: {'unk_token': '[UNK]', 'sep_token': '[SEP]', 'pad_token': '[PAD]', 'cls_token': '[CLS]', 'mask_token': '[MASK]'}
+Model pad token ID: 0
+Loaded Model and Tokenizer
+Tokenizer pad token ID: 0
+Tokenizer special tokens: {'unk_token': '[UNK]', 'sep_token': '[SEP]', 'pad_token': '[PAD]', 'cls_token': '[CLS]', 'mask_token': '[MASK]'}
+Model pad token ID: 0
+Retrieving relevant information
+Retrieved relevant information
+Retrieving relevant information
+Retrieved relevant information
+Loaded Data
+Starting Training
+{'eval_loss': 0.029331566765904427, 'eval_accuracy': 1.0, 'eval_f1': 1.0, 'eval_precision': 1.0, 'eval_recall': 1.0, 'eval_runtime': 0.1416, 'eval_samples_per_second': 190.647, 'eval_steps_per_second': 14.122, 'epoch': 1.0}
+{'loss': 0.5637, 'learning_rate': 0.00018333333333333334, 'epoch': 1.25}
+{'eval_loss': 2.925264596939087, 'eval_accuracy': 0.6666666666666666, 'eval_f1': 0.5555555555555555, 'eval_precision': 0.5, 'eval_recall': 0.6666666666666666, 'eval_runtime': 0.1322, 'eval_samples_per_second': 204.173, 'eval_steps_per_second': 15.124, 'epoch': 2.0}
+{'loss': 0.9235, 'learning_rate': 0.0001666666666666667, 'epoch': 2.5}
+{'eval_loss': 0.6482763886451721, 'eval_accuracy': 0.6666666666666666, 'eval_f1': 0.5555555555555555, 'eval_precision': 0.5, 'eval_recall': 0.6666666666666666, 'eval_runtime': 0.1089, 'eval_samples_per_second': 247.969, 'eval_steps_per_second': 18.368, 'epoch': 3.0}
+{'loss': 0.7256, 'learning_rate': 0.00015000000000000001, 'epoch': 3.75}
+{'eval_loss': 0.6206722259521484, 'eval_accuracy': 0.6666666666666666, 'eval_f1': 0.5555555555555555, 'eval_precision': 0.5, 'eval_recall': 0.6666666666666666, 'eval_runtime': 0.1214, 'eval_samples_per_second': 222.367, 'eval_steps_per_second': 16.472, 'epoch': 4.0}
+{'loss': 0.569, 'learning_rate': 0.00013333333333333334, 'epoch': 5.0}
+{'eval_loss': 1.2542383670806885, 'eval_accuracy': 0.6666666666666666, 'eval_f1': 0.5555555555555555, 'eval_precision': 0.5, 'eval_recall': 0.6666666666666666, 'eval_runtime': 0.1206, 'eval_samples_per_second': 223.903, 'eval_steps_per_second': 16.585, 'epoch': 5.0}
+{'eval_loss': 2.536057949066162, 'eval_accuracy': 0.6666666666666666, 'eval_f1': 0.5555555555555555, 'eval_precision': 0.5, 'eval_recall': 0.6666666666666666, 'eval_runtime': 0.2409, 'eval_samples_per_second': 112.092, 'eval_steps_per_second': 8.303, 'epoch': 6.0}
+{'loss': 0.1022, 'learning_rate': 0.00011666666666666668, 'epoch': 6.25}
+{'eval_loss': 0.46929821372032166, 'eval_accuracy': 0.6666666666666666, 'eval_f1': 0.5555555555555555, 'eval_precision': 0.5, 'eval_recall': 0.6666666666666666, 'eval_runtime': 0.1357, 'eval_samples_per_second': 198.976, 'eval_steps_per_second': 14.739, 'epoch': 7.0}
+{'loss': 0.4509, 'learning_rate': 0.0001, 'epoch': 7.5}
+{'eval_loss': 0.6305229067802429, 'eval_accuracy': 0.6666666666666666, 'eval_f1': 0.5555555555555555, 'eval_precision': 0.5, 'eval_recall': 0.6666666666666666, 'eval_runtime': 0.1104, 'eval_samples_per_second': 244.658, 'eval_steps_per_second': 18.123, 'epoch': 8.0}
+{'loss': 0.5102, 'learning_rate': 8.333333333333334e-05, 'epoch': 8.75}
+{'eval_loss': 0.46817734837532043, 'eval_accuracy': 0.6666666666666666, 'eval_f1': 0.5555555555555555, 'eval_precision': 0.5, 'eval_recall': 0.6666666666666666, 'eval_runtime': 0.1822, 'eval_samples_per_second': 148.164, 'eval_steps_per_second': 10.975, 'epoch': 9.0}
+{'loss': 0.4426, 'learning_rate': 6.666666666666667e-05, 'epoch': 10.0}
+{'eval_loss': 0.5061545968055725, 'eval_accuracy': 0.6666666666666666, 'eval_f1': 0.5555555555555555, 'eval_precision': 0.5, 'eval_recall': 0.6666666666666666, 'eval_runtime': 0.1378, 'eval_samples_per_second': 195.991, 'eval_steps_per_second': 14.518, 'epoch': 10.0}
+{'eval_loss': 0.47058749198913574, 'eval_accuracy': 0.6666666666666666, 'eval_f1': 0.5555555555555555, 'eval_precision': 0.5, 'eval_recall': 0.6666666666666666, 'eval_runtime': 0.2226, 'eval_samples_per_second': 121.268, 'eval_steps_per_second': 8.983, 'epoch': 11.0}
+{'loss': 0.4692, 'learning_rate': 5e-05, 'epoch': 11.25}
+{'eval_loss': 0.4861886501312256, 'eval_accuracy': 0.6666666666666666, 'eval_f1': 0.5555555555555555, 'eval_precision': 0.5, 'eval_recall': 0.6666666666666666, 'eval_runtime': 0.1462, 'eval_samples_per_second': 184.661, 'eval_steps_per_second': 13.679, 'epoch': 12.0}
+{'loss': 0.4565, 'learning_rate': 3.3333333333333335e-05, 'epoch': 12.5}
+{'eval_loss': 0.46762174367904663, 'eval_accuracy': 0.6666666666666666, 'eval_f1': 0.5555555555555555, 'eval_precision': 0.5, 'eval_recall': 0.6666666666666666, 'eval_runtime': 0.133, 'eval_samples_per_second': 202.957, 'eval_steps_per_second': 15.034, 'epoch': 13.0}
+{'loss': 0.4834, 'learning_rate': 1.6666666666666667e-05, 'epoch': 13.75}
+{'eval_loss': 0.46597903966903687, 'eval_accuracy': 0.6666666666666666, 'eval_f1': 0.5555555555555555, 'eval_precision': 0.5, 'eval_recall': 0.6666666666666666, 'eval_runtime': 0.1553, 'eval_samples_per_second': 173.861, 'eval_steps_per_second': 12.879, 'epoch': 14.0}
+{'loss': 0.4776, 'learning_rate': 0.0, 'epoch': 15.0}
+{'eval_loss': 0.4659331738948822, 'eval_accuracy': 0.6666666666666666, 'eval_f1': 0.5555555555555555, 'eval_precision': 0.5, 'eval_recall': 0.6666666666666666, 'eval_runtime': 0.121, 'eval_samples_per_second': 223.103, 'eval_steps_per_second': 16.526, 'epoch': 15.0}
+{'eval_loss': 0.4659331738948822, 'eval_accuracy': 0.6666666666666666, 'eval_f1': 0.5555555555555555, 'eval_precision': 0.5, 'eval_recall': 0.6666666666666666, 'eval_runtime': 0.5424, 'eval_samples_per_second': 49.777, 'eval_steps_per_second': 3.687, 'epoch': 16.0}
+{'train_runtime': 106.4703, 'train_samples_per_second': 37.419, 'train_steps_per_second': 2.404, 'train_loss': 0.5132407704368234, 'epoch': 16.0}
+Finished Training
+Saving Model at: /cluster/dataset/midatams/inf-extr/resources/models/ms-diag_medbert-512_pipeline
+Saving Tokenizer at: /cluster/dataset/midatams/inf-extr/resources/models/ms-diag_medbert-512_pipeline
+Job finished

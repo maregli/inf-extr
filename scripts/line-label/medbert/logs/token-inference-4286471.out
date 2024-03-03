@@ -1,0 +1,24 @@
+Starting job with ID 4286471...
+Parsed Arguments:
+job_id: unknown
+model_name: line-label_medbert-512_token
+peft_model_name: None
+quantization: None
+batch_size: 8
+split: test
+task_type: token
+output_hidden_states: True
+GPU 0: NVIDIA GeForce RTX 2080 Ti
+   Total Memory: 10.75 GB
+   Free Memory: 10.14 GB
+   Allocated Memory : 0.00 GB
+   Reserved Memory : 0.00 GB
+Tokenizer pad token ID: 0
+Tokenizer special tokens: {'unk_token': '[UNK]', 'sep_token': '[SEP]', 'pad_token': '[PAD]', 'cls_token': '[CLS]', 'mask_token': '[MASK]', 'additional_special_tokens': ['[BRK]']}
+Model pad token ID: 0
+Loaded Model and Tokenizer
+Predictions shape: (15, 512)
+Outputting Hidden States
+Saving Inference Results at: /cluster/dataset/midatams/inf-extr/results/line-label/line-label_medbert-512_token_test.pt
+Saving Last Hidden States at: /cluster/dataset/midatams/inf-extr/results/line-label/line-label_medbert-512_token_test_hidden_states.pt
+Job finished

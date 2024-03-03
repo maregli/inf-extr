@@ -1,0 +1,11 @@
+/bin/bash: /cluster/customapps/biomed/grlab/users/eglimar/conda/envs/inf-extr/lib/libtinfo.so.6: no version information available (required by /bin/bash)
+/cluster/home/eglimar/.env_bootstrap/dotfiles/shell/bashrc: line 17: module: command not found
+/cluster/home/eglimar/.env_bootstrap/dotfiles/shell/bashrc: line 20: module: command not found
+/cluster/customapps/biomed/grlab/users/eglimar/conda/envs/inf-extr/lib/python3.9/site-packages/transformers/utils/generic.py:441: UserWarning: torch.utils._pytree._register_pytree_node is deprecated. Please use torch.utils._pytree.register_pytree_node instead.
+  _torch_pytree._register_pytree_node(
+/cluster/customapps/biomed/grlab/users/eglimar/conda/envs/inf-extr/lib/python3.9/site-packages/transformers/utils/generic.py:309: UserWarning: torch.utils._pytree._register_pytree_node is deprecated. Please use torch.utils._pytree.register_pytree_node instead.
+  _torch_pytree._register_pytree_node(
+/cluster/customapps/biomed/grlab/users/eglimar/conda/envs/inf-extr/lib/python3.9/site-packages/transformers/utils/generic.py:309: UserWarning: torch.utils._pytree._register_pytree_node is deprecated. Please use torch.utils._pytree.register_pytree_node instead.
+  _torch_pytree._register_pytree_node(
+  0%|          | 0/46 [00:00<?, ?it/s]You're using a BertTokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
+  2%|▏         | 1/46 [00:03<02:25,  3.24s/it] 13%|█▎        | 6/46 [00:03<00:16,  2.40it/s] 26%|██▌       | 12/46 [00:03<00:06,  5.65it/s] 39%|███▉      | 18/46 [00:03<00:02,  9.65it/s] 52%|█████▏    | 24/46 [00:03<00:01, 14.44it/s] 65%|██████▌   | 30/46 [00:03<00:00, 19.43it/s] 78%|███████▊  | 36/46 [00:03<00:00, 24.90it/s] 91%|█████████▏| 42/46 [00:04<00:00, 30.24it/s]100%|██████████| 46/46 [00:04<00:00, 11.24it/s]

@@ -1,0 +1,59 @@
+Starting job with ID 4286481...
+Parsed Arguments:
+job_id: unknown
+model_name: medbert-512
+quantization: None
+batch_size: 16
+lr: 0.0002
+num_epochs: 16
+gradient_accumulation_steps: 1
+task_type: class
+data: line
+data_augmentation: original_approach
+num_labels: 3
+peft_config: None
+attn_implementation: None
+GPU 0: NVIDIA GeForce RTX 2080 Ti
+   Total Memory: 10.75 GB
+   Free Memory: 10.14 GB
+   Allocated Memory : 0.00 GB
+   Reserved Memory : 0.00 GB
+Tokenizer pad token ID: 0
+Tokenizer special tokens: {'unk_token': '[UNK]', 'sep_token': '[SEP]', 'pad_token': '[PAD]', 'cls_token': '[CLS]', 'mask_token': '[MASK]'}
+Model pad token ID: 0
+Loaded Model and Tokenizer
+Loaded Data
+Starting Training
+{'eval_loss': 0.030910935252904892, 'eval_accuracy': 1.0, 'eval_f1': 1.0, 'eval_precision': 1.0, 'eval_recall': 1.0, 'eval_runtime': 0.0612, 'eval_samples_per_second': 441.229, 'eval_steps_per_second': 32.684, 'epoch': 1.0}
+{'loss': 0.5674, 'learning_rate': 0.00018333333333333334, 'epoch': 1.25}
+{'eval_loss': 0.9749866127967834, 'eval_accuracy': 0.3333333333333333, 'eval_f1': 0.16666666666666666, 'eval_precision': 0.1111111111111111, 'eval_recall': 0.3333333333333333, 'eval_runtime': 0.0458, 'eval_samples_per_second': 589.348, 'eval_steps_per_second': 43.655, 'epoch': 2.0}
+{'loss': 0.2123, 'learning_rate': 0.0001666666666666667, 'epoch': 2.5}
+{'eval_loss': 3.3686156272888184, 'eval_accuracy': 0.6296296296296297, 'eval_f1': 0.5280112044817927, 'eval_precision': 0.49122807017543857, 'eval_recall': 0.6296296296296297, 'eval_runtime': 0.0423, 'eval_samples_per_second': 638.763, 'eval_steps_per_second': 47.316, 'epoch': 3.0}
+{'loss': 0.0827, 'learning_rate': 0.00015000000000000001, 'epoch': 3.75}
+{'eval_loss': 2.3350367546081543, 'eval_accuracy': 0.6666666666666666, 'eval_f1': 0.5555555555555555, 'eval_precision': 0.5, 'eval_recall': 0.6666666666666666, 'eval_runtime': 0.0411, 'eval_samples_per_second': 656.622, 'eval_steps_per_second': 48.639, 'epoch': 4.0}
+{'loss': 0.0135, 'learning_rate': 0.00013333333333333334, 'epoch': 5.0}
+{'eval_loss': 2.935924768447876, 'eval_accuracy': 0.6666666666666666, 'eval_f1': 0.5555555555555555, 'eval_precision': 0.5, 'eval_recall': 0.6666666666666666, 'eval_runtime': 0.0343, 'eval_samples_per_second': 787.186, 'eval_steps_per_second': 58.31, 'epoch': 5.0}
+{'eval_loss': 3.0135700702667236, 'eval_accuracy': 0.6666666666666666, 'eval_f1': 0.5555555555555555, 'eval_precision': 0.5, 'eval_recall': 0.6666666666666666, 'eval_runtime': 0.0413, 'eval_samples_per_second': 654.107, 'eval_steps_per_second': 48.452, 'epoch': 6.0}
+{'loss': 0.0003, 'learning_rate': 0.00011666666666666668, 'epoch': 6.25}
+{'eval_loss': 3.1262409687042236, 'eval_accuracy': 0.6666666666666666, 'eval_f1': 0.5555555555555555, 'eval_precision': 0.5, 'eval_recall': 0.6666666666666666, 'eval_runtime': 0.0419, 'eval_samples_per_second': 644.484, 'eval_steps_per_second': 47.74, 'epoch': 7.0}
+{'loss': 0.0002, 'learning_rate': 0.0001, 'epoch': 7.5}
+{'eval_loss': 3.183018922805786, 'eval_accuracy': 0.6666666666666666, 'eval_f1': 0.5555555555555555, 'eval_precision': 0.5, 'eval_recall': 0.6666666666666666, 'eval_runtime': 0.0421, 'eval_samples_per_second': 641.026, 'eval_steps_per_second': 47.483, 'epoch': 8.0}
+{'loss': 0.0002, 'learning_rate': 8.333333333333334e-05, 'epoch': 8.75}
+{'eval_loss': 3.202033758163452, 'eval_accuracy': 0.6666666666666666, 'eval_f1': 0.5555555555555555, 'eval_precision': 0.5, 'eval_recall': 0.6666666666666666, 'eval_runtime': 0.0451, 'eval_samples_per_second': 598.366, 'eval_steps_per_second': 44.323, 'epoch': 9.0}
+{'loss': 0.0002, 'learning_rate': 6.666666666666667e-05, 'epoch': 10.0}
+{'eval_loss': 3.237492561340332, 'eval_accuracy': 0.6666666666666666, 'eval_f1': 0.5555555555555555, 'eval_precision': 0.5, 'eval_recall': 0.6666666666666666, 'eval_runtime': 0.0545, 'eval_samples_per_second': 495.846, 'eval_steps_per_second': 36.729, 'epoch': 10.0}
+{'eval_loss': 3.256300449371338, 'eval_accuracy': 0.6666666666666666, 'eval_f1': 0.5555555555555555, 'eval_precision': 0.5, 'eval_recall': 0.6666666666666666, 'eval_runtime': 0.0413, 'eval_samples_per_second': 654.496, 'eval_steps_per_second': 48.481, 'epoch': 11.0}
+{'loss': 0.0001, 'learning_rate': 5e-05, 'epoch': 11.25}
+{'eval_loss': 3.271876096725464, 'eval_accuracy': 0.6666666666666666, 'eval_f1': 0.5555555555555555, 'eval_precision': 0.5, 'eval_recall': 0.6666666666666666, 'eval_runtime': 0.0534, 'eval_samples_per_second': 505.83, 'eval_steps_per_second': 37.469, 'epoch': 12.0}
+{'loss': 0.0001, 'learning_rate': 3.3333333333333335e-05, 'epoch': 12.5}
+{'eval_loss': 3.284402370452881, 'eval_accuracy': 0.6666666666666666, 'eval_f1': 0.5555555555555555, 'eval_precision': 0.5, 'eval_recall': 0.6666666666666666, 'eval_runtime': 0.0545, 'eval_samples_per_second': 495.314, 'eval_steps_per_second': 36.69, 'epoch': 13.0}
+{'loss': 0.0001, 'learning_rate': 1.6666666666666667e-05, 'epoch': 13.75}
+{'eval_loss': 3.2933008670806885, 'eval_accuracy': 0.6666666666666666, 'eval_f1': 0.5555555555555555, 'eval_precision': 0.5, 'eval_recall': 0.6666666666666666, 'eval_runtime': 0.0421, 'eval_samples_per_second': 641.662, 'eval_steps_per_second': 47.53, 'epoch': 14.0}
+{'loss': 0.0001, 'learning_rate': 0.0, 'epoch': 15.0}
+{'eval_loss': 3.2970197200775146, 'eval_accuracy': 0.6666666666666666, 'eval_f1': 0.5555555555555555, 'eval_precision': 0.5, 'eval_recall': 0.6666666666666666, 'eval_runtime': 0.0393, 'eval_samples_per_second': 687.353, 'eval_steps_per_second': 50.915, 'epoch': 15.0}
+{'eval_loss': 3.2970197200775146, 'eval_accuracy': 0.6666666666666666, 'eval_f1': 0.5555555555555555, 'eval_precision': 0.5, 'eval_recall': 0.6666666666666666, 'eval_runtime': 0.0413, 'eval_samples_per_second': 653.266, 'eval_steps_per_second': 48.39, 'epoch': 16.0}
+{'train_runtime': 89.2583, 'train_samples_per_second': 44.634, 'train_steps_per_second': 2.868, 'train_loss': 0.06854803864280257, 'epoch': 16.0}
+Finished Training
+Saving Model at: /cluster/dataset/midatams/inf-extr/resources/models/ms-diag_medbert-512_class_line_original_approach
+Saving Tokenizer at: /cluster/dataset/midatams/inf-extr/resources/models/ms-diag_medbert-512_class_line_original_approach
+Job finished

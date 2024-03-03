@@ -1,0 +1,17 @@
+/bin/bash: /cluster/customapps/biomed/grlab/users/eglimar/conda/envs/inf-extr/lib/libtinfo.so.6: no version information available (required by /bin/bash)
+/cluster/home/eglimar/.env_bootstrap/dotfiles/shell/bashrc: line 17: module: command not found
+/cluster/home/eglimar/.env_bootstrap/dotfiles/shell/bashrc: line 20: module: command not found
+/cluster/customapps/biomed/grlab/users/eglimar/conda/envs/inf-extr/lib/python3.9/site-packages/transformers/utils/generic.py:441: UserWarning: torch.utils._pytree._register_pytree_node is deprecated. Please use torch.utils._pytree.register_pytree_node instead.
+  _torch_pytree._register_pytree_node(
+/cluster/customapps/biomed/grlab/users/eglimar/conda/envs/inf-extr/lib/python3.9/site-packages/transformers/utils/generic.py:309: UserWarning: torch.utils._pytree._register_pytree_node is deprecated. Please use torch.utils._pytree.register_pytree_node instead.
+  _torch_pytree._register_pytree_node(
+/cluster/customapps/biomed/grlab/users/eglimar/conda/envs/inf-extr/lib/python3.9/site-packages/transformers/utils/generic.py:309: UserWarning: torch.utils._pytree._register_pytree_node is deprecated. Please use torch.utils._pytree.register_pytree_node instead.
+  _torch_pytree._register_pytree_node(
+Map:   0%|          | 0/249 [00:00<?, ? examples/s]Map: 100%|██████████| 249/249 [00:00<00:00, 544.17 examples/s]Map: 100%|██████████| 249/249 [00:00<00:00, 518.25 examples/s]
+Map:   0%|          | 0/11 [00:00<?, ? examples/s]Map: 100%|██████████| 11/11 [00:00<00:00, 321.53 examples/s]
+Map:   0%|          | 0/46 [00:00<?, ? examples/s]Map: 100%|██████████| 46/46 [00:00<00:00, 646.13 examples/s]
+  0%|          | 0/12 [00:00<?, ?it/s]You're using a BertTokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
+  8%|▊         | 1/12 [00:03<00:35,  3.20s/it] 25%|██▌       | 3/12 [00:03<00:07,  1.14it/s] 42%|████▏     | 5/12 [00:03<00:03,  2.20it/s] 58%|█████▊    | 7/12 [00:03<00:01,  3.49it/s] 75%|███████▌  | 9/12 [00:03<00:00,  5.02it/s] 92%|█████████▏| 11/12 [00:03<00:00,  6.67it/s]100%|██████████| 12/12 [00:03<00:00,  3.15it/s]
+Filter:   0%|          | 0/121 [00:00<?, ? examples/s]Filter: 100%|██████████| 121/121 [00:00<00:00, 7245.19 examples/s]
+Filter:   0%|          | 0/14 [00:00<?, ? examples/s]Filter: 100%|██████████| 14/14 [00:00<00:00, 1188.52 examples/s]
+Filter:   0%|          | 0/58 [00:00<?, ? examples/s]Filter: 100%|██████████| 58/58 [00:00<00:00, 4390.12 examples/s]

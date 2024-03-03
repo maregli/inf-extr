@@ -1,0 +1,24 @@
+Starting job with ID 4286489...
+Parsed Arguments:
+job_id: unknown
+model_name: ms-diag_medbert-512_class_all_original_approach
+peft_model_name: None
+quantization: None
+batch_size: 4
+data: all
+data_augmentation: original_approach
+split: test
+task_type: class
+output_hidden_states: True
+num_labels: 3
+GPU 0: NVIDIA GeForce RTX 2080 Ti
+   Total Memory: 10.75 GB
+   Free Memory: 10.14 GB
+   Allocated Memory : 0.00 GB
+   Reserved Memory : 0.00 GB
+Tokenizer pad token ID: 0
+Tokenizer special tokens: {'unk_token': '[UNK]', 'sep_token': '[SEP]', 'pad_token': '[PAD]', 'cls_token': '[CLS]', 'mask_token': '[MASK]'}
+Model pad token ID: 0
+Loaded Model and Tokenizer
+Saving Inference Results at: /cluster/dataset/midatams/inf-extr/results/ms-diag/ms-diag_medbert-512_class_all_original_approach_test.pt
+Job finished

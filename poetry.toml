@@ -1,0 +1,4 @@
+[virtualenvs]
+path = "/cluster/customapps/biomed/grlab/users/eglimar/software/virtualenvs"
+create = false
+in-project = true

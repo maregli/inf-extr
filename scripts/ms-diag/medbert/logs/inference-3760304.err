@@ -1,21 +1,0 @@
-/bin/bash: /cluster/customapps/biomed/grlab/users/eglimar/conda/envs/inf-extr/lib/libtinfo.so.6: no version information available (required by /bin/bash)
-/cluster/home/eglimar/.env_bootstrap/dotfiles/shell/bashrc: line 17: module: command not found
-/cluster/home/eglimar/.env_bootstrap/dotfiles/shell/bashrc: line 20: module: command not found
-Map:   0%|          | 0/123 [00:00<?, ? examples/s]Map: 100%|██████████| 123/123 [00:00<00:00, 586.34 examples/s]Map: 100%|██████████| 123/123 [00:00<00:00, 576.27 examples/s]
-Map:   0%|          | 0/14 [00:00<?, ? examples/s]Map: 100%|██████████| 14/14 [00:00<00:00, 526.30 examples/s]
-Map:   0%|          | 0/59 [00:00<?, ? examples/s]Map: 100%|██████████| 59/59 [00:00<00:00, 575.34 examples/s]
-Map:   0%|          | 0/220 [00:00<?, ? examples/s]Map: 100%|██████████| 220/220 [00:00<00:00, 691.67 examples/s]Map: 100%|██████████| 220/220 [00:00<00:00, 683.10 examples/s]
-  0%|          | 0/15 [00:00<?, ?it/s]You're using a BertTokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
-  7%|▋         | 1/15 [00:02<00:32,  2.34s/it] 13%|█▎        | 2/15 [00:02<00:13,  1.02s/it] 27%|██▋       | 4/15 [00:02<00:04,  2.26it/s] 40%|████      | 6/15 [00:02<00:02,  3.63it/s] 53%|█████▎    | 8/15 [00:02<00:01,  5.06it/s] 67%|██████▋   | 10/15 [00:03<00:00,  6.38it/s] 80%|████████  | 12/15 [00:03<00:00,  7.57it/s] 93%|█████████▎| 14/15 [00:03<00:00,  8.77it/s]100%|██████████| 15/15 [00:03<00:00,  4.24it/s]
-Map:   0%|          | 0/123 [00:00<?, ? examples/s]Map: 100%|██████████| 123/123 [00:00<00:00, 682.62 examples/s]Map: 100%|██████████| 123/123 [00:00<00:00, 669.31 examples/s]
-Map:   0%|          | 0/14 [00:00<?, ? examples/s]Map: 100%|██████████| 14/14 [00:00<00:00, 537.28 examples/s]
-Map:   0%|          | 0/59 [00:00<?, ? examples/s]Map: 100%|██████████| 59/59 [00:00<00:00, 683.16 examples/s]
-Map:   0%|          | 0/220 [00:00<?, ? examples/s]Map: 100%|██████████| 220/220 [00:00<00:00, 741.02 examples/s]Map: 100%|██████████| 220/220 [00:00<00:00, 726.09 examples/s]
-  0%|          | 0/15 [00:00<?, ?it/s]You're using a BertTokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
-  7%|▋         | 1/15 [00:00<00:09,  1.48it/s] 20%|██        | 3/15 [00:00<00:02,  4.06it/s] 33%|███▎      | 5/15 [00:01<00:01,  6.05it/s] 47%|████▋     | 7/15 [00:01<00:01,  7.59it/s] 60%|██████    | 9/15 [00:01<00:00,  8.75it/s] 73%|███████▎  | 11/15 [00:01<00:00,  9.54it/s] 87%|████████▋ | 13/15 [00:01<00:00, 10.12it/s]100%|██████████| 15/15 [00:01<00:00, 11.19it/s]100%|██████████| 15/15 [00:01<00:00,  8.00it/s]
-Map:   0%|          | 0/123 [00:00<?, ? examples/s]Map: 100%|██████████| 123/123 [00:00<00:00, 690.16 examples/s]Map: 100%|██████████| 123/123 [00:00<00:00, 677.08 examples/s]
-Map:   0%|          | 0/14 [00:00<?, ? examples/s]Map: 100%|██████████| 14/14 [00:00<00:00, 550.67 examples/s]
-Map:   0%|          | 0/59 [00:00<?, ? examples/s]Map: 100%|██████████| 59/59 [00:00<00:00, 819.04 examples/s]
-Map:   0%|          | 0/220 [00:00<?, ? examples/s]Map: 100%|██████████| 220/220 [00:00<00:00, 805.40 examples/s]Map: 100%|██████████| 220/220 [00:00<00:00, 792.28 examples/s]
-  0%|          | 0/15 [00:00<?, ?it/s]You're using a BertTokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
-  7%|▋         | 1/15 [00:00<00:08,  1.59it/s] 20%|██        | 3/15 [00:00<00:02,  4.41it/s] 33%|███▎      | 5/15 [00:00<00:01,  6.50it/s] 47%|████▋     | 7/15 [00:01<00:00,  8.02it/s] 60%|██████    | 9/15 [00:01<00:00,  9.17it/s] 73%|███████▎  | 11/15 [00:01<00:00,  9.92it/s] 87%|████████▋ | 13/15 [00:01<00:00, 10.46it/s]100%|██████████| 15/15 [00:01<00:00, 11.57it/s]100%|██████████| 15/15 [00:01<00:00,  8.41it/s]

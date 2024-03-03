@@ -1,32 +1,0 @@
-/bin/bash: /cluster/customapps/biomed/grlab/users/eglimar/conda/envs/inf-extr/lib/libtinfo.so.6: no version information available (required by /bin/bash)
-/cluster/home/eglimar/.env_bootstrap/dotfiles/shell/bashrc: line 17: module: command not found
-/cluster/home/eglimar/.env_bootstrap/dotfiles/shell/bashrc: line 20: module: command not found
-Some weights of BertForSequenceClassification were not initialized from the model checkpoint at /cluster/dataset/midatams/inf-extr/resources/models/medbert-512 and are newly initialized: ['bert.pooler.dense.bias', 'classifier.weight', 'bert.pooler.dense.weight', 'classifier.bias']
-You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
-Filter:   0%|          | 0/240 [00:00<?, ? examples/s]Filter: 100%|██████████| 240/240 [00:00<00:00, 7190.49 examples/s]
-Filter:   0%|          | 0/27 [00:00<?, ? examples/s]Filter: 100%|██████████| 27/27 [00:00<00:00, 2342.70 examples/s]
-Filter:   0%|          | 0/115 [00:00<?, ? examples/s]Filter: 100%|██████████| 115/115 [00:00<00:00, 9734.71 examples/s]
-Filter:   0%|          | 0/95 [00:00<?, ? examples/s]Filter: 100%|██████████| 95/95 [00:00<00:00, 8141.12 examples/s]
-Filter:   0%|          | 0/95 [00:00<?, ? examples/s]Filter: 100%|██████████| 95/95 [00:00<00:00, 7733.46 examples/s]
-Filter:   0%|          | 0/95 [00:00<?, ? examples/s]Filter: 100%|██████████| 95/95 [00:00<00:00, 8399.57 examples/s]
-Filter:   0%|          | 0/11 [00:00<?, ? examples/s]Filter: 100%|██████████| 11/11 [00:00<00:00, 966.96 examples/s]
-Filter:   0%|          | 0/11 [00:00<?, ? examples/s]Filter: 100%|██████████| 11/11 [00:00<00:00, 1033.87 examples/s]
-Filter:   0%|          | 0/11 [00:00<?, ? examples/s]Filter: 100%|██████████| 11/11 [00:00<00:00, 1033.01 examples/s]
-Map:   0%|          | 0/246 [00:00<?, ? examples/s]Map: 100%|██████████| 246/246 [00:00<00:00, 541.25 examples/s]Map: 100%|██████████| 246/246 [00:00<00:00, 519.91 examples/s]
-Map:   0%|          | 0/3 [00:00<?, ? examples/s]Map: 100%|██████████| 3/3 [00:00<00:00, 174.65 examples/s]
-Map:   0%|          | 0/46 [00:00<?, ? examples/s]Map: 100%|██████████| 46/46 [00:00<00:00, 712.45 examples/s]
-Detected kernel version 5.4.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
-  0%|          | 0/192 [00:00<?, ?it/s]You're using a BertTokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
-  1%|          | 1/192 [00:01<05:14,  1.65s/it]  1%|          | 2/192 [00:02<04:20,  1.37s/it]  2%|▏         | 3/192 [00:04<04:03,  1.29s/it]  2%|▏         | 4/192 [00:05<03:55,  1.25s/it]  3%|▎         | 5/192 [00:06<03:50,  1.23s/it]  3%|▎         | 6/192 [00:07<03:46,  1.22s/it]  4%|▎         | 7/192 [00:08<03:43,  1.21s/it]  4%|▍         | 8/192 [00:09<03:42,  1.21s/it]  5%|▍         | 9/192 [00:11<03:40,  1.20s/it]  5%|▌         | 10/192 [00:12<03:38,  1.20s/it]  6%|▌         | 11/192 [00:13<03:36,  1.20s/it]  6%|▋         | 12/192 [00:14<03:35,  1.20s/it]  7%|▋         | 13/192 [00:15<03:33,  1.20s/it]  7%|▋         | 14/192 [00:17<03:33,  1.20s/it]  8%|▊         | 15/192 [00:18<03:31,  1.19s/it]  8%|▊         | 16/192 [00:18<02:50,  1.03it/s]
-  0%|          | 0/1 [00:00<?, ?it/s][A/cluster/customapps/biomed/grlab/users/eglimar/conda/envs/inf-extr/lib/python3.9/site-packages/sklearn/metrics/_classification.py:1469: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
-  _warn_prf(average, modifier, msg_start, len(result))
-                                                
-                                     [A  8%|▊         | 16/192 [00:18<02:50,  1.03it/s]
-100%|██████████| 1/1 [00:00<00:00, 82.98it/s][A
-                                             [A  9%|▉         | 17/192 [00:22<04:50,  1.66s/it]  9%|▉         | 18/192 [00:23<04:24,  1.52s/it] 10%|▉         | 19/192 [00:24<04:06,  1.43s/it] 10%|█         | 20/192 [00:25<03:52,  1.35s/it]                                                 10%|█         | 20/192 [00:25<03:52,  1.35s/it] 11%|█         | 21/192 [00:26<03:43,  1.31s/it] 11%|█▏        | 22/192 [00:28<03:37,  1.28s/it] 12%|█▏        | 23/192 [00:29<03:32,  1.26s/it] 12%|█▎        | 24/192 [00:30<03:28,  1.24s/it] 13%|█▎        | 25/192 [00:31<03:24,  1.23s/it] 14%|█▎        | 26/192 [00:32<03:22,  1.22s/it] 14%|█▍        | 27/192 [00:34<03:20,  1.22s/it] 15%|█▍        | 28/192 [00:35<03:18,  1.21s/it] 15%|█▌        | 29/192 [00:36<03:16,  1.21s/it] 16%|█▌        | 30/192 [00:37<03:15,  1.20s/it] 16%|█▌        | 31/192 [00:38<03:13,  1.20s/it] 17%|█▋        | 32/192 [00:39<02:36,  1.03it/s]
-  0%|          | 0/1 [00:00<?, ?it/s][A/cluster/customapps/biomed/grlab/users/eglimar/conda/envs/inf-extr/lib/python3.9/site-packages/sklearn/metrics/_classification.py:1469: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
-  _warn_prf(average, modifier, msg_start, len(result))
-                                                
-                                     [A 17%|█▋        | 32/192 [00:39<02:36,  1.03it/s]
-100%|██████████| 1/1 [00:00<00:00, 321.58it/s][A
-                                              [A 17%|█▋        | 33/192 [00:42<04:19,  1.63s/it] 18%|█▊        | 34/192 [00:43<03:57,  1.50s/it] 18%|█▊        | 35/192 [00:44<03:41,  1.41s/it] 19%|█▉        | 36/192 [00:46<03:31,  1.35s/it] 19%|█▉        | 37/192 [00:47<03:22,  1.31s/it] 20%|█▉        | 38/192 [00:48<03:16,  1.28s/it] 20%|██        | 39/192 [00:49<03:11,  1.25s/it]

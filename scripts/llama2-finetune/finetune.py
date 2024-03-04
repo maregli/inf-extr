@@ -34,7 +34,7 @@ def parse_args():
     parser.add_argument("--num_epochs", type=int, default=1, help="Number of Epochs. Defaults to 1")
     parser.add_argument("--peft_config", type=str, default=None, help="PEFT Config. JSON-formatted configuration. Defaults to None in which case the default config is used.")
     parser.add_argument("--attn_implementation", type=str, default=None, help="To implement Flash Attention 2 provide flash_attention_2. Defaults to None.")
-    parser.add_argument("--bf16", type=bool, default=False, help="Enable bf16 training. Defaults to False")
+    parser.add_argument("--bf16", action="store_true", help="Enable bf16 training. Defaults to False")
 
     args = parser.parse_args()
 
@@ -81,7 +81,6 @@ def main():
     ##########################
 
     dataset = Dataset.load_from_disk(os.path.join(paths.DATA_PATH_PREPROCESSED, "text-finetune/kisim_diagnoses"))
-    dataset = dataset.select(range(200)) # For testing purposes
 
     ##########################
     # Specifiations
@@ -134,10 +133,10 @@ def main():
     group_by_length = True
 
     # Save checkpoint every X updates steps
-    save_steps = 25
+    save_steps = 50
 
     # Log every X updates steps
-    logging_steps = 25
+    logging_steps = 50
 
     # Maximum sequence length to use
     max_seq_length = 128

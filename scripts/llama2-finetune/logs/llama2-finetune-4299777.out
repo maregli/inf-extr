@@ -1,0 +1,17 @@
+Starting job with ID 4299777...
+Parsed Arguments:
+job_id: unknown
+model_name: Llama2-MedTuned-13b
+new_model_name: Llama2-MedTuned-13b-LoRa
+quantization: 4bit
+batch_size: 16
+lr: 0.0002
+num_epochs: 1
+peft_config: None
+attn_implementation: flash_attention_2
+bf16: True
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 23.43 GB
+   Allocated Memory : 0.00 GB
+   Reserved Memory : 0.00 GB

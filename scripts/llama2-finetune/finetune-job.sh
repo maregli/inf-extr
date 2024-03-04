@@ -5,8 +5,8 @@
 #SBATCH --error=/cluster/home/eglimar/inf-extr/scripts/llama2-finetune/logs/llama2-finetune-%j.err
 #SBATCH --cpus-per-task=1
 #SBATCH -p gpu
-#SBATCH --gres=gpu:1
-#SBATCH --time=06:00:00
+#SBATCH --gres=gpu:rtx3090:1
+#SBATCH --time=20:00:00
 #SBATCH --mem-per-cpu=15G
  
 source ~/.bashrc
@@ -19,6 +19,6 @@ python /cluster/home/eglimar/inf-extr/scripts/llama2-finetune/finetune.py \
     --batch_size 16 \
     --lr 2e-4 \
     --num_epochs 1 \
-    # --attn_implementation flash_attention_2 \
-    # --bf16
+    --attn_implementation flash_attention_2 \
+    --bf16
 echo "Job finished"

@@ -1,0 +1,27 @@
+Starting job with ID 4299522...
+Parsed Arguments:
+job_id: unknown
+model_name: Llama2-MedTuned-13b
+new_model_name: Llama2-MedTuned-13b-LoRa
+quantization: 4bit
+batch_size: 16
+lr: 0.0002
+num_epochs: 1
+peft_config: None
+attn_implementation: None
+bf16: False
+GPU 0: Tesla V100-SXM2-32GB
+   Total Memory: 31.74 GB
+   Free Memory: 30.99 GB
+   Allocated Memory : 0.00 GB
+   Reserved Memory : 0.00 GB
+Tokenizer pad token ID: 32000
+Tokenizer special tokens: {'bos_token': '<s>', 'eos_token': '</s>', 'unk_token': '<unk>', 'pad_token': '<pad>'}
+Model pad token ID: 32000
+Starting Training
+{'train_runtime': 220.3926, 'train_samples_per_second': 1.37, 'train_steps_per_second': 0.086, 'train_loss': 3.0417769582648027, 'epoch': 1.0}
+Finished Training
+Saving Model at: /cluster/dataset/midatams/inf-extr/resources/models/Llama2-MedTuned-13b-LoRa
+Saving Tokenizer at: /cluster/dataset/midatams/inf-extr/resources/models/Llama2-MedTuned-13b-LoRa
+Saving training logs at: /cluster/dataset/midatams/inf-extr/resources/models/Llama2-MedTuned-13b-LoRa/log_history.pt
+Job finished

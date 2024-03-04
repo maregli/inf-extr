@@ -32,6 +32,7 @@ ninja = "^1.11.1.1"
 wheel = "^0.42.0"
 setuptools = "^69.1.1"
 outlines = "^0.0.34"
+trl = "^0.7.11"
 
 
 [[tool.poetry.source]]

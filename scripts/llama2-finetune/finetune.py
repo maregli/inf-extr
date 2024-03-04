@@ -81,6 +81,7 @@ def main():
     ##########################
 
     dataset = Dataset.load_from_disk(os.path.join(paths.DATA_PATH_PREPROCESSED, "text-finetune/kisim_diagnoses"))
+    dataset = dataset.select(range(200)) # For testing purposes
 
     ##########################
     # Specifiations

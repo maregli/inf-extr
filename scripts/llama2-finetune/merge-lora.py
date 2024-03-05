@@ -43,6 +43,9 @@ def main():
 
     model = PeftModel.from_pretrained(base_model, paths.MODEL_PATH/PEFT_MODEL_NAME)
 
+    # Trainable parameters
+    model.print_trainable_parameters()
+
     model = model.merge_and_unload()
 
     model.save_pretrained(paths.MODEL_PATH/NEW_MODEL_NAME)

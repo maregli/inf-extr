@@ -120,8 +120,7 @@ def load_model_and_tokenizer(model_name:str,
                                                                 label2id=line_label_token_label2id)
     elif task_type == "outlines":
         # Outlines will always work with clm
-        model_name = config_kwargs.pop("pretrained_model_name_or_path")
-        model = models.transformers(model_name,
+        model = models.transformers(config_kwargs.pop("pretrained_model_name_or_path"),
                                     device="cuda", 
                                    model_kwargs = config_kwargs,)
         
@@ -135,33 +134,34 @@ def load_model_and_tokenizer(model_name:str,
 
     tokenizer = AutoTokenizer.from_pretrained(paths.MODEL_PATH/model_name, padding_side=padding_side, truncation_side=truncation_side)
 
-    # Set max length to max of 2048 and model max length, can cause issues with int too large
-    tokenizer.model_max_length = min(tokenizer.model_max_length, 4096)
-
-    # Check if the pad token is already in the tokenizer vocabulary
-    if tokenizer.pad_token_id is None:
-        # Add the pad token
-        tokenizer.add_special_tokens({"pad_token":"<pad>"})
+    if not task_type == "outlines":
+        # Set max length to max of 2048 and model max length, can cause issues with int too large
+        tokenizer.model_max_length = min(tokenizer.model_max_length, 4096)
     
-    # If task is token classification add special line break token
-    if task_type == "token" and "[BRK]" not in tokenizer.special_tokens_map.get("additional_special_tokens", []):
-        tokenizer.add_special_tokens({"additional_special_tokens":["[BRK]"]})
-        print("Added special token [BRK] to tokenizer")
+        # Check if the pad token is already in the tokenizer vocabulary
+        if tokenizer.pad_token_id is None:
+            # Add the pad token
+            tokenizer.add_special_tokens({"pad_token":"<pad>"})
+        
+        # If task is token classification add special line break token
+        if task_type == "token" and "[BRK]" not in tokenizer.special_tokens_map.get("additional_special_tokens", []):
+            tokenizer.add_special_tokens({"additional_special_tokens":["[BRK]"]})
+            print("Added special token [BRK] to tokenizer")
+        
     
-
-    #Resize the embeddings
-    model.resize_token_embeddings(len(tokenizer))
-
-    #Configure the pad token in the model
-    model.config.pad_token_id = tokenizer.pad_token_id
-
-    # Check if they are equal
-    assert model.config.pad_token_id == tokenizer.pad_token_id, "The model's pad token ID does not match the tokenizer's pad token ID!"
-
-    # Print the pad token ids
-    print('Tokenizer pad token ID:', tokenizer.pad_token_id)
-    print("Tokenizer special tokens:", tokenizer.special_tokens_map)
-    print('Model pad token ID:', model.config.pad_token_id)
+        #Resize the embeddings
+        model.resize_token_embeddings(len(tokenizer))
+    
+        #Configure the pad token in the model
+        model.config.pad_token_id = tokenizer.pad_token_id
+    
+        # Check if they are equal
+        assert model.config.pad_token_id == tokenizer.pad_token_id, "The model's pad token ID does not match the tokenizer's pad token ID!"
+    
+        # Print the pad token ids
+        print('Tokenizer pad token ID:', tokenizer.pad_token_id)
+        print("Tokenizer special tokens:", tokenizer.special_tokens_map)
+        print('Model pad token ID:', model.config.pad_token_id)
 
     return model, tokenizer
 

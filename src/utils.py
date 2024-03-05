@@ -121,7 +121,8 @@ def load_model_and_tokenizer(model_name:str,
     elif task_type == "outlines":
         # Outlines will always work with clm
         model_name = config_kwargs.pop("pretrained_model_name_or_path")
-        model = models.transformer(model_name, 
+        model = models.transformers(model_name,
+                                    device="cuda", 
                                    model_kwargs = config_kwargs,)
         
 

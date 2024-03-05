@@ -15,6 +15,8 @@ import matplotlib.pyplot as plt
 
 import seaborn as sns
 
+from outlines import samplers, models
+
 from transformers import (AutoModelForSequenceClassification,
                           AutoModelForCausalLM,
                           AutoModelForTokenClassification, 
@@ -63,7 +65,7 @@ def load_model_and_tokenizer(model_name:str,
     Args:
         model (str): Model Name. Assumes that the model is saved in the path: paths.MODEL_PATH/model.
         num_labels (int): Number of labels (classes) to predict. Defaults to 0.
-        task_type (str): Task Type. Must be one of class, token or clm. Defaults to "class".
+        task_type (str): Task Type. Must be one of class, token, clm or outlines. Defaults to "class".
         quantization (str, optional): Quantization. Can be one of 4bit, bfloat16 or float16. Defaults to None.
         attn_implementation (str, optional): To implement Flash Attention 2 provide "flash_attention_2". Defaults to None.
         truncation_side (str, optional): Truncation Side. Defaults to "right".
@@ -116,8 +118,12 @@ def load_model_and_tokenizer(model_name:str,
                                                                 num_labels=num_labels, 
                                                                 id2label=line_label_token_id2label, 
                                                                 label2id=line_label_token_label2id)
-    #if quantization == "4bit":
-        #model = prepare_model_for_kbit_training(model)
+    elif task_type == "outlines":
+        # Outlines will always work with clm
+        model_name = config_kwargs.pop("pretrained_model_name_or_path")
+        model = models.transformer(model_name, 
+                                   model_kwargs = config_kwargs,)
+        
 
     ### Tokenizer
     # If model is bert model, use bert tokenizer

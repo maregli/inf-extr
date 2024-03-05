@@ -50,8 +50,9 @@ from src import paths
 
 from collections import Counter
 
-### Model and Tokenizer
-
+###########################################################################################################
+# Model and Tokenizer
+###########################################################################################################
 
 def load_model_and_tokenizer(model_name:str, 
                              num_labels:int = 0, 
@@ -217,7 +218,9 @@ def select_peft_config(model:AutoModelForSequenceClassification, peft_type:str)-
     
     return peft_config
 
-### Data
+########################################################################################################### 
+# Data
+###########################################################################################################
 
 def load_line_label_data(version:str="base")->DatasetDict:
     """Loads the data for Line Label task and returns the dataset dictionary
@@ -554,7 +557,9 @@ def information_retrieval(retrieval_model:AutoModelForSequenceClassification,
 
     return relevant_text
 
-### Label to id mapping
+##########################################################################################################
+# Label to id mapping
+##########################################################################################################
 
 # MS Label to id
 ms_label2id = {'primary_progressive_multiple_sclerosis': 0,
@@ -597,7 +602,9 @@ line_label_token_label2id = {'B-dm': 0,
 
 line_label_token_id2label = {v:k for k,v in line_label_token_label2id.items()}
 
-### Trainer/Training Components
+#########################################################################################################
+# Trainer/Training Components
+#########################################################################################################
 
 def get_DataLoader(df:Dataset, tokenizer:AutoTokenizer, batch_size:int = 4, shuffle:bool = True)->DataLoader:
     """Returns a DataLoader for the given dataset dictionary
@@ -646,7 +653,26 @@ def get_optimizer_and_scheduler(model:Union[PeftModel, AutoModelForSequenceClass
     return optimizer, lr_scheduler
 
 
-### Inference
+def check_gpu_memory()->None:
+    """Checks the GPU memory and prints the results.
+    """
+    if torch.cuda.is_available():
+        num_gpus = torch.cuda.device_count()
+        for gpu_id in range(num_gpus):
+            free_mem, total_mem = torch.cuda.mem_get_info(gpu_id)
+            gpu_properties = torch.cuda.get_device_properties(gpu_id)
+            print(f"GPU {gpu_id}: {gpu_properties.name}")
+            print(f"   Total Memory: {total_mem / (1024 ** 3):.2f} GB")
+            print(f"   Free Memory: {free_mem / (1024 ** 3):.2f} GB")
+            print(f"   Allocated Memory : {torch.cuda.memory_allocated(gpu_id) / (1024 ** 3):.2f} GB")
+            print(f"   Reserved Memory : {torch.cuda.memory_reserved(gpu_id) / (1024 ** 3):.2f} GB")
+    else:
+        print("No GPU available.")
+
+
+#########################################################################################################
+# Inference
+#########################################################################################################
 
 def perform_inference(model:Union[PeftModel, AutoModelForSequenceClassification], 
                       dataloader:DataLoader, 
@@ -693,123 +719,38 @@ def perform_inference(model:Union[PeftModel, AutoModelForSequenceClassification]
             "logits": logits_list,}   
 
 
-### Training
-
-def train_loop(model:Union[PeftModel, AutoModelForSequenceClassification], 
-               train_dataloader:DataLoader, 
-               eval_dataloader:DataLoader, 
-               device:torch.device,
-               finetuned_model_name:str,
-               num_epochs:int = 4, 
-               learning_rate:float = 1e-03,
-               gradient_accumulation_steps:int = 1,
-               )->None:
-    
-    """Trains the given model using the given dataloader and returns the trained model.
+# Embedd the data and predict
+def model_output(data: Dataset, model: AutoModelForSequenceClassification, batch_size: int = 32, device: str = 'cuda'):
+    """
+    Embedd the data and predict
 
     Args:
-        model (Union[PeftModel, AutoModelForSequenceClassification]): Model to train.
-        train_dataloader (DataLoader): Train DataLoader.
-        eval_dataloader (DataLoader): Eval DataLoader.
-        device (torch.device): Device to use for training.
-        finetuned_model_name (str): Name under which finetuned model is saved.
-        num_epochs (int, optional): Number of epochs. Defaults to 4.
-        learning_rate (float, optional): Learning Rate. Defaults to 1e-03.
-        gradient_accumulation_steps (int, optional): Gradient Accumulation Steps. Defaults to 1.
-
-    Returns:
-        None: Trains the given model using the given dataloader and returns the trained model.
+        data (datasets.arrow_dataset.Dataset): Dataset to embedd
+        model (transformers.models.bert.modeling_bert.BertForSequenceClassification): Model to use.
+        batch_size (int, optional): Batch size. Defaults to 32.
     """
-
-    # Seed
-    torch.manual_seed(42)
-    torch.cuda.manual_seed(42)
-
-    # Optimizer and Scheduler
-    num_training_steps = num_epochs * len(train_dataloader)
-    optimizer, lr_scheduler = get_optimizer_and_scheduler(model, num_training_steps, learning_rate)
-
-    # Training
-    model.to(device)
-
-    for epoch in range(num_epochs):
-        model.train()
-        total_loss = 0
-        bar = tqdm(train_dataloader)
-
-        for step, batch in enumerate(bar):
-            optimizer.zero_grad()
-            batch.to(device)
-            outputs = model(**batch)
-            
-            loss = outputs.loss
-            total_loss += loss.detach().float()
-            loss = loss / gradient_accumulation_steps
-            loss.backward()
-
-            if (step + 1) % gradient_accumulation_steps == 0:
-                optimizer.step()
-                lr_scheduler.step()
-            bar.set_description(f"Epoch: {epoch}, Loss: {loss.item():.4f}")
-
-        model.eval()
-
+    # Create dataloader
+    dataloader = DataLoader(data, batch_size=batch_size, shuffle=False)
+    # Embedd data
+    embeddings = []
+    logits = []
+    labels = []
+    for batch in tqdm(dataloader):
+        input_ids = torch.stack(batch['input_ids'], dim=1).to(device)
+        attention_mask = torch.stack(batch['attention_mask'], dim=1).to(device)
+        token_type_ids = torch.stack(batch['token_type_ids'], dim=1).to(device)
         with torch.no_grad():
-            eval_loss = 0
-            eval_preds = []
-            labels = []
-            for step, batch in enumerate(tqdm(eval_dataloader)):
-                batch.to(device)
-                outputs = model(**batch)
-                    
-                predictions = outputs.logits.argmax(dim=-1)
-                eval_preds.extend(predictions.tolist())
-                labels.extend(batch['labels'].tolist())
-                
-                loss = outputs.loss
-                eval_loss += loss.detach().float()
-                
-        f1 = f1_score(labels, eval_preds, average='macro')
-        
-        if epoch == 0:
-            max_f1 = 0
-            min_eval_loss = eval_loss
-            print(f"Saving Model at {paths.MODEL_PATH/finetuned_model_name}")
-            model.save_pretrained(paths.MODEL_PATH/finetuned_model_name)
-
-        if f1 > max_f1:
-            max_f1 = f1
-            min_eval_loss = eval_loss
-            print(f"Saving Model at {paths.MODEL_PATH/finetuned_model_name}")
-            model.save_pretrained(paths.MODEL_PATH/finetuned_model_name)
-
-        elif f1 == max_f1 and eval_loss < min_eval_loss:
-            min_eval_loss = eval_loss
-            print(f"Saving Model at {paths.MODEL_PATH/finetuned_model_name}")
-            model.save_pretrained(paths.MODEL_PATH/finetuned_model_name)
-
-        eval_epoch_loss = eval_loss / len(eval_dataloader)
-        train_epoch_loss = total_loss / len(train_dataloader)
-        print(f"{epoch=}: {train_epoch_loss=} {eval_epoch_loss=} {f1=}")
-
-def check_gpu_memory()->None:
-    """Checks the GPU memory and prints the results.
-    """
-    if torch.cuda.is_available():
-        num_gpus = torch.cuda.device_count()
-        for gpu_id in range(num_gpus):
-            free_mem, total_mem = torch.cuda.mem_get_info(gpu_id)
-            gpu_properties = torch.cuda.get_device_properties(gpu_id)
-            print(f"GPU {gpu_id}: {gpu_properties.name}")
-            print(f"   Total Memory: {total_mem / (1024 ** 3):.2f} GB")
-            print(f"   Free Memory: {free_mem / (1024 ** 3):.2f} GB")
-            print(f"   Allocated Memory : {torch.cuda.memory_allocated(gpu_id) / (1024 ** 3):.2f} GB")
-            print(f"   Reserved Memory : {torch.cuda.memory_reserved(gpu_id) / (1024 ** 3):.2f} GB")
-    else:
-        print("No GPU available.")
+            output = model(input_ids, attention_mask=attention_mask, token_type_ids=token_type_ids, output_hidden_states=True)
+            embeddings.append(output.hidden_states[-1].cpu())
+            logits.append(output.logits.cpu())
+            labels.append(torch.stack(batch['labels'], dim = 1))
+    return {"embeddings": torch.cat(embeddings, dim=0), "logits": torch.cat(logits, dim=0), "labels": torch.cat(labels, dim = 0)}
 
 
-### Evaluation
+
+########################################################################################################
+# Evaluation
+########################################################################################################
 
 def plot_embeddings(embeddings: torch.tensor, labels: list[int], title="plot", method="pca") -> None:
     """
@@ -941,31 +882,6 @@ def get_df_classificationreport(y_valid, y_pred, labels, param = None, cv_split 
 
     return df            
 
-# def get_df_classificationreport_clf2(y_valid, y_pred, labels, param = None, cv_split = None):
-#     from sklearn.metrics import classification_report
-
-#     # classification report
-#     dict_cr = classification_report(y_valid, y_pred, output_dict = True)
-    
-#     # data frame of classification report
-#     df = pd.DataFrame(dict_cr).transpose()
-#     df.loc['accuracy', ['precision', 'recall']] = np.nan
-#     df.loc['accuracy', 'support'] = df.loc['macro avg', 'support']
-#     df = df.astype({'support': int})
-#     df = df.reset_index().rename(columns = {'index': 'eval_measure'})
-    
-#     # assign grid search parameters
-#     if param is not None:
-#         for key, value in param.items():
-#             df = df.assign(temp = value)
-#             df = df.rename(columns = {'temp': key})
-    
-#     # assign cv split number
-#     if cv_split is not None:
-#         df = df.assign(cv_split = cv_split)
-
-#     return df
-
 def majority_vote(current_predictions: list)->str:
     """Helper function to perform majority vote on the given predictions in a line.
     
@@ -1062,30 +978,104 @@ def get_results_from_token_preds(predictions:np.ndarray,
     # return preds, labs, rid, text
     return data
 
-# Embedd the data and predict
-def model_output(data: Dataset, model: AutoModelForSequenceClassification, batch_size: int = 32, device: str = 'cuda'):
-    """
-    Embedd the data and predict
+########################################################################################################
+# Prompting
+########################################################################################################
+
+                    
+def zero_shot_base(input:str, system_prompt:str, task_instruction:str, *args, **kwargs)->str:
+    """Zero-shot base for Llama prompting
 
     Args:
-        data (datasets.arrow_dataset.Dataset): Dataset to embedd
-        model (transformers.models.bert.modeling_bert.BertForSequenceClassification): Model to use.
-        batch_size (int, optional): Batch size. Defaults to 32.
-    """
-    # Create dataloader
-    dataloader = DataLoader(data, batch_size=batch_size, shuffle=False)
-    # Embedd data
-    embeddings = []
-    logits = []
-    labels = []
-    for batch in tqdm(dataloader):
-        input_ids = torch.stack(batch['input_ids'], dim=1).to(device)
-        attention_mask = torch.stack(batch['attention_mask'], dim=1).to(device)
-        token_type_ids = torch.stack(batch['token_type_ids'], dim=1).to(device)
-        with torch.no_grad():
-            output = model(input_ids, attention_mask=attention_mask, token_type_ids=token_type_ids, output_hidden_states=True)
-            embeddings.append(output.hidden_states[-1].cpu())
-            logits.append(output.logits.cpu())
-            labels.append(torch.stack(batch['labels'], dim = 1))
-    return {"embeddings": torch.cat(embeddings, dim=0), "logits": torch.cat(logits, dim=0), "labels": torch.cat(labels, dim = 0)}
+        input (str): user input (medical report)
+        system_prompt (str): system prompt
+        task_instruction (str): instruction for the task
 
+    Returns:
+        str: reformatted medical report
+
+    """
+    base_prompt = "[INST]<<SYS>>{system_prompt}<</SYS>>\n\n{task_instruction}\nHere is the Input:\n{input}[/INST]"
+    
+    input = base_prompt.format(system_prompt = system_prompt, task_instruction = task_instruction, input =  input)
+
+    return input
+    
+def zero_shot_instruction(input:str, system_prompt:str, task_instruction:str, *args, **kwargs)->str:
+    """Zero-shot instruction for the MS extraction task
+    
+    Args:
+        input (str): user input (medical report)
+        system_prompt (str): system prompt
+        task_instruction (str): instruction for the task
+        
+        Returns:
+            str: reformatted medical report with instruction
+            
+    """
+
+    instruction_base_prompt = "[INST]<<SYS>>{system_prompt}<</SYS>>\n\n### Instruction:\n{task_instruction}\n\n### Input:\n{input}\n\n### Output:\n[/INST]"
+    input = instruction_base_prompt.format(system_prompt = system_prompt, task_instruction = task_instruction, input = input)
+
+    return input
+
+
+
+def few_shot_base(input:str, system_prompt:str, task_instruction:str, examples:list[dict], *args, **kwargs)->str:
+    """Few Shot base for the MS extraction task
+
+    Args:
+        input (str): user input (medical report)
+        system_prompt (str): system prompt
+        task_instruction (str): instruction for the task
+        examples (list[dict]): examples for the task. Each dict contains a text and a label.
+
+    Returns:
+        str: reformatted medical report with examples
+
+    """
+    base_prompt = ("[INST]<<SYS>>{system_prompt}<</SYS>>\n\n{task_instruction}\n"
+                   "Here is an example to help you understand the task:\n{examples} \n"
+                   "Please provide your answer for the following Input.\n"
+                    "Input:\n{input}\nOutput:\n[/INST]"
+                   )
+    
+    insert_examples = ""
+        
+    for example in examples:
+        text = example["text"]
+        label = example["labels"]
+        insert_examples += f"Input:\n{text}\nOutput:\n{label}\n"
+    
+    input = base_prompt.format(system_prompt = system_prompt, task_instruction = task_instruction, examples = insert_examples, input = input)
+    return input
+
+
+def few_shot_instruction(input:str, system_prompt:str, task_instruction:str, examples:list[dict], *args, **kwargs)->str:
+    """Few Shot Instruction for the MS extraction task
+
+    Args:
+        input (str): user input (medical report)
+        system_prompt (str): system prompt
+        task_instruction (str): instruction for the task
+        examples (list[dict]): examples for the task. Each dict contains a text and a label.
+
+    Returns:
+        str: reformatted medical report with examples and instruction
+
+    """
+    base_prompt = ("[INST]<<SYS>>{system_prompt}<</SYS>>\n\n### Instruction:\n{task_instruction}\n"
+                   "Here is an example to help you understand the task:\n{examples}\n"
+                   "Please provide your answer for the following Input.\n\n"
+                   "### Input:\n{input}\n\n### Output:\n[/INST]")
+
+    insert_examples = ""
+
+    for example in examples:
+        text = example["text"]
+        label = example["labels"]
+        insert_examples += f"Input:\n{text}\nOutput:\n{label}\n"
+    
+    input = base_prompt.format(system_prompt = system_prompt, task_instruction = task_instruction, examples = insert_examples, input = input)
+
+    return input

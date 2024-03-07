@@ -1,0 +1,17 @@
+Starting job with ID 4316559...
+Parsed Arguments:
+job_id: unknown
+model_name: Llama2-MedTuned-13b
+quantization: 4bit
+batch_size: 4
+gen_config: None
+prompt_strategies: ['all']
+data: all
+split: test
+attn_implementation: flash_attention_2
+information_retrieval: False
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 23.43 GB
+   Allocated Memory : 0.00 GB
+   Reserved Memory : 0.00 GB

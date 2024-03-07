@@ -367,7 +367,7 @@ def prompting(prompting_strategy:str,
     """
 
     format_fun = get_format_fun(prompting_strategy)
-    prefix = get_prefix(prompting_strategy)
+    prefix = get_prefix()
 
     if prompting_strategy == "two_steps":
         return multi_round_inference(reports=reports,

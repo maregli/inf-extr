@@ -19,5 +19,6 @@ python /cluster/home/eglimar/inf-extr/scripts/ms-diag/prompting.py \
     --prompt_strategies "all" \
     --data all \
     --split test \
-    --batch_size 4
+    --batch_size 4 \
+    --information_retrieval
 echo "Job finished"

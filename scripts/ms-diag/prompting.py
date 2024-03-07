@@ -485,11 +485,8 @@ def main()->None:
     print("Loaded Generation Config")
 
     # Prompt strategies
-    if PROMPT_STRATEGIES == "all":
+    if "all" in PROMPT_STRATEGIES:
         PROMPT_STRATEGIES = ["zero_shot_vanilla", "zero_shot_instruction", "few_shot_vanilla", "few_shot_instruction", "two_steps"]
-    
-    elif isinstance(PROMPT_STRATEGIES, str):
-        PROMPT_STRATEGIES = [PROMPT_STRATEGIES]
 
     # Prompting
     for prompting_strategy in PROMPT_STRATEGIES:

@@ -67,7 +67,6 @@ def main()->None:
                                                 quantization = QUANTIZATION,
                                                 attn_implementation = ATTN_IMPLEMENTATION,
                                                 )
-    model.config.use_cache = True
 
     check_gpu_memory()
 

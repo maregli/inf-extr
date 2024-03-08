@@ -22,7 +22,9 @@ import matplotlib.pyplot as plt
 
 import seaborn as sns
 
+import outlines
 from outlines import samplers, models
+from outlines.generate import SequenceGenerator
 
 from transformers import (AutoModelForSequenceClassification,
                           AutoModelForCausalLM,
@@ -49,6 +51,10 @@ from sklearn.metrics import (accuracy_score,
 from umap import UMAP
 
 from collections import Counter
+
+from pydantic import BaseModel
+
+from enum import Enum
 
 ###########################################################################################################
 # Model and Tokenizer
@@ -1140,5 +1146,107 @@ def two_steps_one(input: str, *args, **kwargs)->str:
     input = base_prompt.format(system_prompt = system_prompt, instruction = instruction, input =  input)
     return input
 
+
+def format_prompt(text: list[str], format_fun: Callable[[List[str]], List[str]], *args, **kwargs) -> list[str]:
+    """
+    Formats a list of texts using a given formatting function. Used for formatting text with a prompt template.
+
+    Args:
+        text (list[str]): list of strings to be formatted
+        format_fun (Callable[list[str], list[str]]): formatting function. Specify additional arguments using *args and **kwargs.
+
+    Returns:
+        list[str]: list of formatted strings
+    """
+    return [format_fun(t, **kwargs) for t in text]
+
+def outlines_prompting(text: list[str], generator: SequenceGenerator, batch_size: int = 4)-> list[Union[str, BaseModel]]:
+    """
+    Generates a list of sequences using the given outlines generator and sampler.
+
+    Args:
+        text (list[str]): list of strings to be used as prompts
+        generator (outlines.SequenceGenerator): outlines generator
+        batch_size (int, optional): batch size. Defaults to 4.
+
+    Returns:
+        list[Union[str, pydantic.BaseModel]]: list of generated sequences
+    """
+    dataloader = DataLoader(text, batch_size = batch_size, shuffle = False)
+
+    results = []
+
+    for batch in tqdm(dataloader):
+        answer = generator(batch)
+        results.extend(answer)
+
+    return results
+
+def get_sampler(sampler_name:str)->samplers.Sampler:
+    """Get sampler for the outlines generator
+
+    Args:
+        sampler_name (str): sampler name. Must be one of greedy, multinomial or beam.
+
+    Returns:
+        samplers.Sampler: sampler
+    """
+
+    if sampler_name=="greedy":
+        sampler = samplers.greedy()
+    elif sampler_name=="multinomial":
+        sampler = samplers.multinomial()
+    elif sampler_name=="beam":
+        sampler = samplers.beam_search(beams=2)
+    else:
+        raise ValueError(f"Invalid sampler. Must be one of greedy, multinomial or beam. Got {sampler_name}")
+    
+    return sampler
+  
+def get_outlines_generator(model: Callable, sampler: outlines.samplers.Sampler, task: str = "text", *args, **kwargs) -> outlines.generate.SequenceGenerator:
+    if task == "choice":
+        choices = kwargs.get("choices")
+        assert choices is not None, "For 'choice' generation, you need to specify a list of choices as 'choices' argument."
+        assert isinstance(choices, list), "The 'choices' argument must be a list of strings."
+        return outlines.generate.choice(model, choices=choices, sampler=sampler)
+    
+    elif task == "json":
+        schema = kwargs.get("schema")
+        assert schema is not None, "For 'json' generation, you need to specify a Pydantic Base model as 'schema' argument."
+        assert issubclass(schema, BaseModel), "The 'schema' argument must be a Pydantic Base model."
+        return outlines.generate.json(model, schema, sampler=sampler)
+    
+    elif task == "text":
+        return outlines.generate.text(model, sampler=sampler)
+    
+    else:
+        raise f"Task type {task} not implemented"
+
+def get_pydantic_schema(schema_name: str)->BaseModel:
+    if schema_name == "medication":
+        class MedicationUnit(str, Enum):
+            mg = "mg"
+            ug = "ug"
+            g = "g"
+            stk = "stk"
+            tropfen = "tropfen"
+            ml = "ml"
+            unknown = "unknown"
+
+        class Medication(BaseModel):
+            name: str
+            unit: MedicationUnit
+            amount: float
+            morning: float
+            noon: float
+            evening: float
+            night: float
+
+        class MedicationList(BaseModel):
+            medications: list[Medication]
+
+        return MedicationList
+    else:
+        raise f"Schema {schema_name} not implemented"
 
 

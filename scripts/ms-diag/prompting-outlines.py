@@ -138,10 +138,8 @@ def main()->None:
         format_fun = get_format_fun(prompting_strategy=prompting_strategy)
 
         input = format_prompt(text = df["text"], format_fun=format_fun, task_instruction = task_instruction, system_prompt = system_prompt, examples = examples)
-        print(input)
 
         model_answers = outlines_prompting(text = input, generator=generator, batch_size=BATCH_SIZE)
-        print(model_answers)
 
         results = {"model_answers": model_answers}
         results["labels"] = df["labels"]

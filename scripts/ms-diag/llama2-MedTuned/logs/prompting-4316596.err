@@ -1,0 +1,82 @@
+/bin/bash: /cluster/customapps/biomed/grlab/users/eglimar/conda/envs/inf-extr/lib/libtinfo.so.6: no version information available (required by /bin/bash)
+/cluster/home/eglimar/.env_bootstrap/dotfiles/shell/bashrc: line 17: module: command not found
+/cluster/home/eglimar/.env_bootstrap/dotfiles/shell/bashrc: line 20: module: command not found
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [15:22<30:44, 922.16s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [26:28<12:51, 771.83s/it]Loading checkpoint shards: 100%|██████████| 3/3 [32:04<00:00, 572.77s/it]Loading checkpoint shards: 100%|██████████| 3/3 [32:04<00:00, 641.56s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:03<00:00,  3.99s/it]100%|██████████| 1/1 [00:03<00:00,  3.99s/it]
+  0%|          | 0/15 [00:00<?, ?it/s]  7%|▋         | 1/15 [00:08<01:56,  8.34s/it]  7%|▋         | 1/15 [00:13<03:03, 13.11s/it]
+Traceback (most recent call last):
+  File "/cluster/home/eglimar/inf-extr/scripts/ms-diag/prompting.py", line 525, in <module>
+    main()
+  File "/cluster/home/eglimar/inf-extr/scripts/ms-diag/prompting.py", line 494, in main
+    results = prompting(prompting_strategy=prompting_strategy,
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/cluster/home/eglimar/inf-extr/scripts/ms-diag/prompting.py", line 383, in prompting
+    return single_round_inference(reports=reports,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/cluster/home/eglimar/inf-extr/scripts/ms-diag/prompting.py", line 152, in single_round_inference
+    outputs = model.generate(
+              ^^^^^^^^^^^^^^^
+  File "/cluster/customapps/biomed/grlab/users/eglimar/software/virtualenvs/inf-extr-RuZI_Gck-py3.11/lib/python3.11/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/cluster/customapps/biomed/grlab/users/eglimar/software/virtualenvs/inf-extr-RuZI_Gck-py3.11/lib/python3.11/site-packages/transformers/generation/utils.py", line 1544, in generate
+    return self.greedy_search(
+           ^^^^^^^^^^^^^^^^^^^
+  File "/cluster/customapps/biomed/grlab/users/eglimar/software/virtualenvs/inf-extr-RuZI_Gck-py3.11/lib/python3.11/site-packages/transformers/generation/utils.py", line 2404, in greedy_search
+    outputs = self(
+              ^^^^^
+  File "/cluster/customapps/biomed/grlab/users/eglimar/software/virtualenvs/inf-extr-RuZI_Gck-py3.11/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/cluster/customapps/biomed/grlab/users/eglimar/software/virtualenvs/inf-extr-RuZI_Gck-py3.11/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/cluster/customapps/biomed/grlab/users/eglimar/software/virtualenvs/inf-extr-RuZI_Gck-py3.11/lib/python3.11/site-packages/accelerate/hooks.py", line 166, in new_forward
+    output = module._old_forward(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/cluster/customapps/biomed/grlab/users/eglimar/software/virtualenvs/inf-extr-RuZI_Gck-py3.11/lib/python3.11/site-packages/transformers/models/llama/modeling_llama.py", line 1168, in forward
+    outputs = self.model(
+              ^^^^^^^^^^^
+  File "/cluster/customapps/biomed/grlab/users/eglimar/software/virtualenvs/inf-extr-RuZI_Gck-py3.11/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/cluster/customapps/biomed/grlab/users/eglimar/software/virtualenvs/inf-extr-RuZI_Gck-py3.11/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/cluster/customapps/biomed/grlab/users/eglimar/software/virtualenvs/inf-extr-RuZI_Gck-py3.11/lib/python3.11/site-packages/accelerate/hooks.py", line 166, in new_forward
+    output = module._old_forward(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/cluster/customapps/biomed/grlab/users/eglimar/software/virtualenvs/inf-extr-RuZI_Gck-py3.11/lib/python3.11/site-packages/transformers/models/llama/modeling_llama.py", line 1008, in forward
+    layer_outputs = decoder_layer(
+                    ^^^^^^^^^^^^^^
+  File "/cluster/customapps/biomed/grlab/users/eglimar/software/virtualenvs/inf-extr-RuZI_Gck-py3.11/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/cluster/customapps/biomed/grlab/users/eglimar/software/virtualenvs/inf-extr-RuZI_Gck-py3.11/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/cluster/customapps/biomed/grlab/users/eglimar/software/virtualenvs/inf-extr-RuZI_Gck-py3.11/lib/python3.11/site-packages/accelerate/hooks.py", line 166, in new_forward
+    output = module._old_forward(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/cluster/customapps/biomed/grlab/users/eglimar/software/virtualenvs/inf-extr-RuZI_Gck-py3.11/lib/python3.11/site-packages/transformers/models/llama/modeling_llama.py", line 734, in forward
+    hidden_states, self_attn_weights, present_key_value = self.self_attn(
+                                                          ^^^^^^^^^^^^^^^
+  File "/cluster/customapps/biomed/grlab/users/eglimar/software/virtualenvs/inf-extr-RuZI_Gck-py3.11/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/cluster/customapps/biomed/grlab/users/eglimar/software/virtualenvs/inf-extr-RuZI_Gck-py3.11/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/cluster/customapps/biomed/grlab/users/eglimar/software/virtualenvs/inf-extr-RuZI_Gck-py3.11/lib/python3.11/site-packages/accelerate/hooks.py", line 166, in new_forward
+    output = module._old_forward(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/cluster/customapps/biomed/grlab/users/eglimar/software/virtualenvs/inf-extr-RuZI_Gck-py3.11/lib/python3.11/site-packages/transformers/models/llama/modeling_llama.py", line 487, in forward
+    attn_output = self._flash_attention_forward(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/cluster/customapps/biomed/grlab/users/eglimar/software/virtualenvs/inf-extr-RuZI_Gck-py3.11/lib/python3.11/site-packages/transformers/models/llama/modeling_llama.py", line 530, in _flash_attention_forward
+    query_states, key_states, value_states, indices_q, cu_seq_lens, max_seq_lens = self._upad_input(
+                                                                                   ^^^^^^^^^^^^^^^^^
+  File "/cluster/customapps/biomed/grlab/users/eglimar/software/virtualenvs/inf-extr-RuZI_Gck-py3.11/lib/python3.11/site-packages/transformers/models/llama/modeling_llama.py", line 563, in _upad_input
+    key_layer.reshape(batch_size * kv_seq_len, num_key_value_heads, head_dim), indices_k
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 74.00 MiB. GPU 0 has a total capacity of 23.69 GiB of which 32.06 MiB is free. Including non-PyTorch memory, this process has 23.66 GiB memory in use. Of the allocated memory 18.07 GiB is allocated by PyTorch, and 4.27 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)

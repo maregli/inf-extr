@@ -1,0 +1,11 @@
+/bin/bash: /cluster/customapps/biomed/grlab/users/eglimar/conda/envs/inf-extr/lib/libtinfo.so.6: no version information available (required by /bin/bash)
+/cluster/home/eglimar/.env_bootstrap/dotfiles/shell/bashrc: line 17: module: command not found
+/cluster/home/eglimar/.env_bootstrap/dotfiles/shell/bashrc: line 20: module: command not found
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [01:06<01:06, 66.37s/it]Loading checkpoint shards: 100%|██████████| 2/2 [01:28<00:00, 40.63s/it]Loading checkpoint shards: 100%|██████████| 2/2 [01:29<00:00, 44.51s/it]
+Traceback (most recent call last):
+  File "/cluster/home/eglimar/inf-extr/scripts/ms-diag/prompting-outlines.py", line 172, in <module>
+    main()
+  File "/cluster/home/eglimar/inf-extr/scripts/ms-diag/prompting-outlines.py", line 70, in main
+    model.config.use_cache = True
+    ^^^^^^^^^^^^
+AttributeError: 'Transformer' object has no attribute 'config'

@@ -1,4 +1,11 @@
-from typing import List, Dict, Tuple, Union, Optional
+import os
+import sys
+from pathlib import Path
+sys.path.append(str(Path(__file__).parent))
+
+from src import paths
+
+from typing import List, Dict, Tuple, Union, Optional, Callable
 
 import torch
 from torch.utils.data import DataLoader
@@ -40,13 +47,6 @@ from sklearn.metrics import (accuracy_score,
 
 
 from umap import UMAP
-
-import os
-import sys
-from pathlib import Path
-sys.path.append(str(Path(__file__).parent))
-
-from src import paths
 
 from collections import Counter
 
@@ -982,6 +982,35 @@ def get_results_from_token_preds(predictions:np.ndarray,
 # Prompting
 ########################################################################################################
 
+
+def get_format_fun(prompting_strategy:str)->Callable[[str],str]:
+    """Get format function for prompting strategy
+
+    Args:
+        prompting_strategy (str): prompting strategy. Must be one of zero_shot_vanilla, zero_shot_instruction, few_shot_vanilla, few_shot_instruction, two_steps, or all. Defaults to zero_shot_vanilla.
+
+    Returns:
+        Callable[[str],str]: format function
+
+    """
+    if prompting_strategy == "zero_shot_vanilla":
+        return zero_shot_base
+
+    elif prompting_strategy == "zero_shot_instruction":
+        return zero_shot_instruction
+
+    elif prompting_strategy == "few_shot_vanilla":
+        return few_shot_base
+
+    elif prompting_strategy == "few_shot_instruction":
+        return few_shot_instruction
+
+    elif prompting_strategy == "two_steps":
+        return two_steps_one
+
+    else:
+        raise ValueError(f"prompting_strategy must be one of zero_shot_vanilla, zero_shot_instruction, few_shot_vanilla, few_shot_instruction, two_steps, or all. Got {prompting_strategy}")
+    
                     
 def zero_shot_base(input:str, system_prompt:str, task_instruction:str, *args, **kwargs)->str:
     """Zero-shot base for Llama prompting
@@ -1079,3 +1108,37 @@ def few_shot_instruction(input:str, system_prompt:str, task_instruction:str, exa
     input = base_prompt.format(system_prompt = system_prompt, task_instruction = task_instruction, examples = insert_examples, input = input)
 
     return input
+
+
+def two_steps_one(input: str, *args, **kwargs)->str:
+    """Two Steps One for the MS extraction task. Encodes the report for first turn of the dialogue.
+
+    Args:
+        input (str): medical report
+
+    Returns:
+        str: reformatted medical report with base
+
+    """
+    base_prompt = "<s>[INST]<<SYS>>{system_prompt}<</SYS>>\n\n{instruction}{input}[/INST]"
+    system_prompt =  ("\nYou are a helpful, respectful and honest assistant. Always answer as helpfully as possible, while being safe. "
+                      "Your answers should not include any harmful, unethical, racist, sexist, toxic, dangerous, or illegal content. "
+                       "Please ensure that your responses are socially unbiased and positive in nature.\n\nIf a question does not make "
+                        "any sense, or is not factually coherent, explain why instead of answering something not correct. If you don’t "
+                        "know the answer to a question, please don’t share false information.\n"
+                        )
+    instruction = ("Your task is to extract relevant information about the multiple sclerosis diagnosis from the provided German medical report. "
+                   "Identify and summarize all sections discussing \"Multiple Sklerose\" paying attention to the exact type of multiple sclerosis. "
+                   "There are three types:\n"
+                   "primär progrediente Multiple Sklerose (PPMS)\n"
+                   "sekundär progrediente Multiple Sklerose (SPMS)\n"
+                   "schubförmige Multiple Sklerose (RRMS)\n"
+                   "If the report lacks information about multiple sclerosis, respond with \"not enough info\". "
+                   "\nHere is the Medical Report:\n "
+                   )
+                   
+    input = base_prompt.format(system_prompt = system_prompt, instruction = instruction, input =  input)
+    return input
+
+
+

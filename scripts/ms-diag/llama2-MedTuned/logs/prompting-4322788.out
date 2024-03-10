@@ -1,0 +1,193 @@
+Starting job with ID 4322788...
+Parsed Arguments:
+job_id: unknown
+model_name: Llama2-MedTuned-13b
+quantization: 4bit
+batch_size: 4
+gen_config: None
+prompt_strategies: ['all']
+data: all
+split: test
+attn_implementation: flash_attention_2
+information_retrieval: True
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 23.43 GB
+   Allocated Memory : 0.00 GB
+   Reserved Memory : 0.00 GB
+Tokenizer pad token ID: 32000
+Tokenizer special tokens: {'bos_token': '<s>', 'eos_token': '</s>', 'unk_token': '<unk>', 'pad_token': '<pad>'}
+Model pad token ID: 32000
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 15.71 GB
+   Allocated Memory : 7.51 GB
+   Reserved Memory : 7.69 GB
+Loaded Model and Tokenizer
+Loaded Data
+Performing Information Retrieval
+Tokenizer pad token ID: 0
+Tokenizer special tokens: {'unk_token': '[UNK]', 'sep_token': '[SEP]', 'pad_token': '[PAD]', 'cls_token': '[CLS]', 'mask_token': '[MASK]'}
+Model pad token ID: 0
+Retrieving relevant information
+Retrieved relevant information
+Saved Label Encodings
+Loaded Generation Config
+Prompting Strategy: zero_shot_vanilla
+Starting Inference
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 12.40 GB
+   Allocated Memory : 8.79 GB
+   Reserved Memory : 10.98 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 12.39 GB
+   Allocated Memory : 8.80 GB
+   Reserved Memory : 10.98 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 12.40 GB
+   Allocated Memory : 8.77 GB
+   Reserved Memory : 10.97 GB
+Finished Inference
+Starting Hidden State Calculation
+Finished Hidden State Calculation
+Saved Results
+Prompting Strategy: zero_shot_instruction
+Starting Inference
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 12.39 GB
+   Allocated Memory : 8.82 GB
+   Reserved Memory : 10.98 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 12.38 GB
+   Allocated Memory : 8.83 GB
+   Reserved Memory : 11.00 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 12.39 GB
+   Allocated Memory : 8.81 GB
+   Reserved Memory : 10.98 GB
+Finished Inference
+Starting Hidden State Calculation
+Finished Hidden State Calculation
+Saved Results
+Prompting Strategy: few_shot_vanilla
+Starting Inference
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 9.44 GB
+   Allocated Memory : 9.95 GB
+   Reserved Memory : 13.94 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 9.43 GB
+   Allocated Memory : 9.97 GB
+   Reserved Memory : 13.94 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 9.44 GB
+   Allocated Memory : 9.94 GB
+   Reserved Memory : 13.93 GB
+Finished Inference
+Starting Hidden State Calculation
+Finished Hidden State Calculation
+Saved Results
+Prompting Strategy: few_shot_instruction
+Starting Inference
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 9.49 GB
+   Allocated Memory : 10.00 GB
+   Reserved Memory : 13.88 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 9.49 GB
+   Allocated Memory : 10.01 GB
+   Reserved Memory : 13.88 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 9.43 GB
+   Allocated Memory : 9.99 GB
+   Reserved Memory : 13.94 GB
+Finished Inference
+Starting Hidden State Calculation
+Finished Hidden State Calculation
+Saved Results
+Prompting Strategy: two_steps
+Starting Inference
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 15.14 GB
+   Allocated Memory : 7.81 GB
+   Reserved Memory : 8.23 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 14.97 GB
+   Allocated Memory : 7.84 GB
+   Reserved Memory : 8.40 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 15.16 GB
+   Allocated Memory : 7.81 GB
+   Reserved Memory : 8.21 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 15.00 GB
+   Allocated Memory : 7.83 GB
+   Reserved Memory : 8.37 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 14.95 GB
+   Allocated Memory : 7.84 GB
+   Reserved Memory : 8.42 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 15.02 GB
+   Allocated Memory : 7.82 GB
+   Reserved Memory : 8.35 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 15.00 GB
+   Allocated Memory : 7.83 GB
+   Reserved Memory : 8.37 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 15.00 GB
+   Allocated Memory : 7.83 GB
+   Reserved Memory : 8.37 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 15.02 GB
+   Allocated Memory : 7.83 GB
+   Reserved Memory : 8.35 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 15.16 GB
+   Allocated Memory : 7.81 GB
+   Reserved Memory : 8.21 GB
+Finished Inference
+Starting Inference
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 13.41 GB
+   Allocated Memory : 8.38 GB
+   Reserved Memory : 9.96 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 13.46 GB
+   Allocated Memory : 8.38 GB
+   Reserved Memory : 9.91 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 13.46 GB
+   Allocated Memory : 8.38 GB
+   Reserved Memory : 9.91 GB
+Finished Inference
+Starting Hidden State Calculation
+Finished Hidden State Calculation
+Saved Results
+Job finished

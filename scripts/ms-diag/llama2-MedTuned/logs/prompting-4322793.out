@@ -1,0 +1,40 @@
+Starting job with ID 4322793...
+Parsed Arguments:
+job_id: unknown
+model_name: Llama2-MedTuned-7b
+quantization: 4bit
+batch_size: 4
+prompt_strategies: ['all']
+sampler: greedy
+data: all
+split: test
+attn_implementation: flash_attention_2
+information_retrieval: True
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 22.92 GB
+   Allocated Memory : 0.00 GB
+   Reserved Memory : 0.00 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 18.69 GB
+   Allocated Memory : 3.76 GB
+   Reserved Memory : 4.05 GB
+Loaded Model and Tokenizer
+Got Outlines generator
+Loaded Data
+Performing Information Retrieval
+Tokenizer pad token ID: 0
+Tokenizer special tokens: {'unk_token': '[UNK]', 'sep_token': '[SEP]', 'pad_token': '[PAD]', 'cls_token': '[CLS]', 'mask_token': '[MASK]'}
+Model pad token ID: 0
+Retrieving relevant information
+Retrieved relevant information
+Prompting Strategy: zero_shot_vanilla
+Saved Results
+Prompting Strategy: zero_shot_instruction
+Saved Results
+Prompting Strategy: few_shot_vanilla
+Saved Results
+Prompting Strategy: few_shot_instruction
+Saved Results
+Job finished

@@ -1,15 +1,0 @@
-/bin/bash: /cluster/customapps/biomed/grlab/users/eglimar/conda/envs/inf-extr/lib/libtinfo.so.6: no version information available (required by /bin/bash)
-/cluster/home/eglimar/.env_bootstrap/dotfiles/shell/bashrc: line 17: module: command not found
-/cluster/home/eglimar/.env_bootstrap/dotfiles/shell/bashrc: line 20: module: command not found
-Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [01:09<02:19, 69.78s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [02:14<01:07, 67.06s/it]Loading checkpoint shards: 100%|██████████| 3/3 [02:55<00:00, 54.93s/it]Loading checkpoint shards: 100%|██████████| 3/3 [02:55<00:00, 58.47s/it]
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:01<00:00,  1.32s/it]100%|██████████| 1/1 [00:01<00:00,  1.32s/it]
-Traceback (most recent call last):
-  File "/cluster/home/eglimar/inf-extr/scripts/ms-diag/prompting.py", line 525, in <module>
-    main()
-  File "/cluster/home/eglimar/inf-extr/scripts/ms-diag/prompting.py", line 494, in main
-    results = prompting(prompting_strategy=prompting_strategy,
-              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/cluster/home/eglimar/inf-extr/scripts/ms-diag/prompting.py", line 370, in prompting
-    prefix = get_prefix(prompting_strategy)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-TypeError: get_prefix() takes 0 positional arguments but 1 was given

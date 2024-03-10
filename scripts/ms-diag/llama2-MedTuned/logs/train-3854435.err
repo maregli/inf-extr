@@ -1,18 +1,0 @@
-/bin/bash: /cluster/customapps/biomed/grlab/users/eglimar/conda/envs/inf-extr/lib/libtinfo.so.6: no version information available (required by /bin/bash)
-/cluster/home/eglimar/.env_bootstrap/dotfiles/shell/bashrc: line 17: module: command not found
-/cluster/home/eglimar/.env_bootstrap/dotfiles/shell/bashrc: line 20: module: command not found
-Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [10:52<21:45, 652.94s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [23:28<11:53, 713.14s/it]Loading checkpoint shards: 100%|██████████| 3/3 [30:54<00:00, 591.42s/it]Loading checkpoint shards: 100%|██████████| 3/3 [30:54<00:00, 618.27s/it]
-Some weights of LlamaForSequenceClassification were not initialized from the model checkpoint at /cluster/dataset/midatams/inf-extr/resources/models/Llama2-MedTuned-13b and are newly initialized: ['score.weight']
-You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
-Traceback (most recent call last):
-  File "/cluster/home/eglimar/inf-extr/scripts/ms-diag/finetune.py", line 179, in <module>
-    main()
-  File "/cluster/home/eglimar/inf-extr/scripts/ms-diag/finetune.py", line 104, in main
-    config = json.loads(PEFT_CONFIG)
-  File "/cluster/customapps/biomed/grlab/users/eglimar/conda/envs/inf-extr/lib/python3.9/json/__init__.py", line 346, in loads
-    return _default_decoder.decode(s)
-  File "/cluster/customapps/biomed/grlab/users/eglimar/conda/envs/inf-extr/lib/python3.9/json/decoder.py", line 337, in decode
-    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
-  File "/cluster/customapps/biomed/grlab/users/eglimar/conda/envs/inf-extr/lib/python3.9/json/decoder.py", line 353, in raw_decode
-    obj, end = self.scan_once(s, idx)
-json.decoder.JSONDecodeError: Expecting ',' delimiter: line 1 column 53 (char 52)

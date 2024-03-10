@@ -1085,7 +1085,7 @@ def zero_shot_instruction(input:str, system_prompt:str, task_instruction:str, *a
             
     """
 
-    instruction_base_prompt = "[INST]<<SYS>>{system_prompt}<</SYS>>\n\n### Instruction:\n{task_instruction}\n\n### Input:\n{input}\n\n### Output:\n[/INST]"
+    instruction_base_prompt = "[INST]<<SYS>>{system_prompt}<</SYS>>\n### Instruction:\n{task_instruction}\n\n### Input:\n{input}[/INST]\n\n### Output:\n"
     input = instruction_base_prompt.format(system_prompt = system_prompt, task_instruction = task_instruction, input = input)
 
     return input
@@ -1108,7 +1108,7 @@ def few_shot_base(input:str, system_prompt:str, task_instruction:str, examples:l
     base_prompt = ("[INST]<<SYS>>{system_prompt}<</SYS>>\n\n{task_instruction}\n"
                    "Here are some examples to help you understand the task:\n\n{examples} \n"
                    "Please provide your answer for the following Input.\n"
-                    "Input:\n{input}\nOutput:\n[/INST]"
+                    "Input:\n{input}[/INST]"
                    )
     
     insert_examples = ""
@@ -1138,7 +1138,7 @@ def few_shot_instruction(input:str, system_prompt:str, task_instruction:str, exa
     base_prompt = ("[INST]<<SYS>>{system_prompt}<</SYS>>\n\n### Instruction:\n{task_instruction}\n"
                    "Here are some examples to help you understand the task:\n{examples}\n"
                    "Please provide your answer for the following Input.\n\n"
-                   "### Input:\n{input}\n\n### Output:\n[/INST]")
+                   "### Input:\n{input}[/INST]\n\n### Output:\n")
 
     insert_examples = ""
 

@@ -1,16 +1,0 @@
-/bin/bash: /cluster/customapps/biomed/grlab/users/eglimar/conda/envs/inf-extr/lib/libtinfo.so.6: no version information available (required by /bin/bash)
-/cluster/home/eglimar/.env_bootstrap/dotfiles/shell/bashrc: line 17: module: command not found
-/cluster/home/eglimar/.env_bootstrap/dotfiles/shell/bashrc: line 20: module: command not found
-Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [01:09<02:19, 69.97s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [02:14<01:06, 66.92s/it]Loading checkpoint shards: 100%|██████████| 3/3 [02:55<00:00, 54.99s/it]Loading checkpoint shards: 100%|██████████| 3/3 [02:55<00:00, 58.52s/it]
-  0%|          | 0/33 [00:00<?, ?it/s]  3%|▎         | 1/33 [00:00<00:20,  1.58it/s] 12%|█▏        | 4/33 [00:00<00:04,  6.71it/s] 21%|██        | 7/33 [00:00<00:02, 11.15it/s] 30%|███       | 10/33 [00:00<00:01, 15.12it/s] 39%|███▉      | 13/33 [00:01<00:01, 16.30it/s] 52%|█████▏    | 17/33 [00:01<00:00, 19.54it/s] 61%|██████    | 20/33 [00:01<00:00, 19.44it/s] 73%|███████▎  | 24/33 [00:01<00:00, 22.69it/s] 82%|████████▏ | 27/33 [00:01<00:00, 24.36it/s] 91%|█████████ | 30/33 [00:01<00:00, 24.64it/s]100%|██████████| 33/33 [00:01<00:00, 24.18it/s]100%|██████████| 33/33 [00:01<00:00, 17.21it/s]
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  1.28it/s]100%|██████████| 1/1 [00:00<00:00,  1.27it/s]
-Traceback (most recent call last):
-  File "/cluster/home/eglimar/inf-extr/scripts/ms-diag/prompting.py", line 525, in <module>
-    main()
-  File "/cluster/home/eglimar/inf-extr/scripts/ms-diag/prompting.py", line 494, in main
-    results = prompting(prompting_strategy=prompting_strategy,
-              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/cluster/home/eglimar/inf-extr/scripts/ms-diag/prompting.py", line 370, in prompting
-    prefix = get_prefix(prompting_strategy)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-TypeError: get_prefix() takes 0 positional arguments but 1 was given

@@ -19,6 +19,8 @@ import numpy as np
 import pandas as pd
 
 import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
+import matplotlib.colors as mcolors
 
 import seaborn as sns
 
@@ -45,7 +47,8 @@ from sklearn.metrics import (accuracy_score,
                              recall_score, 
                              ConfusionMatrixDisplay, 
                              precision_recall_fscore_support,
-                             classification_report)
+                             classification_report,
+                             confusion_matrix,)
 
 
 from umap import UMAP
@@ -758,14 +761,14 @@ def model_output(data: Dataset, model: AutoModelForSequenceClassification, batch
 # Evaluation
 ########################################################################################################
 
-def plot_embeddings(embeddings: torch.tensor, labels: list[int], title="plot", method="pca") -> None:
+def plot_embeddings(embeddings: torch.tensor, labels: list[int], title="", method="pca") -> None:
     """
     Plot embeddings using PCA or UMAP
 
     Args:
         embeddings (torch.tensor): Embeddings to plot. Shape: (num_samples, embedding_size)
         labels List[int]: Labels in integer format.
-        title (str, optional): Title. Defaults to "plot".
+        title (str, optional): Title. Defaults to "".
         method (str, optional): Method. Defaults to "pca".
     """
 
@@ -818,18 +821,51 @@ def performance_metrics(preds:List[int], labels:List[int])->dict[str, float]:
             "precision": precision_score(labels, preds, average='macro'),
             "recall": recall_score(labels, preds, average='macro')}
 
-def plot_confusion_matrix(preds:List[int], labels:List[int], title:str = "Confusion Matrix", label2id:dict = None)->None:
-    """
-    Plots the confusion matrix
+
+def pretty_confusion_matrix(y_true:list[int], y_pred:list[int], label_dict:dict[int, str], title:str="")->None:
+    """Plots a pretty confusion matrix using Seaborn's heatmap.
 
     Args:
-        preds (List[int]): Predictions
-        labels (List[int]): Labels
-        title (str, optional): Title. Defaults to "Confusion Matrix".
-        id2label (dict, optional): Id to label mapping. Defaults to None.
-    """    
-    ConfusionMatrixDisplay.from_predictions(y_true = labels, y_pred = preds, display_labels=label2id, xticks_rotation="vertical")
+        y_true (list[int]): True labels
+        y_pred (list[int]): Predicted labels
+        label_dict (dict[int, str]): Label dictionary. Maps label indices to display labels.
+        title (str, optional): Title. Defaults to "".
+
+    Returns:
+        None
+    """
+
+    
+    viridis_cmap = plt.get_cmap('viridis_r')
+    cmap = sns.color_palette("ch:s=.25,rot=-.25", as_cmap=True)
+
+    # Extract a subset of colors from the "viridis" colormap
+    start_index = 120  # Start index of colors to include
+    end_index = 200 # End index of colors to include
+    subset_colors = viridis_cmap(np.linspace(start_index / 255, end_index / 255, end_index - start_index + 1))
+
+    # Create a custom colormap using the subset of colors
+    custom_cmap = mcolors.ListedColormap(subset_colors)
+    custom_cmap = sns.color_palette("light:#5A9", as_cmap=True)
+
+    sorted_labels = [item[1] for item in sorted(label_dict.items(), key=lambda x: x[0])]
+
+    # Create the confusion matrix
+    cm = confusion_matrix(y_true=y_true, y_pred=y_pred)
+
+    # Plotting the confusion matrix
+    plt.figure(figsize=(10, 8))
+    sns.set_theme(font_scale=1.2)  # Adjust font size for labels
+    sns.heatmap(cm, annot=True, fmt='d', cmap=custom_cmap, cbar=False,
+                yticklabels=sorted_labels, xticklabels=sorted_labels, alpha=0.9, linewidths=0.5, linecolor='lightgrey')
+    plt.xlabel('Predicted Label')
+    plt.ylabel('True Label')
+    plt.xticks(rotation=45, ha='right')  # Rotate x-axis labels for better readability
+    plt.yticks(rotation=0)
+    plt.grid(False)
+    plt.tight_layout()
     plt.title(title)
+    plt.show()
 
 def compute_metrics(eval_preds):
     """Computes accuracy, precision, recall and f1 score for the given logits and labels.

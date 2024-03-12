@@ -1257,7 +1257,7 @@ def get_outlines_generator(model: Callable, sampler: outlines.samplers.Sampler, 
     elif task == "json":
         schema = kwargs.get("schema")
         assert schema is not None, "For 'json' generation, you need to specify a Pydantic Base model as 'schema' argument."
-        assert issubclass(schema, BaseModel), "The 'schema' argument must be a Pydantic Base model."
+        assert issubclass(schema, BaseModel), "The 'schema' argument must be a subclass of the Pydantic Base model."
         return outlines.generate.json(model, schema, sampler=sampler)
     
     elif task == "text":

@@ -138,7 +138,6 @@ def main()->None:
         model_answers = outlines_prompting(text = input, generator=generator, batch_size=BATCH_SIZE)
 
         results = {"model_answers": model_answers}
-        results["labels"] = df["labels"]
         results["rid"] = df["rid"]
         results["text"] = df["text"]
 

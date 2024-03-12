@@ -761,7 +761,7 @@ def model_output(data: Dataset, model: AutoModelForSequenceClassification, batch
 # Evaluation
 ########################################################################################################
 
-def plot_embeddings(embeddings: torch.tensor, labels: list[int], title="", method="pca") -> None:
+def plot_embeddings(embeddings: torch.tensor, labels: list[int], title="", method="pca", display_label_mapping: dict = None) -> None:
     """
     Plot embeddings using PCA or UMAP
 
@@ -770,6 +770,7 @@ def plot_embeddings(embeddings: torch.tensor, labels: list[int], title="", metho
         labels List[int]: Labels in integer format.
         title (str, optional): Title. Defaults to "".
         method (str, optional): Method. Defaults to "pca".
+        display_label_mapping (dict, optional): Display label mapping, from int (key) to label (value). Defaults to None.
     """
 
     # Create a PCA object
@@ -789,6 +790,13 @@ def plot_embeddings(embeddings: torch.tensor, labels: list[int], title="", metho
     # Create a dataframe with the embeddings and the corresponding labels
     df_embeddings = pd.DataFrame(principalComponents, columns=['x', 'y'])
     df_embeddings['label'] = labels
+
+    # Sort the labels
+    df_embeddings = df_embeddings.sort_values(by='label', ascending=True)
+
+    # Display the label mapping
+    if display_label_mapping:
+        df_embeddings['label'] = df_embeddings['label'].map(display_label_mapping)
 
     # Plot using Seaborn
     plt.figure(figsize=(8, 6))
@@ -828,7 +836,7 @@ def pretty_confusion_matrix(y_true:list[int], y_pred:list[int], label_dict:dict[
     Args:
         y_true (list[int]): True labels
         y_pred (list[int]): Predicted labels
-        label_dict (dict[int, str]): Label dictionary. Maps label indices to display labels.
+        label_dict (dict[int, str]): Label dictionary. Maps label indices to display labels. From int2label
         title (str, optional): Title. Defaults to "".
 
     Returns:

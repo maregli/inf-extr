@@ -1,0 +1,12 @@
+/bin/bash: /cluster/customapps/biomed/grlab/users/eglimar/conda/envs/inf-extr/lib/libtinfo.so.6: no version information available (required by /bin/bash)
+/cluster/home/eglimar/.env_bootstrap/dotfiles/shell/bashrc: line 17: module: command not found
+/cluster/home/eglimar/.env_bootstrap/dotfiles/shell/bashrc: line 20: module: command not found
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [11:00<22:00, 660.30s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [19:42<09:38, 578.78s/it]Loading checkpoint shards: 100%|██████████| 3/3 [28:38<00:00, 559.55s/it]Loading checkpoint shards: 100%|██████████| 3/3 [28:38<00:00, 572.91s/it]
+Prompting:   0%|          | 0/100 [00:00<?, ?it/s]Prompting:   1%|          | 1/100 [03:57<6:31:05, 237.02s/it]Prompting:   2%|▏         | 2/100 [05:15<3:54:33, 143.61s/it]Prompting:   3%|▎         | 3/100 [06:31<3:02:35, 112.95s/it]
+Stream input:   0%|          | 0/1 [00:00<?, ?it/s][A
+Stream input: 100%|██████████| 1/1 [00:25<00:00, 25.60s/it][A
+                                                           [APrompting:   4%|▍         | 4/100 [11:57<5:15:02, 196.90s/it]Prompting:   5%|▌         | 5/100 [13:16<4:04:36, 154.49s/it]Prompting:   6%|▌         | 6/100 [14:34<3:21:09, 128.40s/it]Prompting:   7%|▋         | 7/100 [17:11<3:33:30, 137.74s/it]Prompting:   8%|▊         | 8/100 [18:01<2:48:20, 109.79s/it]Prompting:   9%|▉         | 9/100 [18:42<2:14:10, 88.47s/it] 
+Stream input:   0%|          | 0/1 [00:00<?, ?it/s][A
+Stream input: 100%|██████████| 1/1 [1:24:17<00:00, 5055.87s/it][A
+                                                               [APrompting:  10%|█         | 10/100 [1:48:00<42:52:45, 1715.17s/it]
+Stream input:   0%|          | 0/1 [00:00<?, ?it/s][A

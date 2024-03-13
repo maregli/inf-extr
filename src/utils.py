@@ -5,7 +5,7 @@ sys.path.append(str(Path(__file__).parent))
 
 from src import paths
 
-from typing import List, Dict, Tuple, Union, Optional, Callable
+from typing import List, Dict, Tuple, Union, Optional, Callable, Type
 
 import torch
 from torch.utils.data import DataLoader
@@ -44,12 +44,12 @@ from sklearn.manifold import TSNE
 from sklearn.metrics import (accuracy_score, 
                              f1_score, 
                              precision_score, 
-                             recall_score, 
-                             ConfusionMatrixDisplay, 
+                             recall_score,  
                              precision_recall_fscore_support,
                              classification_report,
                              confusion_matrix,)
 
+import signal
 
 from umap import UMAP
 
@@ -58,6 +58,7 @@ from collections import Counter
 from pydantic import BaseModel
 
 from enum import Enum
+
 
 ###########################################################################################################
 # Model and Tokenizer
@@ -1225,6 +1226,82 @@ def outlines_prompting(text: list[str], generator: SequenceGenerator, batch_size
         results.extend(answer)
 
     return results
+
+def outlines_prompting_to(text: list[str], generator: SequenceGenerator, schema:Type[BaseModel], batch_size: int = 1, wait_time:int = 120)-> list[Union[str, BaseModel]]:
+    """
+    Generates a list of sequences using the given outlines generator and sampler. Function has built in time-out function, as the generation is prone
+    to hang with a complicated schema.
+
+    Args:
+        text (list[str]): list of strings to be used as prompts
+        generator (outlines.SequenceGenerator): outlines generator
+        schema (Type[BaseModel]): Pydantic schema
+        batch_size (int, optional): batch size. Defaults to 1.
+        wait_time (int, optional): wait time. Defaults to 120.
+
+    Returns:
+        list[Union[str, pydantic.BaseModel]]: list of generated sequences
+    """
+
+    dataloader = DataLoader(text, batch_size = batch_size, shuffle = False)
+
+    results = []
+    successful = []
+
+    def timeout_handler(signum, frame):
+        raise TimeoutError("Timed out")
+    
+    signal.signal(signal.SIGALRM, timeout_handler)
+
+    bar_prompt = tqdm(dataloader, desc="Prompting", leave=False)
+
+    for batch in bar_prompt:
+        try:
+            signal.alarm(wait_time)  # Set the timeout
+            result = generator(batch)
+            results.extend(result)
+            successful.extend([True] * len(result))
+
+        except TimeoutError:
+            print("Timed out, trying stream_input")
+            bar_stream = tqdm(batch, desc="Stream input", leave=False)
+            for text in bar_stream:
+                _res = stream_input(text, generator)
+                try: 
+                    _res = schema.model_validate_json(_res)
+                    successful.append(True)
+                except:
+                    successful.append(False)
+                results.append(_res)
+        finally:
+            signal.alarm(0)
+    return results, successful
+
+
+def stream_input(text: str, generator: SequenceGenerator)-> str:
+    """
+    Streams the input text through the given outlines generator.
+
+    Args:
+        text (str): input text
+        generator (outlines.SequenceGenerator): outlines generator
+
+    Returns:
+        str: generated text
+    """
+
+    result = ""
+    line_break_count = 0
+    for token in generator.stream(text):
+        result += token
+        # Failsaves for infinite generation
+        if line_break_count > 6:
+            return result
+        elif token == "\n":
+            line_break_count += 1
+        else:
+            line_break_count = 0
+    return result
 
 def get_sampler(sampler_name:str)->samplers.Sampler:
     """Get sampler for the outlines generator

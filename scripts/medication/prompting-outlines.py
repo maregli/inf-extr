@@ -14,12 +14,12 @@ from src.utils import (load_model_and_tokenizer,
                         get_outlines_generator,
                         get_pydantic_schema,
                         format_prompt,
-                        outlines_prompting_to,
+                        outlines_medication_prompting,
 )
 
 import argparse
 
-from datasets import concatenate_datasets, Dataset
+from datasets import Dataset
 
 import json
 

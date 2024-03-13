@@ -1390,7 +1390,7 @@ def get_pydantic_schema(schema_name: str)->BaseModel:
 
 def get_default_pydantic_model(schema_name: str)->BaseModel:
     if schema_name == "medication":
-        return Medication(
+        medication = Medication(
                             name="unknown",
                             unit="unknown",
                             amount=-99,
@@ -1399,5 +1399,6 @@ def get_default_pydantic_model(schema_name: str)->BaseModel:
                             evening=-99,
                             night=-99,
                         )
+        return MedicationList(medications=[medication])
     else:
         raise f"Schema {schema_name} not implemented"

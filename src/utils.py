@@ -1260,7 +1260,7 @@ def outlines_prompting_to(text: list[str], generator: SequenceGenerator, schema:
             signal.alarm(wait_time)  # Set the timeout
             result = generator(batch)
             results.extend(result)
-            successful.extend([True] * len(result))
+            successful.extend([True] * len(batch))
 
         except TimeoutError:
             print("Timed out, trying stream_input")

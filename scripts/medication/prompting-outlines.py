@@ -33,6 +33,7 @@ def parse_args():
     parser.add_argument("--sampler", type=str, default = "greedy", help="Outlines Sampler to be used for generation. Must be one of greedy, multinomial or beam.")
     parser.add_argument("--attn_implementation", type=str, default=None, help="To implement Flash Attention 2 provide flash_attention_2. Defaults to None.")
     parser.add_argument("--information_retrieval", action="store_true", help="Whether to perform information retrieval. Defaults to False. If True, the model will be loaded from the information retrieval path.")
+    parser.add_argument("--max_tokens", type=int, default = 500, help="Maximum tokens to be generated per example. Defaults to 500.")
 
     args = parser.parse_args()
 
@@ -50,6 +51,7 @@ def main()->None:
     MODEL_NAME = args.model_name
     QUANTIZATION = args.quantization
     BATCH_SIZE = args.batch_size
+    MAX_TOKENS = args.max_tokens
     PROMPT_STRATEGIES = args.prompt_strategies
     SAMPLER_NAME = args.sampler
     ATTN_IMPLEMENTATION = args.attn_implementation
@@ -135,7 +137,7 @@ def main()->None:
 
         input = format_prompt(text = df["text"], format_fun=format_fun, task_instruction = task_instruction, system_prompt = system_prompt, examples = examples)
 
-        model_answers, successful = outlines_prompting_to(text = input, generator=generator, batch_size=BATCH_SIZE, schema = schema, wait_time = 300)
+        model_answers, successful = outlines_medication_prompting(text= input, generator = generator, max_tokens = MAX_TOKENS, batch_size = BATCH_SIZE)
 
         results = {"model_answers": model_answers}
         results["rid"] = df["rid"]

@@ -1247,10 +1247,6 @@ def outlines_medication_prompting(text: list[str], generator: SequenceGenerator,
         list[Union[str, pydantic.BaseModel]]: list of generated sequences
     """
 
-    if batch_size > 1:
-        warnings.warn("Approach has not been implemented for batch_size > 1. Setting batch_size to 1.")
-        batch_size = 1
-
     dataloader = DataLoader(text, batch_size = batch_size, shuffle = False)
 
     results = []
@@ -1260,73 +1256,30 @@ def outlines_medication_prompting(text: list[str], generator: SequenceGenerator,
     filename = "intermediate_results" + str(time.time()) + ".pt"
     os.makedirs(paths.RESULTS_PATH/"intermediate", exist_ok=True)
 
-
-    for batch in tqdm(dataloader):
-        result = generator(batch, max_tokens=100) 
-        # With batch_size = 1, this returns a list of len 1 with tuple:  [('medications', [Medication(name=...)])]]
-        # Will try to validate the result with Medication class and stringify the result if it fails
-        if isinstance(result, tuple):
-            medication_list = result[1]
-        else:
-            medication_list = result[0][1]
-        _res = [] # This is results list for one text
-        _successful = []
-        for medication in medication_list:
-            try:
-                _res.append(medication.json())
-                _successful.append(True)
-            except:
-                _res.append(str(medication))
-                _successful.append(False)
-
-        results.append(_res) # Thus we get a list of lists of results
-        successful.append(_successful)
+    bar_prompt = tqdm(dataloader, desc="Prompting", leave=False)
+    for batch in bar_prompt:
+        try:
+            result = generator(batch, max_tokens=max_tokens)
+            if isinstance(result, list): # If batch size greater 1 it will return list
+                results.extend(result)
+            else:
+                results.append(result)
+            successful.extend([True] * len(batch))
+        except: # This happens when model cannot finish JSON Schema, just parse what you can
+            bar_stream = tqdm(batch, desc="Stream input", leave=False)
+            for text in bar_stream:
+                result = stream_input(text, generator, max_tokens = max_tokens)
+                results.append(result)
+                successful.append(False)
 
         torch.save(results, paths.RESULTS_PATH/"intermediate"/filename)
-        torch.save(successful, paths.RESULTS_PATH/"intermediate"/filename + "_successful")
+        torch.save(successful, os.path.join(paths.RESULTS_PATH/"intermediate", filename + "_successful"))
         print(f"Saved intermediate results to {paths.RESULTS_PATH/'intermediate'}/{filename}")
 
-    # def timeout_handler(signum, frame):
-    #     raise TimeoutError("Timed out")
-    
-    # signal.signal(signal.SIGALRM, timeout_handler)
-
-    # bar_prompt = tqdm(dataloader, desc="Prompting", leave=False)
-
-    # for batch in bar_prompt:
-    #     try:
-    #         signal.alarm(wait_time)  # Set the timeout
-    #         result = generator(batch)
-    #         results.extend(result)
-    #         successful.extend([True] * len(batch))
-        
-    #     except TimeoutError:
-    #         print("Timed out at observation number", len(results))
-    #         successful.extend([False] * len(batch))
-    #         results.extend([default_model for _ in range(len(batch))])
-
-    #     # except TimeoutError:
-    #     #     print("Timed out, trying stream_input")
-    #     #     bar_stream = tqdm(batch, desc="Stream input", leave=False)
-    #     #     for text in bar_stream:
-    #     #         _res = stream_input(text, generator)
-    #     #         try: 
-    #     #             _res = schema.model_validate_json(_res)
-    #     #             successful.append(True)
-    #     #         except:
-    #     #             successful.append(False)
-    #     #         results.append(_res)
-    #     finally:
-    #         signal.alarm(0)
-        # results_json = [res.json() for res in results]
-        # results_json += [{"successful": s} for s in successful]
-        # os.makedirs(paths.RESULTS_PATH/"intermediate", exist_ok=True)
-        # torch.save(results_json, paths.RESULTS_PATH/"intermediate"/filename)
-        # print(f"Saved intermediate results to {paths.RESULTS_PATH/'intermediate'}/{filename}")
     return results, successful
 
 
-def stream_input(text: str, generator: SequenceGenerator)-> str:
+def stream_input(text: str, generator: SequenceGenerator, max_tokens: int = 100)-> str:
     """
     Streams the input text through the given outlines generator.
 
@@ -1340,16 +1293,8 @@ def stream_input(text: str, generator: SequenceGenerator)-> str:
 
     result = ""
     line_break_count = 0
-    for token in generator.stream(text):
+    for token in generator.stream(text, max_tokens = max_tokens):
         result += token
-        print(token, end ="")
-        # Failsaves for infinite generation
-        if line_break_count > 6:
-            return result
-        elif token == "\n" or token == "":
-            line_break_count += 1
-        else:
-            line_break_count = 0
     return result
 
 def get_sampler(sampler_name:str)->samplers.Sampler:
@@ -1384,7 +1329,7 @@ def get_outlines_generator(model: Callable, sampler: outlines.samplers.Sampler, 
         schema = kwargs.get("schema")
         assert schema is not None, "For 'json' generation, you need to specify a Pydantic Base model as 'schema' argument."
         assert issubclass(schema, BaseModel), "The 'schema' argument must be a subclass of the Pydantic Base model."
-        return outlines.generate.json(model, schema, sampler=sampler)
+        return outlines.generate.json(model, schema, sampler=sampler, whitespace_pattern=r"[\n ]?")
     
     elif task == "text":
         return outlines.generate.text(model, sampler=sampler)

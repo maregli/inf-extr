@@ -1262,17 +1262,17 @@ def outlines_prompting_to(text: list[str], generator: SequenceGenerator, schema:
             results.extend(result)
             successful.extend([True] * len(batch))
 
-        except TimeoutError:
-            print("Timed out, trying stream_input")
-            bar_stream = tqdm(batch, desc="Stream input", leave=False)
-            for text in bar_stream:
-                _res = stream_input(text, generator)
-                try: 
-                    _res = schema.model_validate_json(_res)
-                    successful.append(True)
-                except:
-                    successful.append(False)
-                results.append(_res)
+        # except TimeoutError:
+        #     print("Timed out, trying stream_input")
+        #     bar_stream = tqdm(batch, desc="Stream input", leave=False)
+        #     for text in bar_stream:
+        #         _res = stream_input(text, generator)
+        #         try: 
+        #             _res = schema.model_validate_json(_res)
+        #             successful.append(True)
+        #         except:
+        #             successful.append(False)
+        #         results.append(_res)
         finally:
             signal.alarm(0)
     return results, successful
@@ -1294,10 +1294,11 @@ def stream_input(text: str, generator: SequenceGenerator)-> str:
     line_break_count = 0
     for token in generator.stream(text):
         result += token
+        print(token, end ="")
         # Failsaves for infinite generation
         if line_break_count > 6:
             return result
-        elif token == "\n":
+        elif token == "\n" or token == "":
             line_break_count += 1
         else:
             line_break_count = 0

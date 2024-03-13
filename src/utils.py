@@ -61,6 +61,8 @@ from enum import Enum
 
 import time
 
+import warnings
+
 
 ###########################################################################################################
 # Model and Tokenizer
@@ -1207,7 +1209,7 @@ def format_prompt(text: list[str], format_fun: Callable[[List[str]], List[str]],
     """
     return [format_fun(t, **kwargs) for t in text]
 
-def outlines_prompting(text: list[str], generator: SequenceGenerator, batch_size: int = 4)-> list[Union[str, BaseModel]]:
+def outlines_prompting(text: list[str], generator: SequenceGenerator, batch_size: int = 4, max_tokens:int = 100)-> list[Union[str, BaseModel]]:
     """
     Generates a list of sequences using the given outlines generator and sampler.
 
@@ -1215,6 +1217,7 @@ def outlines_prompting(text: list[str], generator: SequenceGenerator, batch_size
         text (list[str]): list of strings to be used as prompts
         generator (outlines.SequenceGenerator): outlines generator
         batch_size (int, optional): batch size. Defaults to 4.
+        max_tokens (int, optional): max tokens. Defaults to 100.
 
     Returns:
         list[Union[str, pydantic.BaseModel]]: list of generated sequences
@@ -1224,12 +1227,12 @@ def outlines_prompting(text: list[str], generator: SequenceGenerator, batch_size
     results = []
 
     for batch in tqdm(dataloader):
-        answer = generator(batch)
+        answer = generator(batch, max_tokens=max_tokens)
         results.extend(answer)
 
     return results
 
-def outlines_prompting_to(text: list[str], generator: SequenceGenerator, default_model:Type[BaseModel], batch_size: int = 1, wait_time:int = 120)-> list[Union[str, BaseModel]]:
+def outlines_medication_prompting(text: list[str], generator: SequenceGenerator, max_tokens:int = 100, batch_size: int = 1)-> list[Union[str, BaseModel]]:
     """
     Generates a list of sequences using the given outlines generator and sampler. Function has built in time-out function, as the generation is prone
     to hang with a complicated schema.
@@ -1237,13 +1240,16 @@ def outlines_prompting_to(text: list[str], generator: SequenceGenerator, default
     Args:
         text (list[str]): list of strings to be used as prompts
         generator (outlines.SequenceGenerator): outlines generator
-        default_model (Type[BaseModel]): default pydantic model to return if the generation times out
+        max_tokens (int, optional): max tokens. Defaults to 100.
         batch_size (int, optional): batch size. Defaults to 1.
-        wait_time (int, optional): wait time. Defaults to 120.
 
     Returns:
         list[Union[str, pydantic.BaseModel]]: list of generated sequences
     """
+
+    if batch_size > 1:
+        warnings.warn("Approach has not been implemented for batch_size > 1. Setting batch_size to 1.")
+        batch_size = 1
 
     dataloader = DataLoader(text, batch_size = batch_size, shuffle = False)
 
@@ -1252,44 +1258,71 @@ def outlines_prompting_to(text: list[str], generator: SequenceGenerator, default
 
     # Save intermediate results
     filename = "intermediate_results" + str(time.time()) + ".pt"
+    os.makedirs(paths.RESULTS_PATH/"intermediate", exist_ok=True)
 
-    def timeout_handler(signum, frame):
-        raise TimeoutError("Timed out")
-    
-    signal.signal(signal.SIGALRM, timeout_handler)
 
-    bar_prompt = tqdm(dataloader, desc="Prompting", leave=False)
+    for batch in tqdm(dataloader):
+        result = generator(batch, max_tokens=100) 
+        # With batch_size = 1, this returns a list of len 1 with tuple:  [('medications', [Medication(name=...)])]]
+        # Will try to validate the result with Medication class and stringify the result if it fails
+        if isinstance(result, tuple):
+            medication_list = result[1]
+        else:
+            medication_list = result[0][1]
+        _res = [] # This is results list for one text
+        _successful = []
+        for medication in medication_list:
+            try:
+                _res.append(medication.json())
+                _successful.append(True)
+            except:
+                _res.append(str(medication))
+                _successful.append(False)
 
-    for batch in bar_prompt:
-        try:
-            signal.alarm(wait_time)  # Set the timeout
-            result = generator(batch)
-            results.extend(result)
-            successful.extend([True] * len(batch))
-        
-        except TimeoutError:
-            print("Timed out at observation number", len(results))
-            successful.extend([False] * len(batch))
-            results.extend([default_model for _ in range(len(batch))])
+        results.append(_res) # Thus we get a list of lists of results
+        successful.append(_successful)
 
-        # except TimeoutError:
-        #     print("Timed out, trying stream_input")
-        #     bar_stream = tqdm(batch, desc="Stream input", leave=False)
-        #     for text in bar_stream:
-        #         _res = stream_input(text, generator)
-        #         try: 
-        #             _res = schema.model_validate_json(_res)
-        #             successful.append(True)
-        #         except:
-        #             successful.append(False)
-        #         results.append(_res)
-        finally:
-            signal.alarm(0)
-        results_json = [res.json() for res in results]
-        results_json += [{"successful": s} for s in successful]
-        os.makedirs(paths.RESULTS_PATH/"intermediate", exist_ok=True)
-        torch.save(results_json, paths.RESULTS_PATH/"intermediate"/filename)
+        torch.save(results, paths.RESULTS_PATH/"intermediate"/filename)
+        torch.save(successful, paths.RESULTS_PATH/"intermediate"/filename + "_successful")
         print(f"Saved intermediate results to {paths.RESULTS_PATH/'intermediate'}/{filename}")
+
+    # def timeout_handler(signum, frame):
+    #     raise TimeoutError("Timed out")
+    
+    # signal.signal(signal.SIGALRM, timeout_handler)
+
+    # bar_prompt = tqdm(dataloader, desc="Prompting", leave=False)
+
+    # for batch in bar_prompt:
+    #     try:
+    #         signal.alarm(wait_time)  # Set the timeout
+    #         result = generator(batch)
+    #         results.extend(result)
+    #         successful.extend([True] * len(batch))
+        
+    #     except TimeoutError:
+    #         print("Timed out at observation number", len(results))
+    #         successful.extend([False] * len(batch))
+    #         results.extend([default_model for _ in range(len(batch))])
+
+    #     # except TimeoutError:
+    #     #     print("Timed out, trying stream_input")
+    #     #     bar_stream = tqdm(batch, desc="Stream input", leave=False)
+    #     #     for text in bar_stream:
+    #     #         _res = stream_input(text, generator)
+    #     #         try: 
+    #     #             _res = schema.model_validate_json(_res)
+    #     #             successful.append(True)
+    #     #         except:
+    #     #             successful.append(False)
+    #     #         results.append(_res)
+    #     finally:
+    #         signal.alarm(0)
+        # results_json = [res.json() for res in results]
+        # results_json += [{"successful": s} for s in successful]
+        # os.makedirs(paths.RESULTS_PATH/"intermediate", exist_ok=True)
+        # torch.save(results_json, paths.RESULTS_PATH/"intermediate"/filename)
+        # print(f"Saved intermediate results to {paths.RESULTS_PATH/'intermediate'}/{filename}")
     return results, successful
 
 

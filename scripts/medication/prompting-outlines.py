@@ -14,7 +14,7 @@ from src.utils import (load_model_and_tokenizer,
                         get_outlines_generator,
                         get_pydantic_schema,
                         format_prompt,
-                        outlines_prompting,
+                        outlines_prompting_to,
 )
 
 import argparse
@@ -135,11 +135,12 @@ def main()->None:
 
         input = format_prompt(text = df["text"], format_fun=format_fun, task_instruction = task_instruction, system_prompt = system_prompt, examples = examples)
 
-        model_answers = outlines_prompting(text = input, generator=generator, batch_size=BATCH_SIZE)
+        model_answers, successful = outlines_prompting_to(text = input, generator=generator, batch_size=BATCH_SIZE, schema = schema, wait_time = 300)
 
         results = {"model_answers": model_answers}
         results["rid"] = df["rid"]
         results["text"] = df["text"]
+        results["successful"] = successful
 
         # Add Information Retrieval Results for no_ms (no hidden states for this)
         if INFORMATION_RETRIEVAL:

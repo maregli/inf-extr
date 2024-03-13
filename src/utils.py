@@ -59,6 +59,8 @@ from pydantic import BaseModel
 
 from enum import Enum
 
+import time
+
 
 ###########################################################################################################
 # Model and Tokenizer
@@ -1227,7 +1229,7 @@ def outlines_prompting(text: list[str], generator: SequenceGenerator, batch_size
 
     return results
 
-def outlines_prompting_to(text: list[str], generator: SequenceGenerator, schema:Type[BaseModel], batch_size: int = 1, wait_time:int = 120)-> list[Union[str, BaseModel]]:
+def outlines_prompting_to(text: list[str], generator: SequenceGenerator, default_model:Type[BaseModel], batch_size: int = 1, wait_time:int = 120)-> list[Union[str, BaseModel]]:
     """
     Generates a list of sequences using the given outlines generator and sampler. Function has built in time-out function, as the generation is prone
     to hang with a complicated schema.
@@ -1235,7 +1237,7 @@ def outlines_prompting_to(text: list[str], generator: SequenceGenerator, schema:
     Args:
         text (list[str]): list of strings to be used as prompts
         generator (outlines.SequenceGenerator): outlines generator
-        schema (Type[BaseModel]): Pydantic schema
+        default_model (Type[BaseModel]): default pydantic model to return if the generation times out
         batch_size (int, optional): batch size. Defaults to 1.
         wait_time (int, optional): wait time. Defaults to 120.
 
@@ -1247,6 +1249,9 @@ def outlines_prompting_to(text: list[str], generator: SequenceGenerator, schema:
 
     results = []
     successful = []
+
+    # Save intermediate results
+    filename = "intermediate_results" + str(time.time()) + ".pt"
 
     def timeout_handler(signum, frame):
         raise TimeoutError("Timed out")
@@ -1261,6 +1266,11 @@ def outlines_prompting_to(text: list[str], generator: SequenceGenerator, schema:
             result = generator(batch)
             results.extend(result)
             successful.extend([True] * len(batch))
+        
+        except TimeoutError:
+            print("Timed out at observation number", len(results))
+            successful.extend([False] * len(batch))
+            results.extend([default_model for _ in range(len(batch))])
 
         # except TimeoutError:
         #     print("Timed out, trying stream_input")
@@ -1275,6 +1285,11 @@ def outlines_prompting_to(text: list[str], generator: SequenceGenerator, schema:
         #         results.append(_res)
         finally:
             signal.alarm(0)
+        results_json = [res.json() for res in results]
+        results_json += [{"successful": s} for s in successful]
+        os.makedirs(paths.RESULTS_PATH/"intermediate", exist_ok=True)
+        torch.save(results_json, paths.RESULTS_PATH/"intermediate"/filename)
+        print(f"Saved intermediate results to {paths.RESULTS_PATH/'intermediate'}/{filename}")
     return results, successful
 
 
@@ -1343,10 +1358,8 @@ def get_outlines_generator(model: Callable, sampler: outlines.samplers.Sampler, 
     
     else:
         raise f"Task type {task} not implemented"
-
-def get_pydantic_schema(schema_name: str)->BaseModel:
-    if schema_name == "medication":
-        class MedicationUnit(str, Enum):
+    
+class MedicationUnit(str, Enum):
             mg = "mg"
             ug = "ug"
             g = "g"
@@ -1355,20 +1368,36 @@ def get_pydantic_schema(schema_name: str)->BaseModel:
             ml = "ml"
             unknown = "unknown"
 
-        class Medication(BaseModel):
-            name: str
-            unit: MedicationUnit
-            amount: float
-            morning: float
-            noon: float
-            evening: float
-            night: float
+class Medication(BaseModel):
+    name: str
+    unit: MedicationUnit
+    amount: float
+    morning: float
+    noon: float
+    evening: float
+    night: float
 
-        class MedicationList(BaseModel):
-            medications: list[Medication]
+class MedicationList(BaseModel):
+    medications: list[Medication]
+
+def get_pydantic_schema(schema_name: str)->BaseModel:
+    if schema_name == "medication":
 
         return MedicationList
     else:
         raise f"Schema {schema_name} not implemented"
 
 
+def get_default_pydantic_model(schema_name: str)->BaseModel:
+    if schema_name == "medication":
+        return Medication(
+                            name="unknown",
+                            unit="unknown",
+                            amount=-99,
+                            morning=-99,
+                            noon=-99,
+                            evening=-99,
+                            night=-99,
+                        )
+    else:
+        raise f"Schema {schema_name} not implemented"

@@ -80,7 +80,7 @@ def main()->None:
     print("Got Outlines generator")
 
     # Load Data
-    df = Dataset.load_from_disk(paths.DATA_PATH_PREPROCESSED/"medication/kisim_medication_sample").select(range(2))
+    df = Dataset.load_from_disk(paths.DATA_PATH_PREPROCESSED/"medication/kisim_medication_sample")
 
     print("Loaded Data")
 

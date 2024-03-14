@@ -17,5 +17,6 @@ python /cluster/home/eglimar/inf-extr/scripts/medication/prompting-outlines.py \
     --quantization 4bit \
     --attn_implementation flash_attention_2 \
     --prompt_strategies "all" \
-    --batch_size 1
+    --batch_size 1 \
+    --num_examples 10
 echo "Job finished"

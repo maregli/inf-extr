@@ -1261,8 +1261,10 @@ def outlines_medication_prompting(text: list[str], generator: SequenceGenerator,
         try:
             result = generator(batch, max_tokens=max_tokens)
             if isinstance(result, list): # If batch size greater 1 it will return list
+                result = [res.json() for res in result]
                 results.extend(result)
             else:
+                result = result.json()
                 results.append(result)
             successful.extend([True] * len(batch))
         except: # This happens when model cannot finish JSON Schema, just parse what you can

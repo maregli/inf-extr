@@ -159,7 +159,7 @@ def main()->None:
             filename += "_rag"
 
         torch.save(results, paths.RESULTS_PATH/"medication"/f"{filename}.pt")
-        print("Saved Results under: ", paths.RESULTS_PATH/"ms-diag"/f"{filename}.pt")
+        print("Saved Results under: ", paths.RESULTS_PATH/"medication"/f"{filename}.pt")
 
     return
 

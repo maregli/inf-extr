@@ -1350,8 +1350,8 @@ def get_outlines_generator(model: Callable, sampler: outlines.samplers.Sampler, 
 
 class Medication(BaseModel):
     name: str
-    unit: constr(max_length=10)
-    amount: float
+    dose: float
+    dose_unit: constr(max_length=10)
     morning: float
     noon: float
     evening: float
@@ -1373,8 +1373,8 @@ def get_default_pydantic_model(schema_name: str)->BaseModel:
     if schema_name == "medication":
         medication = Medication(
                             name="unknown",
-                            unit="unknown",
-                            amount=-99,
+                            dose=-99,
+                            dose_unit="unknown",
                             morning=-99,
                             noon=-99,
                             evening=-99,

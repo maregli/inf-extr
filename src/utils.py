@@ -55,7 +55,7 @@ from umap import UMAP
 
 from collections import Counter
 
-from pydantic import BaseModel
+from pydantic import BaseModel, constr
 
 from enum import Enum
 
@@ -1339,23 +1339,24 @@ def get_outlines_generator(model: Callable, sampler: outlines.samplers.Sampler, 
     else:
         raise f"Task type {task} not implemented"
     
-class MedicationUnit(str, Enum):
-            mg = "mg"
-            ug = "ug"
-            g = "g"
-            stk = "stk"
-            tropfen = "tropfen"
-            ml = "ml"
-            unknown = "unknown"
+# class MedicationUnit(str, Enum):
+#             mg = "mg"
+#             ug = "ug"
+#             g = "g"
+#             stk = "stk"
+#             tropfen = "tropfen"
+#             ml = "ml"
+#             unknown = "unknown"
 
 class Medication(BaseModel):
     name: str
-    unit: MedicationUnit
+    unit: str
     amount: float
     morning: float
     noon: float
     evening: float
     night: float
+    extra: str
 
 class MedicationList(BaseModel):
     medications: list[Medication]

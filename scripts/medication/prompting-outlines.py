@@ -23,6 +23,8 @@ from datasets import Dataset
 
 import json
 
+import random
+
 def parse_args():
     parser = argparse.ArgumentParser(description="Zero Shot Classification with Llama2-Chat")
     parser.add_argument("--job_id", type=str, default="unknown", help="Job ID")
@@ -34,6 +36,7 @@ def parse_args():
     parser.add_argument("--attn_implementation", type=str, default=None, help="To implement Flash Attention 2 provide flash_attention_2. Defaults to None.")
     parser.add_argument("--information_retrieval", action="store_true", help="Whether to perform information retrieval. Defaults to False. If True, the model will be loaded from the information retrieval path.")
     parser.add_argument("--max_tokens", type=int, default = 500, help="Maximum tokens to be generated per example. Defaults to 500.")
+    parser.add_argument("--num_examples", type=int, default = 3, help="Number of examples to be provided in few shot. Defaults to 3.")
 
     args = parser.parse_args()
 
@@ -51,11 +54,12 @@ def main()->None:
     MODEL_NAME = args.model_name
     QUANTIZATION = args.quantization
     BATCH_SIZE = args.batch_size
-    MAX_TOKENS = args.max_tokens
     PROMPT_STRATEGIES = args.prompt_strategies
     SAMPLER_NAME = args.sampler
     ATTN_IMPLEMENTATION = args.attn_implementation
     INFORMATION_RETRIEVAL = args.information_retrieval
+    MAX_TOKENS = args.max_tokens
+    NUM_EXAMPLES = args.num_examples
 
     # Check GPU Memory
     check_gpu_memory()
@@ -82,7 +86,7 @@ def main()->None:
     print("Got Outlines generator")
 
     # Load Data
-    df = Dataset.load_from_disk(paths.DATA_PATH_PREPROCESSED/"medication/kisim_medication_sample")
+    df = Dataset.load_from_disk(paths.DATA_PATH_PREPROCESSED/"medication/kisim_medication_sample").select(range(2))
 
     print("Loaded Data")
 
@@ -121,7 +125,9 @@ def main()->None:
     with open(paths.DATA_PATH_PREPROCESSED/"medication/examples.json", "r") as file:
         examples = json.load(file)                  
 
-
+    # Randomly sample examples
+    random.seed(42)
+    examples = random.sample(examples, NUM_EXAMPLES)
     # Prompt strategies
     if "all" in PROMPT_STRATEGIES:
         PROMPT_STRATEGIES = ["zero_shot_vanilla", "zero_shot_instruction", "few_shot_vanilla", "few_shot_instruction"]
@@ -154,6 +160,9 @@ def main()->None:
 
 
         filename = f"medication_outlines_{MODEL_NAME}_{QUANTIZATION}_{prompting_strategy}"
+
+        if "few_shot" in prompting_strategy:
+            filename += f"_examples_{NUM_EXAMPLES}"
 
         if INFORMATION_RETRIEVAL:
             filename += "_rag"

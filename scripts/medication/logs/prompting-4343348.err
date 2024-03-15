@@ -1,5 +1,0 @@
-/bin/bash: /cluster/customapps/biomed/grlab/users/eglimar/conda/envs/inf-extr/lib/libtinfo.so.6: no version information available (required by /bin/bash)
-/cluster/home/eglimar/.env_bootstrap/dotfiles/shell/bashrc: line 17: module: command not found
-/cluster/home/eglimar/.env_bootstrap/dotfiles/shell/bashrc: line 20: module: command not found
-Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [01:01<02:03, 61.93s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [02:06<01:03, 63.43s/it]Loading checkpoint shards: 100%|██████████| 3/3 [02:48<00:00, 53.57s/it]Loading checkpoint shards: 100%|██████████| 3/3 [02:48<00:00, 56.08s/it]
-Prompting:   0%|          | 0/2 [00:00<?, ?it/s]Prompting:  50%|█████     | 1/2 [03:25<03:25, 205.13s/it]Prompting: 100%|██████████| 2/2 [04:24<00:00, 119.50s/it]                                                         

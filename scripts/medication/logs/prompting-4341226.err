@@ -1,24 +1,0 @@
-/bin/bash: /cluster/customapps/biomed/grlab/users/eglimar/conda/envs/inf-extr/lib/libtinfo.so.6: no version information available (required by /bin/bash)
-/cluster/home/eglimar/.env_bootstrap/dotfiles/shell/bashrc: line 17: module: command not found
-/cluster/home/eglimar/.env_bootstrap/dotfiles/shell/bashrc: line 20: module: command not found
-Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:52<01:44, 52.24s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [01:10<00:32, 32.10s/it]Loading checkpoint shards: 100%|██████████| 3/3 [01:12<00:00, 18.61s/it]Loading checkpoint shards: 100%|██████████| 3/3 [01:12<00:00, 24.27s/it]
-Prompting:   0%|          | 0/100 [00:00<?, ?it/s]Prompting:   1%|          | 1/100 [03:26<5:40:05, 206.11s/it]Prompting:   2%|▏         | 2/100 [04:43<3:32:38, 130.19s/it]Prompting:   3%|▎         | 3/100 [05:58<2:49:56, 105.12s/it]
-Stream input:   0%|          | 0/1 [00:00<?, ?it/s][A
-Stream input: 100%|██████████| 1/1 [00:25<00:00, 25.02s/it][A
-                                                           [APrompting:   4%|▍         | 4/100 [11:23<5:07:17, 192.05s/it]Prompting:   5%|▌         | 5/100 [12:41<3:58:52, 150.87s/it]Prompting:   6%|▌         | 6/100 [13:57<3:16:38, 125.52s/it]Prompting:   7%|▋         | 7/100 [16:32<3:29:04, 134.88s/it]Prompting:   8%|▊         | 8/100 [17:21<2:45:00, 107.61s/it]Prompting:   9%|▉         | 9/100 [18:02<2:11:36, 86.77s/it] 
-Stream input:   0%|          | 0/1 [00:00<?, ?it/s][A
-Stream input: 100%|██████████| 1/1 [1:22:55<00:00, 4975.58s/it][A
-                                                               [APrompting:  10%|█         | 10/100 [1:45:57<42:13:04, 1688.72s/it]
-Stream input:   0%|          | 0/1 [00:00<?, ?it/s][A
-Stream input: 100%|██████████| 1/1 [1:22:58<00:00, 4978.50s/it][A
-                                                               [APrompting:  11%|█         | 11/100 [3:13:56<68:54:40, 2787.42s/it]Prompting:  12%|█▏        | 12/100 [3:15:18<48:01:03, 1964.36s/it]
-Stream input:   0%|          | 0/1 [00:00<?, ?it/s][A
-Stream input: 100%|██████████| 1/1 [00:32<00:00, 32.36s/it][A
-                                                           [APrompting:  13%|█▎        | 13/100 [3:20:51<35:31:31, 1470.02s/it]Prompting:  14%|█▍        | 14/100 [3:21:37<24:50:43, 1040.04s/it]
-Stream input:   0%|          | 0/1 [00:00<?, ?it/s][A
-Stream input: 100%|██████████| 1/1 [1:22:52<00:00, 4972.67s/it][A
-                                                               [APrompting:  15%|█▌        | 15/100 [4:49:30<54:40:54, 2315.93s/it]Prompting:  16%|█▌        | 16/100 [4:50:11<38:03:36, 1631.15s/it]Prompting:  17%|█▋        | 17/100 [4:50:54<26:36:04, 1153.79s/it]
-Stream input:   0%|          | 0/1 [00:00<?, ?it/s][A
-Stream input: 100%|██████████| 1/1 [00:30<00:00, 30.85s/it][A
-                                                           [APrompting:  18%|█▊        | 18/100 [4:56:25<20:38:56, 906.55s/it] Prompting:  19%|█▉        | 19/100 [4:57:05<14:32:24, 646.23s/it]Prompting:  20%|██        | 20/100 [4:57:45<10:18:52, 464.16s/it]Prompting:  21%|██        | 21/100 [4:59:51<7:57:34, 362.71s/it] Prompting:  22%|██▏       | 22/100 [5:00:42<5:49:53, 269.14s/it]Prompting:  23%|██▎       | 23/100 [5:01:29<4:19:52, 202.50s/it]Prompting:  24%|██▍       | 24/100 [5:02:12<3:15:57, 154.70s/it]
-Stream input:   0%|          | 0/1 [00:00<?, ?it/s][Aslurmstepd-gpu-biomed-16: error: *** JOB 4341226 ON gpu-biomed-16 CANCELLED AT 2024-03-13T20:40:05 ***

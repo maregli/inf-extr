@@ -1,5 +1,0 @@
-/bin/bash: /cluster/customapps/biomed/grlab/users/eglimar/conda/envs/inf-extr/lib/libtinfo.so.6: no version information available (required by /bin/bash)
-/cluster/home/eglimar/.env_bootstrap/dotfiles/shell/bashrc: line 17: module: command not found
-/cluster/home/eglimar/.env_bootstrap/dotfiles/shell/bashrc: line 20: module: command not found
-Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [11:36<23:13, 696.91s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [23:46<11:55, 715.97s/it]Loading checkpoint shards: 100%|██████████| 3/3 [33:43<00:00, 661.83s/it]Loading checkpoint shards: 100%|██████████| 3/3 [33:43<00:00, 674.54s/it]
-  0%|          | 0/25 [00:00<?, ?it/s]  4%|▍         | 1/25 [11:38<4:39:16, 698.17s/it]  8%|▊         | 2/25 [14:55<2:34:41, 403.53s/it] 12%|█▏        | 3/25 [18:17<1:54:16, 311.68s/it] 16%|█▌        | 4/25 [20:09<1:21:28, 232.77s/it]slurmstepd-gpu-biomed-23: error: *** JOB 4338113 ON gpu-biomed-23 CANCELLED AT 2024-03-13T14:48:53 ***

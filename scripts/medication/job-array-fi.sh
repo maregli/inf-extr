@@ -6,7 +6,7 @@
 #SBATCH --cpus-per-task=1
 #SBATCH -p gpu
 #SBATCH --gres=gpu:rtx3090:1
-#SBATCH --time=04:00:00
+#SBATCH --time=08:00:00
 #SBATCH --mem-per-cpu=15G
 
 source ~/.bashrc

@@ -35,7 +35,7 @@ def parse_args():
     parser.add_argument("--sampler", type=str, default = "greedy", help="Outlines Sampler to be used for generation. Must be one of greedy, multinomial or beam.")
     parser.add_argument("--attn_implementation", type=str, default=None, help="To implement Flash Attention 2 provide flash_attention_2. Defaults to None.")
     parser.add_argument("--information_retrieval", action="store_true", help="Whether to perform information retrieval. Defaults to False. If True, the model will be loaded from the information retrieval path.")
-    parser.add_argument("--max_tokens", type=int, default = 500, help="Maximum tokens to be generated per example. Defaults to 500.")
+    parser.add_argument("--max_tokens", type=int, default = 1000, help="Maximum tokens to be generated per example. Defaults to 1000.")
     parser.add_argument("--num_examples", type=int, default = 3, help="Number of examples to be provided in few shot. Defaults to 3.")
 
     args = parser.parse_args()

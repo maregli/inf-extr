@@ -28,4 +28,4 @@ python /cluster/home/eglimar/inf-extr/scripts/medication/prompting-outlines.py \
 
 echo "Job finished"
 
-# use this to submit the job: sbatch --array=0-4 job_array-13b-fi.sh
+# use this to submit the job: sbatch --array=0-4 job_array-7b-fi.sh

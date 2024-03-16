@@ -1339,14 +1339,6 @@ def get_outlines_generator(model: Callable, sampler: outlines.samplers.Sampler, 
     else:
         raise f"Task type {task} not implemented"
     
-# class MedicationUnit(str, Enum):
-#             mg = "mg"
-#             ug = "ug"
-#             g = "g"
-#             stk = "stk"
-#             tropfen = "tropfen"
-#             ml = "ml"
-#             unknown = "unknown"
 
 class Medication(BaseModel):
     name: str
@@ -1361,10 +1353,19 @@ class Medication(BaseModel):
 class MedicationList(BaseModel):
     medications: list[Medication]
 
+class SideEffect(BaseModel):
+    medication: str
+    side_effect: str
+
+class SideEffectList(BaseModel):
+    side_effects: list[SideEffect]
+
 def get_pydantic_schema(schema_name: str)->BaseModel:
     if schema_name == "medication":
-
         return MedicationList
+    
+    elif schema_name == "side_effects":
+        return SideEffectList
     else:
         raise f"Schema {schema_name} not implemented"
 

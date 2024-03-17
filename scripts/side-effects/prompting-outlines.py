@@ -106,7 +106,7 @@ def main()->None:
         text = information_retrieval(retrieval_model=retrieval_model,
                                             retrieval_tokenizer=retrieval_tokenizer,
                                             text=df["text"],
-                                            label = "medms")
+                                            label = ["medms", "medo_unk_do_so"])
         
         df = df.remove_columns("text").add_column("text", text)
 

@@ -514,7 +514,7 @@ def prepare_pd_dataset_for_lineclass(df: pd.DataFrame):
 def information_retrieval(retrieval_model:AutoModelForSequenceClassification,
                           retrieval_tokenizer:AutoTokenizer,
                           text:list[str],
-                          label:str)->list[str]:
+                          label:Union[list[str], str])->list[str]:
                           
     """Retrieves relevant information from the given text using the given retrieval model and tokenizer
 
@@ -522,7 +522,7 @@ def information_retrieval(retrieval_model:AutoModelForSequenceClassification,
         retrieval_model (AutoModelForSequenceClassification): Retrieval Model
         retrieval_tokenizer (AutoTokenizer): Retrieval Tokenizer
         text (list[str]): Text
-        label (str): Label of the relevant information
+        label (Union[list[str], str]): Label of the content to retrieve. Can be a list of labels or a single label.
 
     Returns:
         list[str]: Returns the relevant text. Output list should have same length as input list.
@@ -551,7 +551,10 @@ def information_retrieval(retrieval_model:AutoModelForSequenceClassification,
     inference_results = perform_inference(retrieval_model, dataloader, device, output_hidden_states=False)
 
     # Get the relevant text
-    relevant_lines = [splitted_text[i] if line_label_id2label[pred] == label else "" for i, pred in enumerate(inference_results["preds"])]
+    if isinstance(label, str): # Artefact to ensure backwards compatibility
+        label = [label]
+
+    relevant_lines = [splitted_text[i] if line_label_id2label[pred] in label else "" for i, pred in enumerate(inference_results["preds"])]
 
     # Get back original reports
     relevant_text = []

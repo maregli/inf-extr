@@ -91,6 +91,8 @@ def main()->None:
 
     # Load Data
     df = Dataset.load_from_disk(paths.DATA_PATH_PREPROCESSED/"side-effects/kisim_diagnoses_combined_se_sample")
+    df = df.add_column("index", range(len(df)))
+
 
     print("Loaded Data")
 
@@ -152,6 +154,7 @@ def main()->None:
         results["rid"] = df["rid"]
         results["text"] = df["text"]
         results["successful"] = successful
+        results["index"] = df["index"]
 
         # Add Information Retrieval Results for no_ms (no hidden states for this)
         if INFORMATION_RETRIEVAL:
@@ -160,6 +163,7 @@ def main()->None:
             results["text"].extend(df_no_med["text"])
             results["original_text"] = df["original_text"] + df_no_med["original_text"]
             results["successful"].extend([False]*len(df_no_med)) # No information found is not successful
+            results["index"].extend(df_no_med["index"])
 
 
         filename = f"side-effects_outlines_{MODEL_NAME}_{QUANTIZATION}_{prompting_strategy}"

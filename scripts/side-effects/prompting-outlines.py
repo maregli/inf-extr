@@ -14,8 +14,8 @@ from src.utils import (load_model_and_tokenizer,
                         get_outlines_generator,
                         get_pydantic_schema,
                         format_prompt,
-                        outlines_prompting,
                         outlines_medication_prompting,
+                        get_default_pydantic_model,
 )
 
 from pydantic import BaseModel
@@ -158,7 +158,8 @@ def main()->None:
 
         # Add Information Retrieval Results for no_ms (no hidden states for this)
         if INFORMATION_RETRIEVAL:
-            results["model_answers"].extend(["no information"]*len(df_no_med))
+            default_pydantic_model = get_default_pydantic_model("side_effects")
+            results["model_answers"].extend([default_pydantic_model.model_dump_json()]*len(df_no_med))
             results["rid"].extend(df_no_med["rid"])
             results["text"].extend(df_no_med["text"])
             results["original_text"] = df["original_text"] + df_no_med["original_text"]

@@ -1,0 +1,26 @@
+Starting job with ID 4370807...
+Parsed Arguments:
+job_id: unknown
+model_name: Llama2-MedTuned-13b
+quantization: 4bit
+batch_size: 1
+prompt_strategies: ['all']
+sampler: greedy
+attn_implementation: flash_attention_2
+information_retrieval: False
+max_tokens: 1000
+num_examples: 10
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 23.43 GB
+   Allocated Memory : 0.00 GB
+   Reserved Memory : 0.00 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.32 GB
+   Allocated Memory : 6.90 GB
+   Reserved Memory : 7.07 GB
+Loaded Model and Tokenizer
+Got Outlines generator
+Loaded Data
+Prompting Strategy: zero_shot_vanilla

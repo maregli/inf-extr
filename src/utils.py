@@ -1235,7 +1235,7 @@ def outlines_prompting(text: list[str], generator: SequenceGenerator, batch_size
 
     return results
 
-def outlines_medication_prompting(text: list[str], generator: SequenceGenerator, max_tokens:int = 100, batch_size: int = 1)-> list[Union[str, BaseModel]]:
+def outlines_medication_prompting(text: list[str], generator: SequenceGenerator, max_tokens:int = 100, batch_size: int = 1)-> Tuple[List[Union[str, BaseModel]], List[bool]]:
     """
     Generates a list of sequences using the given outlines generator and sampler. Function has built in time-out function, as the generation is prone
     to hang with a complicated schema.
@@ -1247,7 +1247,7 @@ def outlines_medication_prompting(text: list[str], generator: SequenceGenerator,
         batch_size (int, optional): batch size. Defaults to 1.
 
     Returns:
-        list[Union[str, pydantic.BaseModel]]: list of generated sequences
+        Tuple[List[Union[str, pydantic.BaseModel]], List[bool]]: list of generated sequences and list if successful generations
     """
 
     dataloader = DataLoader(text, batch_size = batch_size, shuffle = False)

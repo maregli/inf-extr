@@ -15,6 +15,7 @@ from src.utils import (load_model_and_tokenizer,
                         get_pydantic_schema,
                         format_prompt,
                         outlines_prompting,
+                        outlines_medication_prompting,
 )
 
 from pydantic import BaseModel
@@ -143,13 +144,14 @@ def main()->None:
 
         input = format_prompt(text = df["text"], format_fun=format_fun, task_instruction = task_instruction, system_prompt = system_prompt, examples = examples)
 
-        model_answers = outlines_prompting(text = input, generator=generator, batch_size=BATCH_SIZE, max_tokens=MAX_TOKENS)
+        model_answers, successful = outlines_medication_prompting(text = input, generator=generator, batch_size=BATCH_SIZE, max_tokens=MAX_TOKENS)
 
         model_answers = [model_answer.model_dump_json() if isinstance(model_answer, BaseModel) else model_answer for model_answer in model_answers]
 
         results = {"model_answers": model_answers}
         results["rid"] = df["rid"]
         results["text"] = df["text"]
+        results["successful"] = successful
 
         # Add Information Retrieval Results for no_ms (no hidden states for this)
         if INFORMATION_RETRIEVAL:
@@ -157,6 +159,7 @@ def main()->None:
             results["rid"].extend(df_no_med["rid"])
             results["text"].extend(df_no_med["text"])
             results["original_text"] = df["original_text"] + df_no_med["original_text"]
+            results["successful"].extend([False]*len(df_no_med)) # No information found is not successful
 
 
         filename = f"side-effects_outlines_{MODEL_NAME}_{QUANTIZATION}_{prompting_strategy}"

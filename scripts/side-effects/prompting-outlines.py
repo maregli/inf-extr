@@ -99,9 +99,9 @@ def main()->None:
     if INFORMATION_RETRIEVAL:
         print("Performing Information Retrieval")
         # Load Retrieval Model
-        retrieval_model, retrieval_tokenizer = load_model_and_tokenizer(model_name="line-label_medbert-512_class_pipeline", 
+        retrieval_model, retrieval_tokenizer = load_model_and_tokenizer(model_name="line-label_medbert-512_class_medication", 
                                                 quantization=None, 
-                                                num_labels=8,
+                                                num_labels=2,
                                                 task_type="class")
         
         # Retrieve relevant information for training and validation
@@ -109,7 +109,7 @@ def main()->None:
         text = information_retrieval(retrieval_model=retrieval_model,
                                             retrieval_tokenizer=retrieval_tokenizer,
                                             text=df["text"],
-                                            label = ["medms", "medo_unk_do_so"])
+                                            label = [0])
         
         df = df.remove_columns("text").add_column("text", text)
 
@@ -158,7 +158,7 @@ def main()->None:
 
         # Add Information Retrieval Results for no_ms (no hidden states for this)
         if INFORMATION_RETRIEVAL:
-            results["model_answers"].extend(["no information found"]*len(df_no_med))
+            results["model_answers"].extend(["no information"]*len(df_no_med))
             results["rid"].extend(df_no_med["rid"])
             results["text"].extend(df_no_med["text"])
             results["original_text"] = df["original_text"] + df_no_med["original_text"]

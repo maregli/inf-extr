@@ -11,6 +11,7 @@ from src.utils import (load_model_and_tokenizer,
                        check_gpu_memory, 
                        get_optimizer_and_scheduler, 
                        compute_metrics,
+                       oversample_dataset,
 )
 
 import argparse
@@ -35,6 +36,7 @@ def parse_args():
     parser.add_argument("--num_epochs", type=int, default=4, help="Number of Epochs. Defaults to 4")
     parser.add_argument("--gradient_accumulation_steps", type=int, default=1, help="Gradient Accumulation Steps. Defaults to 1")
     parser.add_argument("--num_labels", type=int, default=None, help="Number of Labels. If not set and task_type is class, it will be automatically inferred from data[\"train\"][\"labels\"]. Defaults to None")
+    parser.add_argument("--oversample", action="store_true", help="Whether to oversample minority classes. Defaults to False")
 
     args = parser.parse_args()
 
@@ -60,12 +62,16 @@ def main():
     NUM_EPOCHS = args.num_epochs
     GRADIENT_ACCUMULATION_STEPS = args.gradient_accumulation_steps
     NUM_LABELS = args.num_labels
+    OVERSAMPLE = args.oversample
 
     # Check GPU Memory
     check_gpu_memory()
 
     # Load Data
     df = load_line_label_data(version=DATA_VERSION)
+
+    if OVERSAMPLE:
+        df["train"] = oversample_dataset(df["train"], desired_len=500)
     
     if NUM_LABELS is None and TASK_TYPE == "class":
         NUM_LABELS = len(set(df['train']["labels"]))

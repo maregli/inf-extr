@@ -240,7 +240,7 @@ def load_line_label_data(version:str="base")->DatasetDict:
     """Loads the data for Line Label task and returns the dataset dictionary
 
     Args:
-        version (str, optional): Version. Must be one of base or pipeline. Defaults to "base".
+        version (str, optional): Version. Must be one of base, pipeline or medication. Defaults to "base".
 
     Returns:
         DatasetDict: Returns the dataset dictionary
@@ -256,6 +256,13 @@ def load_line_label_data(version:str="base")->DatasetDict:
             dataset = DatasetDict.load_from_disk(paths.DATA_PATH_PREPROCESSED/'line-label/line-label_clean_dataset_pipeline')
         except:
             print("Could not find the dataset. Try running the preprocessing notebook: notebooks/01_classifying_text_lines.ipynb")
+    elif version == "medication":
+        try:
+            dataset = DatasetDict.load_from_disk(paths.DATA_PATH_PREPROCESSED/'line-label/line-label_medication_dataset')
+        except:
+            print("Could not find the dataset. Try running the preprocessing notebook: notebooks/05_side-effects.ipynb")
+    else:
+        raise ValueError("Version must be one of base, pipeline or medication")
     return dataset
 
 
@@ -554,7 +561,10 @@ def information_retrieval(retrieval_model:AutoModelForSequenceClassification,
     if isinstance(label, str): # Artefact to ensure backwards compatibility
         label = [label]
 
-    relevant_lines = [splitted_text[i] if line_label_id2label[pred] in label else "" for i, pred in enumerate(inference_results["preds"])]
+        relevant_lines = [splitted_text[i] if line_label_id2label[pred] in label else "" for i, pred in enumerate(inference_results["preds"])]
+    else:
+        relevant_lines = [splitted_text[i] if pred in label else "" for i, pred in enumerate(inference_results["preds"])]
+    
 
     # Get back original reports
     relevant_text = []
@@ -1357,8 +1367,8 @@ class MedicationList(BaseModel):
     medications: list[Medication]
 
 class SideEffect(BaseModel):
-    medication: str
-    side_effect: str
+    medication: constr(max_length=30)
+    side_effect: constr(max_length=100)
 
 class SideEffectList(BaseModel):
     side_effects: list[SideEffect]
@@ -1386,5 +1396,11 @@ def get_default_pydantic_model(schema_name: str)->BaseModel:
                             extra=""
                         )
         return MedicationList(medications=[medication])
+    elif schema_name == "side_effects":
+        side_effect = SideEffect(
+                            medication="unknown",
+                            side_effect="unknown"
+                        )
+        return SideEffectList(side_effects=[side_effect])
     else:
         raise f"Schema {schema_name} not implemented"

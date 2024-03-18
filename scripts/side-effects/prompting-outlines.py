@@ -146,7 +146,7 @@ def main()->None:
 
     # Prompt strategies
     if "all" in PROMPT_STRATEGIES:
-        PROMPT_STRATEGIES = ["zero_shot_vanilla", "zero_shot_instruction", "few_shot_vanilla", "few_shot_instruction"]
+        PROMPT_STRATEGIES = ["few_shot_instruction", "zero_shot_instruction", "few_shot_vanilla", "zero_shot_vanilla"]
 
     # Prompting
     for prompting_strategy in PROMPT_STRATEGIES:

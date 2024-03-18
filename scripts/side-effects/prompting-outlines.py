@@ -40,6 +40,7 @@ def parse_args():
     parser.add_argument("--information_retrieval", action="store_true", help="Whether to perform information retrieval. Defaults to False. If True, the model will be loaded from the information retrieval path.")
     parser.add_argument("--max_tokens", type=int, default = 1000, help="Maximum tokens to be generated per example. Defaults to 1000.")
     parser.add_argument("--num_examples", type=int, default = 10, help="Number of examples to be provided in few shot. Defaults to 10")
+    parser.add_argument("--data_version", type=str, default = "base", help="Data version to be used. Must be one of base or s2a. Defaults to base.")
 
     args = parser.parse_args()
 
@@ -63,6 +64,7 @@ def main()->None:
     INFORMATION_RETRIEVAL = args.information_retrieval
     MAX_TOKENS = args.max_tokens
     NUM_EXAMPLES = args.num_examples
+    DATA_VERSION = args.data_version
 
     # Check GPU Memory
     check_gpu_memory()
@@ -90,7 +92,15 @@ def main()->None:
     print("Got Outlines generator")
 
     # Load Data
-    df = Dataset.load_from_disk(paths.DATA_PATH_PREPROCESSED/"side-effects/kisim_diagnoses_combined_se_sample")
+    if DATA_VERSION == "base":
+        df = Dataset.load_from_disk(paths.DATA_PATH_PREPROCESSED/"side-effects/kisim_diagnoses_combined_se_sample")
+    elif DATA_VERSION == "s2a":
+        df = Dataset.load_from_disk(paths.DATA_PATH_PREPROCESSED/"side-effects/kisim_diagnoses_combined_se_sample_s2a")
+        if INFORMATION_RETRIEVAL:
+            print("Warning: Information Retrieval is not intended for s2a data. Setting Information Retrieval to False")
+            INFORMATION_RETRIEVAL = False
+    else:
+        raise ValueError("Invalid Data Version")
     df = df.add_column("index", range(len(df)))
 
 
@@ -174,6 +184,10 @@ def main()->None:
 
         if INFORMATION_RETRIEVAL:
             filename += "_rag"
+
+        if DATA_VERSION == "s2a":
+            filename += "_s2a"
+            results["original_text"] = df["original_text"]
 
         os.makedirs(paths.RESULTS_PATH/"side-effects", exist_ok=True)
         torch.save(results, paths.RESULTS_PATH/f"side-effects/{filename}.pt")

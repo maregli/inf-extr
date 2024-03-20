@@ -358,6 +358,27 @@ html5lib = ["html5lib"]
 lxml = ["lxml"]
 
 [[package]]
+name = "bert-score"
+version = "0.3.13"
+description = "PyTorch implementation of BERT score"
+optional = false
+python-versions = ">=3.6"
+files = [
+    {file = "bert_score-0.3.13-py3-none-any.whl", hash = "sha256:bbbb4c7fcdaa46d7681aff49f37f96faa09ed74e1b150e659bdc6b58a66989b9"},
+    {file = "bert_score-0.3.13.tar.gz", hash = "sha256:8ffe5838eac8cdd988b8b1a896af7f49071188c8c011a1ed160d71a9899a2ba4"},
+]
+
+[package.dependencies]
+matplotlib = "*"
+numpy = "*"
+packaging = ">=20.9"
+pandas = ">=1.0.1"
+requests = "*"
+torch = ">=1.0.0"
+tqdm = ">=4.31.1"
+transformers = ">=3.0.0"
+
+[[package]]
 name = "bitsandbytes"
 version = "0.42.0"
 description = "k-bit optimizers and matrix multiplication routines."
@@ -5092,4 +5113,4 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "1d3d0aa829cf8b3e8e47ef523eb524ecebae6f7918c38a1ea53530c2310bee57"
+content-hash = "325429c71fb2a8e92d3eefc08359c34eac4c9a857e1471a7620e6d40a8299f65"

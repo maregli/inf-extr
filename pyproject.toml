@@ -34,6 +34,7 @@ setuptools = "^69.1.1"
 outlines = "^0.0.34"
 trl = "^0.7.11"
 openpyxl = "^3.1.2"
+bert-score = "^0.3.13"
 
 
 [[tool.poetry.source]]

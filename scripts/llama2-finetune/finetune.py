@@ -150,10 +150,10 @@ def main():
 
     else:
         # LoRA attention dimension
-        lora_r = 64
+        lora_r = 4
 
         # Alpha parameter for LoRA scaling
-        lora_alpha = 16
+        lora_alpha = 4
 
         # Dropout probability for LoRA layers
         lora_dropout = 0.1
@@ -165,6 +165,8 @@ def main():
             "lora_dropout": lora_dropout,
             "bias":"none",
             "task_type":"CAUSAL_LM",
+            "target_modules": ['down_proj', 'o_proj', 'k_proj', 'up_proj', 'v_proj', 'q_proj', 'gate_proj'],
+            "layers_to_transform" : list(range(5)),
         }
 
     PEFT_CONFIG = get_peft_config(config)

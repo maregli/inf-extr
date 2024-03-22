@@ -168,7 +168,7 @@ def main():
             "bias":"none",
             "task_type":"CAUSAL_LM",
             "target_modules": ['o_proj', 'k_proj', 'v_proj', 'q_proj'],
-            "layers_to_transform" : 1,
+            "layers_to_transform" : 0,
         }
 
     PEFT_CONFIG = get_peft_config(config)

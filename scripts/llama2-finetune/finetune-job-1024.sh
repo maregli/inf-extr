@@ -14,9 +14,9 @@ source ~/.bashrc
 echo "Starting job with ID $SLURM_JOB_ID..."
 python /cluster/home/eglimar/inf-extr/scripts/llama2-finetune/finetune.py \
     --model_name Llama2-MedTuned-13b \
-    --new_model_name Llama2-MedTuned-13b-LoRa \
+    --seq_length 1024 \
     --quantization "4bit" \
-    --batch_size 16 \
+    --batch_size 1 \
     --lr 2e-4 \
     --num_epochs 1 \
     --attn_implementation flash_attention_2 \

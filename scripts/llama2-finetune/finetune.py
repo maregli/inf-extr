@@ -30,6 +30,7 @@ def parse_args():
     parser.add_argument("--new_model_name", type=str, default=None, help="Directory to save the model. Defaults to model_name_finetuned")
     parser.add_argument("--quantization", type=str, default=None, help="Quantization. Must be one of 4bit, bfloat16, float16 or None. Defaults to None")
     parser.add_argument("--batch_size", type=int, default=4, help="Batch Size. Defaults to 4")
+    parser.add_argument("--seq_length", type=int, default=128, help="Sequence Length. Defaults to 128")
     parser.add_argument("--lr", type=float, default=2e-4, help="Learning Rate. Defaults to 2e-4")
     parser.add_argument("--num_epochs", type=int, default=1, help="Number of Epochs. Defaults to 1")
     parser.add_argument("--peft_config", type=str, default=None, help="PEFT Config. JSON-formatted configuration. Defaults to None in which case the default config is used.")
@@ -54,6 +55,7 @@ def main():
     NEW_MODEL_NAME = args.new_model_name
     QUANTIZATION = args.quantization
     BATCH_SIZE = args.batch_size
+    SEQ_LENGTH = args.seq_length
     LEARNING_RATE = args.lr
     NUM_EPOCHS = args.num_epochs
     PEFT_CONFIG = args.peft_config
@@ -139,7 +141,7 @@ def main():
     logging_steps = 50
 
     # Maximum sequence length to use
-    max_seq_length = 128
+    max_seq_length = SEQ_LENGTH
 
     # Pack multiple short examples in the same input sequence to increase efficiency
     packing = True
@@ -165,8 +167,8 @@ def main():
             "lora_dropout": lora_dropout,
             "bias":"none",
             "task_type":"CAUSAL_LM",
-            "target_modules": ['down_proj', 'o_proj', 'k_proj', 'up_proj', 'v_proj', 'q_proj', 'gate_proj'],
-            "layers_to_transform" : list(range(5)),
+            "target_modules": ['o_proj', 'k_proj', 'v_proj', 'q_proj'],
+            "layers_to_transform" : 1,
         }
 
     PEFT_CONFIG = get_peft_config(config)
@@ -222,7 +224,7 @@ def main():
     ##########################
 
     if NEW_MODEL_NAME is None:
-        NEW_MODEL_NAME = MODEL_NAME + "_finetuned"
+        NEW_MODEL_NAME = MODEL_NAME + "-" + str(max_seq_length) + "-lora"
 
     print("Saving Model at:", paths.MODEL_PATH/NEW_MODEL_NAME)
     trainer.save_model(paths.MODEL_PATH/NEW_MODEL_NAME)

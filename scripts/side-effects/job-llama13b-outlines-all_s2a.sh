@@ -8,7 +8,6 @@
 #SBATCH --gres=gpu:rtx3090:1
 #SBATCH --time=12:00:00
 #SBATCH --mem-per-cpu=15G
-#SBATCH --nodelist=gpu-biomed-16
  
 source ~/.bashrc
 

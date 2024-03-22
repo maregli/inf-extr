@@ -1,0 +1,22 @@
+=====================================================================
+                   Welcome to Leonhard Med v.2.0.1                    
+
+ * Documentation:  https://unlimited.ethz.ch/display/LEOMED2
+ * Support:        leomed-support@id.ethz.ch
+ * Software stack: type "enable_modules" to use Modules
+
+Tenant name: BIOMED
+=====================================================================
+Starting job with ID 4404042...
+Parsed Arguments:
+job_id: unknown
+model_name: Llama2-MedTuned-13b
+peft_model_name: Llama2-MedTuned-13b-LoRa
+new_model_name: Llama2-MedTuned-13b-LoRa-merged
+Tokenizer pad token ID: 32000
+Tokenizer special tokens: {'bos_token': '<s>', 'eos_token': '</s>', 'unk_token': '<unk>', 'pad_token': '<pad>'}
+Model pad token ID: 32000
+trainable params: 0 || all params: 13,017,830,400 || trainable%: 0.0
+Model saved at /cluster/dataset/midatams/inf-extr/resources/models/Llama2-MedTuned-13b-LoRa-merged
+Tokenizer saved at /cluster/dataset/midatams/inf-extr/resources/models/Llama2-MedTuned-13b-LoRa-merged
+Job finished

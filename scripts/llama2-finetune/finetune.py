@@ -104,7 +104,7 @@ def main():
     per_device_train_batch_size = BATCH_SIZE
 
     # Number of update steps to accumulate the gradients for
-    gradient_accumulation_steps = 1
+    gradient_accumulation_steps = 4
 
     # Enable gradient checkpointing
     gradient_checkpointing = True

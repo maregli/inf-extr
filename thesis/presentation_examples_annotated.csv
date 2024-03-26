@@ -1,0 +1,147 @@
+,name,dose,dose_unit,morning,noon,evening,night,extra,text,id,Category,Comment
+0,prednison,100,mg,1,0,0,0,24.09. - 07.10.2016,"prednison 100 mg	1-0-0		24.09. - 07.10.2016
+prednison 80 mg		1-0-0		08.10. - 14.10.2016
+prednison 60 mg		1-0-0		15.10. - 21.10.2016
+prednison 40 mg		1-0-0		22.10.2016 bis auf weiteres
+
+pantozol 40 mg		1-0-0 		für die dauer der prednison-behandlung",0,good,Nice example
+1,prednison,80,mg,1,0,1,0,08.10. - 14.10.2016,"prednison 100 mg	1-0-0		24.09. - 07.10.2016
+prednison 80 mg		1-0-0		08.10. - 14.10.2016
+prednison 60 mg		1-0-0		15.10. - 21.10.2016
+prednison 40 mg		1-0-0		22.10.2016 bis auf weiteres
+
+pantozol 40 mg		1-0-0 		für die dauer der prednison-behandlung",0,good,Nice example
+2,prednison,60,mg,1,0,1,0,15.10. - 21.10.2016,"prednison 100 mg	1-0-0		24.09. - 07.10.2016
+prednison 80 mg		1-0-0		08.10. - 14.10.2016
+prednison 60 mg		1-0-0		15.10. - 21.10.2016
+prednison 40 mg		1-0-0		22.10.2016 bis auf weiteres
+
+pantozol 40 mg		1-0-0 		für die dauer der prednison-behandlung",0,good,Nice example
+3,prednison,40,mg,1,0,0,0,22.10.2016 bis auf weiteres,"prednison 100 mg	1-0-0		24.09. - 07.10.2016
+prednison 80 mg		1-0-0		08.10. - 14.10.2016
+prednison 60 mg		1-0-0		15.10. - 21.10.2016
+prednison 40 mg		1-0-0		22.10.2016 bis auf weiteres
+
+pantozol 40 mg		1-0-0 		für die dauer der prednison-behandlung",0,good,Nice example
+4,pantozol,40,mg,1,0,1,0,für die dauer der prednison-behandlung,"prednison 100 mg	1-0-0		24.09. - 07.10.2016
+prednison 80 mg		1-0-0		08.10. - 14.10.2016
+prednison 60 mg		1-0-0		15.10. - 21.10.2016
+prednison 40 mg		1-0-0		22.10.2016 bis auf weiteres
+
+pantozol 40 mg		1-0-0 		für die dauer der prednison-behandlung",0,good,Nice example
+62,otrivin,3,spray,1,1,1,0,für 5 tage,"1 op otrivin spray 3x3/d für 5 tage
+1 op mefenacid 500mg 1-1-1",48,good,"Nice example, outperforms rule based"
+63,mefenacid,500,mg,1,1,1,0,1-1-1,"1 op otrivin spray 3x3/d für 5 tage
+1 op mefenacid 500mg 1-1-1",48,good,"Nice example, outperforms rule based"
+77,detrusitol,4,mg,1,0,0,0,sr,"detrusitol sr 4mg
+1tbl. tgl.",60,good,"Nice example, outperforms rule based"
+52,defalgan,1,unknown,-99,-99,-99,-99,2 tagen pro woche,defalgan 1 an 2 tagen pro woche ,40,input mistake,spelling mistake name
+105,medrol,100,mg,10,0,0,0,po 4 tage,"medrol 100 mg 10-0-0 po 4 tage
+pantoprazol 40 mg 1-0-0- 7 tage",79,input mistake,spelling mistake dosis
+106,pantoprazol,40,mg,1,0,0,0,7 tage,"medrol 100 mg 10-0-0 po 4 tage
+pantoprazol 40 mg 1-0-0- 7 tage",79,,
+35,excipial,1,g,-99,-99,-99,-99,oder alternativ,"diprosalic lösung: 1mal täglich (morgens und abends) tropfenweise auf die kopfhaut auftragen und leicht einreiben, dann 3x/woche weiter
+
+daivobet salbe, 
+b. bedarf auf psoriasistellen auf dem körper 
+
+dermovate creme
+stärker wirksam, auf die infiltrierten psoriasisstellen im schub tgl für 10-14 tage, dann 2-3x/woche für 4 wochen
+
+excipial u lipolotion 
+oder alternativ 
+excipial u hydrolotio ",25,domain knowledge,Excipial U Lipolotion would be more precise but just uses excipial
+61,bactrim,800,mg,1,0,0,0,tabl,bactrim forte (tabl) 800/160mg,47,domain knowledge,"my mistake, restricting dose to float, didn’t know format existed"
+85,pk-merz,100, filmtabl,1,0,0,0,erste woche,"pk-merz filmtabl 100 
+
+erste woche 1-0-0
+bei bedarf zweite woche 1-1-0 oder 2-0-0",68,domain knowledge,100 mg?
+86,pk-merz,100, filmtabl,1,1,0,0,bei bedarf zweite woche,"pk-merz filmtabl 100 
+
+erste woche 1-0-0
+bei bedarf zweite woche 1-1-0 oder 2-0-0",68,,
+100,fampyra,10,mg,1,1,0,0,1-1-0,"fampyra 10 mg 		1-1-0
+sifrol 0.125 mg 		2h vor schlafegehen",77,,
+101,sifrol,0.125,mg,-99,-99,-99,-99,2h vor schlafegehen,"fampyra 10 mg 		1-1-0
+sifrol 0.125 mg 		2h vor schlafegehen",77,reasoning,"2h vor schlafengehen, evening/night?"
+115,lioresal,10,mg,-99,-99,-99,-99,3 tage,"lioresal 10 mg
+s: 0-0-1/2 	3 tage
+1/2-0-1/2 	3 tage
+1/2-1/2-1/2 	3 tage
+1/2-1/2-1 	3 tage
+1-1/2-1 		3 tage
+dann 1-1-1
+
+bei abnahme der kraft oder nebenwirkungen wie schläfrigkeit zurück auf die vorherige dosisstufe
+",87,reasoning,for us clear every entry for pioresal
+116,1/2,0,unknown,-99,-99,-99,-99,3 tage,"lioresal 10 mg
+s: 0-0-1/2 	3 tage
+1/2-0-1/2 	3 tage
+1/2-1/2-1/2 	3 tage
+1/2-1/2-1 	3 tage
+1-1/2-1 		3 tage
+dann 1-1-1
+
+bei abnahme der kraft oder nebenwirkungen wie schläfrigkeit zurück auf die vorherige dosisstufe
+",87,reasoning,for us clear every entry for pioresal
+117,1/2-0-1/2,0,unknown,-99,-99,-99,-99,3 tage,"lioresal 10 mg
+s: 0-0-1/2 	3 tage
+1/2-0-1/2 	3 tage
+1/2-1/2-1/2 	3 tage
+1/2-1/2-1 	3 tage
+1-1/2-1 		3 tage
+dann 1-1-1
+
+bei abnahme der kraft oder nebenwirkungen wie schläfrigkeit zurück auf die vorherige dosisstufe
+",87,reasoning,for us clear every entry for pioresal
+118,1/2-1/2-1/2,0,unknown,-99,-99,-99,-99,3 tage,"lioresal 10 mg
+s: 0-0-1/2 	3 tage
+1/2-0-1/2 	3 tage
+1/2-1/2-1/2 	3 tage
+1/2-1/2-1 	3 tage
+1-1/2-1 		3 tage
+dann 1-1-1
+
+bei abnahme der kraft oder nebenwirkungen wie schläfrigkeit zurück auf die vorherige dosisstufe
+",87,reasoning,for us clear every entry for pioresal
+119,1/2-1/2-1,0,unknown,-99,-99,-99,-99,3 tage,"lioresal 10 mg
+s: 0-0-1/2 	3 tage
+1/2-0-1/2 	3 tage
+1/2-1/2-1/2 	3 tage
+1/2-1/2-1 	3 tage
+1-1/2-1 		3 tage
+dann 1-1-1
+
+bei abnahme der kraft oder nebenwirkungen wie schläfrigkeit zurück auf die vorherige dosisstufe
+",87,reasoning,for us clear every entry for pioresal
+120,1,1,unknown,-99,-99,-99,-99,3 tage,"lioresal 10 mg
+s: 0-0-1/2 	3 tage
+1/2-0-1/2 	3 tage
+1/2-1/2-1/2 	3 tage
+1/2-1/2-1 	3 tage
+1-1/2-1 		3 tage
+dann 1-1-1
+
+bei abnahme der kraft oder nebenwirkungen wie schläfrigkeit zurück auf die vorherige dosisstufe
+",87,reasoning,for us clear every entry for pioresal
+102,avanex,1,unknown,-99,-99,-99,-99,für 1 jahr,"für 1 jahr 
+
+avanex:  vers.-nr. 96472969 
+
+tecfidera 120mg 1-0-1 	für 1 woche
+ab 2. woche tecfidra 240mg 1-0-1 
+",78,hallucination,avanex Is insurance not medication
+103,tecfidera,120,mg,1,0,1,0,für 1 woche,"für 1 jahr 
+
+avanex:  vers.-nr. 96472969 
+
+tecfidera 120mg 1-0-1 	für 1 woche
+ab 2. woche tecfidra 240mg 1-0-1 
+",78,,
+104,tecfidera,240,mg,1,0,1,0,ab 2. woche,"für 1 jahr 
+
+avanex:  vers.-nr. 96472969 
+
+tecfidera 120mg 1-0-1 	für 1 woche
+ab 2. woche tecfidra 240mg 1-0-1 
+",78,,

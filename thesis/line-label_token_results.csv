@@ -1,0 +1,13 @@
+,eval_measure,precision,recall,f1-score,support
+0,dm,0.93,1.0,0.96,13
+1,head,0.82,0.97,0.89,37
+2,his_sym_cu,0.94,0.97,0.96,68
+3,labr_labo,1.0,1.0,1.0,33
+4,medms,0.87,1.0,0.93,20
+5,medo_unk_do_so,0.89,0.43,0.58,37
+6,mr,0.9,1.0,0.95,57
+7,to_tr,0.93,0.93,0.93,14
+8,accuracy,,,0.91,279
+9,macro avg,0.91,0.91,0.9,279
+10,weighted avg,0.91,0.91,0.9,279
+11,custom_weighted,0.91,0.99,0.95,-1

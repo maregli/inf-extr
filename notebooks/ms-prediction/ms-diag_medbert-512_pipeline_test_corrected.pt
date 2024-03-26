@@ -1,0 +1,8 @@
+,precision,recall,f1-score,support
+Other,1.0,0.92,0.96,13.0
+PPMS,0.75,0.75,0.75,4.0
+RRMS,1.0,1.0,1.0,38.0
+SPMS,0.75,1.0,0.86,3.0
+accuracy,0.97,0.97,0.97,0.97
+macro avg,0.88,0.92,0.89,58.0
+weighted avg,0.97,0.97,0.97,58.0

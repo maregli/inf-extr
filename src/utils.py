@@ -779,7 +779,7 @@ def model_output(data: Dataset, model: AutoModelForSequenceClassification, batch
 # Evaluation
 ########################################################################################################
 
-def plot_embeddings(embeddings: torch.tensor, labels: list[int], title="", method="pca", display_label_mapping: dict = None) -> None:
+def plot_embeddings(embeddings: torch.tensor, labels: list[int], title="", method="pca", display_label_mapping: dict = None, save_dir:str = None) -> None:
     """
     Plot embeddings using PCA or UMAP
 
@@ -827,8 +827,10 @@ def plot_embeddings(embeddings: torch.tensor, labels: list[int], title="", metho
     
     # Show plot
     plt.tight_layout()
+    if save_dir:
+        plt.savefig(save_dir, dpi=300)
     plt.show()
-
+    
 def performance_metrics(preds:List[int], labels:List[int])->dict[str, float]:
 
     """
@@ -848,7 +850,7 @@ def performance_metrics(preds:List[int], labels:List[int])->dict[str, float]:
             "recall": recall_score(labels, preds, average='macro')}
 
 
-def pretty_confusion_matrix(y_true:list[int], y_pred:list[int], label_dict:dict[int, str], title:str="")->None:
+def pretty_confusion_matrix(y_true:list[int], y_pred:list[int], label_dict:dict[int, str], title:str="", save_dir:str = None)->None:
     """Plots a pretty confusion matrix using Seaborn's heatmap.
 
     Args:
@@ -891,6 +893,8 @@ def pretty_confusion_matrix(y_true:list[int], y_pred:list[int], label_dict:dict[
     plt.grid(False)
     plt.tight_layout()
     plt.title(title)
+    if save_dir:
+        plt.savefig(save_dir, dpi=300)
     plt.show()
 
 def compute_metrics(eval_preds):
@@ -1208,18 +1212,19 @@ def two_steps_one(input: str, *args, **kwargs)->str:
     input = base_prompt.format(system_prompt = system_prompt, instruction = instruction, input =  input)
     return input
 
-
-def format_prompt(text: list[str], format_fun: Callable[[List[str]], List[str]], *args, **kwargs) -> list[str]:
+def format_prompt(text: Union[str, list[str]], format_fun: Callable[[List[str]], List[str]], *args, **kwargs) -> list[str]:
     """
     Formats a list of texts using a given formatting function. Used for formatting text with a prompt template.
 
     Args:
-        text (list[str]): list of strings to be formatted
+        text (Union[str, list[str]]): text to be formatted
         format_fun (Callable[list[str], list[str]]): formatting function. Specify additional arguments using *args and **kwargs.
 
     Returns:
         list[str]: list of formatted strings
     """
+    if isinstance(text, str):
+        text = [text]
     return [format_fun(t, **kwargs) for t in text]
 
 def outlines_prompting(text: list[str], generator: SequenceGenerator, batch_size: int = 4, max_tokens:int = 100)-> list[Union[str, BaseModel]]:

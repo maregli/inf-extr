@@ -167,3 +167,5 @@ midatams/
 results/
 
 src/paths.py
+thesis/presentation_examples.csv
+thesis/presentation_examples_annotated.csv

@@ -13,7 +13,7 @@ source ~/.bashrc
 
 echo "Starting job with ID $SLURM_JOB_ID..."
 python /cluster/home/eglimar/inf-extr/scripts/side-effects/prompting-outlines.py \
-    --model_name Llama2-MedTuned-13b-LoRa-merged \
+    --model_name Llama2-MedTuned-13b-512-lora-merged \
     --quantization 4bit \
     --attn_implementation flash_attention_2 \
     --prompt_strategies "all" \

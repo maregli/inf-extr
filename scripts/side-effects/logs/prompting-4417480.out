@@ -1,0 +1,453 @@
+=====================================================================
+                   Welcome to Leonhard Med v.2.0.1                    
+
+ * Documentation:  https://unlimited.ethz.ch/display/LEOMED2
+ * Support:        leomed-support@id.ethz.ch
+ * Software stack: type "enable_modules" to use Modules
+
+Tenant name: BIOMED
+OS: Ubuntu 20.04.6 LTS x86_64 
+Uptime: 10 days, 5 hours, 29 mins 
+CPU: AMD EPYC-Rome (60) @ 2.250GHz 
+CPU Usage: 7% 
+GPU: NVIDIA 00:09.0 NVIDIA Corporation Device 2204 
+GPU: NVIDIA 00:08.0 NVIDIA Corporation Device 2204 
+GPU: NVIDIA 00:0b.0 NVIDIA Corporation Device 2204 
+GPU: NVIDIA 00:0a.0 NVIDIA Corporation Device 2204 
+Memory: 20461MiB / 243811MiB (8%) 
+
+=====================================================================Starting job with ID 4417480...
+Parsed Arguments:
+job_id: unknown
+model_name: Llama2-MedTuned-13b-1024-lora-merged
+quantization: 4bit
+batch_size: 1
+prompt_strategies: ['all']
+sampler: greedy
+attn_implementation: flash_attention_2
+information_retrieval: False
+max_tokens: 1000
+num_examples: 10
+data_version: base
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 23.43 GB
+   Allocated Memory : 0.00 GB
+   Reserved Memory : 0.00 GB
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 16.41 GB
+   Allocated Memory : 6.91 GB
+   Reserved Memory : 6.98 GB
+Loaded Model and Tokenizer
+Got Outlines generator
+Loaded Data
+Prompting Strategy: few_shot_instruction
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711223891.1049724.pt
+Saved Results
+Prompting Strategy: zero_shot_instruction
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711239089.9223375.pt
+Saved Results
+Prompting Strategy: few_shot_vanilla
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711251769.4919775.pt
+Saved Results
+Prompting Strategy: zero_shot_vanilla
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved intermediate results to /cluster/dataset/midatams/inf-extr/results/intermediate/intermediate_results1711263467.6804636.pt
+Saved Results
+Job finished

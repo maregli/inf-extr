@@ -1,8 +1,8 @@
 #!/bin/bash
  
 #SBATCH --job-name=side-effects_llama2-Medtuned7b_prompting
-#SBATCH --output=/cluster/home/eglimar/inf-extr/scripts/side-effects/logs/prompting-s2a%j.out
-#SBATCH --error=/cluster/home/eglimar/inf-extr/scripts/side-effects/logs/prompting-s2a%j.err
+#SBATCH --output=/cluster/home/eglimar/inf-extr/scripts/side-effects/logs/prompting-%j.out
+#SBATCH --error=/cluster/home/eglimar/inf-extr/scripts/side-effects/logs/prompting-%j.err
 #SBATCH --cpus-per-task=1
 #SBATCH -p gpu
 #SBATCH --gres=gpu:rtx3090:1
@@ -16,8 +16,8 @@ python /cluster/home/eglimar/inf-extr/scripts/side-effects/prompting-outlines.py
     --model_name Llama2-MedTuned-13b-512-lora-merged \
     --quantization 4bit \
     --attn_implementation flash_attention_2 \
-    --prompt_strategies "all" \
+    --prompt_strategies "zero_shot_vanilla" \
     --batch_size 1 \
     --num_examples 10 \
-    --data_version s2a
+    --information_retrieval
 echo "Job finished"

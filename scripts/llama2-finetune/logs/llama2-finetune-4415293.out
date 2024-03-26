@@ -1,0 +1,50 @@
+Starting job with ID 4415293...
+Parsed Arguments:
+job_id: unknown
+model_name: Llama2-MedTuned-13b
+new_model_name: None
+quantization: 4bit
+batch_size: 1
+seq_length: 1024
+lr: 0.0002
+num_epochs: 1
+peft_config: None
+attn_implementation: flash_attention_2
+bf16: True
+GPU 0: NVIDIA GeForce RTX 3090
+   Total Memory: 23.69 GB
+   Free Memory: 22.92 GB
+   Allocated Memory : 0.00 GB
+   Reserved Memory : 0.00 GB
+Tokenizer pad token ID: 32000
+Tokenizer special tokens: {'bos_token': '<s>', 'eos_token': '</s>', 'unk_token': '<unk>', 'pad_token': '<pad>'}
+Model pad token ID: 32000
+Starting Training
+{'loss': 2.8754, 'grad_norm': 0.56640625, 'learning_rate': 0.0002, 'epoch': 0.05}
+{'loss': 2.6635, 'grad_norm': 0.50390625, 'learning_rate': 0.0002, 'epoch': 0.09}
+{'loss': 2.5595, 'grad_norm': 0.484375, 'learning_rate': 0.0002, 'epoch': 0.14}
+{'loss': 2.5358, 'grad_norm': 0.5625, 'learning_rate': 0.0002, 'epoch': 0.18}
+{'loss': 2.5105, 'grad_norm': 0.60546875, 'learning_rate': 0.0002, 'epoch': 0.23}
+{'loss': 2.4673, 'grad_norm': 0.546875, 'learning_rate': 0.0002, 'epoch': 0.27}
+{'loss': 2.4848, 'grad_norm': 0.61328125, 'learning_rate': 0.0002, 'epoch': 0.32}
+{'loss': 2.4381, 'grad_norm': 0.78515625, 'learning_rate': 0.0002, 'epoch': 0.36}
+{'loss': 2.4651, 'grad_norm': 0.8046875, 'learning_rate': 0.0002, 'epoch': 0.41}
+{'loss': 2.4245, 'grad_norm': 0.84375, 'learning_rate': 0.0002, 'epoch': 0.45}
+{'loss': 2.4073, 'grad_norm': 0.93359375, 'learning_rate': 0.0002, 'epoch': 0.5}
+{'loss': 2.3648, 'grad_norm': 0.81640625, 'learning_rate': 0.0002, 'epoch': 0.54}
+{'loss': 2.3831, 'grad_norm': 0.91796875, 'learning_rate': 0.0002, 'epoch': 0.59}
+{'loss': 2.3567, 'grad_norm': 1.0390625, 'learning_rate': 0.0002, 'epoch': 0.63}
+{'loss': 2.3421, 'grad_norm': 0.953125, 'learning_rate': 0.0002, 'epoch': 0.68}
+{'loss': 2.3194, 'grad_norm': 0.953125, 'learning_rate': 0.0002, 'epoch': 0.72}
+{'loss': 2.3216, 'grad_norm': 0.98828125, 'learning_rate': 0.0002, 'epoch': 0.77}
+{'loss': 2.3073, 'grad_norm': 0.9375, 'learning_rate': 0.0002, 'epoch': 0.81}
+{'loss': 2.3, 'grad_norm': 1.0546875, 'learning_rate': 0.0002, 'epoch': 0.86}
+{'loss': 2.2813, 'grad_norm': 1.1171875, 'learning_rate': 0.0002, 'epoch': 0.9}
+{'loss': 2.2815, 'grad_norm': 1.21875, 'learning_rate': 0.0002, 'epoch': 0.95}
+{'loss': 2.2489, 'grad_norm': 1.078125, 'learning_rate': 0.0002, 'epoch': 0.99}
+{'train_runtime': 9078.1891, 'train_samples_per_second': 0.488, 'train_steps_per_second': 0.122, 'train_loss': 2.4237098900606315, 'epoch': 1.0}
+Finished Training
+Saving Model at: /cluster/dataset/midatams/inf-extr/resources/models/Llama2-MedTuned-13b-1024-lora
+Saving Tokenizer at: /cluster/dataset/midatams/inf-extr/resources/models/Llama2-MedTuned-13b-1024-lora
+Saving training logs at: /cluster/dataset/midatams/inf-extr/resources/models/Llama2-MedTuned-13b-1024-lora/log_history.pt
+Job finished

@@ -1,0 +1,5 @@
+strategy,side_effects_precision_base,medication_precision_base,side_effects_precision_rag,medication_precision_rag,side_effects_precision_s2a,medication_precision_s2a
+Few-Shot Base,0.22,0.4,0.24,0.38,0.24,0.54
+Few-Shot Instruction,0.23,0.39,0.26,0.39,0.24,0.46
+Zero-Shot Base,0.04,0.23,0.14,0.42,0.15,0.78
+Zero-Shot Instruction,0.04,0.2,0.14,0.42,0.16,0.81

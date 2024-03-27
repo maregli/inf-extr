@@ -1,0 +1,7 @@
+,strategy,side_effects_recall_base,medication_recall_base,side_effects_recall_rag,medication_recall_rag,side_effects_recall_s2a,medication_recall_s2a,model
+0,Few-Shot Instruction,0.51,0.83,0.52,0.78,0.56,0.9,base
+0,Zero-Shot Instruction,0.29,0.87,0.32,0.76,0.38,0.97,base
+0,Few-Shot Instruction,0.38,0.76,0.5,0.78,0.61,0.93,512
+0,Zero-Shot Instruction,0.23,0.79,0.3,0.78,0.38,0.92,512
+0,Few-Shot Instruction,0.41,0.76,0.52,0.76,0.72,0.96,1024
+0,Zero-Shot Instruction,0.24,0.78,0.36,0.77,0.38,0.92,1024

@@ -1,0 +1,7 @@
+,strategy,side_effects_f1_base,medication_f1_base,side_effects_f1_rag,medication_f1_rag,side_effects_f1_s2a,medication_f1_s2a,model
+0,Few-Shot Instruction,0.33,0.53,0.35,0.52,0.52,0.86,base
+0,Zero-Shot Instruction,0.22,0.54,0.24,0.5,0.37,0.94,base
+0,Few-Shot Instruction,0.25,0.48,0.33,0.49,0.57,0.87,512
+0,Zero-Shot Instruction,0.16,0.48,0.22,0.5,0.36,0.88,512
+0,Few-Shot Instruction,0.28,0.5,0.35,0.5,0.7,0.93,1024
+0,Zero-Shot Instruction,0.16,0.49,0.26,0.51,0.37,0.89,1024

@@ -1,7 +1,7 @@
 ,strategy,side_effects_precision_base,medication_precision_base,side_effects_precision_rag,medication_precision_rag,side_effects_precision_s2a,medication_precision_s2a,model
-0,Few-Shot Instruction,0.31,0.43,0.32,0.43,0.59,0.85,base
-0,Zero-Shot Instruction,0.23,0.43,0.25,0.42,0.46,0.93,base
-0,Few-Shot Instruction,0.23,0.39,0.28,0.4,0.62,0.86,512
-0,Zero-Shot Instruction,0.16,0.37,0.24,0.41,0.45,0.87,512
-0,Few-Shot Instruction,0.27,0.42,0.32,0.41,0.71,0.92,1024
-0,Zero-Shot Instruction,0.17,0.39,0.26,0.42,0.46,0.88,1024
+0,Few-Shot Instruction,0.31,0.43,0.33,0.43,0.63,0.85,base
+0,Zero-Shot Instruction,0.24,0.43,0.25,0.42,0.51,0.93,base
+0,Few-Shot Instruction,0.24,0.39,0.29,0.4,0.66,0.86,512
+0,Zero-Shot Instruction,0.17,0.37,0.26,0.41,0.5,0.87,512
+0,Few-Shot Instruction,0.28,0.42,0.32,0.41,0.75,0.92,1024
+0,Zero-Shot Instruction,0.18,0.39,0.27,0.42,0.5,0.88,1024

@@ -819,11 +819,13 @@ def plot_embeddings(embeddings: torch.tensor, labels: list[int], title="", metho
     # Plot using Seaborn
     plt.figure(figsize=(8, 6))
     sns.set_theme(style='whitegrid')
-    sns.scatterplot(data=df_embeddings, x='x', y='y', hue='label', palette='viridis', alpha=0.7)
+    sns.scatterplot(data=df_embeddings, x='x', y='y', hue='label', palette='gist_ncar', alpha=0.7)
+    plt.xlabel(f'{method.upper()} 1', fontsize='large', fontweight='bold')
+    plt.ylabel(f'{method.upper()} 2', fontsize='large', fontweight='bold')
     
     # Add a title and legend
     plt.title(title)
-    plt.legend(title='Label', loc='upper left')
+    plt.legend(title='Label', loc='upper left', bbox_to_anchor=(1, 1), fontsize='large')
     
     # Show plot
     plt.tight_layout()
@@ -886,10 +888,10 @@ def pretty_confusion_matrix(y_true:list[int], y_pred:list[int], label_dict:dict[
     sns.set_theme(font_scale=1.2)  # Adjust font size for labels
     sns.heatmap(cm, annot=True, fmt='d', cmap=custom_cmap, cbar=False,
                 yticklabels=sorted_labels, xticklabels=sorted_labels, alpha=0.9, linewidths=0.5, linecolor='lightgrey')
-    plt.xlabel('Predicted Label')
-    plt.ylabel('True Label')
-    plt.xticks(rotation=45, ha='right')  # Rotate x-axis labels for better readability
-    plt.yticks(rotation=0)
+    plt.xlabel('Predicted Label', fontsize=20, fontweight='bold', labelpad=15)
+    plt.ylabel('True Label', fontsize=20, fontweight='bold', labelpad=20)
+    plt.xticks(rotation=45, ha='right', fontsize = 16)  # Rotate x-axis labels for better readability
+    plt.yticks(rotation=0, fontsize = 16)
     plt.grid(False)
     plt.tight_layout()
     plt.title(title)

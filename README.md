@@ -1,16 +1,41 @@
 # Utilizing Deep Language Models for the Medical Information Extraction
 
-This is for my master thesis.
+## Overview
 
-I updated it now.
+The emergence of Large Language Models (LLMs) has brought about significant innovations across various sectors, including the field of healthcare informatics.  This thesis explores the application of LLMs for extracting structured information from German medical reports, a task that is particularly challenging for the clinical domain given the specialized vocabulary, the lack of high-quality, annotated datasets, and the prohibitive costs associated with manual data annotation. Our approach utilized prompt templates, few-shot learning, and structured text generation to steer the unrestricted text outputs of LLMs. This ranged from more straightforward tasks such as extracting a single diagnosis to intricate relation extraction tasks, including identifying multiple medications and their specific attributes. By employing LLMs such as Llama2-MedTuned, our findings reveal that LLMs are competitive with previous non-LLM approaches of the Swiss Data Science Center (SDSC), sometimes even outperforming them, all while requiring minimal to no training data.
 
-I update it again.
+This GitHub Repo contains all the code for out analysis. Because of data privacy concerns, the data is only available on the secure leomed cluster.
 
-To install dependencies:
-poetry install 
-then to build flash-attention: FLASH_ATTENTION_SKIP_CUDA_BUILD=TRUE poetry run python -m pip install flash-attn --no-build-isolation
-maybe you can also try without 
+## Table of Contents
 
+- [Installation](#installation)
+- [Project Structure](#project-structure)
+- [Data](#data)
+- [Running the Project](#running-the-project)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Installation
+
+### Step 1: Install Poetry
+
+Ensure [Poetry](https://python-poetry.org/docs/) is installed on your system. Poetry manages project dependencies and environments.
+
+### Step 2: Install Dependencies
+
+Clone the repository and navigate to the project directory. Use the provided `setup.sh` script to install all necessary dependencies.
+
+```bash
+git clone https://github.com/maregli/inf-extr.git
+cd inf-extr
+./setup.sh
+```
+
+## Project Structure
+
+Below is the file structure of our project, which includes notebooks for data processing and evaluations, scripts for various processing tasks, source code, and thesis-related images and results.
+
+```bash
 ├── README.md
 ├── notebooks
 │   ├── data_preprocessing
@@ -35,37 +60,32 @@ maybe you can also try without
 │   ├── paths.py
 │   └── utils.py
 └── thesis
-    ├── line-label-embeddings.png
-    ├── line-label_line_cm.png
-    ├── line-label_line_embeddings.png
-    ├── line-label_line_results.csv
-    ├── line-label_token_cm.png
-    ├── line-label_token_embeddings.png
-    ├── line-label_token_results.csv
-    ├── line-level-cm.png
-    ├── llama2-finetuning-1024.png
-    ├── llama2-finetuning-512.png
-    ├── medication_results_13b.csv
-    ├── medication_results_7b.csv
-    ├── medication_results_rule.csv
-    ├── ms_diag_medbert_cm_base.png
-    ├── ms_diag_medbert_cm_s2a.png
-    ├── ms_diag_medbert_embeddings_base.png
-    ├── ms_diag_medbert_embeddings_s2a.png
-    ├── ms_pred_results_prompt13b.csv
-    ├── ms_pred_results_prompt13b_no.csv
-    ├── ms_pred_results_prompt7b.csv
-    ├── roc_curve.png
-    ├── se_lora_f1.csv
-    ├── se_lora_precision.csv
-    ├── se_lora_recall.csv
-    ├── se_prc.png
-    ├── se_roc.png
-    ├── se_thesis7b_f1.csv
-    ├── se_thesis7b_precision.csv
-    ├── se_thesis7b_recall.csv
-    ├── se_threshold_f1.png
-    ├── se_threshold_precision.png
-    ├── se_threshold_recall.png
-    ├── token-label-embeddings.png
-    └── token-level-cm.png
+```
+
+### Key Directories and Files
+
+- **notebooks/**: Contains Jupyter notebooks for data preprocessing as well as evaluations of the different tasks (Content classification, diagnosis extraction, medication extraction, side effects extraction, fine-tuning)
+- **scripts/**: Includes scripts for training the models for the different tasks and performing inference.
+- **src/**: Source code for the project, including utility functions and data management.
+- **thesis/**: Contains images and CSV files with results related to the thesis, including graphs, embeddings, and performance metrics.
+- **pyproject.toml & poetry.lock**: Configuration files for project dependencies.
+- **setup.sh**: A script for setting up the project environment.
+
+For more details on each directory and its contents, refer to the individual files and folders within the project.
+
+## Data and Resources
+
+The data, resources and results used for this thesis can be found on the leomed cluster under:
+
+```
+/cluster/dataset/midatams/inf-extr/
+```
+
+Make sure that the import paths, especially the project root in ```src/paths.py``` matches the data path.
+
+## Running Project
+
+- Preprocessing: Begin with the notebooks in `notebooks/data_preprocessing` for initial data handling.
+- Training: Use scripts in `scripts/` for model training. Check each script for command line options.
+- Inference: For model inference, refer to the relevant scripts in `scripts/`.
+- Evaluation: Evaluation notebooks are located in `notebooks/`, organized by task.
